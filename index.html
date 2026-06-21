@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>สารบรรณหลักสูตรเตรียมสอบข้าราชการไทย</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700;800&family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Font Awesome and Tailwind CSS CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sarabun: ['Sarabun', 'sans-serif'],
+          thai: ['IBM Plex Sans Thai', 'sans-serif'],
+        },
+        colors: {
+          brand: {
+            50: '#fff7ed',
+            100: '#ffedd5',
+            200: '#fed7aa',
+            300: '#fdba74',
+            400: '#fb923c',
+            500: '#f97316', /* Safety Orange Accent */
+            600: '#ea580c',
+            700: '#c2410c',
+            800: '#9a3412',
+            navy: '#1E3A5F', /* Premium Navy Blue */
+            navyLight: '#2C5282',
+          }
+        }
+      }
+    }
+  }
+</script>
+<style>
+  body {
+    font-family: 'Sarabun', 'IBM Plex Sans Thai', sans-serif;
+    background-color: #f8fafc;
+  }
+  .card-gradient {
+    background: linear-gradient(135deg, #1E3A5F 0%, #2B4C7E 100%);
+  }
+  .accent-gradient {
+    background: linear-gradient(135deg, #ea580c 0%, #f97316 100%);
+  }
+</style>
+</head>
+<body class="text-slate-800 antialiased min-h-screen flex flex-col pb-12">
+
+<header class="relative bg-gradient-to-r from-brand-navy to-brand-navyLight text-white py-12 px-4 shadow-md overflow-hidden">
+  <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:20px_20px]"></div>
+  <div class="relative z-10 max-w-6xl mx-auto text-center">
+    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-white/20 text-brand-200 border border-white/30 mb-4 uppercase tracking-wider">
+      <i class="fa-solid fa-graduation-cap"></i> ระบบสารบรรณสอบราชการอัจฉริยะ
+    </span>
+    <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4 font-thai">
+      ระบบคลังสรุปย่อและข้อสอบเสมือนจริง
+    </h1>
+    <p class="text-slate-200 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+      รวบรวมหลักสูตร พ.ร.บ. กฎหมายเฉพาะตำแหน่ง และระเบียบปฏิบัติราชการที่ออกสอบบ่อยที่สุด <br>
+      พร้อมระบบทดสอบอัจฉริยะ (Interactive Exam Engine) ในรูปแบบของไฟล์ส่วนตัวแบบพกพา
+    </p>
+  </div>
+</header>
+
+<main class="flex-grow max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-20">
+  
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+    <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex items-center gap-3">
+      <div class="w-10 h-10 rounded-xl bg-orange-100 text-brand-500 flex items-center justify-center text-lg"><i class="fa-solid fa-book"></i></div>
+      <div>
+        <span class="text-xs text-slate-400 block font-medium">หลักสูตรติว</span>
+        <span class="text-lg font-bold text-slate-900">9 วิชาหลัก</span>
+      </div>
+    </div>
+    <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex items-center gap-3">
+      <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center text-lg"><i class="fa-solid fa-clipboard-question"></i></div>
+      <div>
+        <span class="text-xs text-slate-400 block font-medium">รวมข้อสอบ</span>
+        <span class="text-lg font-bold text-slate-900">260+ ข้อสอบ</span>
+      </div>
+    </div>
+    <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex items-center gap-3">
+      <div class="w-10 h-10 rounded-xl bg-green-100 text-green-600 flex items-center justify-center text-lg"><i class="fa-solid fa-file-shield"></i></div>
+      <div>
+        <span class="text-xs text-slate-400 block font-medium">สรุปรายมาตรา</span>
+        <span class="text-lg font-bold text-slate-900">ครบถ้วน 100%</span>
+      </div>
+    </div>
+    <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex items-center gap-3">
+      <div class="w-10 h-10 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center text-lg"><i class="fa-solid fa-globe"></i></div>
+      <div>
+        <span class="text-xs text-slate-400 block font-medium">พร้อมใช้งาน</span>
+        <span class="text-lg font-bold text-slate-900">แบบออฟไลน์</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search & Filter Controls -->
+  <div class="bg-white p-4 sm:p-6 rounded-2xl shadow-sm border border-slate-100 mb-8 space-y-4">
+    <div class="flex flex-col sm:flex-row gap-3">
+      <!-- Search Input -->
+      <div class="relative flex-grow">
+        <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400"><i class="fa-solid fa-magnifying-glass"></i></span>
+        <input type="text" id="searchInput" placeholder="ค้นหารายชื่อกฎหมาย, วิชา, หรือกลุ่มหัวข้อสอบ..." class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 text-sm font-medium">
+      </div>
+      <!-- Tab filters -->
+      <div class="flex gap-1 overflow-x-auto pb-1 sm:pb-0">
+        <button onclick="filterCategory('all')" id="tab-all" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all bg-brand-500 text-white shadow-sm">ทั้งหมด</button>
+        <button onclick="filterCategory('law')" id="tab-law" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all text-slate-600 hover:bg-slate-50">กฎหมายเฉพาะด้าน</button>
+        <button onclick="filterCategory('reg')" id="tab-reg" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all text-slate-600 hover:bg-slate-50">ระเบียบปฏิบัติราชการ</button>
+        <button onclick="filterCategory('gen')" id="tab-gen" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all text-slate-600 hover:bg-slate-50">ความรู้องค์กร/ทั่วไป</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Courses Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="courseGrid">
+    
+    <!-- Subject 1 -->
+    <div class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition-shadow" data-category="law">
+      <div class="card-gradient text-white p-5 relative">
+        <span class="absolute top-4 right-4 bg-white/20 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">พ.ร.บ. หลัก</span>
+        <h3 class="font-thai font-bold text-lg leading-snug mt-2">พ.ร.บ. ป้องกันและบรรเทาสาธารณภัย พ.ศ. 2550</h3>
+        <p class="text-xs text-slate-200 mt-1">กฎหมายหลักเฉพาะตำแหน่งกรม ปภ.</p>
+      </div>
+      <div class="p-5 flex-grow flex flex-col justify-between">
+        <div class="space-y-3 mb-6">
+          <ul class="text-xs text-slate-500 space-y-2">
+            <li><i class="fa-solid fa-circle-check text-green-500 mr-1.5"></i>สายบังคับบัญชาผู้บัญชาการ → ผู้อำนวยการแต่ละระดับ</li>
+            <li><i class="fa-solid fa-circle-check text-green-500 mr-1.5"></i>โครงสร้างคณะกรรมการ ปภ. แห่งชาติ (กปภ.ช.)</li>
+            <li><i class="fa-solid fa-circle-check text-green-500 mr-1.5"></i>อำนาจสั่งการภาวะฉุกเฉินและโทษทางอาญา</li>
+          </ul>
+          <div class="flex flex-wrap gap-1.5 pt-2">
+            <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-orange-50 text-brand-600">วิชาหลักเฉพาะตำแหน่ง</span>
+            <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-blue-50 text-blue-600">ปภ. ตรงประเด็น</span>
+          </div>
+        </div>
+        <a href="พ.ร.บ. ป้องกันและบรรเทาสาธารณภัย พ.ศ. 2550.html" class="w-full py-2.5 rounded-xl bg-slate-900 hover:bg-brand-600 text-white font-semibold text-xs sm:text-sm text-center transition-all flex items-center justify-center gap-1.5">
+          ทำข้อสอบ & อ่านสรุปย่อ <i class="fa-solid fa-chevron-right text-xs"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Subject 2 -->
+    <div class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition-shadow" data-category="gen">
+      <div class="card-gradient text-white p-5 relative">
+        <span class="absolute top-4 right-4 bg-white/20 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">ความรู้ทั่วไป</span>
+        <h3 class="font-thai font-bold text-lg leading-snug mt-2">ความรู้เกี่ยวกับกรม ปภ.</h3>
+        <p class="text-xs text-slate-200 mt-1">ประวัติ โครงสร้าง วิสัยทัศน์องค์กร</p>
+      </div>
+      <div class="p-5 flex-grow flex flex-col justify-between">
+        <div class="space-y-3 mb-6">
+          <ul class="text-xs text-slate-500 space-y-2">
+            <li><i class="fa-solid fa-circle-check text-green-500 mr-1.5"></i>ประวัติการก่อตั้งและแปรสภาพจาก 5 หน่วยงาน</li>
+            <li><i class="fa-solid fa-circle-check text-green-500 mr-1.5"></i>ส่วนกลาง 14 กอง / ส่วนภูมิภาค เขต 18 ศูนย์</li>
+            <li><i class="fa-solid fa-circle-check text-green-500 mr-1.5"></i>ยุทธศาสตร์แผนงานและค่านิยม DDPM</li>
+          </ul>
+          <div class="flex flex-wrap gap-1.5 pt-2">
+            <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-orange-50 text-brand-600">ความรู้ทั่วไป</span>
+            <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-blue-50 text-blue-600">ประวัติกรม</span>
+          </div>
+        </div>
+        <a href="ความรู้กรมปภ.html" class="w-full py-2.5 rounded-xl bg-slate-900 hover:bg-brand-600 text-white font-semibold text-xs sm:text-sm text-center transition-all flex items-center justify-center gap-1.5">
+          ทำข้อสอบ & อ่านสรุปย่อ <i class="fa-solid fa-chevron-right text-xs"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Subject 3 -->
+    <div class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition-shadow" data-category="law">
+      <div class="accent-gradient text-white p-5 relative">
+        <span class="absolute top-4 right-4 bg-white/20 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">พ.ร.บ.</span>
+        <h3 class="font-thai font-bold text-lg leading-snug mt-2">พ.ร.บ. วิธีการงบประมาณ พ.ศ. 2561</h3>
+        <p class="text-xs text-slate-200 mt-1">การบริหารงานและวิธีการด้านงบประมาณแผ่นดิน</p>
+      </div>
+      <div class="p-5 flex-grow flex flex-col justify-between">
+        <div class="space-y-3 mb-6">
+          <ul class="text-xs text-slate-500 space-y-2">
+            <li><i class="fa-solid fa-clipboard-question text-orange-500 mr-1.5"></i><strong>38 ข้อสอบ</strong> ปรนัยพร้อมเฉลยละเอียด</li>
+            <li><i class="fa-solid fa-circle-check text-green-500 mr-1.5"></i>สรุปรายหมวดครบทั้ง 8 หมวด 61 มาตรา</li>
+            <li><i class="fa-solid fa-circle-check text-green-500 mr-1.5"></i>เน้นจุดออกสอบบ่อย ตัวเลขระยะเวลาสำคัญ</li>
+          </ul>
+          <div class="flex flex-wrap gap-1.5 pt-2">
+            <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-orange-50 text-brand-600">งบประมาณแผ่นดิน</span>
+            <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-blue-50 text-blue-600">38 ข้อสอบ</span>
+          </div>
+        </div>
+        <a href="พ.ร.บ. วิธีการงบประมาณ พ.ศ. 2561.html" class="w-full py-2.5 rounded-xl bg-brand-500 hover:bg-brand-600 text-white font-semibold text-xs sm:text-sm text-center transition-all flex items-center justify-center gap-1.5 shadow-sm">
+          ทำข้อสอบ & อ่านสรุปย่อ <i class="fa-solid fa-chevron-right text-xs"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Subject 4 -->
+    <div class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition-shadow" data-category="reg">
+      <div class="card-gradient text-white p-5 relative">
+        <span class="absolute top-4 right-4 bg-white/20 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">ระเบียบ มท.</span>
+        <h3 class="font-thai font-bold text-lg leading-snug mt-2">ระเบียบ มท. ว่าด้วยกิจการ อปพร. 2553</h3>
+        <p class="text-xs text-slate-200 mt-1">อาสาสมัครป้องกันภัยฝ่ายพลเรือน</p>
+      </div>
+      <div class="p-5 flex-grow flex flex-col justify-between">
+        <div class="space-y-3 mb-6">
+          <ul class="text-xs text-slate-500 space-y-2">
+            <li><i class="fa-solid fa-clipboard-question text-orange-500 mr-1.5"></i><strong>36 ข้อสอบ</strong> ปลัดมหาดไทย/ท้องถิ่นคุมเข้ม</li>
+            <li><i class="fa-solid fa-circle-check text-green-500 mr-1.5"></i>9 หัวข้อสรุปจำง่าย โครงสร้างคกก. กลาง/จังหวัด</li>
+            <li><i class="fa-solid fa-circle-check text-green-500 mr-1.5"></i>อายุสมัคร วินัย 11 ประการ บัตรใช้งานไม่เกิน 8 ปี</li>
+          </ul>
+          <div class="flex flex-wrap gap-1.5 pt-2">
+            <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-orange-50 text-brand-600">กิจการ อปพร.</span>
+            <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-blue-50 text-blue-600">36 ข้อสอบ</span>
+          </div>
+        </div>
+        <a href="ระเบียบ มท. ว่าด้วยกิจการ อปพร. พ.ศ. 2553.html" class="w-full py-2.5 rounded-xl bg-slate-900 hover:bg-brand-600 text-white font-semibold text-xs sm:text-sm text-center transition-all flex items-center justify-center gap-1.5">
+          ทำข้อสอบ & อ่านสรุปย่อ <i class="fa-solid fa-chevron-right text-xs"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Subject 5 -->
+    <div class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition-shadow" data-category="law">
+      <div class="accent-gradient text-white p-5 relative">
+        <span class="absolute top-4 right-4 bg-white/20 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">พ.ร.บ.</span>
+        <h3 class="font-thai font-bold text-lg leading-snug mt-2">พ.ร.บ. ปรับปรุงกระทรวง ทบวง กรม 2545</h3>
+        <p class="text-xs text-slate-200 mt-1">โครงสร้างและขอบข่ายการปรับปรุงกระทรวง ทบวง กรม</p>
+      </div>
+      <div class="p-5 flex-grow flex flex-col justify-between">
+        <div class="space-y-3 mb-6">
+          <ul class="text-xs text-slate-500 space-y-2">
+            <li><i class="fa-solid fa-clipboard-question text-white mr-1.5"></i><strong>30 ข้อสอบ</strong> ปราบเซียนวิเคราะห์ลวงเจาะลึก</li>
+            <li><i class="fa-solid fa-circle-check text-green-500 mr-1.5"></i>สรุปฉบับพรีเมียม มาตรา 1 - 46 คมชัด</li>
+            <li><i class="fa-solid fa-circle-check text-green-500 mr-1.5"></i>โครงสร้าง 20 กระทรวงและสำนักนายกฯ ละเอียด</li>
+          </ul>
+          <div class="flex flex-wrap gap-1.5 pt-2">
+            <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-orange-50 text-brand-600">บริหารแผ่นดิน</span>
+            <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-blue-50 text-blue-600">30 ข้อสอบ</span>
+          </div>
+        </div>
+        <a href="พ.ร.บ. ปรับปรุงกระทรวง ทบวง กรม พ.ศ. 2545.html" class="w-full py-2.5 rounded-xl bg-brand-500 hover:bg-brand-600 text-white font-semibold text-xs sm:text-sm text-center transition-all flex items-center justify-center gap-1.5 shadow-sm">
+          ทำข้อสอบ & อ่านสรุปย่อ <i class="fa-solid fa-chevron-right text-xs"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Subject 6 -->
+    <div class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition-shadow" data-category="reg">
+      <div class="card-gradient text-white p-5 relative">
+        <span class="absolute top-4 right-4 bg-white/20 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">ระเบียบ นรม.</span>
+        <h3 class="font-thai font-bold text-lg leading-snug mt-2">ระเบียบฯ ป้องกันอุบัติภัยแห่งชาติ 2564</h3>
+        <p class="text-xs text-slate-200 mt-1">คณะกรรมการป้องกันอุบัติภัยแห่งชาติ (กปอ.)</p>
+      </div>
+      <div class="p-5 flex-grow flex flex-col justify-between">
+        <div class="space-y-3 mb-6">
+          <ul class="text-xs text-slate-500 space-y-2">
+            <li><i class="fa-solid fa-clipboard-question text-orange-500 mr-1.5"></i><strong>30 ข้อสอบ</strong> เก็งจุดลวงข้อ 1 - 14 อย่างมีประสิทธิภาพ</li>
+            <li><i class="fa-solid fa-circle-check text-green-500 mr-1.5"></i>วิเคราะห์คำนิยาม "อุบัติภัย" ไม่รวมอุบัติเหตุทางถนน</li>
+            <li><i class="fa-solid fa-circle-check text-green-500 mr-1.5"></i>หน้าที่ กปอ. / วาระผู้ทรงคุณวุฒิ และผู้รักษาการ</li>
+          </ul>
+          <div class="flex flex-wrap gap-1.5 pt-2">
+            <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-orange-50 text-brand-600">อุบัติภัยแห่งชาติ</span>
+            <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-blue-50 text-blue-600">30 ข้อสอบ</span>
+          </div>
+        </div>
+        <a href="ระเบียบการป้องกันอุบัติภัยแห่งชาติ พ.ศ. 2564.html" class="w-full py-2.5 rounded-xl bg-slate-900 hover:bg-brand-600 text-white font-semibold text-xs sm:text-sm text-center transition-all flex items-center justify-center gap-1.5">
+          ทำข้อสอบ & อ่านสรุปย่อ <i class="fa-solid fa-chevron-right text-xs"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Subject 7 -->
+    <div class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition-shadow" data-category="reg">
+      <div class="card-gradient text-white p-5 relative">
+        <span class="absolute top-4 right-4 bg-white/20 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">ระเบียบ นรม.</span>
+        <h3 class="font-thai font-bold text-lg leading-snug mt-2">ระเบียบฯ ป้องกันและลดอุบัติเหตุทางถนน 2554</h3>
+        <p class="text-xs text-slate-200 mt-1">โครงสร้างและกลไกความปลอดภัยทางถนนของชาติ</p>
+      </div>
+      <div class="p-5 flex-grow flex flex-col justify-between">
+        <div class="space-y-3 mb-6">
+          <ul class="text-xs text-slate-500 space-y-2">
+            <li><i class="fa-solid fa-clipboard-question text-orange-500 mr-1.5"></i><strong>30 ข้อสอบ</strong> สรุปย่อรายข้อ 1 - 26 ครบถ้วน</li>
+            <li><i class="fa-solid fa-circle-check text-green-500 mr-1.5"></i>จำแนกโครงสร้างงาน 3 ระดับ (นโยบาย-อำนวยการ-ปฏิบัติการ)</li>
+            <li><i class="fa-solid fa-circle-check text-green-500 mr-1.5"></i>บอร์ด นปถ. / ศูนย์ ศปถ. แผนแม่บทเสนอ ครม.</li>
+          </ul>
+          <div class="flex flex-wrap gap-1.5 pt-2">
+            <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-orange-50 text-brand-600">ลดอุบัติเหตุถนน</span>
+            <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-blue-50 text-blue-600">30 ข้อสอบ</span>
+          </div>
+        </div>
+        <a href="ระเบียบสำนักนายกรัฐมนตรี ป้องกันและลดอุบัติเหตุทางถนน พ.ศ. 2554.html" class="w-full py-2.5 rounded-xl bg-slate-900 hover:bg-brand-600 text-white font-semibold text-xs sm:text-sm text-center transition-all flex items-center justify-center gap-1.5">
+          ทำข้อสอบ & อ่านสรุปย่อ <i class="fa-solid fa-chevron-right text-xs"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Subject 8 -->
+    <div class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition-shadow" data-category="reg">
+      <div class="card-gradient text-white p-5 relative">
+        <span class="absolute top-4 right-4 bg-white/20 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">ระเบียบ นรม.</span>
+        <h3 class="font-thai font-bold text-lg leading-snug mt-2">ระเบียบฯ เตือนภัยพิบัติแห่งชาติ 2552</h3>
+        <p class="text-xs text-slate-200 mt-1">บริหารระบบและเตือนภัยพิบัติแห่งชาติ (แก้ไข พ.ศ. 2562)</p>
+      </div>
+      <div class="p-5 flex-grow flex flex-col justify-between">
+        <div class="space-y-3 mb-6">
+          <ul class="text-xs text-slate-500 space-y-2">
+            <li><i class="fa-solid fa-clipboard-question text-orange-500 mr-1.5"></i><strong>34 ข้อสอบ</strong> เจาะลึก 12 จุดแก้ไขสำคัญ "เดิม → ใหม่"</li>
+            <li><i class="fa-solid fa-circle-check text-green-500 mr-1.5"></i>โอนสังกัด ปภ. / อธิบดีกรม ปภ. เป็นเลขาธิการ กภช.</li>
+            <li><i class="fa-solid fa-circle-check text-green-500 mr-1.5"></i>วาระผู้ทรงคุณวุฒิ 4 ปี / องค์ประชุม 1 ใน 3 ป้องกันสะดุด</li>
+          </ul>
+          <div class="flex flex-wrap gap-1.5 pt-2">
+            <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-orange-50 text-brand-600">เตือนภัยพิบัติ</span>
+            <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-blue-50 text-blue-600">34 ข้อสอบ</span>
+          </div>
+        </div>
+        <a href="ระเบียบการบริหารระบบการเตือนภัยพิบัติแห่งชาติ พ.ศ. 2552.html" class="w-full py-2.5 rounded-xl bg-slate-900 hover:bg-brand-600 text-white font-semibold text-xs sm:text-sm text-center transition-all flex items-center justify-center gap-1.5">
+          ทำข้อสอบ & อ่านสรุปย่อ <i class="fa-solid fa-chevron-right text-xs"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Subject 9 -->
+    <div class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition-shadow" data-category="law">
+      <div class="accent-gradient text-white p-5 relative">
+        <span class="absolute top-4 right-4 bg-white/20 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">ระเบียบ กค.</span>
+        <h3 class="font-thai font-bold text-lg leading-snug mt-2">ระเบียบเงินทดรองราชการฯ พ.ศ. 2568</h3>
+        <p class="text-xs text-slate-200 mt-1">เงินทดรองราชการเพื่อช่วยเหลือผู้ประสบภัยกรณีฉุกเฉิน</p>
+      </div>
+      <div class="p-5 flex-grow flex flex-col justify-between">
+        <div class="space-y-3 mb-6">
+          <ul class="text-xs text-slate-500 space-y-2">
+            <li><i class="fa-solid fa-clipboard-question text-white mr-1.5"></i><strong>30 ข้อสอบ</strong> อัปเกรดเนื้อหาใหม่รายข้อ 1 - 41 ชัดเจน</li>
+            <li><i class="fa-solid fa-circle-check text-green-500 mr-1.5"></i>ขอบข่ายการใช้ / วงเงิน ปภ. 100 ล้าน / จังหวัด 50 ล้าน</li>
+            <li><i class="fa-solid fa-circle-check text-green-500 mr-1.5"></i>คณะกรรมการช่วยเหลือภัย / ปลัดกระทรวงการคลังรักษาการ</li>
+          </ul>
+          <div class="flex flex-wrap gap-1.5 pt-2">
+            <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-orange-50 text-brand-600">เงินทดรองราชการ</span>
+            <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-blue-50 text-blue-600">30 ข้อสอบ</span>
+          </div>
+        </div>
+        <a href="ระเบียบกระทรวงการคลัง ว่าด้วยเงินทดรองราชการ พ.ศ. 2568.html" class="w-full py-2.5 rounded-xl bg-brand-500 hover:bg-brand-600 text-white font-semibold text-xs sm:text-sm text-center transition-all flex items-center justify-center gap-1.5 shadow-sm">
+          ทำข้อสอบ & อ่านสรุปย่อ <i class="fa-solid fa-chevron-right text-xs"></i>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- User Guide Section -->
+  <div class="mt-12 bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+    <h3 class="font-thai font-bold text-lg text-slate-900 flex items-center gap-2 border-b pb-3 mb-4">
+      <i class="fa-solid fa-circle-info text-brand-500"></i> คำแนะนำและข้อควรปฏิบัติในการบันทึกไฟล์และออนไลน์
+    </h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-slate-600">
+      <div class="space-y-2">
+        <h4 class="font-bold text-slate-800 flex items-center gap-1.5"><i class="fa-solid fa-file-signature text-brand-500"></i> 1. ตั้งชื่อไฟล์ให้ตรงกับสารบรรณ</h4>
+        <p class="text-xs leading-relaxed">
+          เพื่อให้หน้าเว็บสารบรรณ (`index.html`) ตัวนี้กดลิงก์ได้อย่างถูกต้องและไม่มีปัญหาหน้า 404 Error ให้เซฟชื่อไฟล์ข้อสอบทั้ง 9 วิชาให้ถูกต้องตามรายชื่อดังนี้:
+        </p>
+        <div class="bg-slate-50 p-3 rounded-xl border border-slate-200/60 font-mono text-[10px] space-y-1">
+          <div>• <span class="text-blue-600">พ.ร.บ. ป้องกันและบรรเทาสาธารณภัย พ.ศ. 2550.html</span></div>
+          <div>• <span class="text-blue-600">ความรู้กรมปภ.html</span></div>
+          <div>• <span class="text-blue-600">พ.ร.บ. วิธีการงบประมาณ พ.ศ. 2561.html</span></div>
+          <div>• <span class="text-blue-600">ระเบียบ มท. ว่าด้วยกิจการ อปพร. พ.ศ. 2553.html</span></div>
+          <div>• <span class="text-blue-600">พ.ร.บ. ปรับปรุงกระทรวง ทบวง กรม พ.ศ. 2545.html</span></div>
+          <div>• <span class="text-blue-600">ระเบียบการป้องกันอุบัติภัยแห่งชาติ พ.ศ. 2564.html</span></div>
+          <div>• <span class="text-blue-600">ระเบียบสำนักนายกรัฐมนตรี ป้องกันและลดอุบัติเหตุทางถนน พ.ศ. 2554.html</span></div>
+          <div>• <span class="text-blue-600">ระเบียบการบริหารระบบการเตือนภัยพิบัติแห่งชาติ พ.ศ. 2552.html</span></div>
+          <div>• <span class="text-blue-600">ระเบียบกระทรวงการคลัง ว่าด้วยเงินทดรองราชการ พ.ศ. 2568.html</span></div>
+        </div>
+      </div>
+      <div class="space-y-2">
+        <h4 class="font-bold text-slate-800 flex items-center gap-1.5"><i class="fa-solid fa-cloud-arrow-up text-brand-500"></i> 2. การเปิดแชร์ออนไลน์ผ่าน GitHub Pages</h4>
+        <p class="text-xs leading-relaxed">
+          หากท่านได้เอาชุดโปรแกรมข้อสอบนี้ขึ้น GitHub Repository และต้องการทำหน้าเว็บข้อสอบนี้ส่งต่อให้เพื่อนๆ เล่นผ่านมือถือหรือแท็บเล็ตได้สะดวก สามารถเปิดใช้งานได้ดังนี้:
+        </p>
+        <ul class="list-decimal pl-4 space-y-1 text-xs">
+          <li>ตรวจสอบให้แน่ใจว่าได้เปลี่ยนชื่อไฟล์สารบรรณหลักนี้เป็น <strong class="text-slate-800">`index.html`</strong> (ตัวเล็กทั้งหมด)</li>
+          <li>เข้าไปที่ระบบของท่านบน GitHub กดเลือกแท็บ <strong class="text-slate-800">Settings</strong> (เมนูด้านบนสุดรูปฟันเฟือง)</li>
+          <li>มองหาหัวข้อย่อยด้านซ้ายที่ชื่อว่า <strong class="text-slate-800">Pages</strong> ในหมวดหมู่ Code and automation</li>
+          <li>ที่ส่วนของ **Branch** ให้เปลี่ยนจาก `None` มาเลือกที่สาขาหลัก เช่น <strong class="text-blue-600">`main`</strong> หรือ <strong class="text-blue-600">`master`</strong> จากนั้นเลือก <strong class="text-slate-800">`/ (root)`</strong> แล้วกดบันทึก **Save**</li>
+          <li>รอประมาณ 1 - 2 นาที และเปิดดูลิงก์สีเขียวที่ระบบให้มาเพื่อใช้งานสอบออนไลน์ทันที!</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="bg-slate-900 text-slate-400 text-xs sm:text-sm text-center py-8 mt-16 border-t border-slate-800">
+  <div class="max-w-6xl mx-auto px-4 space-y-2">
+    <p class="font-semibold text-slate-300">ระบบอำนวยความสะดวกสารบรรณหลักสูตรและคู่มือเก็งข้อสอบราชการส่วนกลาง</p>
+    <p>&copy; 2026 คลังข้อสอบราชการไทยเพื่อการศึกษาและการเตรียมสอบอย่างมีเอกภาพ</p>
+  </div>
+</footer>
+
+<script>
+  let activeCategory = 'all';
+
+  function filterCategory(cat) {
+    activeCategory = cat;
+    
+    // Update button styling
+    const tabs = ['all', 'law', 'reg', 'gen'];
+    tabs.forEach(tab => {
+      const el = document.getElementById('tab-' + tab);
+      if (tab === cat) {
+        el.className = "px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all bg-brand-500 text-white shadow-sm";
+      } else {
+        el.className = "px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all text-slate-600 hover:bg-slate-50";
+      }
+    });
+
+    applySearchAndFilter();
+  }
+
+  function applySearchAndFilter() {
+    const query = document.getElementById('searchInput').value.trim().toLowerCase();
+    const cards = document.getElementById('courseGrid').children;
+
+    for (let i = 0; i < cards.length; i++) {
+      const card = cards[i];
+      const category = card.getAttribute('data-category');
+      const text = card.textContent.toLowerCase();
+
+      // Check category match
+      const matchesCategory = (activeCategory === 'all' || category === activeCategory);
+      // Check search match
+      const matchesSearch = (text.indexOf(query) > -1);
+
+      if (matchesCategory && matchesSearch) {
+        card.style.display = '';
+        card.classList.add('animate-fade');
+      } else {
+        card.style.display = 'none';
+      }
+    }
+  }
+
+  document.getElementById('searchInput').addEventListener('input', applySearchAndFilter);
+</script>
+</body>
+</html>
