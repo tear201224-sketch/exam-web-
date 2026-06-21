@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ระเบียบ มท. ว่าด้วยกิจการ อปพร. พ.ศ. 2553 · สรุป + ข้อสอบ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;500;600;700&family=Sarabun:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#fff7f0;--paper:#ffffff;--line:#f1e1d2;--line-strong:#ffd2ac;
+    --ink:#33271c;--ink-dim:#6b5a4a;--ink-faint:#9a8a7a;
+    --orange:#f56a00;--orange-2:#ff8a2b;--orange-soft:#fff0e3;--orange-tint:#fff6ee;
+    --red:#e0413f;--red-soft:#fdecec;--green:#1f9d63;--green-soft:#e8f7ef;
+    --blue:#2f6fd6;--blue-soft:#eaf1fc;
+    --mono:'IBM Plex Mono',monospace;--radius:14px;
+    --shadow:0 1px 2px rgba(120,70,20,.04), 0 8px 24px rgba(180,90,20,.06);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{font-family:'Sarabun',system-ui,sans-serif;
+    background:radial-gradient(900px 420px at 90% -8%, #ffe6cf 0%, transparent 60%),
+      radial-gradient(700px 360px at -8% 4%, #ffeede 0%, transparent 55%),var(--bg);
+    color:var(--ink);min-height:100vh;line-height:1.62;padding:22px 16px 80px}
+  .wrap{max-width:780px;margin:0 auto}
+
+  .masthead{background:linear-gradient(135deg,var(--orange),var(--orange-2));border-radius:18px;padding:26px 26px 22px;color:#fff;box-shadow:0 10px 30px rgba(245,106,0,.22);position:relative;overflow:hidden}
+  .masthead::after{content:"";position:absolute;right:-40px;top:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.12)}
+  .masthead .eyebrow{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;opacity:.9;margin-bottom:8px}
+  .masthead h1{font-family:'Anuphan',sans-serif;font-weight:700;font-size:1.5rem;line-height:1.22;letter-spacing:-.01em;position:relative}
+  .masthead p{opacity:.95;margin-top:6px;font-size:.95rem;position:relative}
+
+  .tabs{display:flex;gap:8px;margin:18px 0 22px;position:sticky;top:10px;z-index:20}
+  .tab{flex:1;cursor:pointer;border:1px solid var(--line);background:var(--paper);border-radius:12px;padding:13px;text-align:center;font-family:'Anuphan',sans-serif;font-weight:600;font-size:1rem;color:var(--ink-dim);transition:.15s;box-shadow:var(--shadow);user-select:none}
+  .tab:hover{border-color:var(--line-strong)}
+  .tab[aria-selected="true"]{background:var(--orange);color:#fff;border-color:var(--orange)}
+  .tab small{display:block;font-weight:400;font-size:.74rem;opacity:.85;margin-top:1px}
+
+  .panel{display:none}
+  .panel.active{display:block;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:26px 24px;box-shadow:var(--shadow)}
+  @media(max-width:560px){.card{padding:20px 16px}body{padding:16px 10px 70px}.masthead h1{font-size:1.22rem}}
+
+  .sum h2{font-family:'Anuphan',sans-serif;font-weight:700;font-size:1.18rem;color:var(--orange);margin:26px 0 12px;padding-bottom:8px;border-bottom:2px solid var(--orange-soft);display:flex;align-items:center;gap:10px}
+  .sum h2:first-child{margin-top:0}
+  .sum h2 .num{font-family:var(--mono);font-size:.78rem;background:var(--orange);color:#fff;width:26px;height:26px;border-radius:7px;display:grid;place-items:center;flex:none}
+  .sum h3{font-family:'Anuphan',sans-serif;font-weight:600;font-size:1rem;color:var(--ink);margin:16px 0 8px}
+  .sum p{color:var(--ink-dim);margin-bottom:10px}
+  .sum ul{list-style:none;margin:6px 0 12px}
+  .sum li{position:relative;padding-left:20px;margin-bottom:6px;color:var(--ink-dim)}
+  .sum li::before{content:"▸";position:absolute;left:0;color:var(--orange);font-size:.9rem}
+  .sum b{color:var(--ink)}
+  .sum .hl{background:linear-gradient(transparent 60%, #ffe0c2 60%);padding:0 2px;font-weight:600;color:var(--ink)}
+
+  .callout{background:var(--orange-tint);border:1px solid var(--line);border-left:4px solid var(--orange);border-radius:0 10px 10px 0;padding:12px 15px;margin:12px 0;color:var(--ink-dim);font-size:.95rem}
+  .callout b{color:var(--ink)}
+  .callout.blue{background:var(--blue-soft);border-left-color:var(--blue)}
+
+  table.tb{width:100%;border-collapse:collapse;margin:10px 0 14px;font-size:.92rem}
+  table.tb th,table.tb td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+  table.tb th{background:var(--orange-soft);color:var(--ink);font-family:'Anuphan',sans-serif;font-weight:600;font-size:.85rem}
+  table.tb td{color:var(--ink-dim)}
+  table.tb td b{color:var(--ink)}
+  .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+  .meta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:4px 0 22px}
+  @media(max-width:520px){.meta-grid{grid-template-columns:1fr 1fr}}
+  .chip{border:1px solid var(--line);border-radius:12px;background:var(--orange-tint);padding:12px 14px}
+  .chip b{display:block;font-family:'Anuphan',sans-serif;font-size:1.35rem;color:var(--orange);line-height:1}
+  .chip span{font-size:.78rem;color:var(--ink-faint)}
+
+  .field-label{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;color:var(--ink-faint);text-transform:uppercase;margin-bottom:9px}
+  .modes{display:flex;gap:8px;margin-bottom:22px;flex-wrap:wrap}
+  .mode{flex:1;min-width:90px;cursor:pointer;text-align:center;border:1px solid var(--line);border-radius:11px;background:var(--paper);padding:13px 8px;font-family:'Anuphan',sans-serif;font-weight:600;color:var(--ink-dim);transition:.15s;user-select:none}
+  .mode small{display:block;font-weight:400;font-size:.72rem;color:var(--ink-faint);margin-top:2px}
+  .mode[aria-pressed="true"]{border-color:var(--orange);background:var(--orange);color:#fff}
+  .mode[aria-pressed="true"] small{color:#ffe7d3}
+
+  .btn{width:100%;cursor:pointer;border:none;font-family:'Anuphan',sans-serif;font-weight:700;font-size:1.05rem;border-radius:12px;padding:15px;transition:.15s}
+  .btn-go{background:var(--orange);color:#fff;box-shadow:0 6px 16px rgba(245,106,0,.25)}
+  .btn-go:hover{filter:brightness(1.05)}
+  .btn-ghost{background:transparent;border:1px solid var(--line-strong);color:var(--orange);font-size:.95rem;padding:13px}
+  .btn-ghost:hover{background:var(--orange-soft)}
+  .btn-row{display:flex;gap:10px;margin-top:14px}
+  .btn-row .btn{margin:0}
+
+  .prog-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px}
+  .qcount{font-family:var(--mono);font-size:.78rem;color:var(--ink-dim)}
+  .score-live{font-family:var(--mono);font-size:.78rem;color:var(--orange);font-weight:600}
+  .track{height:7px;border-radius:7px;background:var(--orange-soft);overflow:hidden;margin-bottom:24px}
+  .bar{height:100%;width:0;background:linear-gradient(90deg,var(--orange),var(--orange-2));transition:width .35s ease}
+
+  .qcat{display:inline-block;font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);background:var(--orange-soft);padding:4px 10px;border-radius:20px;margin-bottom:14px}
+  .qtext{font-family:'Anuphan',sans-serif;font-weight:600;font-size:1.2rem;line-height:1.45;margin-bottom:20px;color:var(--ink)}
+
+  .opts{display:flex;flex-direction:column;gap:10px}
+  .opt{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:12px;background:var(--paper);padding:13px 14px;cursor:pointer;transition:.12s;width:100%;text-align:left;font-family:'Sarabun',sans-serif;font-size:1rem;color:var(--ink);line-height:1.5}
+  .opt:hover:not(:disabled){border-color:var(--line-strong);background:var(--orange-tint)}
+  .opt:disabled{cursor:default}
+  .opt .key{font-family:var(--mono);font-weight:600;font-size:.82rem;flex:none;width:26px;height:26px;border-radius:7px;display:grid;place-items:center;border:1px solid var(--line);color:var(--ink-dim);margin-top:1px}
+  .opt.correct{border-color:var(--green);background:var(--green-soft)}
+  .opt.correct .key{background:var(--green);color:#fff;border-color:var(--green)}
+  .opt.wrong{border-color:var(--red);background:var(--red-soft)}
+  .opt.wrong .key{background:var(--red);color:#fff;border-color:var(--red)}
+  .opt.dim{opacity:.55}
+
+  .explain{margin-top:16px;border-left:3px solid var(--orange);background:var(--orange-tint);border-radius:0 10px 10px 0;padding:13px 16px;font-size:.95rem;color:var(--ink-dim);display:none}
+  .explain.show{display:block;animation:fade .25s ease}
+  .explain b{color:var(--ink)}
+
+  .nav{margin-top:22px}
+
+  .result-hero{text-align:center;padding:6px 0 16px}
+  .result-ring{width:140px;height:140px;border-radius:50%;margin:0 auto 16px;display:grid;place-items:center;padding:10px}
+  .result-ring .pct{font-family:'Anuphan',sans-serif;font-weight:700;font-size:2.3rem;line-height:1}
+  .result-ring .of{font-family:var(--mono);font-size:.76rem;color:var(--ink-dim);margin-top:4px}
+  .verdict{font-family:'Anuphan',sans-serif;font-weight:700;font-size:1.35rem;margin-bottom:6px}
+  .verdict-sub{color:var(--ink-dim);margin-bottom:22px}
+
+  .review-h{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);margin:10px 0 12px}
+  .rev{border:1px solid var(--line);border-radius:12px;padding:14px 15px;margin-bottom:10px;background:var(--orange-tint)}
+  .rev-q{font-family:'Anuphan',sans-serif;font-weight:600;font-size:.98rem;margin-bottom:8px;display:flex;gap:9px;color:var(--ink)}
+  .rev-q .mark{flex:none;font-family:var(--mono);font-weight:600;color:var(--red)}
+  .rev-line{font-size:.9rem;color:var(--ink-dim);padding-left:22px}
+  .rev-line .you-wrong{color:var(--red)}
+  .rev-line .ans{color:var(--green);font-weight:600}
+
+  .foot{text-align:center;margin-top:24px;font-size:.8rem;color:var(--ink-faint)}
+  .hidden{display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="masthead">
+    <div class="eyebrow">ระเบียบกระทรวงมหาดไทย · พ.ศ. 2553</div>
+    <h1>กิจการอาสาสมัครป้องกันภัยฝ่ายพลเรือน (อปพร.)</h1>
+    <p>สรุปสาระสำคัญ + ข้อสอบปรนัยพร้อมเฉลย สำหรับเตรียมสอบ</p>
+  </div>
+
+  <div class="tabs" role="tablist">
+    <div class="tab" id="tabSum" role="tab" aria-selected="true" tabindex="0">สรุปเนื้อหา<small>9 หัวข้อจำง่าย</small></div>
+    <div class="tab" id="tabQuiz" role="tab" aria-selected="false" tabindex="0">ทำข้อสอบ<small>36 ข้อ พร้อมเฉลย</small></div>
+  </div>
+
+  <!-- ============================ SUMMARY ============================ -->
+  <section class="panel active" id="panelSum">
+    <div class="card sum">
+
+      <h2><span class="num">1</span>ข้อมูลทั่วไป &amp; นิยาม</h2>
+      <div class="scroll"><table class="tb">
+        <tr><th>ประเด็น</th><th>สาระสำคัญ</th></tr>
+        <tr><td>ชื่อระเบียบ</td><td>ระเบียบ มท. ว่าด้วยกิจการอาสาสมัครป้องกันภัยฝ่ายพลเรือน <b>พ.ศ. 2553</b></td></tr>
+        <tr><td>วันใช้บังคับ</td><td>ตั้งแต่<b>วันถัดจาก</b>วันประกาศในราชกิจจานุเบกษา</td></tr>
+        <tr><td>ผู้รักษาการ</td><td><b>ปลัดกระทรวงมหาดไทย</b> (มีอำนาจตีความ วินิจฉัยปัญหา กำหนดหลักเกณฑ์)</td></tr>
+        <tr><td>“อปพร.”</td><td>อาสาสมัครป้องกันภัยฝ่ายพลเรือน</td></tr>
+        <tr><td>“ผู้บัญชาการ”</td><td>ผู้บัญชาการป้องกันและบรรเทาสาธารณภัยแห่งชาติ (ผบ.ปภ.ช.)</td></tr>
+        <tr><td>“ผู้อำนวยการ”</td><td>ผอ.กลาง · จังหวัด · อำเภอ · ท้องถิ่น · กรุงเทพมหานคร</td></tr>
+      </table></div>
+      <div class="callout">⚠️ ผู้รักษาการคือ <b>ปลัด มท.</b> (ไม่ใช่ รมว.มหาดไทย และไม่ใช่อธิบดี ปภ.)</div>
+
+      <h2><span class="num">2</span>คณะกรรมการอำนวยการศูนย์ อปพร. กลาง</h2>
+      <div class="scroll"><table class="tb">
+        <tr><th>ตำแหน่ง</th><th>ผู้ดำรง</th></tr>
+        <tr><td>ประธาน</td><td><b>อธิบดีกรม ปภ.</b></td></tr>
+        <tr><td>รองประธาน (3)</td><td>รองอธิบดี ปภ. · รองอธิบดีกรมการปกครอง · รองอธิบดีกรมส่งเสริมการปกครองท้องถิ่น (ที่ได้รับมอบหมาย)</td></tr>
+        <tr><td>กรรมการ</td><td>ผอ.สำนักป้องกันฯ กทม. + ผู้ทรงคุณวุฒิ <b>ไม่เกิน 5 คน</b> (ประธานแต่งตั้ง)</td></tr>
+        <tr><td>กรรมการและเลขานุการ</td><td><b>ผอ.กองส่งเสริมการป้องกันสาธารณภัย</b> กรม ปภ.</td></tr>
+        <tr><td>ผู้ช่วยเลขานุการ</td><td>ผอ.ส่วนกิจการอาสาสมัคร กองส่งเสริมการป้องกันสาธารณภัย</td></tr>
+      </table></div>
+      <h3>วาระผู้ทรงคุณวุฒิ &amp; การประชุม</h3>
+      <ul>
+        <li>วาระ <b>คราวละ 4 ปี</b> · แต่งตั้งใหม่ได้ · พ้นก่อนวาระ → แทนเท่าวาระที่เหลือ</li>
+        <li>องค์ประชุม <b>ไม่น้อยกว่ากึ่งหนึ่ง</b> · วินิจฉัยเสียงข้างมาก · เท่ากันประธานออกเสียงชี้ขาด</li>
+      </ul>
+
+      <h2><span class="num">3</span>เหตุพ้นตำแหน่งผู้ทรงคุณวุฒิ</h2>
+      <ul>
+        <li>(1) ตาย · (2) ลาออก (ยื่นต่อประธาน) · (3) <b>ประธานให้ออก</b> (ประพฤติเสื่อมเสีย/บกพร่อง/ไม่สุจริต/หย่อนความสามารถ)</li>
+        <li>(4) เป็นบุคคลล้มละลาย · (5) ไร้ความสามารถ/เสมือนไร้ความสามารถ</li>
+        <li>(6) ต้องโทษจำคุกถึงที่สุด <b>ยกเว้นประมาทหรือลหุโทษ</b></li>
+      </ul>
+
+      <h2><span class="num">4</span>คณะกรรมการ จังหวัด &amp; กทม.</h2>
+      <div class="scroll"><table class="tb">
+        <tr><th>ตำแหน่ง</th><th>จังหวัด (ข้อ 10)</th><th>กทม. (ข้อ 12)</th></tr>
+        <tr><td>ประธาน</td><td><b>ผู้ว่าราชการจังหวัด</b></td><td><b>ผู้ว่าฯ กทม.</b></td></tr>
+        <tr><td>รองประธาน 1</td><td>รองผู้ว่าฯ ที่มอบหมาย</td><td><b>ปลัด กทม.</b></td></tr>
+        <tr><td>รองประธาน 2</td><td><b>นายก อบจ.</b></td><td>—</td></tr>
+        <tr><td>ผู้ทรงคุณวุฒิ</td><td><b>ไม่เกิน 3 คน</b> (มีผู้แทนองค์การสาธารณกุศล)</td><td>ตามที่ผู้ว่าฯ กทม. เห็นสมควร</td></tr>
+        <tr><td>กรรมการ + เลขานุการ</td><td>หัวหน้า สนง.ปภ.จังหวัด</td><td>ผอ.สำนักป้องกันฯ กทม.</td></tr>
+      </table></div>
+      <div class="callout">⚠️ ผู้ทรงคุณวุฒิ: <b>กลาง 5 คน · จังหวัด 3 คน</b> (สลับตัวเลขกันบ่อย)</div>
+
+      <h2><span class="num">5</span>โครงสร้างศูนย์ อปพร. แต่ละระดับ</h2>
+      <div class="scroll"><table class="tb">
+        <tr><th>ระดับ</th><th>ผอ. ศูนย์ อปพร.</th><th>หน่วยที่เป็น “ศูนย์”</th></tr>
+        <tr><td>กลาง</td><td>ผอ.กลาง (อธิบดี ปภ.)</td><td>กรม ปภ.</td></tr>
+        <tr><td>เขต</td><td>ผอ.ศูนย์ป้องกันฯ เขต</td><td>ศูนย์ป้องกันและบรรเทาสาธารณภัยเขต</td></tr>
+        <tr><td>จังหวัด</td><td>ผอ.จังหวัด (ผู้ว่าฯ)</td><td>สนง.ปภ.จังหวัด</td></tr>
+        <tr><td>อำเภอ</td><td>ผอ.อำเภอ (นายอำเภอ)</td><td>ที่ทำการปกครองอำเภอ</td></tr>
+        <tr><td>เทศบาล</td><td>นายกเทศมนตรี</td><td>สำนักปลัดเทศบาล</td></tr>
+        <tr><td>อบต.</td><td>นายก อบต.</td><td>สำนักปลัด อบต.</td></tr>
+        <tr><td>เมืองพัทยา</td><td>นายกเมืองพัทยา</td><td>สำนักปลัดเมืองพัทยา</td></tr>
+        <tr><td>กทม.</td><td>ผอ.กทม. (ผู้ว่าฯ กทม.)</td><td>สำนักป้องกันฯ กทม.</td></tr>
+      </table></div>
+      <ul>
+        <li><b>ผู้บัญชาการศูนย์ อปพร. กลาง</b> = ผู้บัญชาการ (ผบ.ปภ.ช.) — บังคับบัญชาทั่วราชอาณาจักร</li>
+        <li>ในเทศบาล/อบต./เมืองพัทยา: <b>ปลัด</b> = ผู้ช่วยผู้อำนวยการศูนย์ (ไม่ใช่รอง ผอ.)</li>
+        <li>อำเภอ: รอง ผอ.ศูนย์ = <b>ปลัดอำเภอที่นายอำเภอมอบหมาย</b></li>
+      </ul>
+
+      <h2><span class="num">6</span>ฝ่ายปฏิบัติงาน (ข้อ 23) — เทศบาล/อบต./เขตในกทม./เมืองพัทยา</h2>
+      <ul>
+        <li>(1) ฝ่ายป้องกันและบรรเทาสาธารณภัย</li>
+        <li>(2) ฝ่ายรักษาความสงบเรียบร้อย</li>
+        <li>(3) ฝ่ายสงเคราะห์ผู้ประสบภัย</li>
+        <li>(4) ฝ่ายปฏิบัติการกู้ชีพกู้ภัย</li>
+        <li>(5) ฝ่ายอื่น ๆ ตามความจำเป็น</li>
+      </ul>
+      <div class="callout">แต่ละฝ่ายมี <b>หัวหน้าฝ่าย 1 คน + รองหัวหน้าฝ่าย 2 คน</b></div>
+
+      <h2><span class="num">7</span>คุณสมบัติ อปพร. (ข้อ 28) &amp; การพ้นสมาชิกภาพ</h2>
+      <ul>
+        <li>(1) สัญชาติไทย · (2) <b>อายุไม่ต่ำกว่า 18 ปีบริบูรณ์</b> · (3) มีภูมิลำเนา/ถิ่นที่อยู่ในเขตศูนย์ อปพร. นั้น</li>
+        <li>(4) เลื่อมใสประชาธิปไตยอันมีพระมหากษัตริย์ทรงเป็นประมุข</li>
+        <li>(5) ไม่ไร้ความสามารถ/เสมือนไร้ความสามารถ/วิกลจริต · (6) ไม่เสื่อมเสียศีลธรรม/ทุจริต/เป็นภัยต่อสังคม</li>
+        <li>ผ่านคัดเลือกแล้วต้อง <b>เข้ารับการฝึกอบรมหลักสูตร อปพร.</b> จึงจะขึ้นทะเบียน</li>
+      </ul>
+      <p><b>พ้นสมาชิกภาพ (ข้อ 29):</b> ขาดคุณสมบัติ+ผอ.สั่ง · ตาย · ลาออก · ผอ.สั่งให้พ้นตามข้อ 36</p>
+
+      <h2><span class="num">8</span>สิทธิ · วินัย · บัตรประจำตัว</h2>
+      <h3>สิทธิ อปพร. (ข้อ 35)</h3>
+      <ul>
+        <li>แต่งเครื่องแบบและประดับเครื่องหมาย อปพร.</li>
+        <li>ใช้วิทยุสื่อสารของราชการ (ต้องได้รับมอบหมาย<b>เป็นลายลักษณ์อักษร</b>)</li>
+        <li>ได้รับการคุ้มครองตามระเบียบและกฎหมายในการปฏิบัติหน้าที่</li>
+      </ul>
+      <div class="callout blue"><b>วินัย อปพร. = 11 ประการ</b> (ข้อ 36) · <b>บัตรประจำตัว อปพร. ใช้ได้ไม่เกิน 8 ปี</b> นับแต่วันออกบัตร (ข้อ 44)</div>
+
+      <h2><span class="num">9</span>อำนาจหน้าที่ศูนย์ อปพร. กลาง (ข้อ 16)</h2>
+      <ul>
+        <li>งานธุรการของคณะกรรมการฯ · สนับสนุนงบฯ/วัสดุ/คู่มือ</li>
+        <li>วางระเบียบ หลักเกณฑ์ รวมทั้งสิทธิและสวัสดิการแก่ อปพร.</li>
+        <li>ศึกษา ค้นคว้า วิจัย เผยแพร่ · จัดทำหลักสูตรฝึกอบรม/วุฒิบัตร/เครื่องหมาย · จัดฝึกอบรม</li>
+        <li>จัดทำแผนพัฒนาอัตรากำลัง · ประสาน ติดตาม ประเมินผลทั่วราชอาณาจักร</li>
+      </ul>
+
+      <div class="callout"><b>คำย่อ/ตัวเลขสำคัญ:</b> อปพร. = อาสาสมัครป้องกันภัยฝ่ายพลเรือน · ผู้รักษาการ = ปลัด มท. · ประธานกรรมการกลาง = อธิบดี ปภ. · ผบ.ศูนย์กลาง = ผบ.ปภ.ช. · ผู้ทรงคุณวุฒิ กลาง 5 / จังหวัด 3 · วาระ 4 ปี · องค์ประชุมกึ่งหนึ่ง · อายุ ≥ 18 ปี · วินัย 11 ข้อ · บัตร ≤ 8 ปี</div>
+
+      <button class="btn btn-go" id="goQuizBtn" style="margin-top:8px">พร้อมแล้ว ไปทำข้อสอบ →</button>
+    </div>
+  </section>
+
+  <!-- ============================ QUIZ ============================ -->
+  <section class="panel" id="panelQuiz">
+    <div class="card" id="startScreen">
+      <div class="meta-grid">
+        <div class="chip"><b id="poolCount">36</b><span>ข้อในคลัง</span></div>
+        <div class="chip"><b>11</b><span>วินัย อปพร.</span></div>
+        <div class="chip"><b>8</b><span>ระดับศูนย์</span></div>
+      </div>
+      <p style="color:var(--ink-dim);margin-bottom:20px">ช้อยหลอกเน้นจุดสับสน — ปลัด มท. vs รมว. vs อธิบดี · ผู้บัญชาการ vs ผู้อำนวยการ vs ประธานกรรมการ · ผู้ทรงคุณวุฒิ 5/3 คน · ปลัดท้องถิ่นเป็น “ผู้ช่วย” ผอ.</p>
+      <div class="field-label">เลือกจำนวนข้อ</div>
+      <div class="modes" id="modes">
+        <div class="mode" data-n="12" role="button" tabindex="0" aria-pressed="false">12<small>อุ่นเครื่อง</small></div>
+        <div class="mode" data-n="20" role="button" tabindex="0" aria-pressed="true">20<small>มาตรฐาน</small></div>
+        <div class="mode" data-n="all" role="button" tabindex="0" aria-pressed="false">ทั้งหมด<small>ลุยเต็ม</small></div>
+      </div>
+      <button class="btn btn-go" id="startBtn">เริ่มทำข้อสอบ</button>
+      <div class="foot">สลับลำดับข้อและตัวเลือกใหม่ทุกครั้ง · เฉลย+คำอธิบายทันทีหลังเลือก</div>
+    </div>
+
+    <div class="card hidden" id="quizScreen">
+      <div class="prog-top">
+        <span class="qcount" id="qCount">ข้อ 1 / 20</span>
+        <span class="score-live" id="scoreLive">ถูก 0</span>
+      </div>
+      <div class="track"><div class="bar" id="bar"></div></div>
+      <div class="qcat" id="qCat">หมวด</div>
+      <div class="qtext" id="qText">โจทย์</div>
+      <div class="opts" id="opts"></div>
+      <div class="explain" id="explain"></div>
+      <div class="nav"><button class="btn btn-go hidden" id="nextBtn">ข้อถัดไป</button></div>
+    </div>
+
+    <div class="card hidden" id="resultScreen">
+      <div class="result-hero">
+        <div class="result-ring" id="ring"></div>
+        <div class="verdict" id="verdict">—</div>
+        <div class="verdict-sub" id="verdictSub">—</div>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-go" id="retryBtn">ทำชุดใหม่</button>
+        <button class="btn btn-ghost" id="homeBtn">กลับหน้าเริ่ม</button>
+      </div>
+      <div class="review-h">ทบทวนข้อที่ตอบผิด</div>
+      <div id="reviewList"></div>
+    </div>
+  </section>
+
+  <div class="foot">อ้างอิงระเบียบกระทรวงมหาดไทย ว่าด้วยกิจการอาสาสมัครป้องกันภัยฝ่ายพลเรือน พ.ศ. 2553</div>
+</div>
+
+<script>
+/* ===================== คลังข้อสอบ ===================== */
+const BANK = [
+ {cat:"ข้อมูลทั่วไป", q:"ระเบียบกระทรวงมหาดไทย ว่าด้วยกิจการอาสาสมัครป้องกันภัยฝ่ายพลเรือน ฉบับนี้ เป็นฉบับ พ.ศ. ใด?",
+  o:["พ.ศ. 2550","พ.ศ. 2553","พ.ศ. 2554","พ.ศ. 2552"], c:1,
+  e:"เป็นระเบียบ <b>พ.ศ. 2553</b> ใช้บังคับตั้งแต่วันถัดจากวันประกาศในราชกิจจานุเบกษา"},
+
+ {cat:"ผู้รักษาการ", q:"ผู้ใดเป็นผู้รักษาการตามระเบียบนี้ และมีอำนาจตีความ วินิจฉัยปัญหา?",
+  o:["รัฐมนตรีว่าการกระทรวงมหาดไทย","ปลัดกระทรวงมหาดไทย","อธิบดีกรมป้องกันและบรรเทาสาธารณภัย","ผู้บัญชาการป้องกันและบรรเทาสาธารณภัยแห่งชาติ"], c:1,
+  e:"<b>ปลัดกระทรวงมหาดไทย</b> เป็นผู้รักษาการ มีอำนาจตีความ วินิจฉัยปัญหา และกำหนดหลักเกณฑ์ (อย่าสับกับ รมว.มหาดไทย หรืออธิบดี ปภ.)"},
+
+ {cat:"นิยาม", q:"ตามนิยาม “ผู้บัญชาการ” ในระเบียบนี้ หมายความถึงผู้ใด?",
+  o:["อธิบดีกรมป้องกันและบรรเทาสาธารณภัย","ผู้บัญชาการป้องกันและบรรเทาสาธารณภัยแห่งชาติ","ปลัดกระทรวงมหาดไทย","ผู้ว่าราชการจังหวัด"], c:1,
+  e:"“ผู้บัญชาการ” = <b>ผู้บัญชาการป้องกันและบรรเทาสาธารณภัยแห่งชาติ (ผบ.ปภ.ช.)</b> ซึ่งคือ รมว.มหาดไทย"},
+
+ {cat:"นิยาม", q:"“อปพร.” เป็นชื่อย่อของสิ่งใด?",
+  o:["อาสาสมัครป้องกันภัยฝ่ายพลเรือน","อาสาสมัครป้องกันและบรรเทาสาธารณภัย","อาสาสมัครปฏิบัติการพลเรือน","องค์กรป้องกันภัยพลเรือน"], c:0,
+  e:"<b>อปพร. = อาสาสมัครป้องกันภัยฝ่ายพลเรือน</b>"},
+
+ {cat:"คกก. กลาง", q:"ผู้ใดเป็นประธานคณะกรรมการอำนวยการศูนย์ อปพร. กลาง?",
+  o:["ปลัดกระทรวงมหาดไทย","อธิบดีกรมป้องกันและบรรเทาสาธารณภัย","ผู้บัญชาการป้องกันและบรรเทาสาธารณภัยแห่งชาติ","อธิบดีกรมการปกครอง"], c:1,
+  e:"ประธานคณะกรรมการอำนวยการศูนย์ อปพร. กลาง = <b>อธิบดีกรม ปภ.</b> (ระวังสับกับ ผบ.ศูนย์ฯ กลาง ที่เป็น ผบ.ปภ.ช.)"},
+
+ {cat:"คกก. กลาง", q:"ข้อใดไม่ใช่รองประธานคณะกรรมการอำนวยการศูนย์ อปพร. กลาง?",
+  o:["รองอธิบดีกรม ปภ. ที่ได้รับมอบหมาย","รองอธิบดีกรมการปกครอง ที่ได้รับมอบหมาย","รองอธิบดีกรมส่งเสริมการปกครองท้องถิ่น ที่ได้รับมอบหมาย","รองอธิบดีกรมโยธาธิการและผังเมือง ที่ได้รับมอบหมาย"], c:3,
+  e:"รองประธาน 3 ราย = รองอธิบดี <b>ปภ. / กรมการปกครอง / กรมส่งเสริมการปกครองท้องถิ่น</b> — “กรมโยธาธิการฯ” เป็นช้อยหลอก"},
+
+ {cat:"คกก. กลาง", q:"ผู้ใดเป็นกรรมการและเลขานุการของคณะกรรมการอำนวยการศูนย์ อปพร. กลาง?",
+  o:["ผอ.กองส่งเสริมการป้องกันสาธารณภัย กรม ปภ.","ผอ.ส่วนกิจการอาสาสมัคร","ผอ.สำนักป้องกันและบรรเทาสาธารณภัย กทม.","หัวหน้าสำนักงาน ปภ. จังหวัด"], c:0,
+  e:"กรรมการและเลขานุการ = <b>ผอ.กองส่งเสริมการป้องกันสาธารณภัย กรม ปภ.</b> (ส่วน ผอ.ส่วนกิจการอาสาสมัคร เป็นผู้ช่วยเลขานุการ)"},
+
+ {cat:"คกก. กลาง", q:"ผู้ทรงคุณวุฒิในคณะกรรมการอำนวยการศูนย์ อปพร. กลาง มีได้ไม่เกินกี่คน?",
+  o:["3 คน","5 คน","7 คน","9 คน"], c:1,
+  e:"ผู้ทรงคุณวุฒิ (กลาง) <b>ไม่เกิน 5 คน</b> ที่ประธานแต่งตั้ง (จังหวัด = ไม่เกิน 3 คน — สลับตัวเลขกันบ่อย)"},
+
+ {cat:"วาระ", q:"กรรมการผู้ทรงคุณวุฒิในคณะกรรมการอำนวยการศูนย์ อปพร. กลาง มีวาระคราวละกี่ปี?",
+  o:["2 ปี","3 ปี","4 ปี","5 ปี"], c:2,
+  e:"วาระ <b>คราวละ 4 ปี</b> และอาจได้รับแต่งตั้งอีกได้"},
+
+ {cat:"พ้นตำแหน่ง", q:"ข้อใดไม่ใช่เหตุพ้นจากตำแหน่งของกรรมการผู้ทรงคุณวุฒิ?",
+  o:["ตาย หรือลาออก","ประธานกรรมการให้ออกเพราะหย่อนความสามารถ","ขาดการประชุม 3 ครั้งติดต่อกันโดยไม่มีเหตุอันสมควร","เป็นบุคคลล้มละลาย"], c:2,
+  e:"เหตุพ้นตำแหน่ง: ตาย/ลาออก/ประธานให้ออก/ล้มละลาย/ไร้ความสามารถ/ต้องโทษจำคุก — “ขาดประชุม 3 ครั้ง” เป็นช้อยหลอกที่ไม่มีในระเบียบนี้"},
+
+ {cat:"พ้นตำแหน่ง", q:"ประธานกรรมการมีอำนาจให้กรรมการผู้ทรงคุณวุฒิออกจากตำแหน่งได้เพราะเหตุใด?",
+  o:["มีความประพฤติเสื่อมเสีย บกพร่อง ไม่สุจริตต่อหน้าที่ หรือหย่อนความสามารถ","อายุครบ 60 ปีบริบูรณ์","ย้ายภูมิลำเนาออกนอกพื้นที่","ดำรงตำแหน่งครบ 2 วาระติดต่อกัน"], c:0,
+  e:"ประธานให้ออกได้เพราะ <b>ประพฤติเสื่อมเสีย บกพร่อง ไม่สุจริตต่อหน้าที่ หรือหย่อนความสามารถ</b>"},
+
+ {cat:"การประชุม", q:"องค์ประชุมของคณะกรรมการอำนวยการศูนย์ อปพร. กลาง ต้องมีกรรมการมาประชุมเท่าใด?",
+  o:["ไม่น้อยกว่าหนึ่งในสาม","ไม่น้อยกว่ากึ่งหนึ่ง","ไม่น้อยกว่าสองในสาม","ไม่น้อยกว่าสามในสี่"], c:1,
+  e:"องค์ประชุม <b>ไม่น้อยกว่ากึ่งหนึ่ง</b> ของจำนวนกรรมการทั้งหมด"},
+
+ {cat:"การประชุม", q:"การวินิจฉัยชี้ขาดของที่ประชุม กรณีคะแนนเสียงเท่ากันให้ทำอย่างไร?",
+  o:["เลื่อนการพิจารณา","ประธานในที่ประชุมออกเสียงเพิ่มอีกหนึ่งเสียงเป็นเสียงชี้ขาด","ให้เลขานุการชี้ขาด","ให้ถือว่าตกไป"], c:1,
+  e:"ถือเสียงข้างมาก ถ้าเท่ากัน <b>ประธานในที่ประชุมออกเสียงเพิ่มอีก 1 เสียง</b> เป็นเสียงชี้ขาด"},
+
+ {cat:"คกก. จังหวัด", q:"ผู้ใดเป็นประธานคณะกรรมการอำนวยการศูนย์ อปพร. จังหวัด?",
+  o:["นายกองค์การบริหารส่วนจังหวัด","ผู้ว่าราชการจังหวัด","หัวหน้าสำนักงาน ปภ. จังหวัด","รองผู้ว่าราชการจังหวัด"], c:1,
+  e:"ประธาน = <b>ผู้ว่าราชการจังหวัด</b> (นายก อบจ. เป็นรองประธานคนที่ 2)"},
+
+ {cat:"คกก. จังหวัด", q:"ผู้ใดเป็นรองประธานกรรมการคนที่สองของคณะกรรมการอำนวยการศูนย์ อปพร. จังหวัด?",
+  o:["รองผู้ว่าราชการจังหวัดที่ได้รับมอบหมาย","นายกองค์การบริหารส่วนจังหวัด","ปลัดจังหวัด","หัวหน้าสำนักงาน ปภ. จังหวัด"], c:1,
+  e:"รองประธานคนที่ 1 = รองผู้ว่าฯ ที่มอบหมาย, รองประธานคนที่ 2 = <b>นายก อบจ.</b>"},
+
+ {cat:"คกก. จังหวัด", q:"ผู้ทรงคุณวุฒิในคณะกรรมการอำนวยการศูนย์ อปพร. จังหวัด มีได้ไม่เกินกี่คน?",
+  o:["3 คน","5 คน","7 คน","ไม่จำกัดจำนวน"], c:0,
+  e:"ผู้ทรงคุณวุฒิ (จังหวัด) <b>ไม่เกิน 3 คน</b> โดยมีผู้แทนองค์การสาธารณกุศลในเขตจังหวัดรวมอยู่ด้วย (กลาง = ไม่เกิน 5 คน)"},
+
+ {cat:"คกก. จังหวัด", q:"ผู้ใดเป็นกรรมการและเลขานุการของคณะกรรมการอำนวยการศูนย์ อปพร. จังหวัด?",
+  o:["ปลัดจังหวัด","หัวหน้าสำนักงานป้องกันและบรรเทาสาธารณภัยจังหวัด","นายอำเภอ","ผอ.ศูนย์ป้องกันและบรรเทาสาธารณภัยเขต"], c:1,
+  e:"กรรมการและเลขานุการ (จังหวัด) = <b>หัวหน้าสำนักงาน ปภ. จังหวัด</b>"},
+
+ {cat:"คกก. กทม.", q:"ผู้ใดเป็นรองประธานคณะกรรมการอำนวยการศูนย์ อปพร. กรุงเทพมหานคร?",
+  o:["รองผู้ว่าราชการกรุงเทพมหานคร","ปลัดกรุงเทพมหานคร","ผอ.สำนักป้องกันและบรรเทาสาธารณภัย กทม.","ผู้อำนวยการเขต"], c:1,
+  e:"รองประธาน (กทม.) = <b>ปลัดกรุงเทพมหานคร</b> (ส่วน ผอ.สำนักป้องกันฯ กทม. เป็นกรรมการและเลขานุการ)"},
+
+ {cat:"ผู้บังคับบัญชา", q:"ผู้ใดเป็นผู้บัญชาการศูนย์ อปพร. กลาง ที่มีอำนาจบังคับบัญชา อปพร. ทั่วราชอาณาจักร?",
+  o:["อธิบดีกรม ปภ.","ผู้บัญชาการ (ผบ.ปภ.ช.)","ปลัดกระทรวงมหาดไทย","รัฐมนตรีว่าการกระทรวงมหาดไทย โดยตำแหน่งนายก"], c:1,
+  e:"<b>ผู้บัญชาการ (ผบ.ปภ.ช.)</b> เป็นผู้บัญชาการศูนย์ อปพร. กลาง — ต่างจากอธิบดี ปภ. ที่เป็น “ผู้อำนวยการ” ศูนย์ อปพร. กลาง"},
+
+ {cat:"ผู้บังคับบัญชา", q:"ผู้ใดเป็นผู้อำนวยการศูนย์ อปพร. กลาง?",
+  o:["ผู้บัญชาการป้องกันและบรรเทาสาธารณภัยแห่งชาติ","ผู้อำนวยการกลาง (อธิบดีกรม ปภ.)","ปลัดกระทรวงมหาดไทย","รองอธิบดีกรม ปภ."], c:1,
+  e:"ผู้อำนวยการศูนย์ อปพร. กลาง = <b>ผู้อำนวยการกลาง (อธิบดีกรม ปภ.)</b> ส่วนรองอธิบดี ปภ. เป็นรองผู้อำนวยการศูนย์ฯ กลาง"},
+
+ {cat:"ผู้บังคับบัญชา", q:"หน่วยงานใดเป็น “ศูนย์ อปพร. กลาง”?",
+  o:["กรมป้องกันและบรรเทาสาธารณภัย","กองส่งเสริมการป้องกันสาธารณภัย","สำนักงานปลัดกระทรวงมหาดไทย","ศูนย์เตือนภัยพิบัติแห่งชาติ"], c:0,
+  e:"<b>กรม ปภ.</b> เป็นศูนย์ อปพร. กลาง"},
+
+ {cat:"โครงสร้างศูนย์", q:"หน่วยงานใดทำหน้าที่เป็น “ศูนย์ อปพร. เขต”?",
+  o:["สำนักงาน ปภ. จังหวัด","ศูนย์ป้องกันและบรรเทาสาธารณภัยเขต กรม ปภ.","ที่ทำการปกครองอำเภอ","กองส่งเสริมการป้องกันสาธารณภัย"], c:1,
+  e:"<b>ศูนย์ป้องกันและบรรเทาสาธารณภัยเขต กรม ปภ.</b> เป็นศูนย์ อปพร. เขต และ ผอ.ศูนย์ป้องกันฯ เขต เป็น ผอ.ศูนย์ อปพร. เขต"},
+
+ {cat:"โครงสร้างศูนย์", q:"ผู้ใดเป็นผู้อำนวยการศูนย์ อปพร. อำเภอ และผู้ใดเป็นรองผู้อำนวยการ?",
+  o:["ผอ.อำเภอ (นายอำเภอ) เป็น ผอ. / ปลัดอำเภอที่นายอำเภอมอบหมาย เป็นรอง ผอ.","นายอำเภอ เป็น ผอ. / หัวหน้าสำนักงาน ปภ. จังหวัด เป็นรอง ผอ.","ปลัดอำเภอ เป็น ผอ. / นายอำเภอ เป็นรอง ผอ.","นายก อบต. เป็น ผอ. / ปลัดอำเภอ เป็นรอง ผอ."], c:0,
+  e:"ผอ.ศูนย์ อปพร. อำเภอ = <b>ผอ.อำเภอ (นายอำเภอ)</b> · รอง ผอ. = <b>ปลัดอำเภอที่นายอำเภอมอบหมาย</b>"},
+
+ {cat:"โครงสร้างศูนย์", q:"ในศูนย์ อปพร. เทศบาล ผู้ใดเป็น “ผู้ช่วยผู้อำนวยการ” ศูนย์ อปพร. เทศบาล?",
+  o:["รองนายกเทศมนตรี","ปลัดเทศบาล","หัวหน้าสำนักปลัดเทศบาล","ผู้อำนวยการกองช่าง"], c:1,
+  e:"<b>ปลัดเทศบาล</b> เป็นผู้ช่วยผู้อำนวยการศูนย์ อปพร. เทศบาล (นายกฯ = ผอ., รองนายกฯ ที่มอบหมาย = รอง ผอ.)"},
+
+ {cat:"โครงสร้างศูนย์", q:"ในศูนย์ อปพร. องค์การบริหารส่วนตำบล (อบต.) ผู้ใดเป็นผู้อำนวยการศูนย์?",
+  o:["ปลัด อบต.","นายกองค์การบริหารส่วนตำบล","ประธานสภา อบต.","นายอำเภอ"], c:1,
+  e:"<b>นายก อบต.</b> เป็น ผอ.ศูนย์ อปพร. อบต. (ปลัด อบต. = ผู้ช่วย ผอ., สำนักปลัด อบต. = ศูนย์)"},
+
+ {cat:"ฝ่ายปฏิบัติงาน", q:"ข้อใดไม่ใช่ฝ่ายปฏิบัติงานที่ต้องจัดตั้งในศูนย์ อปพร. เทศบาล/อบต./เขตในกทม./เมืองพัทยา (ข้อ 23)?",
+  o:["ฝ่ายป้องกันและบรรเทาสาธารณภัย","ฝ่ายรักษาความสงบเรียบร้อย","ฝ่ายการเงินและพัสดุ","ฝ่ายปฏิบัติการกู้ชีพกู้ภัย"], c:2,
+  e:"ฝ่ายตามข้อ 23: ป้องกันและบรรเทาฯ / รักษาความสงบฯ / สงเคราะห์ผู้ประสบภัย / กู้ชีพกู้ภัย / อื่น ๆ ตามจำเป็น — “ฝ่ายการเงินและพัสดุ” เป็นช้อยหลอก"},
+
+ {cat:"ฝ่ายปฏิบัติงาน", q:"การแต่งตั้งหัวหน้าฝ่ายและรองหัวหน้าฝ่ายในศูนย์ อปพร. กำหนดจำนวนเท่าใด?",
+  o:["หัวหน้าฝ่าย 1 คน รองหัวหน้าฝ่าย 1 คน","หัวหน้าฝ่าย 1 คน รองหัวหน้าฝ่าย 2 คน","หัวหน้าฝ่าย 2 คน รองหัวหน้าฝ่าย 2 คน","หัวหน้าฝ่าย 1 คน รองหัวหน้าฝ่าย 3 คน"], c:1,
+  e:"แต่งตั้ง <b>หัวหน้าฝ่าย 1 คน และรองหัวหน้าฝ่าย 2 คน</b> จากเจ้าหน้าที่ประจำศูนย์หรือ อปพร."},
+
+ {cat:"คุณสมบัติ", q:"ผู้สมัครเป็น อปพร. ต้องมีอายุเท่าใด?",
+  o:["ไม่ต่ำกว่า 15 ปีบริบูรณ์","ไม่ต่ำกว่า 18 ปีบริบูรณ์","ไม่ต่ำกว่า 20 ปีบริบูรณ์","ระหว่าง 18–60 ปี"], c:1,
+  e:"คุณสมบัติ: อายุ <b>ไม่ต่ำกว่า 18 ปีบริบูรณ์</b>"},
+
+ {cat:"คุณสมบัติ", q:"ข้อใดไม่ใช่คุณสมบัติหรือลักษณะของผู้ที่จะเป็น อปพร. ตามข้อ 28?",
+  o:["มีสัญชาติไทย","มีภูมิลำเนาหรือถิ่นที่อยู่ในเขตศูนย์ อปพร. นั้น","สำเร็จการศึกษาไม่ต่ำกว่ามัธยมศึกษาปีที่ 6","เลื่อมใสการปกครองระบอบประชาธิปไตยอันมีพระมหากษัตริย์ทรงเป็นประมุข"], c:2,
+  e:"ข้อ 28 ไม่ได้กำหนดวุฒิการศึกษา — “สำเร็จการศึกษาไม่ต่ำกว่า ม.6” เป็นช้อยหลอก"},
+
+ {cat:"คุณสมบัติ", q:"ผู้สมัครที่ได้รับคัดเลือกว่ามีคุณสมบัติครบถ้วนแล้ว ต้องทำสิ่งใดจึงจะได้รับการขึ้นทะเบียนเป็น อปพร.?",
+  o:["สาบานตนต่อผู้ว่าราชการจังหวัด","เข้ารับการฝึกอบรมหลักสูตรการฝึกอบรม อปพร.","ผ่านการทดสอบสมรรถภาพร่างกาย","ทำสัญญาปฏิบัติงานไม่น้อยกว่า 2 ปี"], c:1,
+  e:"ต้อง <b>เข้ารับการฝึกอบรมหลักสูตร อปพร.</b> จึงจะได้รับการขึ้นทะเบียนเป็น อปพร."},
+
+ {cat:"การพ้นสมาชิกภาพ", q:"ข้อใดไม่ใช่เหตุที่ อปพร. พ้นจากสมาชิกภาพ (ข้อ 29)?",
+  o:["ตาย หรือลาออก","ขาดคุณสมบัติหรือมีลักษณะต้องห้าม และ ผอ. สั่งให้พ้น","เกษียณอายุครบ 60 ปี","ผอ. ศูนย์ อปพร. ต้นสังกัดสั่งให้พ้นตามข้อ 36 (ผิดวินัย)"], c:2,
+  e:"เหตุพ้นสมาชิกภาพ: ขาดคุณสมบัติ+ผอ.สั่ง / ตาย / ลาออก / ผอ.สั่งพ้นตามข้อ 36 — “เกษียณ 60 ปี” เป็นช้อยหลอก"},
+
+ {cat:"สิทธิ", q:"ข้อใดไม่ใช่สิทธิของ อปพร. ตามข้อ 35?",
+  o:["แต่งเครื่องแบบและประดับเครื่องหมาย อปพร.","ได้รับเงินเดือนประจำตามอัตราที่กระทรวงกำหนด","ใช้วิทยุสื่อสารของราชการในการปฏิบัติหน้าที่ตามที่ได้รับมอบหมายเป็นลายลักษณ์อักษร","ได้รับการคุ้มครองตามระเบียบและกฎหมายในการปฏิบัติหน้าที่"], c:1,
+  e:"สิทธิ อปพร. = แต่งเครื่องแบบ/ประดับเครื่องหมาย · ใช้วิทยุสื่อสารราชการ · ได้รับการคุ้มครอง — <b>ไม่มี “เงินเดือนประจำ”</b> (อปพร. เป็นอาสาสมัคร)"},
+
+ {cat:"วินัย", q:"วินัยที่ อปพร. ต้องรักษาและปฏิบัติตามโดยเคร่งครัด มีกี่ประการ?",
+  o:["9 ประการ","10 ประการ","11 ประการ","12 ประการ"], c:2,
+  e:"วินัย อปพร. มี <b>11 ประการ</b> (ข้อ 36)"},
+
+ {cat:"บัตรประจำตัว", q:"บัตรประจำตัว อปพร. (ตามข้อ 43 วรรคหนึ่ง) ให้ใช้ได้ไม่เกินกี่ปีนับแต่วันออกบัตร?",
+  o:["5 ปี","6 ปี","8 ปี","10 ปี"], c:2,
+  e:"บัตรประจำตัว อปพร. ใช้ได้ตามระยะเวลาที่กำหนดในบัตร แต่ <b>ไม่เกิน 8 ปี</b> นับแต่วันออกบัตร"},
+
+ {cat:"การปฏิบัติงาน", q:"กรณีจำเป็นต้องสั่งให้ อปพร. ไปปฏิบัติภารกิจนอกเขตจังหวัด ผู้ใดมีอำนาจสั่งการ/อนุมัติ/อนุญาต?",
+  o:["ผู้อำนวยการศูนย์ อปพร. อำเภอ","ผู้อำนวยการศูนย์ อปพร. จังหวัด หรือ ผอ.ศูนย์ อปพร. กรุงเทพมหานคร","หัวหน้าฝ่าย อปพร.","ผู้บัญชาการศูนย์ อปพร. กลาง เท่านั้น"], c:1,
+  e:"กรณีจำเป็น <b>ผอ.ศูนย์ อปพร. จังหวัด หรือ ผอ.ศูนย์ อปพร. กทม.</b> มีอำนาจสั่ง/อนุมัติ/อนุญาตให้ไปปฏิบัติภารกิจนอกเขตจังหวัดหรือ กทม. ได้ (ข้อ 38)"}
+];
+
+/* ===================== แท็บ ===================== */
+const $ = id => document.getElementById(id);
+function selectTab(which){
+  const sum = which==='sum';
+  $('tabSum').setAttribute('aria-selected', sum);
+  $('tabQuiz').setAttribute('aria-selected', !sum);
+  $('panelSum').classList.toggle('active', sum);
+  $('panelQuiz').classList.toggle('active', !sum);
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+$('tabSum').addEventListener('click', ()=>selectTab('sum'));
+$('tabQuiz').addEventListener('click', ()=>selectTab('quiz'));
+$('tabSum').addEventListener('keydown', e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();selectTab('sum');}});
+$('tabQuiz').addEventListener('keydown', e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();selectTab('quiz');}});
+$('goQuizBtn').addEventListener('click', ()=>selectTab('quiz'));
+
+/* ===================== กลไกข้อสอบ ===================== */
+$('poolCount').textContent = BANK.length;
+let chosenMode = 20, quiz = [], idx = 0, score = 0, answered = false;
+
+$('modes').querySelectorAll('.mode').forEach(m=>{
+  const set = ()=>{
+    $('modes').querySelectorAll('.mode').forEach(x=>x.setAttribute('aria-pressed','false'));
+    m.setAttribute('aria-pressed','true');
+    chosenMode = m.dataset.n === 'all' ? 'all' : parseInt(m.dataset.n);
+  };
+  m.addEventListener('click', set);
+  m.addEventListener('keydown', e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();set();}});
+});
+
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+
+function buildQuiz(){
+  let pool = shuffle(BANK);
+  const n = chosenMode==='all' ? pool.length : Math.min(chosenMode,pool.length);
+  pool = pool.slice(0,n);
+  quiz = pool.map(item=>{
+    const order = shuffle(item.o.map((_,i)=>i));
+    return {cat:item.cat,q:item.q,e:item.e,opts:order.map(i=>item.o[i]),correct:order.indexOf(item.c),picked:null};
+  });
+  idx=0;score=0;
+}
+function start(){
+  buildQuiz();
+  $('startScreen').classList.add('hidden');
+  $('resultScreen').classList.add('hidden');
+  $('quizScreen').classList.remove('hidden');
+  renderQ();
+}
+function renderQ(){
+  answered=false;
+  const it=quiz[idx];
+  $('qCount').textContent=`ข้อ ${idx+1} / ${quiz.length}`;
+  $('scoreLive').textContent=`ถูก ${score}`;
+  $('bar').style.width=(idx/quiz.length*100)+'%';
+  $('qCat').textContent=it.cat;
+  $('qText').textContent=it.q;
+  $('explain').classList.remove('show');$('explain').innerHTML='';
+  $('nextBtn').classList.add('hidden');
+  $('nextBtn').textContent=(idx===quiz.length-1)?'ดูผลคะแนน':'ข้อถัดไป';
+  const box=$('opts');box.innerHTML='';
+  const keys=['ก','ข','ค','ง','จ'];
+  it.opts.forEach((text,i)=>{
+    const b=document.createElement('button');
+    b.className='opt';
+    b.innerHTML=`<span class="key">${keys[i]}</span><span>${text}</span>`;
+    b.addEventListener('click',()=>pick(i,b));
+    box.appendChild(b);
+  });
+}
+function pick(i){
+  if(answered)return;answered=true;
+  const it=quiz[idx];it.picked=i;
+  $('opts').querySelectorAll('.opt').forEach((b,bi)=>{
+    b.disabled=true;
+    if(bi===it.correct)b.classList.add('correct');
+    else if(bi===i)b.classList.add('wrong');
+    else b.classList.add('dim');
+  });
+  if(i===it.correct)score++;
+  $('scoreLive').textContent=`ถูก ${score}`;
+  $('explain').innerHTML=(i===it.correct?'✓ ถูกต้อง — ':'✗ คำตอบที่ถูกคือข้อที่เน้นสีเขียว — ')+it.e;
+  $('explain').classList.add('show');
+  $('nextBtn').classList.remove('hidden');
+  $('bar').style.width=((idx+1)/quiz.length*100)+'%';
+}
+$('nextBtn').addEventListener('click',()=>{
+  if(idx<quiz.length-1){idx++;renderQ();window.scrollTo({top:0,behavior:'smooth'});}
+  else showResult();
+});
+function showResult(){
+  $('quizScreen').classList.add('hidden');
+  $('resultScreen').classList.remove('hidden');
+  const total=quiz.length, pct=Math.round(score/total*100);
+  let col='var(--red)',verdict='ต้องทบทวนอีกหน่อย',sub='ลองอ่านแท็บสรุป โดยเฉพาะตารางตำแหน่ง แล้วทำชุดใหม่';
+  if(pct>=80){col='var(--green)';verdict='ยอดเยี่ยม พร้อมสอบ';sub='แม่นทั้งโครงสร้างศูนย์และตัวเลข รักษาระดับนี้ไว้';}
+  else if(pct>=60){col='var(--orange)';verdict='ผ่านเกณฑ์ดี';sub='ฐานแน่นแล้ว เก็บข้อที่พลาดด้านล่างให้ครบจะปลอดภัยขึ้น';}
+  else if(pct>=40){col='var(--orange-2)';verdict='พอใช้ ใกล้แล้ว';sub='จับหลักได้แล้ว เน้นจุดที่ตำแหน่ง/ตัวเลขคล้ายกัน';}
+  $('ring').style.background=`conic-gradient(${col} ${pct*3.6}deg, var(--orange-soft) 0)`;
+  $('ring').innerHTML=`<div style="width:100%;height:100%;border-radius:50%;background:var(--paper);display:grid;place-items:center">
+    <div style="text-align:center"><div class="pct" style="color:${col}">${pct}%</div><div class="of">${score} / ${total}</div></div></div>`;
+  $('verdict').textContent=verdict;$('verdict').style.color=col;
+  $('verdictSub').textContent=sub;
+  const wrong=quiz.filter(x=>x.picked!==x.correct);
+  const list=$('reviewList');list.innerHTML='';
+  if(wrong.length===0){
+    list.innerHTML=`<div class="rev" style="text-align:center;color:var(--green)">เก็บครบทุกข้อ ไม่มีข้อผิดให้ทบทวน 🎯</div>`;
+  }else{
+    wrong.forEach(it=>{
+      const div=document.createElement('div');div.className='rev';
+      const youText=it.picked==null?'ไม่ได้ตอบ':it.opts[it.picked];
+      div.innerHTML=`<div class="rev-q"><span class="mark">✗</span><span>${it.q}</span></div>
+        <div class="rev-line">คุณตอบ: <span class="you-wrong">${youText}</span></div>
+        <div class="rev-line">คำตอบที่ถูก: <span class="ans">${it.opts[it.correct]}</span></div>
+        <div class="rev-line" style="margin-top:6px">${it.e}</div>`;
+      list.appendChild(div);
+    });
+  }
+}
+$('startBtn').addEventListener('click',start);
+$('retryBtn').addEventListener('click',start);
+$('homeBtn').addEventListener('click',()=>{
+  $('resultScreen').classList.add('hidden');
+  $('startScreen').classList.remove('hidden');
+});
+</script>
+</body>
+</html>

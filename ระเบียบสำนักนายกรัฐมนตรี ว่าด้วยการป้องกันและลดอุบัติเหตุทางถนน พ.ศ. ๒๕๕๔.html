@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบสรุปและทดสอบระเบียบสำนักนายกรัฐมนตรี ป้องกันและลดอุบัติเหตุทางถนน พ.ศ. ๒๕๕๔</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Sarabun -->
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sarabun: ['Sarabun', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            200: '#fed7aa',
+                            300: '#fdba74',
+                            400: '#fb923c',
+                            500: '#f97316', // Primary Orange
+                            600: '#ea580c',
+                            700: '#c2410c',
+                            800: '#9a3412',
+                            900: '#7c2d12',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background-color: #fafafa;
+        }
+        /* Premium custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #fed7aa;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f97316;
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased min-h-screen flex flex-col">
+
+    <!-- Top Premium Navigation Bar -->
+    <header class="sticky top-0 z-40 bg-white border-b border-orange-100 shadow-sm backdrop-blur-md bg-white/95">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-500 to-amber-500 flex items-center justify-center text-white shadow-md shadow-brand-500/20">
+                        <i class="fa-solid fa-car-burst text-lg"></i>
+                    </div>
+                    <div>
+                        <span class="font-bold text-base sm:text-lg text-slate-900 tracking-tight block leading-tight">ระเบียบอุบัติเหตุทางถนน ๒๕๕๔</span>
+                        <span class="text-[10px] sm:text-xs text-brand-600 font-semibold tracking-wider uppercase">สรุปรายข้อ (ข้อ 1-26) & คลังข้อสอบ 30 ข้อ</span>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-1.5 sm:gap-2">
+                    <button onclick="switchTab('summary')" id="tab-summary-btn" class="px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg font-medium text-xs sm:text-sm transition-all duration-200 bg-brand-500 text-white shadow-sm">
+                        <i class="fa-solid fa-book-open mr-1.5"></i> สรุปย่อ
+                    </button>
+                    <button onclick="switchTab('quiz')" id="tab-quiz-btn" class="px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg font-medium text-xs sm:text-sm transition-all duration-200 text-slate-600 hover:text-brand-600 hover:bg-brand-50">
+                        <i class="fa-solid fa-graduation-cap mr-1.5"></i> ข้อสอบ (๓๐ ข้อ)
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- SECTION 1: SUMMARY TAB -->
+        <div id="summary-section" class="space-y-8">
+            
+            <!-- Hero Banner (Failsafe style background to solve contrast issue in ภาพ.png) -->
+            <div class="relative rounded-3xl p-6 sm:p-10 shadow-xl overflow-hidden text-white" style="background: linear-gradient(135deg, #ea580c 0%, #9a3412 100%);">
+                <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                <div class="relative z-10 max-w-4xl">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold bg-white/20 text-white border border-white/30 mb-4">
+                        <i class="fa-solid fa-calendar-check"></i> ประกาศราชกิจจานุเบกษา: ๑๔ มกราคม ๒๕๕๔
+                    </span>
+                    <h1 class="text-xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight mb-4 leading-tight text-white drop-shadow-md">
+                        ระเบียบสำนักนายกรัฐมนตรี ว่าด้วยการป้องกันและลดอุบัติเหตุทางถนน พ.ศ. ๒๕๕๔
+                    </h1>
+                    <p class="text-orange-50 text-xs sm:text-sm leading-relaxed max-w-3xl">
+                        อาศัยอำนาจตามความในมาตรา ๑๑ (๘) แห่ง พ.ร.บ. ระเบียบบริหารราชการแผ่นดิน พ.ศ. ๒๕๓๔ ลงนามโดย นายอภิสิทธิ์ เวชชาชีวะ นายกรัฐมนตรี ณ วันที่ ๘ มกราคม พ.ศ. ๒๕๕๔ บังคับใช้วันถัดไป คือวันที่ <span class="text-amber-300 font-bold underline decoration-amber-300">๑๕ มกราคม พ.ศ. ๒๕๕๔</span>
+                    </p>
+                </div>
+                <div class="absolute right-0 bottom-0 opacity-10 transform translate-x-12 translate-y-12 hidden lg:block">
+                    <i class="fa-solid fa-traffic-light text-[240px] text-white"></i>
+                </div>
+            </div>
+
+            <!-- บททั่วไปและการเริ่มบังคับใช้ (ข้อ 1 - 5) -->
+            <div class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+                <div class="bg-gradient-to-r from-orange-600 to-brand-500 px-6 py-4 flex items-center justify-between text-white">
+                    <h2 class="font-bold flex items-center gap-2 text-sm sm:text-base">
+                        <i class="fa-solid fa-align-left"></i> บททั่วไปและการเริ่มบังคับใช้ (ข้อ ๑ - ๕)
+                    </h2>
+                    <span class="text-xs bg-white/20 px-2.5 py-1 rounded-full font-bold">หมวด ๑</span>
+                </div>
+                <div class="p-6 space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm">
+                        <div class="space-y-3">
+                            <h4 class="font-bold text-slate-950 border-b pb-2 flex items-center gap-1.5 text-sm sm:text-base">
+                                <span class="w-2 h-2 rounded-full bg-brand-500"></span> ข้อ ๑ - ๓: การจัดทำและผู้รักษาการ
+                            </h4>
+                            <ul class="text-slate-600 space-y-3 list-none pl-0">
+                                <li><strong>ข้อ ๑ (ชื่อระเบียบ):</strong> ระเบียบสำนักนายกรัฐมนตรี ว่าด้วยการป้องกันและลดอุบัติเหตุทางถนน พ.ศ. ๒๕๕๔</li>
+                                <li><strong>ข้อ ๒ (การบังคับใช้):</strong> มีผลตั้งแต่วันที่ <span class="text-brand-600 font-semibold">๑๕ มกราคม ๒๕๕๔</span> (วันถัดจากวันประกาศในราชกิจจานุเบกษา)</li>
+                                <li><strong>ข้อ ๓ (ผู้รักษาการ):</strong> ให้ <span class="text-brand-600 font-bold">นายกรัฐมนตรี</span> เป็นผู้รักษาการตามระเบียบนี้</li>
+                            </ul>
+                        </div>
+
+                        <div class="space-y-3">
+                            <h4 class="font-bold text-slate-950 border-b pb-2 flex items-center gap-1.5 text-sm sm:text-base">
+                                <span class="w-2 h-2 rounded-full bg-brand-500"></span> ข้อ ๔: บทนิยามศัพท์ (จุดระวังลวง)
+                            </h4>
+                            <div class="bg-orange-50/50 p-4 rounded-xl border border-orange-100 space-y-2.5 text-slate-600">
+                                <p>
+                                    <strong class="text-brand-700">"องค์กรปกครองส่วนท้องถิ่น" (อปท.)</strong> หมายถึง อบต., เทศบาล, เมืองพัทยา และ อปท.อื่น <span class="text-red-600 font-bold underline">แต่มิให้หมายความรวมถึง องค์การบริหารส่วนจังหวัด (อบจ.) และกรุงเทพมหานคร (กทม.)</span>
+                                </p>
+                                <p>
+                                    <strong class="text-brand-700">"ผู้บริหารองค์กรปกครองส่วนท้องถิ่น"</strong> หมายถึง นายก อบต., นายกเทศมนตรี, นายกเมืองพัทยา และหัวหน้าผู้บริหาร อปท.อื่น <span class="text-red-600 font-bold underline">แต่มิให้รวมถึง นายก อบจ. และผู้ว่าราชการกรุงเทพมหานคร</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ข้อ 5: แนวทางการดำเนินการ -->
+                    <div class="border-t border-slate-100 pt-4">
+                        <h4 class="font-bold text-slate-950 pb-2 flex items-center gap-1.5 text-xs sm:text-sm">
+                            <i class="fa-solid fa-list-check text-brand-500"></i> ข้อ ๕: แนวทางการดำเนินการในการป้องกันและลดอุบัติเหตุทางถนน ๔ ประการ
+                        </h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs mt-2">
+                            <div class="p-3 bg-slate-50 rounded-lg border border-slate-100">
+                                <span class="font-bold text-brand-600 block mb-1">๑. จัดทำแผนแม่บท</span>
+                                กำหนดเป้าหมายและแนวทางเสนอ <strong class="text-slate-800">คณะรัฐมนตรีอนุมัติ</strong> เพื่อให้หน่วยงานรัฐนำไปปฏิบัติ
+                            </div>
+                            <div class="p-3 bg-slate-50 rounded-lg border border-slate-100">
+                                <span class="font-bold text-brand-600 block mb-1">๒. มาตรการแบบบูรณาการ</span>
+                                พัฒนาระบบบริหารจัดการด้านนโยบาย หน่วยงานรับผิดชอบ วางแผน งบประมาณ และติดตามผล
+                            </div>
+                            <div class="p-3 bg-slate-50 rounded-lg border border-slate-100">
+                                <span class="font-bold text-brand-600 block mb-1">๓. มาตรฐานความปลอดภัย</span>
+                                พัฒนามาตรฐานด้านโครงสร้าง สิ่งแวดล้อม ยานพาหนะ และด้านการดูแลช่วยเหลือผู้ประสบภัย
+                            </div>
+                            <div class="p-3 bg-slate-50 rounded-lg border border-slate-100">
+                                <span class="font-bold text-brand-600 block mb-1">๔. วัฒนธรรมความปลอดภัย</span>
+                                รณรงค์และส่งเสริมให้เกิดวัฒนธรรมในการใช้รถใช้ถนนอย่างปลอดภัยในหมู่ประชาชนอย่างยั่งยืน
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3 ระดับการทำงาน (ข้อ 6) -->
+            <div class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+                <div class="bg-gradient-to-r from-orange-50 to-brand-50/30 px-6 py-4 border-b border-orange-100 flex items-center justify-between">
+                    <h2 class="font-bold text-slate-950 flex items-center gap-2 text-sm sm:text-base">
+                        <i class="fa-solid fa-layer-group text-brand-600"></i> โครงสร้างการดำเนินงาน ๓ ระดับ (ข้อ ๖)
+                    </h2>
+                </div>
+                <div class="p-6">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Level 1 -->
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-100 relative overflow-hidden">
+                            <span class="absolute -right-3 -top-3 text-4xl text-slate-200/50 font-bold">1</span>
+                            <h4 class="font-bold text-slate-900 text-sm mb-1">ระดับนโยบาย</h4>
+                            <p class="text-xs text-slate-500 mb-2">รับผิดชอบงานจัดทำนโยบายและเห็นชอบแผนแม่บทใหญ่ของประเทศ</p>
+                            <span class="inline-block px-2.5 py-1 rounded-md text-xs font-semibold bg-brand-100 text-brand-700">คณะกรรมการ นปถ.</span>
+                        </div>
+                        <!-- Level 2 -->
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-100 relative overflow-hidden">
+                            <span class="absolute -right-3 -top-3 text-4xl text-slate-200/50 font-bold">2</span>
+                            <h4 class="font-bold text-slate-900 text-sm mb-1">ระดับอำนวยการ</h4>
+                            <p class="text-xs text-slate-500 mb-2">อำนวยการ ประสานงานหลัก และกำกับดูแลแต่ละพื้นที่จังหวัด/กทม.</p>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-200 text-slate-700">ศปถ.ชาติ</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-200 text-slate-700">ศปถ.จังหวัด</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-200 text-slate-700">ศปถ.กทม.</span>
+                            </div>
+                        </div>
+                        <!-- Level 3 -->
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-100 relative overflow-hidden">
+                            <span class="absolute -right-3 -top-3 text-4xl text-slate-200/50 font-bold">3</span>
+                            <h4 class="font-bold text-slate-900 text-sm mb-1">ระดับปฏิบัติการ</h4>
+                            <p class="text-xs text-slate-500 mb-2">ลงมือปฏิบัติการในพื้นที่ระดับอำเภอ ตำบล เขต ของท้องถิ่น</p>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-orange-100 text-brand-700">ศปถ.อำเภอ</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-orange-100 text-brand-700">ศปถ.อปท.</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-orange-100 text-brand-700">ศปถ.เขต (กทม.)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- อำนาจหน้าที่ของคณะกรรมการแต่ละระดับ (ข้อ 7 - 24) -->
+            <div class="space-y-8">
+                
+                <!-- 1. คณะกรรมการ นปถ. -->
+                <div class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+                    <div class="bg-gradient-to-r from-orange-600 to-brand-500 px-6 py-4 text-white">
+                        <h3 class="font-bold flex items-center gap-2 text-sm sm:text-base">
+                            <i class="fa-solid fa-gavel"></i> คณะกรรมการ นปถ. (ระดับนโยบาย) (ข้อ ๗ - ๑๒)
+                        </h3>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 text-xs sm:text-sm">
+                            <!-- โครงสร้างบอร์ด -->
+                            <div class="space-y-2 bg-slate-50 p-4 rounded-xl border border-slate-100">
+                                <h4 class="font-bold text-slate-900 mb-2 border-b pb-1.5"><i class="fa-solid fa-users text-brand-600"></i> โครงสร้างและองค์ประกอบ นปถ.</h4>
+                                <ul class="space-y-1 text-slate-600">
+                                    <li><strong>ประธาน:</strong> นายกรัฐมนตรี หรือรองนายกรัฐมนตรีที่ได้รับมอบหมาย</li>
+                                    <li><strong>รองประธานคนที่ ๑ ถึง ๕:</strong> รมว.มหาดไทย (๑), รมว.คมนาคม (๒), รมว.ยุติธรรม (๓), รมว.สาธารณสุข (๔), รมว.ศึกษาธิการ (๕)ตามลำดับ</li>
+                                    <li><strong>กรรมการผู้ทรงคุณวุฒิ:</strong> ไม่เกิน ๕ คน (วาระ ๔ ปี ดำรงตำแหน่งได้ติดต่อกันไม่เกิน ๒ วาระ)</li>
+                                    <li><strong>เลขานุการ:</strong> ปลัดกระทรวงมหาดไทย</li>
+                                    <li><strong>ผู้ช่วยเลขานุการ:</strong> อธิบดีกรมป้องกันและบรรเทาสาธารณภัย (ปภ.)</li>
+                                </ul>
+                            </div>
+                            <!-- อำนาจหน้าที่ -->
+                            <div class="space-y-2 bg-slate-50 p-4 rounded-xl border border-slate-100">
+                                <h4 class="font-bold text-slate-900 mb-2 border-b pb-1.5"><i class="fa-solid fa-shield text-brand-600"></i> อำนาจหน้าที่ นปถ. (ข้อ ๑๑)</h4>
+                                <ul class="space-y-1.5 text-slate-600 list-decimal pl-4">
+                                    <li>กำหนดนโยบายในการป้องกันและลดอุบัติเหตุทางถนนให้สอดคล้องกับแผน ปภ. ชาติ</li>
+                                    <li>พิจารณาให้ความเห็นชอบแผนแม่บทก่อนเสนอ คณะรัฐมนตรีอนุมัติ</li>
+                                    <li>พิจารณาให้ความเห็นชอบยุทธศาสตร์และแผนเกี่ยวกับการป้องกันและลดอุบัติเหตุทางถนน</li>
+                                    <li>ออกประกาศ หรือคำสั่ง หรือกำหนดแนวทางปฏิบัติการตามระเบียบนี้</li>
+                                    <li>เสนอความเห็นและให้ข้อเสนอแนะแก่นายกฯ หรือคณะรัฐมนตรี</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. คณะกรรมการ ศปถ. (ระดับชาติ) -->
+                <div class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+                    <div class="bg-gradient-to-r from-orange-600 to-brand-500 px-6 py-4 text-white">
+                        <h3 class="font-bold flex items-center gap-2 text-sm sm:text-base">
+                            <i class="fa-solid fa-shield-halved"></i> ศูนย์อำนวยการ ศปถ. (ระดับชาติ) (ข้อ ๑๓ - ๑๕)
+                        </h3>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 text-xs sm:text-sm">
+                            <!-- โครงสร้าง ศปถ.ชาติ -->
+                            <div class="space-y-2 bg-slate-50 p-4 rounded-xl border border-slate-100">
+                                <h4 class="font-bold text-slate-900 mb-2 border-b pb-1.5"><i class="fa-solid fa-users text-brand-600"></i> โครงสร้างและองค์ประกอบ ศปถ.</h4>
+                                <ul class="space-y-1 text-slate-600">
+                                    <li><strong>ผู้อำนวยการศูนย์ (ประธาน):</strong> รัฐมนตรีว่าการกระทรวงมหาดไทย</li>
+                                    <li><strong>รองผู้อำนวยการคนที่ ๑ ถึง ๕:</strong> ปลัด มท. (๑), ปลัด คค. (๒), ปลัด สธ. (๓), ปลัด ศธ. (๔), ผบ.ตร. (๕)ตามลำดับ</li>
+                                    <li><strong>กรรมการโดยตำแหน่ง:</strong> หัวหน้าหน่วยงานรัฐที่เกี่ยวข้อง เช่น อธิบดีขนส่ง, อธิบดีกรมทางหลวง, ผู้ว่าฯ กทม. ฯลฯ</li>
+                                    <li><strong>เลขานุการ:</strong> อธิบดีกรมป้องกันและบรรเทาสาธารณภัย (ปภ.)</li>
+                                </ul>
+                            </div>
+                            <!-- อำนาจหน้าที่ ศปถ.ชาติ -->
+                            <div class="space-y-2 bg-slate-50 p-4 rounded-xl border border-slate-100">
+                                <h4 class="font-bold text-slate-900 mb-2 border-b pb-1.5"><i class="fa-solid fa-toolbox text-brand-600"></i> อำนาจหน้าที่ ศปถ. (ข้อ ๑๔)</h4>
+                                <ul class="space-y-1 text-slate-600 list-decimal pl-4">
+                                    <li>จัดทำข้อเสนอ นโยบาย แผนแม่บท ยุทธศาสตร์ โดยเสนอขอความเห็นชอบจาก นปถ.</li>
+                                    <li>บูรณาการแผนงานและงบประมาณในการป้องกันลดอุบัติเหตุทางถนนของหน่วยงานรัฐ</li>
+                                    <li>อำนวยการ กำกับ ติดตาม เร่งรัด ประเมินผล และประสานการดำเนินงาน</li>
+                                    <li>จัดทำฐานข้อมูล สถิติ และการวิเคราะห์ประเมินสถานการณ์</li>
+                                    <li>ศึกษา ค้นคว้า วิจัย พัฒนา และตีความวินิจฉัยปัญหาเกี่ยวกับการปฏิบัติตามระเบียบนี้</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. คณะกรรมการ ศปถ. จังหวัด -->
+                <div class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+                    <div class="bg-gradient-to-r from-orange-600 to-brand-500 px-6 py-4 text-white">
+                        <h3 class="font-bold flex items-center gap-2 text-sm sm:text-base">
+                            <i class="fa-solid fa-map-location-dot"></i> คณะกรรมการ ศปถ. จังหวัด (ระดับภูมิภาค) (ข้อ ๑๖ - ๑๘)
+                        </h3>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 text-xs sm:text-sm">
+                            <!-- โครงสร้างจังหวัด -->
+                            <div class="space-y-2 bg-slate-50 p-4 rounded-xl border border-slate-100">
+                                <h4 class="font-bold text-slate-900 mb-2 border-b pb-1.5"><i class="fa-solid fa-users text-brand-600"></i> โครงสร้างและองค์ประกอบ ศปถ. จังหวัด</h4>
+                                <ul class="space-y-1 text-slate-600">
+                                    <li><strong>ผู้อำนวยการศูนย์ (ประธาน):</strong> ผู้ว่าราชการจังหวัด</li>
+                                    <li><strong>รองประธานคนที่ ๑:</strong> ผู้บังคับการตำรวจภูธรจังหวัด (ผบก.ภ.จว.)</li>
+                                    <li><strong>รองประธานคนที่ ๒:</strong> ปลัดจังหวัด</li>
+                                    <li><strong>รองประธานคนที่ ๓:</strong> นายกองค์การบริหารส่วนจังหวัด (นายก อบจ.)</li>
+                                    <li><strong>เลขานุการ:</strong> หัวหน้าสำนักงานป้องกันและบรรเทาสาธารณภัยจังหวัด (หัวหน้า ปภ.จังหวัด)</li>
+                                </ul>
+                            </div>
+                            <!-- อำนาจหน้าที่จังหวัด -->
+                            <div class="space-y-2 bg-slate-50 p-4 rounded-xl border border-slate-100">
+                                <h4 class="font-bold text-slate-900 mb-2 border-b pb-1.5"><i class="fa-solid fa-city text-brand-600"></i> อำนาจหน้าที่ ศปถ. จังหวัด (ข้อ ๑๗)</h4>
+                                <ul class="space-y-1 text-slate-600 list-decimal pl-4">
+                                    <li>จัดทำแผนปฏิบัติการ แผนงาน โครงการ และงบประมาณในเขตจังหวัดให้สอดคล้องแผนแม่บท</li>
+                                    <li>อำนวยการ ประสานงาน ติดตามเร่งรัด และประเมินผลในเขตจังหวัด</li>
+                                    <li>จัดให้มีศูนย์ข้อมูลและสถิติอุบัติเหตุทางถนนของจังหวัด</li>
+                                    <li>ส่งเสริมการมีส่วนร่วมของประชาชน และประชาสัมพันธ์ข้อมูลต่อสาธารณชน</li>
+                                    <li>แต่งตั้งคณะอนุกรรมการหรือคณะทำงานเพื่อปฏิบัติงานในระดับพื้นที่</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. คณะกรรมการ ศปถ. อำเภอ และระดับท้องถิ่น -->
+                <div class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+                    <div class="bg-gradient-to-r from-orange-600 to-brand-500 px-6 py-4 text-white">
+                        <h3 class="font-bold flex items-center gap-2 text-sm sm:text-base">
+                            <i class="fa-solid fa-house-chimney-window"></i> คณะกรรมการ ศปถ. อำเภอ / ศปถ. อปท. / ศปถ. เขต (ข้อ ๒๐ - ๒๓)
+                        </h3>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 text-xs sm:text-sm">
+                            
+                            <!-- ศปถ. อำเภอ -->
+                            <div class="space-y-2 bg-slate-50 p-4 rounded-xl border border-slate-100">
+                                <h4 class="font-bold text-slate-900 mb-2 border-b pb-1.5"><i class="fa-solid fa-hotel text-brand-600"></i> ศปถ. อำเภอ (ข้อ ๒๐ - ๒๑)</h4>
+                                <ul class="space-y-1 text-slate-600 mb-3">
+                                    <li><strong>ประธาน:</strong> นายอำเภอ</li>
+                                    <li><strong>รองประธาน:</strong> หัวหน้าสถานีตำรวจภูธร (ผกก.สภ.) ในเขตอำเภอ</li>
+                                    <li><strong>เลขานุการ:</strong> ข้าราชการที่นายอำเภอมอบหมาย ๑ คน</li>
+                                </ul>
+                                <p class="text-slate-500 leading-relaxed font-semibold">หน้าที่หลัก (ข้อ ๒๑):</p>
+                                <p class="text-slate-500">จัดทำแผนปฏิบัติการโครงการอำเภอ ประสานแผน อปท. ในเขต และรายงานผลให้ ศปถ. จังหวัด ทราบ</p>
+                            </div>
+
+                            <!-- ศปถ. อปท. -->
+                            <div class="space-y-2 bg-slate-50 p-4 rounded-xl border border-slate-100">
+                                <h4 class="font-bold text-slate-900 mb-2 border-b pb-1.5"><i class="fa-solid fa-tree-city text-brand-600"></i> ศปถ. อปท. (ข้อ ๒๒)</h4>
+                                <ul class="space-y-1 text-slate-600 mb-3">
+                                    <li><strong>ประธาน:</strong> ผู้บริหาร อปท. (นายก อบต., นายกเทศมนตรี, นายกเมืองพัทยา)</li>
+                                    <li><strong>การจัดตั้ง:</strong> เกิดจากการประสานงานของผู้ว่าราชการจังหวัดกับ อปท. เพื่อให้ผู้บริหาร อปท. พิจารณาจัดตั้งศูนย์เมื่อมีปัญหาอุบัติเหตุทางถนน</li>
+                                </ul>
+                                <p class="text-slate-500 leading-relaxed font-semibold">หน้าที่หลัก:</p>
+                                <p class="text-slate-500">ดำเนินการป้องกันและลดอุบัติเหตุทางถนนในเขตปกครองท้องถิ่นของตนให้สอดคล้องกับระเบียบนี้</p>
+                            </div>
+
+                            <!-- ศปถ. เขต และ ศปถ. กทม. -->
+                            <div class="space-y-2 bg-slate-50 p-4 rounded-xl border border-slate-100">
+                                <h4 class="font-bold text-slate-900 mb-2 border-b pb-1.5"><i class="fa-solid fa-city text-brand-600"></i> กทม. และ ศปถ. เขต (ข้อ ๑๙ & ๒๓)</h4>
+                                <ul class="space-y-1 text-slate-600 mb-3">
+                                    <li><strong>ศปถ. กทม.:</strong> จัดตั้งขึ้นโดยมี <span class="font-bold text-brand-600">ผู้ว่าฯ กทม.</span> เป็นประธาน</li>
+                                    <li><strong>ศปถ. เขต (ข้อ ๒๓):</strong> หากจำเป็น ผู้ว่าฯ กทม. อาจพิจารณาให้จัดตั้งศูนย์ปฏิบัติการความปลอดภัยทางถนนระดับเขตขึ้นมาได้</li>
+                                </ul>
+                                <p class="text-slate-500 leading-relaxed font-semibold">หน้าที่หลัก:</p>
+                                <p class="text-slate-500">บริหารจัดการป้องกันลดอุบัติเหตุในเมืองหลวงให้มีประสิทธิภาพ สอดคล้องกับนโยบายชาติ</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CTA to Quiz -->
+            <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-xl bg-orange-100 text-brand-600 flex items-center justify-center flex-shrink-0 text-xl">
+                        <i class="fa-solid fa-clipboard-list"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-950 text-sm sm:text-base">แบบทดสอบวัดระดับเชี่ยวชาญ ๓๐ ข้อ (ยากพิเศษ)</h4>
+                        <p class="text-xs text-slate-400 mt-0.5">คัดสรรจุดออกสอบจากเอกสาร 'อุบัติเหตุทางถนน.pdf' เต็มทุกแง่มุมกฎหมาย</p>
+                    </div>
+                </div>
+                <button onclick="switchTab('quiz')" class="bg-brand-500 hover:bg-brand-600 text-white font-bold text-sm py-2.5 px-5 rounded-xl shadow-sm transition-all flex items-center justify-center gap-2">
+                    เริ่มประเมินความรู้ <i class="fa-solid fa-arrow-right text-xs"></i>
+                </button>
+            </div>
+
+        </div>
+
+        <!-- SECTION 2: QUIZ TAB -->
+        <div id="quiz-section" class="hidden max-w-3xl mx-auto space-y-6">
+            
+            <!-- Quiz Header Card -->
+            <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                    <h2 class="text-lg sm:text-xl font-bold text-slate-900 flex items-center gap-2">
+                        <i class="fa-solid fa-list-check text-brand-500"></i> แบบทดสอบเจาะลึกระเบียบอุบัติเหตุทางถนน ๒๕๕๔
+                    </h2>
+                    <p class="text-xs text-slate-400 mt-1">ประเมินทักษะความรอบรู้จำนวน ๓๐ ข้อ (อ้างอิง: อุบัติเหตุทางถนน.pdf)</p>
+                </div>
+                <!-- Progress display -->
+                <div class="flex items-center gap-3 flex-shrink-0">
+                    <div class="text-right">
+                        <span class="text-xs text-slate-400 block font-medium">ข้อที่</span>
+                        <span id="current-question-indicator" class="text-lg font-bold text-brand-600">1/30</span>
+                    </div>
+                    <div class="w-24 sm:w-32 bg-slate-100 h-2 rounded-full overflow-hidden">
+                        <div id="quiz-progress-bar" class="bg-brand-500 h-full transition-all duration-300" style="width: 3.33%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quiz Play Box -->
+            <div id="quiz-play-box" class="space-y-6">
+                <!-- Question Statement Card -->
+                <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-100 shadow-sm relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-1.5 h-full bg-brand-500"></div>
+                    <span class="text-[10px] font-bold text-brand-600 uppercase tracking-wider block mb-2">คำถามสำหรับการเตรียมสอบ</span>
+                    <h3 id="question-text" class="text-sm sm:text-base md:text-lg font-bold text-slate-900 leading-relaxed">
+                        กำลังเตรียมความพร้อมของคำถาม...
+                    </h3>
+                </div>
+
+                <!-- Answer Options Box -->
+                <div id="options-container" class="space-y-3">
+                    <!-- Dynamic choices inject here -->
+                </div>
+
+                <!-- Explanation/Rationale (Hidden until answered) -->
+                <div id="explanation-box" class="hidden bg-slate-50 p-5 sm:p-6 rounded-2xl border border-slate-150 transition-all duration-300">
+                    <div class="flex gap-3">
+                        <div id="explanation-icon-container" class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-white">
+                            <!-- Icon dynamic -->
+                        </div>
+                        <div>
+                            <h4 id="explanation-title" class="font-bold text-xs sm:text-sm"></h4>
+                            <p id="explanation-body" class="text-xs sm:text-sm text-slate-600 mt-1.5 leading-relaxed"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nav Controls -->
+                <div class="flex items-center justify-between">
+                    <button id="hint-btn" onclick="toggleHint()" class="inline-flex items-center gap-1.5 text-slate-500 hover:text-brand-600 font-semibold text-xs sm:text-sm transition-colors py-2 px-3 rounded-lg hover:bg-slate-50">
+                        <i class="fa-regular fa-lightbulb"></i> <span id="hint-text-label">แสดงคำใบ้</span>
+                    </button>
+                    
+                    <button id="next-btn" onclick="goToNextQuestion()" class="hidden bg-brand-500 hover:bg-brand-600 text-white text-xs sm:text-sm font-semibold py-2.5 px-5 sm:px-6 rounded-xl shadow-sm transition-all items-center gap-1.5">
+                        <span>ถัดไป</span> <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                </div>
+                
+                <!-- Hint Text Box (Hidden by default) -->
+                <div id="hint-display-box" class="hidden bg-amber-50/50 border border-amber-100 p-4 rounded-xl text-xs sm:text-sm text-amber-800 leading-relaxed">
+                    <strong class="font-bold"><i class="fa-solid fa-circle-question mr-1"></i> คำใบ้ช่วยคิด:</strong> <span id="hint-content">...</span>
+                </div>
+            </div>
+
+            <!-- Quiz Score/Summary Screen (Hidden by default) -->
+            <div id="quiz-score-box" class="hidden bg-white p-6 sm:p-8 rounded-3xl border border-slate-100 shadow-sm text-center space-y-6">
+                <div class="w-20 h-20 sm:w-24 sm:h-24 bg-brand-50 rounded-full flex items-center justify-center mx-auto border-2 border-brand-100 relative">
+                    <i class="fa-solid fa-trophy text-3xl sm:text-4xl text-brand-500"></i>
+                    <div class="absolute -top-1 -right-1 bg-amber-500 text-white text-[9px] px-2 py-0.5 rounded-full font-bold">สำเร็จ</div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl sm:text-2xl font-black text-slate-900">ทดสอบเสร็จสมบูรณ์!</h3>
+                    <p class="text-xs text-slate-400 mt-1">เกณฑ์ประเมินระดับความรอบรู้ระเบียบอุบัติเหตุทางถนน ๒๕๕๔</p>
+                </div>
+
+                <!-- Score Board -->
+                <div class="max-w-xs mx-auto bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                    <span class="text-xs text-slate-500 uppercase tracking-widest font-semibold block">คะแนนของคุณ</span>
+                    <span id="final-score-display" class="text-4xl sm:text-5xl font-extrabold text-brand-600 my-2 block">0 / 30</span>
+                    <span id="score-assessment" class="text-xs sm:text-sm font-bold text-slate-700 block">ประเมินผล</span>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                    <button onclick="restartQuiz()" class="bg-brand-500 hover:bg-brand-600 text-white font-bold text-xs sm:text-sm py-3 px-6 rounded-xl shadow-sm transition-all">
+                        <i class="fa-solid fa-arrows-rotate mr-1"></i> ทำใหม่อีกครั้ง
+                    </button>
+                    <button onclick="switchTab('summary')" class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs sm:text-sm py-3 px-6 rounded-xl transition-all">
+                        กลับไปอ่านสรุปย่อมาตรา
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-100 py-6 mt-12">
+        <div class="max-w-7xl mx-auto px-4 text-center space-y-2 text-xs text-slate-400">
+            <p>สรุปและวิเคราะห์คลังข้อสอบตามระเบียบสำนักนายกรัฐมนตรี ว่าด้วยการป้องกันและลดอุบัติเหตุทางถนน พ.ศ. ๒๕๕๔</p>
+            <p>&copy; 2026 ระบบการเรียนรู้ออนไลน์เตรียมสอบข้าราชการไทย บรรเทาสาธารณภัยและความมั่นคง</p>
+        </div>
+    </footer>
+
+    <!-- Quiz JS Logic -->
+    <script>
+        // 30 highly challenging questions mapped strictly to "อุบัติเหตุทางถนน.pdf"
+        const quizData = [
+            {
+                question: "ข้อใดคืออำนาจทางกฎหมายและพระราชบัญญัติหลักที่ใช้ตรา 'ระเบียบสำนักนายกรัฐมนตรีว่าด้วยการป้องกันและลดอุบัติเหตุทางถนน พ.ศ. ๒๕๕๔' ขึ้นมา?",
+                options: [
+                    { text: "มาตรา ๑๑ (๘) แห่งพระราชบัญญัติระเบียบบริหารราชการแผ่นดิน พ.ศ. ๒๕๓๔", isCorrect: true, rationale: "ระเบียบสำนักนายกรัฐมนตรีฉบับนี้อ้างอิงชัดเจนตาม มาตรา ๑๑ (๘) แห่ง พ.ร.บ. ระเบียบบริหารราชการแผ่นดิน พ.ศ. ๒๕๓๔ โดยความเห็นชอบของคณะรัฐมนตรี" },
+                    { text: "มาตรา ๑๑ (๔) แห่งพระราชบัญญัติระเบียบบริหารราชการแผ่นดิน พ.ศ. ๒๕๓๔", isCorrect: false, rationale: "มาตรา ๑๑ (๔) เกี่ยวข้องกับการมอบหมายงาน แต่อำนาจตราระเบียบปฏิบัติต้องอิง (๘)" },
+                    { text: "มาตรา ๔๑ แห่งพระราชบัญญัติวินัยการเงินการคลังของรัฐ พ.ศ. ๒๕๖๑", isCorrect: false, rationale: "อันนี้เป็นหลักกฎหมายทางการคลังระดับชาติ ไม่ใช่ของระเบียบอุบัติเหตุทางถนน ๒๕๕๔" },
+                    { text: "มาตรา ๕ แห่งพระราชบัญญัติป้องกันและบรรเทาสาธารณภัย พ.ศ. ๒๕๕๐", isCorrect: false, rationale: "พ.ร.บ. ปภ. ๒๕๕๐ ไม่ใช่ต้นขั้วทางกฎหมายในการตราระเบียบสำนักนายกรัฐมนตรีฉบับนี้โดยตรง" }
+                ],
+                hint: "กฎหมายแม่บทคือ พ.ร.บ. ระเบียบบริหารราชการแผ่นดิน พ.ศ. ๒๕๓๔ มาตรา ๑๑ วรรคแปด"
+            },
+            {
+                question: "ระเบียบสำนักนายกรัฐมนตรีว่าด้วยการป้องกันและลดอุบัติเหตุทางถนน พ.ศ. ๒๕๕๔ เริ่มมีผลบังคับใช้อย่างเป็นทางการเมื่อใด?",
+                options: [
+                    { text: "วันที่ ๘ มกราคม พ.ศ. ๒๕๕๔", isCorrect: false, rationale: "วันที่ ๘ มกราคม ๒๕๕๔ เป็นเพียงวันที่นายกรัฐมนตรีลงนามประกาศระเบียบนี้" },
+                    { text: "วันที่ ๑๔ มกราคม พ.ศ. ๒๕๕๔", isCorrect: false, rationale: "วันที่ ๑๔ มกราคม ๒๕๕๔ เป็นวันที่เผยแพร่ลงราชกิจจานุเบกษา" },
+                    { text: "วันที่ ๑๕ มกราคม พ.ศ. ๒๕๕๔", isCorrect: true, rationale: "ระเบียบกำหนดว่าให้มีผลใช้วันถัดจากวันประกาศในราชกิจจานุเบกษา (ประกาศ ๑๔ มกราคม ๒๕๕๔) จึงมีผลบังคับใช้วันที่ ๑๕ มกราคม ๒๕๕๔" },
+                    { text: "วันที่ ๑ กุมภาพันธ์ พ.ศ. ๒๕๕๔", isCorrect: false, rationale: "ระเบียบบังคับใช้วันถัดจากวันประกาศทันที ไม่ต้องเลื่อนไปต้นเดือนหน้า" }
+                ],
+                hint: "หาคำตอบจากคำว่า 'วันถัดจากวันประกาศในราชกิจจานุเบกษา' (ซึ่งประกาศในราชกิจจานุเบกษาวันที่ ๑๔ มกราคม ๒๕๕๔)"
+            },
+            {
+                question: "ตามบทนิยามในข้อ ๔ คำว่า 'องค์กรปกครองส่วนท้องถิ่น' ตามระเบียบนี้ 'ไม่' รวมถึงหน่วยงานใด?",
+                options: [
+                    { text: "องค์การบริหารส่วนจังหวัด และกรุงเทพมหานคร", isCorrect: true, rationale: "ข้อ ๔ บัญญัติคำจำกัดความไว้อย่างขัดเจนว่า 'องค์กรปกครองส่วนท้องถิ่น' ไม่หมายความรวมถึง 'องค์การบริหารส่วนจังหวัด' (อบจ.) และ 'กรุงเทพมหานคร'" },
+                    { text: "เมืองพัทยา และเทศบาลนคร", isCorrect: false, rationale: "เมืองพัทยาและเทศบาลนครได้รับการจัดเป็น อปท. ภายใต้ข้อจำกัดความนี้" },
+                    { text: "องค์การบริหารส่วนตำบล และเทศบาลตำบล", isCorrect: false, rationale: "อบต. และเทศบาลตำบล คือ อปท. มาตรฐานที่ครอบคลุมอยู่ในบทระเบียบนี้" },
+                    { text: "องค์การบริหารส่วนจังหวัด และเมืองพัทยา", isCorrect: false, rationale: "เมืองพัทยาได้รับการคุ้มครองรวมอยู่ด้วย แต่อบจ. ได้รับข้อยกเว้นออกไป" }
+                ],
+                hint: "ระเบียบนี้เขียนแยก อบจ. และ กทม. ออกไป เนื่องจากกลุ่มจังหวัดและ กทม. มี ศปถ.จังหวัด/กทม. ดูแลโดยตรงอยู่แล้ว"
+            },
+            {
+                question: "ข้อใดคือขอบข่ายความหมายของ 'ผู้บริหารองค์กรปกครองส่วนท้องถิ่น' ตามข้อ ๔ ที่ถูกต้องและครบถ้วนที่สุด?",
+                options: [
+                    { text: "นายก อบต., นายกเทศมนตรี, นายกเมืองพัทยา และหัวหน้าผู้บริหารของ อปท.อื่น แต่มิให้รวมถึงนายก อบจ. และผู้ว่าราชการกรุงเทพมหานคร", isCorrect: true, rationale: "ตามบทนิยามข้อ ๔ ได้จำกัดความและยกเว้น นายก อบจ. และ ผู้ว่าราชการ กทม. ไว้อย่างชัดเจนสอดรับกับนิยาม อปท." },
+                    { text: "นายก อบจ., นายก อบต., นายกเทศมนตรี, และนายกเมืองพัทยา โดยไม่มีข้อยกเว้นใดๆ", isCorrect: false, rationale: "นายก อบจ. ไม่ได้รับการนับรวมเข้ามาในนิยามผู้บริหาร อปท. ตามระเบียบนี้" },
+                    { text: "ผู้ว่าราชการจังหวัด และผู้ว่าราชการกรุงเทพมหานคร", isCorrect: false, rationale: "ผู้ว่าราชการจังหวัดไม่ใช่ผู้บริหาร อปท. และผู้ว่าฯ กทม. ถูกยกเว้นออกจากบทนิยามข้อนี้" },
+                    { text: "นายกเทศมนตรี และนายกเมืองพัทยา เท่านั้น", isCorrect: false, rationale: "ยังรวมถึงนายก อบต. และหัวหน้าผู้บริหาร อปท. อื่นที่มีกฎหมายจัดตั้งอีกด้วย" }
+                ],
+                hint: "หลักนิยามศัพท์จะล้อไปกับการแยกส่วนโครงสร้างปกครองพิเศษขนาดใหญ่อย่าง อบจ. และ กทม. ออกไป"
+            },
+            {
+                question: "ใครคือ 'ผู้รักษาการ' ตามระเบียบสำนักนายกรัฐมนตรีฉบับนี้ตามที่บัญญัติไว้ในข้อ ๓?",
+                options: [
+                    { text: "รัฐมนตรีว่าการกระทรวงมหาดไทย", isCorrect: false, rationale: "รมว.มหาดไทย เป็นผู้อำนวยการ ศปถ.ระดับประเทศ แต่ไม่ใช่ผู้รักษาการระเบียบนี้" },
+                    { text: "ปลัดกระทรวงมหาดไทย", isCorrect: false, rationale: "ปลัด มท. เป็นเลขานุการบอร์ด นปถ. เท่านั้น" },
+                    { text: "อธิบดีกรมป้องกันและบรรเทาสาธารณภัย", isCorrect: false, rationale: "อธิบดี ปภ. เป็นผู้ช่วยเลขานุการ นปถ. และเลขานุการ ศปถ.ระดับชาติ" },
+                    { text: "นายกรัฐมนตรี", isCorrect: true, rationale: "ข้อ ๓ บัญญัติสั้นและชัดเจนว่า 'ให้นายกรัฐมนตรีรักษาการตามระเบียบนี้'" }
+                ],
+                hint: "เนื่องจากระเบียบนี้ออกโดยอาศัยอำนาจนายกรัฐมนตรีตามความเห็นชอบของ ครม. ผู้รักษาการย่อมเป็นผู้นำฝ่ายบริหาร"
+            },
+            {
+                question: "ตามแนวทางการดำเนินการในข้อ ๕ เมื่อมีการจัดทำแผนแม่บทความปลอดภัยทางถนนแล้ว จะต้องเสนอต่อหน่วยงานใดเพื่อขอรับการอนุมัติ?",
+                options: [
+                    { text: "คณะกรรมการ นปถ.", isCorrect: false, rationale: "นปถ. มีหน้าที่พิจารณาให้ความเห็นชอบ แต่อำนาจอนุมัติแผนสูงสุดเป็นของ ครม." },
+                    { text: "คณะรัฐมนตรี", isCorrect: true, rationale: "ตามข้อ ๕ (๑) แผนแม่บทความปลอดภัยทางถนนจะต้องได้รับอนุมัติจาก 'คณะรัฐมนตรี'" },
+                    { text: "รัฐสภา", isCorrect: false, rationale: "ไม่ต้องเสนอเข้าสภาผู้แทนราษฎรหรือรัฐสภาเนื่องจากเป็นอำนาจแผนงานบริหารปกครอง" },
+                    { text: "กระทรวงคมนาคม", isCorrect: false, rationale: "กระทรวงคมนาคมเป็นเพียงหน่วยงานปฏิบัติงาน ไม่ใช่ผู้อนุมัติแผนแม่บทระดับชาติ" }
+                ],
+                hint: "เป็นองค์กรบริหารแผ่นดินระดับสูงสุดที่ให้การรับรองแผนแม่บทแผ่นดินทั้งหมด"
+            },
+            {
+                question: "การดำเนินการตามระเบียบนี้แบ่งออกเป็นกี่ระดับ และศูนย์ใดจัดอยู่ในโครงสร้าง 'ระดับอำนวยการ' ตามข้อ ๖?",
+                options: [
+                    { text: "๓ ระดับ / ศปถ.ชาติ, ศปถ.จังหวัด, และ ศปถ.กรุงเทพมหานคร", isCorrect: true, rationale: "ข้อ ๖ ระบุว่ามี ๓ ระดับ (นโยบาย, อำนวยการ, ปฏิบัติการ) โดยระดับอำนวยการอยู่ภายใต้ ศปถ., ศปถ.จังหวัด และ ศปถ.กทม." },
+                    { text: "๓ ระดับ / คณะกรรมการ นปถ., ศปถ.ชาติ, และ ศปถ.จังหวัด", isCorrect: false, rationale: "นปถ. จัดเป็นหน่วยงานระดับนโยบาย ไม่ใช่ระดับอำนวยการ" },
+                    { text: "๔ ระดับ / ศปถ.ชาติ, ศปถ.จังหวัด, ศปถ.อำเภอ และ ศปถ.อปท.", isCorrect: false, rationale: "จำนวนระดับแบ่งออกเป็นเพียง ๓ ระดับ และ ศปถ.อำเภอ/อปท. จัดอยู่ในระดับปฏิบัติการ" },
+                    { text: "๒ ระดับ / ระดับชาติ และระดับภูมิภาค", isCorrect: false, rationale: "เป็นจำนวนตัวเลขและข้อความที่ไม่ตรงกับระเบียบ" }
+                ],
+                hint: "มี 3 ระดับ ได้แก่ นโยบาย อำนวยการ และปฏิบัติการ โดยศูนย์ในระดับอำนวยการจะทำหน้าที่คุมภาพรวมพื้นที่ประเทศ จังหวัด และ กทม."
+            },
+            {
+                question: "ตามระเบียบข้อ ๖ ศูนย์ความปลอดภัยทางถนนใดต่อไปนี้ 'ไม่' จัดอยู่ในกลุ่มโครงสร้างของ 'ระดับปฏิบัติการ'?",
+                options: [
+                    { text: "ศูนย์ปฏิบัติการความปลอดภัยทางถนนกรุงเทพมหานคร (ศปถ. กทม.)", isCorrect: true, rationale: "ศปถ. กทม. จัดอยู่ในระดับอำนวยการ ไม่ใช่ระดับปฏิบัติการ (ระดับปฏิบัติการในเขต กทม. คือ ศปถ.เขต)" },
+                    { text: "ศูนย์ปฏิบัติการความปลอดภัยทางถนนองค์กรปกครองส่วนท้องถิ่น (ศปถ. อปท.)", isCorrect: false, rationale: "ศปถ. อปท. จัดอยู่ในระดับปฏิบัติการชัดเจน" },
+                    { text: "ศูนย์ปฏิบัติการความปลอดภัยทางถนนอำเภอ (ศปถ. อำเภอ)", isCorrect: false, rationale: "ศปถ. อำเภอ จัดอยู่ในระดับปฏิบัติการ" },
+                    { text: "ศูนย์ปฏิบัติการความปลอดภัยทางถนนเขต (ศปถ. เขต)", isCorrect: false, rationale: "ศปถ. เขต จัดอยู่ในระดับปฏิบัติการของกรุงเทพมหานคร" }
+                ],
+                hint: "ตัวเลือกนี้ทำหน้าที่เทียบเท่าศูนย์จังหวัด โดยมีผู้ว่าฯ กทม. เป็นประธานคุม จึงอยู่ในกลุ่มอำนวยการ"
+            },
+            {
+                question: "ในคณะกรรมการ นปถ. (ระดับนโยบาย) ใครทำหน้าที่เป็น 'ประธานกรรมการ'?",
+                options: [
+                    { text: "รัฐมนตรีว่าการกระทรวงมหาดไทย", isCorrect: false, rationale: "รมว.มหาดไทย เป็นรองประธานคนที่หนึ่ง ไม่ใช่ประธานกรรมการ" },
+                    { text: "นายกรัฐมนตรี หรือรองนายกรัฐมนตรีที่นายกรัฐมนตรีมอบหมาย", isCorrect: true, rationale: "ข้อ ๗ (๑) ระบุว่า 'นายกรัฐมนตรีหรือรองนายกรัฐมนตรีที่นายกรัฐมนตรีมอบหมาย เป็นประธานกรรมการ'" },
+                    { text: "ปลัดกระทรวงมหาดไทย", isCorrect: false, rationale: "ปลัดกระทรวงมหาดไทย เป็นกรรมการและเลขานุการ" },
+                    { text: "อธิบดีกรมป้องกันและบรรเทาสาธารณภัย", isCorrect: false, rationale: "อธิบดี ปภ. เป็นกรรมการและผู้ช่วยเลขานุการ" }
+                ],
+                hint: "เป็นข้าราชการการเมืองระดับสูงสุดของฝ่ายบริหารประเทศเพื่อคุมงานระดับนโยบายชาติ"
+            },
+            {
+                question: "ข้อใดเรียงลำดับตำแหน่ง 'รองประธานกรรมการ นปถ.' คนที่สาม ถึง คนที่ห้า ได้ถูกต้องตามที่บัญญัติในข้อ ๗?",
+                options: [
+                    { text: "รมว.กระทรวงยุติธรรม, รมว.กระทรวงสาธารณสุข, รมว.กระทรวงศึกษาธิการ", isCorrect: true, rationale: "ข้อ ๗ ระบุรองประธานคนที่สาม=ยุติธรรม, คนที่สี่=สาธารณสุข, คนที่ห้า=ศึกษาธิการ" },
+                    { text: "รมว.กระทรวงคมนาคม, รมว.กระทรวงยุติธรรม, รมว.กระทรวงสาธารณสุข", isCorrect: false, rationale: "สลับเอา รมว.คมนาคม ซึ่งเป็นรองประธานคนที่สองเข้ามาอยู่ในอันดับที่สาม" },
+                    { text: "รมว.กระทรวงสาธารณสุข, รมว.กระทรวงศึกษาธิการ, รมว.กระทรวงยุติธรรม", isCorrect: false, rationale: "จัดอันดับสลับสับสนอย่างไม่ถูกต้อง" },
+                    { text: "รมว.กระทรวงมหาดไทย, รมว.กระทรวงคมนาคม, รมว.กระทรวงยุติธรรม", isCorrect: false, rationale: "รมว.มหาดไทย และ รมว.คมนาคม เป็นรองประธานคนที่หนึ่งและสองตามลำดับ" }
+                ],
+                hint: "จำลำดับย่อรองประธาน นปถ. 1-5: มหาดไทย -> คมนาคม -> ยุติธรรม -> สาธารณสุข -> ศึกษาธิการ"
+            },
+            {
+                question: "คณะกรรมการ นปถ. กำหนดให้มี 'กรรมการผู้ทรงคุณวุฒิ' ได้ไม่เกินกี่คน และได้รับการแต่งตั้งโดยผู้ใด?",
+                options: [
+                    { text: "จำนวนไม่เกิน ๕ คน ซึ่งประธานกรรมการแต่งตั้ง", isCorrect: true, rationale: "ตามข้อ ๗ (๘) มีกรรมการผู้ทรงคุณวุฒิจำนวนไม่เกินห้าคน ซึ่งประธานกรรมการแต่งตั้งจากผู้มีความรู้ความเชี่ยวชาญด้านความปลอดภัยทางถนน" },
+                    { text: "จำนวนไม่เกิน ๕ คน ซึ่งอธิบดี ปภ. แต่งตั้ง", isCorrect: false, rationale: "อธิบดี ปภ. ไม่มีอำนาจในการเซ็นลงนามแต่งตั้งผู้ทรงคุณวุฒิในบอร์ดระดับชาตินี้" },
+                    { text: "จำนวนไม่เกิน ๑๐ คน โดยความเห็นชอบของคณะรัฐมนตรี", isCorrect: false, rationale: "จำนวนกำหนดสูงสุดเพียง ๕ คน และเป็นการแต่งตั้งโดยตรงจากประธานกรรมการ นปถ." },
+                    { text: "จำนวนไม่เกิน ๓ คน ซึ่งได้รับการเสนอชื่อจากปลัดกระทรวงคมนาคม", isCorrect: false, rationale: "เป็นจำนวนตัวเลขและข้อเสนอที่แต่งตั้งขึ้นมาเพื่อหลอก" }
+                ],
+                hint: "จำนวนผู้ทรงคุณวุฒิมีจำนวนเท่ากับโควตามาตรฐานคณะกรรมการระดับชาติของ ปภ. คือ 5 คน แต่งตั้งโดยผู้นำสูงสุดของบอร์ด"
+            },
+            {
+                question: "วาระการดำรงตำแหน่งของกรรมการผู้ทรงคุณวุฒิในบอร์ด นปถ. กำหนดไว้อย่างไร และสามารถกลับเข้ามาดำรงตำแหน่งติดต่อกันได้กี่วาระตามข้อ ๘?",
+                options: [
+                    { text: "อยู่ในตำแหน่งคราวละ ๔ ปี และอาจได้รับแต่งตั้งอีกได้ แต่ต้องไม่เกินสองวาระติดต่อกัน", isCorrect: true, rationale: "ข้อ ๘ วรรคหนึ่งระบุชัดเจน: 'มีวาระอยู่ในตำแหน่งคราวละสี่ปี... และอาจได้รับแต่งตั้งอีกได้ แต่ต้องไม่เกินสองวาระติดต่อกัน'" },
+                    { text: "อยู่ในตำแหน่งคราวละ ๒ ปี และดำรงตำแหน่งติดต่อกันได้ไม่จำกัดวาระ", isCorrect: false, rationale: "ระเบียบกำหนดรอบละ ๔ ปี และล็อกเพดานวาระติดต่อกันไว้สูงสุดไม่เกินสองสมัย" },
+                    { text: "อยู่ในตำแหน่งคราวละ ๔ ปี และได้รับแต่งตั้งได้เพียงวาระเดียวเท่านั้น", isCorrect: false, rationale: "ระเบียบผ่อนปรนให้ต่ออายุวาระงานได้เป็นสมัยที่สองติดต่อกัน" },
+                    { text: "อยู่ในตำแหน่งคราวละ ๓ ปี และดำรงตำแหน่งติดต่อกันไม่เกิน ๓ วาระสะสม", isCorrect: false, rationale: "เป็นตัวเลขที่กำหนดขึ้นเพื่อลวงผู้เข้าสอบ" }
+                ],
+                hint: "วาระงานสี่ปีคล้ายอายุของสภาผู้แทนราษฎรไทย และจำกัดการต่ออายุเก้าอี้ไม่เกินสองครั้งติดต่อกัน"
+            },
+            {
+                question: "กรณีใดต่อไปนี้ 'ไม่ใช่' เหตุแห่งการพ้นจากตำแหน่งก่อนครบวาระตามกฎหมายของกรรมการผู้ทรงคุณวุฒิ นปถ. ตามข้อ ๙?",
+                options: [
+                    { text: "ได้รับโทษจำคุกโดยคำพิพากษาถึงที่สุดสำหรับความผิดที่ได้กระทำโดยประมาท หรือความผิดลหุโทษ", isCorrect: true, rationale: "ข้อ ๙ (๕) บัญญัติข้อยกเว้นไว้ชัดเจน: 'เว้นแต่เป็นโทษสำหรับความผิดที่ได้กระทำโดยประมาทหรือความผิดลหุโทษ' ดังนั้นความผิดทั้งสองประเภทนี้ไม่ทำให้พ้นจากตำแหน่งโดยตรง" },
+                    { text: "เป็นบุคคลล้มละลาย", isCorrect: false, rationale: "การตกเป็นบุคคลล้มละลายทำให้พ้นจากเก้าอี้ทันทีตามข้อ ๙ (๓)" },
+                    { text: "เป็นคนไร้ความสามารถหรือคนเสมือนไร้ความสามารถ", isCorrect: false, rationale: "ทำให้พ้นจากตำแหน่งตามข้อ ๙ (๔)" },
+                    { text: "ลาออก", isCorrect: false, rationale: "การเขียนใบลาออกทำให้พ้นตำแหน่งตามข้อ ๙ (๒)" }
+                ],
+                hint: "มองหาข้อยกเว้นสำคัญที่มักอยู่หลังคำว่า 'เว้นแต่...'"
+            },
+            {
+                question: "หากกรรมการผู้ทรงคุณวุฒิ นปถ. สิ้นสุดวาระสี่ปีลงแล้ว แต่ยังไม่มีการแต่งตั้งคนใหม่ขึ้นมาแทน สถานภาพของคนเดิมกฎหมายระบุไว้เช่นไรตามข้อ ๘ วรรคสาม?",
+                options: [
+                    { text: "ให้พ้นจากตำแหน่งทันทีเพื่อป้องกันปัญหาร้องเรียนเรื่องความชอบทางกฎหมาย", isCorrect: false, rationale: "เพื่อไม่ให้เกิดสูญญากาศและงานป้องกันภัยสะดุด กฎหมายจึงเปิดช่องทางรองรับไว้" },
+                    { text: "ให้กรรมการผู้ทรงคุณวุฒิซึ่งพ้นจากตำแหน่งตามวาระนั้นอยู่ในตำแหน่งเพื่อปฏิบัติหน้าที่ต่อไปจนกว่าคนใหม่จะเข้ารับหน้าที่", isCorrect: true, rationale: "ตามข้อ ๘ วรรคสามระบุว่า 'ให้กรรมการผู้ทรงวุฒิซึ่งพ้นจากตำแหน่งตามวาระนั้นอยู่ในตำแหน่งเพื่อปฏิบัติหน้าที่ต่อไปจนกว่ากรรมการผู้ทรงคุณวุฒิซึ่งได้รับแต่งตั้งใหม่เข้ารับหน้าที่'" },
+                    { text: "ให้ปลัดกระทรวงมหาดไทยปฏิบัติหน้าที่แทนโควตานั้นเป็นการชั่วคราว", isCorrect: false, rationale: "ข้าราชการประจำไม่สามารถรักษาการในสัดส่วนผู้ทรงคุณวุฒิทางปกครองได้" },
+                    { text: "ให้ประธาน นปถ. สั่งการระงับตำแหน่งผู้ทรงคุณวุฒินั้นไปชั่วคราวจนกว่าจะมีการเลือกตั้งบอร์ดใหม่", isCorrect: false, rationale: "ระบบกฎหมายมอบอำนาจให้คนเดิมรักษาการต่อเพื่อประสิทธิภาพในการทำงานอย่างต่อเนื่อง" }
+                ],
+                hint: "เป็นหลักการ 'รักษาการแทนเพื่อความต่อเนื่องในราชการแผ่นดิน'"
+            },
+            {
+                question: "องค์ประชุมและการออกเสียงมติในการวินิจฉัยของที่ประชุม นปถ. ตามข้อ ๑๐ (และอนุโลมใช้กับ ศปถ. ทุกระดับตามข้อ ๒๔) ข้อใดกล่าวถูกต้องที่สุด?",
+                options: [
+                    { text: "องค์ประชุมไม่น้อยกว่ากึ่งหนึ่ง / เสียงข้างมาก / หากเท่ากันให้ประธานออกเสียงเพิ่มอีกเสียงเป็นเสียงชี้ขาด", isCorrect: true, rationale: "ข้อ ๑๐ บัญญัติว่าองค์ประชุมไม่น้อยกว่ากึ่งหนึ่ง และถือเสียงข้างมาก 'ถ้าคะแนนเสียงเท่ากัน ให้ประธานในที่ประชุมออกเสียงเพิ่มขึ้นอีกเสียงหนึ่งเป็นเสียงชี้ขาด'" },
+                    { text: "องค์ประชุมไม่น้อยกว่า ๒ ใน ๓ / มติเอกฉันท์เท่านั้นเพื่อป้องกันเสียงแตก", isCorrect: false, rationale: "องค์ประชุม ๒ ใน ๓ และมติเอกฉันท์ไม่ใช่โครงสร้างกฎหมายของการประชุมระดับบอร์ดราชการทั่วไปนี้" },
+                    { text: "องค์ประชุมต้องมาครบ ๑๐๐% เพื่อความโปร่งใส / ยึดเสียงข้างมาก ๓ ใน ๔", isCorrect: false, rationale: "เกณฑ์บังคับมาครบทุกคนจะทำให้ไม่สามารถดำเนินมติได้ทันสถานการณ์เร่งด่วน" },
+                    { text: "องค์ประชุมกึ่งหนึ่ง / เสียงข้างมาก / หากเท่ากันให้ปลัดมหาดไทยเป็นผู้ชี้ขาดชิ้นสุดท้าย", isCorrect: false, rationale: "อำนาจออกเสียงชี้ขาดในรอบที่สองต้องตกเป็นของประธานในที่ประชุมในฐานะผู้ควบคุมการประชุม" }
+                ],
+                hint: "ยึดหลักมาตรฐานคณะกรรมการของไทย: มาครึ่งหนึ่ง-เสียงส่วนใหญ่-ประธานคนสุดท้ายออกคะแนนเบิ้ลเพื่อตัดสิน"
+            },
+            {
+                question: "การพิจารณาให้ความเห็นชอบแผนแม่บทความปลอดภัยทางถนนก่อนนำเสนอต่อคณะรัฐมนตรีเพื่ออนุมัติใช้ปฏิบัติ เป็นอำนาจหน้าที่ของใครตามข้อ ๑๑?",
+                options: [
+                    { text: "คณะกรรมการ นปถ.", isCorrect: true, rationale: "ข้อ ๑๑ (๒) กำหนดหน้าที่โดยตรงของ นปถ. ในการ 'พิจารณาให้ความเห็นชอบแผนแม่บทความปลอดภัยทางถนนก่อนเสนอคณะรัฐมนตรีเพื่ออนุมัติ'" },
+                    { text: "ศูนย์ ศปถ. ระดับชาติ", isCorrect: false, rationale: "ศปถ.ชาติ มีหน้าที่จัดเตรียมร่างและเสนอ แต่การเห็นชอบขั้นสุดท้ายก่อนส่ง ครม. เป็นของ นปถ." },
+                    { text: "อธิบดีกรมป้องกันและบรรเทาสาธารณภัย", isCorrect: false, rationale: "เป็นฝ่ายผลักดันธุรการหลัก แต่ไม่มีอำนาจอนุมัติให้ความเห็นชอบแผนแม่บทชาติเดี่ยวๆ" },
+                    { text: "สำนักงานนโยบายและแผนการขนส่งและจราจร", isCorrect: false, rationale: "เป็นภาคีร่วมพัฒนาเชิงเทคนิค ไม่ใช่คณะผู้มีอำนาจปกครองระดับสูงสุดในการเห็นชอบแผนแม่บท" }
+                ],
+                hint: "ผู้คุมนโยบายความปลอดภัยทางถนนของทั้งประเทศเป็นผู้ให้ความเห็นชอบแผนสูงสุดก่อนเข้า ครม."
+            },
+            {
+                question: "ส่วนราชการใดทำหน้าที่รับผิดชอบงานธุรการและสารบรรณเลขานุการของ 'คณะกรรมการ นปถ.' (ระดับนโยบาย) ตามที่ระบุไว้ในข้อ ๑๒?",
+                options: [
+                    { text: "สำนักงานปลัดสำนักนายกรัฐมนตรี", isCorrect: false, rationale: "สำนักงานปลัดสำนักนายกรัฐมนตรีไม่ได้เป็นผู้คุมงานเลขาหลักของระเบียบอุบัติเหตุทางถนนนี้" },
+                    { text: "กองบังคับการตำรวจจราจร", isCorrect: false, rationale: "ตำรวจจราจรคุมกฎหมายปฏิบัติการท้องถนน แต่ไม่ได้ทำงานธุรการจัดประชุมและบันทึกมติ นปถ." },
+                    { text: "กรมป้องกันและบรรเทาสาธารณภัย กระทรวงมหาดไทย", isCorrect: true, rationale: "ข้อ ๑๒ บัญญัติชัดเจน: 'ให้กรมป้องกันและบรรเทาสาธารณภัย กระทรวงมหาดไทย รับผิดชอบในงานเลขานุการและงานธุรการของคณะกรรมการ นปถ.'" },
+                    { text: "สถาบันการแพทย์ฉุกเฉินแห่งชาติ", isCorrect: false, rationale: "ดูแลงานฟื้นฟูหลังเหตุเดือดร้อนฉุกเฉิน แต่ไม่รับผิดชอบธุรการของ นปถ." }
+                ],
+                hint: "เป็นหน่วยงานฝ่ายพลเรือนสังกัดกระทรวงมหาดไทยที่มีหน้าที่รับมือสาธารณภัยระดับประเทศ"
+            },
+            {
+                question: "ใครดำรงตำแหน่งเป็น 'ผู้อำนวยการศูนย์อำนวยการความปลอดภัยทางถนน' (ผู้อำนวยการ ศปถ.) ระดับชาติ ตามข้อ ๑๓?",
+                options: [
+                    { text: "นายกรัฐมนตรี หรือรองนายกรัฐมนตรีที่ได้รับมอบหมาย", isCorrect: false, rationale: "ตำแหน่งนี้คือประธานบอร์ดระดับนโยบาย นปถ. ส่วน ศปถ.ชาติ มอบหมายให้กระทรวงมหาดไทยดูแลหลัก" },
+                    { text: "รัฐมนตรีว่าการกระทรวงมหาดไทย", isCorrect: true, rationale: "ข้อ ๑๓ กำหนดให้จัดตั้ง ศปถ. 'โดยมีรัฐมนตรีว่าการกระทรวงมหาดไทย เป็นผู้อำนวยการศูนย์อำนวยการความปลอดภัยทางถนน'" },
+                    { text: "ผู้บัญชาการตำรวจแห่งชาติ", isCorrect: false, rationale: "ผบ.ตร. นั่งเป็นรองประธานคนที่ห้าของคณะกรรมการ ศปถ.ชาติ" },
+                    { text: "ปลัดกระทรวงมหาดไทย", isCorrect: false, rationale: "ปลัดกระทรวงมหาดไทย เป็นรองประธาน ศปถ. คนที่หนึ่ง" }
+                ],
+                hint: "ผู้อำนวยการ ศปถ.ชาติ จะเป็นผู้ดำรงตำแหน่งรัฐมนตรีว่าการของกระทรวงมหาดไทย"
+            },
+            {
+                question: "คณะกรรมการ ศปถ. ระดับชาติ มีโครงสร้างรองประธานจากปลัดกระทรวงใดบ้างที่เรียงลำดับถูกต้องตามข้อ ๑๓ (๒) - (๖)?",
+                options: [
+                    { text: "ปลัด มท., ปลัด คค., ปลัด สธ., ปลัด ศธ., ผบ.ตร.", isCorrect: true, rationale: "ข้อ ๑๓ กำหนดโครงสร้างดังนี้: ปลัดมหาดไทย (๑), ปลัดคมนาคม (๒), ปลัดสาธารณสุข (๓), ปลัดศึกษาธิการ (๔), ผู้บัญชาการตำรวจแห่งชาติ (๕)ตามลำดับ" },
+                    { text: "ปลัด มท., ผบ.ตร., ปลัด คค., ปลัด สธ., ปลัด ศธ.", isCorrect: false, rationale: "ผบ.ตร. อยู่ในลำดับรองประธานลำดับสุดท้าย (คนที่ห้า) ไม่ใช่คนที่สอง" },
+                    { text: "ปลัด มท., ปลัด คค., ปลัด ยธ., ปลัด สธ., ผบ.ตร.", isCorrect: false, rationale: "ปลัดกระทรวงยุติธรรมไม่ได้นั่งเป็นรองประธาน ศปถ.ชาติ ตามโครงสร้างข้อนี้" },
+                    { text: "ปลัดสำนักนายกฯ, ปลัด มท., ปลัด คค., ปลัด สธ., ปลัด ศธ.", isCorrect: false, rationale: "สับสนกับโครงสร้างกรรมการ นปถ. ในระดับนโยบาย" }
+                ],
+                hint: "จำง่ายๆ คือ ปลัดสี่กระทรวงหลักของ นปถ. เรียงตามลำดับเดิม และตบท้ายด้วย ผบ.ตร. เป็นคนที่ห้า"
+            },
+            {
+                question: "หน้าที่ในการรวบรวมและจัดทำฐานข้อมูล สถิติอุบัติเหตุทางถนน และการวิเคราะห์ประเมินสถานการณ์ เป็นหน้าที่โดยตรงของใครตามระเบียบนี้?",
+                options: [
+                    { text: "คณะกรรมการ นปถ.", isCorrect: false, rationale: "นปถ. มีหน้าที่เชิงยุทธศาสตร์นโยบาย ไม่ใช่งานรวบรวมวิเคราะห์สถิติลงฐานข้อมูลโดยตรง" },
+                    { text: "คณะกรรมการ ศปถ. (ระดับชาติ)", isCorrect: true, rationale: "ข้อ ๑๔ (๔) กำหนดเป็นอำนาจหน้าที่ของ ศปถ. ในการ 'จัดทำฐานข้อมูล สถิติอุบัติเหตุทางถนน และการวิเคราะห์ประเมินสถานการณ์'" },
+                    { text: "ผู้ว่าราชการจังหวัดแต่ละจังหวัด", isCorrect: false, rationale: "จังหวัดจัดทำของระดับจังหวัด (ข้อ ๑๗) แต่หน้าที่รวบรวมใหญ่ทำฐานข้อมูลระดับประเทศเป็นของบอร์ด ศปถ. ชาติ" },
+                    { text: "มูลนิธิเมาไม่ขับ ร่วมกับ สสส.", isCorrect: false, rationale: "เป็นภาคีเครือข่ายสนับสนุนการประชาสัมพันธ์ตามข้อ ๑๓ (๗) แต่ไม่ใช่องค์กรรับผิดชอบหลักตามกฎหมายในการคุมสถิติใหญ่ของรัฐ" }
+                ],
+                hint: "เป็นหน่วยงานบริหารจัดการและอำนวยการเชิงบูรณาการระดับแผ่นดิน (ระดับที่ 2)"
+            },
+            {
+                question: "ในโครงสร้างของ 'ศูนย์ปฏิบัติการความปลอดภัยทางถนนจังหวัด' (ศปถ. จังหวัด) ใครนั่งตำแหน่งเป็น 'รองประธานกรรมการคนที่สาม' ตามที่ระบุในข้อ ๑๖?",
+                options: [
+                    { text: "นายกองค์การบริหารส่วนจังหวัด", isCorrect: true, rationale: "ข้อ ๑๖ (๔) กำหนดโครงสร้างไว้อย่างเป็นเอกลักษณ์ว่าให้ 'นายกองค์การบริหารส่วนจังหวัด เป็นรองประธานกรรมการคนที่สาม'" },
+                    { text: "ปลัดจังหวัด", isCorrect: false, rationale: "ปลัดจังหวัด ดำรงตำแหน่งเป็นรองประธานคนที่สอง" },
+                    { text: "ผู้บังคับการตำรวจภูธรจังหวัด", isCorrect: false, rationale: "ผู้บังคับการตำรวจภูธรจังหวัด เป็นรองประธานคนที่หนึ่ง" },
+                    { text: "คลังจังหวัด", isCorrect: false, rationale: "คลังจังหวัดไม่ได้เป็นรองประธานโดยตำแหน่งตามระเบียบโครงสร้างนี้" }
+                ],
+                hint: "แม้ อบจ. จะโดนตัดออกจากคำนิยาม อปท. ในข้อ ๔ แต่นายก อบจ. ได้รับเกียรติเป็นหนึ่งในหัวหน้ารองประธานศูนย์จังหวัด"
+            },
+            {
+                question: "ใครคือผู้มีสิทธิแต่งตั้งผู้แทนภาคประชาสังคม ภาคเอกชน และผู้ทรงคุณวุฒิ เข้ามาร่วมทำงานในบอร์ด ศปถ. จังหวัด ตามเกณฑ์ข้อ ๑๖ (๕)?",
+                options: [
+                    { text: "ผู้ว่าราชการจังหวัด", isCorrect: true, rationale: "ตามข้อ ๑๖ (๕) กำหนดว่ากรรมการอื่นและผู้ทรงคุณวุฒิไม่เกินห้าคนเป็น 'ผู้ซึ่งผู้ว่าราชการจังหวัดแต่งตั้ง'" },
+                    { text: "รัฐมนตรีว่าการกระทรวงมหาดไทย", isCorrect: false, rationale: "เป็นผู้คุมศูนย์ระดับชาติ แต่อำนาจแต่งตั้งบอร์ดรายจังหวัดมอบขาดให้แก่ผู้ว่าราชการจังหวัดปกครองส่วนภูมิภาค" },
+                    { text: "ปลัดกระทรวงมหาดไทย", isCorrect: false, rationale: "ไม่ได้ลงมาแต่งตั้งกรรมการรายจังหวัดด้วยตนเอง" },
+                    { text: "อธิบดีกรมป้องกันและบรรเทาสาธารณภัย", isCorrect: false, rationale: "ปภ.จังหวัดประสานงาน แต่อำนาจเซ็นลงนามจัดโครงสร้างคนเป็นของผู้บริหารระดับจังหวัด" }
+                ],
+                hint: "ผู้นำสูงสุดของส่วนภูมิภาคประจำแต่ละจังหวัดทำหน้าที่เลือกทีมงานพิจารณาในพื้นที่ของตนเอง"
+            },
+            {
+                question: "ข้าราชการในตำแหน่งใดทำหน้าที่เป็น 'เลขานุการ' ของบอร์ดคณะกรรมการ ศปถ. จังหวัด ตามข้อ ๑๖ (๖)?",
+                options: [
+                    { text: "หัวหน้าสำนักงานป้องกันและบรรเทาสาธารณภัยจังหวัด", isCorrect: true, rationale: "ตามข้อ ๑๖ (๖) บัญญัติว่า 'หัวหน้าสำนักงานป้องกันและบรรเทาสาธารณภัยจังหวัด เป็นกรรมการและเลขานุการ'" },
+                    { text: "ปลัดจังหวัด", isCorrect: false, rationale: "ปลัดจังหวัดเป็นรองประธานคนที่สอง ไม่ใช่เลขานุการ" },
+                    { text: "ประชาสัมพันธ์จังหวัด", isCorrect: false, rationale: "ประชาสัมพันธ์จังหวัดดูแลการกระจายข้อมูลข่าวสาร แต่ไม่ใช่ระบบเลขานุการบอร์ดจดบันทึกและรวบรวมแผน" },
+                    { text: "ผู้บังคับการตำรวจภูธรจังหวัด", isCorrect: false, rationale: "ตำรวจภูธรจังหวัดคุมกฎจราจรและกฎหมายในฐานะรองประธานคนที่หนึ่ง" }
+                ],
+                hint: "หัวหน้าสำนักงาน ปภ. ประจำแต่ละจังหวัดเป็นสารบรรณหลักประสานงานผ่านผู้ว่าราชการจังหวัด"
+            },
+            {
+                question: "ใน 'ระดับปฏิบัติการ' หากต้องการจัดตั้ง 'ศูนย์ปฏิบัติการความปลอดภัยทางถนนอำเภอ' (ศปถ. อำเภอ) ใครเป็นประธานและใครเป็นรองประธานตามข้อ ๒๐?",
+                options: [
+                    { text: "นายอำเภอ เป็นประธาน / หัวหน้าสถานีตำรวจภูธรในเขตอำเภอ เป็นรองประธาน", isCorrect: true, rationale: "ตามข้อ ๒๐ (๑) และ (๒) ระบุอย่างชัดเจนว่า นายอำเภอเป็นประธาน และหัวหน้าสถานีตำรวจภูธรในเขตอำเภอเป็นรองประธาน" },
+                    { text: "ปลัดอำเภอฝ่ายความมั่นคง เป็นประธาน / สารวัตรจราจร เป็นรองประธาน", isCorrect: false, rationale: "ปลัดอำเภอความมั่นคงและสารวัตรจราจรทำหน้าที่เป็นกรรมการและหน่วยปฏิบัติการ ไม่ได้นั่งหัวโต๊ะประชุมประธานหลัก" },
+                    { text: "นายอำเภอ เป็นประธาน / นายกเทศมนตรีตำบลประจำอำเภอ เป็นรองประธาน", isCorrect: false, rationale: "ระบบโครงสร้างความปลอดภัยมอบความรับผิดชอบระดับรองประธานให้แก่ฝ่ายเจ้าหน้าที่ตำรวจ" },
+                    { text: "ผู้ว่าราชการจังหวัด เป็นประธาน / นายอำเภอ เป็นรองประธาน", isCorrect: false, rationale: "ผู้ว่าราชการจังหวัดดูแลบอร์ดอำนวยการระดับจังหวัด (ศปถ. จังหวัด) ไม่ได้ลงมาประธานในอำเภอ" }
+                ],
+                hint: "สองเสาหลักผู้คุมอำนาจปกครองและผู้คุมกฎหมายบังคับใช้จราจรประจำท้องที่อำเภอ"
+            },
+            {
+                question: "คณะกรรมการ ศปถ. อำเภอ มีการจำกัดโควตาจัดสรร 'ผู้บริหารองค์กรปกครองส่วนท้องถิ่นในเขตอำเภอ' ให้เข้าร่วมในบอร์ดได้สูงสุดจำนวนไม่เกินกี่คนตามข้อ ๒๐ (๔) (ข)?",
+                options: [
+                    { text: "จำนวนไม่เกิน ๕ คน", isCorrect: true, rationale: "ตามข้อ ๒๐ (๔) (ข) กำหนดเกณฑ์โควตาผู้บริหาร อปท. ในเขตอำเภอไว้ที่ 'จำนวนไม่เกินห้าคน' เป็นกรรมการ" },
+                    { text: "จำนวนไม่เกิน ๑๐ คน", isCorrect: false, rationale: "จำนวนไม่เกิน ๑๐ คนเป็นกรอบสัดส่วนสำหรับบอร์ดจังหวัด (ศปถ. จังหวัด)" },
+                    { text: "ไม่จำกัดจำนวนขึ้นอยู่กับจำนวน อปท. ทั้งหมดในเขตอำเภอนั้น", isCorrect: false, rationale: "กฎหมายล็อกจำนวนเพดานไว้เพื่อควบคุมประสิทธิภาพการตัดสินมติในห้องประชุมไม่ให้สมาชิกมากเกินไป" },
+                    { text: "จำนวนไม่เกิน ๓ คน", isCorrect: false, rationale: "ตัวเลขนี้ต่ำกว่าเกณฑ์ปกติที่ระเบียบอนุญาตสัดส่วน อปท." }
+                ],
+                hint: "ครึ่งหนึ่งของโควตาระดับจังหวัด (ระดับจังหวัดคือนายก อปท. รวมกันได้ไม่เกิน 10 คน เมื่อย่อยลงมาอำเภอก็ลดสัดส่วนลงครึ่งหนึ่ง)"
+            },
+            {
+                question: "ตามระเบียบข้อ ๒๒ หากพื้นที่ อปท. ใดมีปัญหาเรื่องอุบัติเหตุทางถนนสมควรแก้ ใครเป็นผู้มีสิทธิประสานงานให้จัดตั้ง 'ศปถ. อปท.' ขึ้นมาดูแล?",
+                options: [
+                    { text: "ผู้ว่าราชการจังหวัด ประสานกับ อปท. นั้น เพื่อให้ผู้บริหาร อปท. พิจารณาจัดตั้ง", isCorrect: true, rationale: "ตามข้อ ๒๒ ระบุว่า 'ให้ผู้ว่าราชการจังหวัดประสานกับองค์กรปกครองส่วนท้องถิ่นนั้น เพื่อให้ผู้บริหารองค์กรปกครองส่วนท้องถิ่นพิจารณาจัดให้มีศูนย์ปฏิบัติการความปลอดภัยทางถนนองค์กรปกครองส่วนท้องถิ่น...'" },
+                    { text: "นายอำเภอสั่งการจัดตั้งได้ทันทีโดยใช้อำนาจตาม พ.ร.บ. ลักษณะปกครองท้องที่", isCorrect: false, rationale: "ไม่ใช่อำนาจสั่งการทันทีเนื่องจาก อปท. มีระบบบริหารปกครองแยกส่วนอิสระ จึงต้องใช้วิธีให้ผู้ว่าฯ ประสานงานผ่านผู้บริหาร" },
+                    { text: "ปลัดกระทรวงมหาดไทยประกาศกฎกระทรวงบังคับจัดตั้งพร้อมกันทั่วประเทศ", isCorrect: false, rationale: "ไม่มีข้อกำหนดให้ปลัด มท. บังคับตั้งขึ้นมาพร้อมกันทางกฎกระทรวงด้วยระเบียบข้อนี้" },
+                    { text: "อธิบดีกรมป้องกันและบรรเทาสาธารณภัยสั่งจัดตั้งโดยความเห็นชอบของคลัง", isCorrect: false, rationale: "กรม ปภ. ไม่ได้ลงมาประสานงานจัดตั้ง ศปถ. อปท. เป็นรายกรณีลักษณะนี้" }
+                ],
+                hint: "เป็นพ่อเมืองของจังหวัดที่จะส่งสารประสานงานไปยังผู้บริหารท้องที่นั้นๆ (นายก อบต./เทศมนตรี/เมืองพัทยา) ให้รับพิจารณา"
+            },
+            {
+                question: "ในเขตกรุงเทพมหานคร การพิจารณาจัดตั้ง 'ศูนย์ปฏิบัติการความปลอดภัยทางถนนระดับเขต' (ศปถ. เขต) ในยามจำเป็น เป็นอำนาจตัดสินใจของใครตามข้อ ๒๓?",
+                options: [
+                    { text: "ผู้ว่าราชการกรุงเทพมหานคร", isCorrect: true, rationale: "ข้อ ๒๓ บัญญัติสั้นกระชับ: 'ในเขตกรุงเทพมหานคร กรณีที่มีความจำเป็นผู้ว่าราชการกรุงเทพมหานครอาจพิจารณาให้มีศูนย์ปฏิบัติการความปลอดภัยทางถนนในเขตกรุงเทพมหานคร...'" },
+                    { text: "ผู้อำนวยการเขตแต่ละเขตพิจารณาตั้งได้เองทันที", isCorrect: false, rationale: "ผู้อำนวยการเขตเป็นผู้ใต้บังคับบัญชาของ กทม. อำนาจตัดสินใจเชิงยุทธศาสตร์จัดสรรจัดตั้งเป็นของส่วนกลางผู้ว่าฯ กทม." },
+                    { text: "รัฐมนตรีว่าการกระทรวงมหาดไทย ในฐานะผู้กำกับดูแล กทม.", isCorrect: false, rationale: "มหาดไทยกำกับ กทม. แต่การสั่งการปฏิบัติการจัดตั้งศูนย์ระดับเขตตกเป็นเกณฑ์สิทธิ์การตัดสินใจของผู้ว่าฯ กทม." },
+                    { text: "ผู้บัญชาการตำรวจนครบาล", isCorrect: false, rationale: "เป็นพันธมิตรร่วมดูแลคดีและการบังคับใช้กฎจราจร แต่ไม่มีสิทธิ์ลงนามตั้งหน่วยงานฝ่ายปกครองของ กทม." }
+                ],
+                hint: "เป็นข้าราชการการเมืองที่ทำหน้าที่ดูแลสุขทุกข์และการจราจรของประชาชนคนกรุงเทพฯ ในภาพรวม"
+            },
+            {
+                question: "ค่าเบี้ยประชุมและค่าใช้จ่ายทั้งหมดในการดำเนินงานของ นปถ. ศปถ.ชาติ และคณะอนุกรรมการทุกชุดตามระเบียบนี้ ให้เบิกจ่ายจากแหล่งใดตามข้อ ๒๕?",
+                options: [
+                    { text: "งบประมาณประจำปีของ กรมป้องกันและบรรเทาสาธารณภัย", isCorrect: true, rationale: "ตามข้อ ๒๕ ระบุอย่างเป็นทางการว่าค่าเบี้ยประชุมและค่าใช้จ่ายของ นปถ., ศปถ. และคณะอนุกรรมการทั้งหมด 'ให้เบิกจ่ายจากงบประมาณของกรมป้องกันและบรรเทาสาธารณภัย'" },
+                    { text: "งบประมาณแผ่นดินจาก สำนักงานปลัดสำนักนายกรัฐมนตรี", isCorrect: false, rationale: "แม้จะเป็นระเบียบสำนักนายกฯ แต่ไม่ได้ฝากยอดค่าเบิกจ่ายเบี้ยประชุมไว้ที่งบสำนักนายกฯ" },
+                    { text: "เงินกองทุนสนับสนุนการสร้างเสริมสุขภาพ (สสส.) หรือเงินบริจาคเอกชน", isCorrect: false, rationale: "สสส. สนับสนุนโครงการแคมเปญรณรงค์ความปลอดภัยทางอ้อม แต่ไม่ใช่งบการจ่ายค่าเบี้ยประชุมทางการของรัฐ" },
+                    { text: "งบประมาณประจำปีของ กระทรวงคมนาคม", isCorrect: false, rationale: "คมนาคมดูแลการก่อสร้างขยายโครงข่ายถนน แต่ไม่มีหน้าที่ดูแลกระเป๋าการจ่ายเบี้ยประชุมชุดนี้" }
+                ],
+                hint: "หน่วยงานราชการที่เป็นฝ่ายธุรการหลักของบอร์ด นปถ. และ ศปถ. (ปภ.) จะเป็นผู้รับภาระเบิกจ่ายงบประมาณนี้"
+            },
+            {
+                question: "เพื่อให้แผนการทำงานความปลอดภัยทางถนนมีประสิทธิภาพและครอบคลุมทุกที่ทั่วประเทศ ใครมีหน้าที่คอยประสานงานกำกับดูแลให้ อปท. และ กทม. ถือปฏิบัติตามระเบียบนี้ตามข้อ ๒๖?",
+                options: [
+                    { text: "กระทรวงมหาดไทย", isCorrect: true, rationale: "ข้อ ๒๖ ระบุว่า 'ให้กระทรวงมหาดไทยซึ่งกำกับดูแลการปฏิบัติราชการขององค์กรปกครองส่วนท้องถิ่นและกรุงเทพมหานคร ประสานงานให้...ถือปฏิบัติตามระเบียบนี้'" },
+                    { text: "กรมการขนส่งทางบก", isCorrect: false, rationale: "ขนส่งดูแลเกณฑ์ทางเทคนิคยานพาหนะและคนขับรถ แต่ไม่ได้คุมสายงานประสานปกครองท้องถิ่น" },
+                    { text: "สำนักงานตำรวจแห่งชาติ", isCorrect: false, rationale: "ตำรวจทำหน้าที่จับปรับและคุมคดีจราจรตาม พ.ร.บ. แต่ไม่ได้ทำสายงานกำกับดูและแปรระเบียบปกครองท้องถิ่น" },
+                    { text: "สำนักนายกรัฐมนตรี", isCorrect: false, rationale: "แม้จะเป็นผู้รักษาการ แต่งานประสานผลักดันลงไปหาท้องถิ่น อปท. และ กทม. เป็นหน้าที่กระทรวงเจ้าสังกัด (มท.)" }
+                ],
+                hint: "กระทรวงที่มีสายบังคับบัญชาดูแลและกำกับข้าราชการส่วนภูมิภาค ข้าราชการท้องถิ่น และกรุงเทพมหานคร"
+            },
+            {
+                question: "ในกรณีที่ประธาน นปถ. (นายกรัฐมนตรีหรือรองนายกฯ) ไม่อยู่ในที่ประชุม และไม่สามารถปฏิบัติหน้าที่ได้ ใครจะได้รับสิทธิทำหน้าที่ประธานที่ประชุมตามลำดับขั้นตอนข้อ ๑๐?",
+                options: [
+                    { text: "รองประธานกรรมการตามลำดับข้อ ๗ (คนที่ ๑ ถึง คนที่ ๕) เป็นประธานตามลำดับ", isCorrect: true, rationale: "ตามข้อ ๑๐ วรรคสองบัญญัติว่า 'ให้รองประธานกรรมการในลำดับรองลงมาตามข้อ ๗ เป็นประธานในที่ประชุม' (เรียงจาก รมว.มหาดไทย รมว.คมนาคม ไล่ลงมา)" },
+                    { text: "ที่ประชุมทำการเลือกตั้งกรรมการคนหนึ่งขึ้นมาทำหน้าที่ประธานทันทีโดยไม่ดูรองประธาน", isCorrect: false, rationale: "จะเลือกกรรมการทั่วไปทำประธานได้ต่อเมื่อไม่มีทั้งประธานและไม่มีรองประธานทั้ง ๕ คนอยู่เลย" },
+                    { text: "ปลัดกระทรวงมหาดไทย ในฐานะเลขานุการบอร์ด นปถ. เลื่อนขึ้นเป็นประธานโดยตำแหน่ง", isCorrect: false, rationale: "เลขานุการทำหน้าที่จดรายงานและอำนวยการวาระ ไม่เลื่อนขึ้นคุมประธานการประชุมข้ามหน้าคณะรัฐมนตรีที่เหลืออยู่" },
+                    { text: "สั่งเลื่อนการประชุมออกไปทันทีจนกว่าตัวจริงนายกรัฐมนตรีหรือรองนายกฯ จะสะดวกกลับมาประชุม", isCorrect: false, rationale: "เพื่อไม่ให้เกิดความล่าช้าในภารกิจความปลอดภัยทางถนน กฎหมายจึงจัดระบบเรียงสายงานรองประธานเตรียมพร้อมไว้" }
+                ],
+                hint: "การสืบทอดสิทธิคุมเก้าอี้หัวโต๊ะประชุมจะไหลลงตามรายชื่อรองประธานที่มีบรรดารัฐมนตรี ๕ คน เรียงรออยู่ตามระเบียบข้อ ๗"
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let hasAnswered = false;
+
+        // Switch Tabs Logic
+        function switchTab(tab) {
+            const summaryBtn = document.getElementById('tab-summary-btn');
+            const quizBtn = document.getElementById('tab-quiz-btn');
+            const summarySec = document.getElementById('summary-section');
+            const quizSec = document.getElementById('quiz-section');
+
+            if (tab === 'summary') {
+                summaryBtn.className = "px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg font-medium text-xs sm:text-sm transition-all duration-200 bg-brand-500 text-white shadow-sm";
+                quizBtn.className = "px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg font-medium text-xs sm:text-sm transition-all duration-200 text-slate-600 hover:text-brand-600 hover:bg-brand-50";
+                summarySec.classList.remove('hidden');
+                quizSec.classList.add('hidden');
+            } else {
+                quizBtn.className = "px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg font-medium text-xs sm:text-sm transition-all duration-200 bg-brand-500 text-white shadow-sm";
+                summaryBtn.className = "px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg font-medium text-xs sm:text-sm transition-all duration-200 text-slate-600 hover:text-brand-600 hover:bg-brand-50";
+                quizSec.classList.remove('hidden');
+                summarySec.classList.add('hidden');
+                initQuiz();
+            }
+        }
+
+        // Initialize / Restart Quiz
+        function initQuiz() {
+            currentQuestionIndex = 0;
+            score = 0;
+            hasAnswered = false;
+            document.getElementById('quiz-play-box').classList.remove('hidden');
+            document.getElementById('quiz-score-box').classList.add('hidden');
+            showQuestion();
+        }
+
+        // Render Current Question
+        function showQuestion() {
+            hasAnswered = false;
+            const q = quizData[currentQuestionIndex];
+            
+            // Set Progress Indicators
+            document.getElementById('current-question-indicator').innerText = `${currentQuestionIndex + 1}/${quizData.length}`;
+            document.getElementById('quiz-progress-bar').style.width = `${((currentQuestionIndex + 1) / quizData.length) * 100}%`;
+            
+            // Set Question Statement
+            document.getElementById('question-text').innerText = `[ข้อที่ ${currentQuestionIndex + 1}] ${q.question}`;
+            
+            // Hide next button & hint box
+            document.getElementById('next-btn').classList.add('hidden');
+            document.getElementById('explanation-box').classList.add('hidden');
+            
+            // Reset hint btn
+            const hintDisplay = document.getElementById('hint-display-box');
+            hintDisplay.classList.add('hidden');
+            document.getElementById('hint-text-label').innerText = "แสดงคำใบ้";
+            document.getElementById('hint-content').innerText = q.hint;
+
+            // Generate Option Cards
+            const container = document.getElementById('options-container');
+            container.innerHTML = '';
+            
+            q.options.forEach((opt, idx) => {
+                const optId = `opt-${idx}`;
+                const card = document.createElement('div');
+                card.id = optId;
+                card.onclick = () => selectOption(idx);
+                card.className = "p-3 sm:p-4 bg-white hover:bg-orange-50/50 border border-slate-150 hover:border-brand-300 rounded-xl cursor-pointer transition-all duration-150 flex items-start gap-3 shadow-sm";
+                
+                // Bullet icon placeholder
+                card.innerHTML = `
+                    <div class="w-5 h-5 sm:w-6 sm:h-6 rounded-full border border-slate-300 flex items-center justify-center flex-shrink-0 text-[10px] sm:text-xs font-semibold text-slate-400 bg-slate-50 transition-all opt-bullet">
+                        ${String.fromCharCode(65 + idx)}
+                    </div>
+                    <div class="text-xs sm:text-sm font-medium text-slate-800 flex-grow leading-relaxed">${opt.text}</div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Toggle Hint Display
+        function toggleHint() {
+            const hintBox = document.getElementById('hint-display-box');
+            const hintLabel = document.getElementById('hint-text-label');
+            if (hintBox.classList.contains('hidden')) {
+                hintBox.classList.remove('hidden');
+                hintLabel.innerText = "ซ่อนคำใบ้";
+            } else {
+                hintBox.classList.add('hidden');
+                hintLabel.innerText = "แสดงคำใบ้";
+            }
+        }
+
+        // Select Option Handling
+        function selectOption(selectedIdx) {
+            if (hasAnswered) return; // Prevent multiple clicks
+            hasAnswered = true;
+            
+            const q = quizData[currentQuestionIndex];
+            const isCorrect = q.options[selectedIdx].isCorrect;
+            
+            if (isCorrect) score++;
+
+            // Visual markers for choices
+            q.options.forEach((opt, idx) => {
+                const card = document.getElementById(`opt-${idx}`);
+                const bullet = card.querySelector('.opt-bullet');
+                
+                // Remove interactive styles
+                card.className = card.className.replace('hover:bg-orange-50/50', '').replace('hover:border-brand-300', '').replace('cursor-pointer', '');
+                
+                if (opt.isCorrect) {
+                    // Correct green styling
+                    card.classList.add('border-green-500', 'bg-green-50/80');
+                    bullet.className = "w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-green-500 text-white flex items-center justify-center flex-shrink-0 text-[10px] sm:text-xs font-semibold";
+                    bullet.innerHTML = '<i class="fa-solid fa-check text-[9px] sm:text-[11px]"></i>';
+                } else if (idx === selectedIdx) {
+                    // Incorrect red styling
+                    card.classList.add('border-red-500', 'bg-red-50/80');
+                    bullet.className = "w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-red-500 text-white flex items-center justify-center flex-shrink-0 text-[10px] sm:text-xs font-semibold";
+                    bullet.innerHTML = '<i class="fa-solid fa-xmark text-[9px] sm:text-[11px]"></i>';
+                } else {
+                    card.classList.add('opacity-60');
+                }
+            });
+
+            // Show explanation/rationale box
+            const expBox = document.getElementById('explanation-box');
+            const expIcon = document.getElementById('explanation-icon-container');
+            const expTitle = document.getElementById('explanation-title');
+            const expBody = document.getElementById('explanation-body');
+            
+            expBox.classList.remove('hidden');
+            
+            if (isCorrect) {
+                expIcon.className = "w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-white bg-green-500 shadow-sm";
+                expIcon.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+                expTitle.className = "font-bold text-xs sm:text-sm text-green-700";
+                expTitle.innerText = "คำตอบถูกต้อง!";
+            } else {
+                expIcon.className = "w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-white bg-red-500 shadow-sm";
+                expIcon.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i>';
+                expTitle.className = "font-bold text-xs sm:text-sm text-red-600";
+                expTitle.innerText = "คำตอบยังไม่ถูกต้อง";
+            }
+            
+            expBody.innerText = q.options[selectedIdx].rationale;
+            
+            // Show next button
+            const nextBtn = document.getElementById('next-btn');
+            nextBtn.classList.remove('hidden');
+            if (currentQuestionIndex === quizData.length - 1) {
+                nextBtn.innerHTML = '<span>ดูผลการสอบทั้งหมด</span> <i class="fa-solid fa-square-poll-vertical ml-1.5"></i>';
+            } else {
+                nextBtn.innerHTML = '<span>ข้อต่อไป</span> <i class="fa-solid fa-chevron-right text-[10px] ml-1.5"></i>';
+            }
+        }
+
+        // Progress or finish quiz
+        function goToNextQuestion() {
+            if (currentQuestionIndex < quizData.length - 1) {
+                currentQuestionIndex++;
+                showQuestion();
+            } else {
+                showQuizResult();
+            }
+        }
+
+        // Show Scoreboard Screen
+        function showQuizResult() {
+            document.getElementById('quiz-play-box').classList.add('hidden');
+            
+            const scoreBox = document.getElementById('quiz-score-box');
+            scoreBox.classList.remove('hidden');
+            
+            document.getElementById('final-score-display').innerText = `${score} / ${quizData.length}`;
+            
+            const assessment = document.getElementById('score-assessment');
+            if (score === 30) {
+                assessment.innerText = "ระดับ: 🏆 ระดับตำนาน (ตอบถูกครบทุกจุดหลอกลวง คะแนนเต็ม 30/30)";
+                assessment.className = "text-xs sm:text-sm font-bold text-emerald-600 block";
+            } else if (score >= 25) {
+                assessment.innerText = "ระดับ: 🥇 ยอดเยี่ยม (เกรดเอ เข้าใจโครงสร้างระเบียบอย่างละเอียดลึกซึ้ง)";
+                assessment.className = "text-xs sm:text-sm font-bold text-teal-600 block";
+            } else if (score >= 18) {
+                assessment.innerText = "ระดับ: 🥈 ผ่านเกณฑ์ความรู้ดีเยี่ยม (เข้าใจโครงสร้างส่วนใหญ่ มีผิดพลาดรายละเอียดเล็กน้อย)";
+                assessment.className = "text-xs sm:text-sm font-bold text-amber-600 block";
+            } else {
+                assessment.innerText = "ระดับ: ⚠️ ควรกลับไปทบทวนส่วนสรุปความรู้ระดับ ๓ ระดับ อีกครั้ง";
+                assessment.className = "text-xs sm:text-sm font-bold text-red-500 block";
+            }
+        }
+
+        function restartQuiz() {
+            initQuiz();
+        }
+
+        // Start app in summary tab on load
+        window.onload = function() {
+            switchTab('summary');
+        };
+    </script>
+</body>
+</html>

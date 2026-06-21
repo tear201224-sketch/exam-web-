@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ข้อสอบ พ.ร.บ. วิธีการงบประมาณ พ.ศ. 2561</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --orange:#F1641E;
+  --orange-deep:#D44E0C;
+  --orange-soft:#FF8A4C;
+  --amber:#FBA94C;
+  --cream:#FFF8F2;
+  --paper:#FFFFFF;
+  --ink:#2A1B12;
+  --ink-soft:#6B5648;
+  --line:#F0E0D2;
+  --green:#1F9D6B;
+  --red:#D64545;
+  --shadow:0 10px 40px -12px rgba(209,78,12,.28);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'IBM Plex Sans Thai','Sarabun',sans-serif;
+  background:
+    radial-gradient(1200px 600px at 100% -10%, #FFEbDD 0%, transparent 55%),
+    radial-gradient(900px 500px at -10% 110%, #FFE3CF 0%, transparent 50%),
+    var(--cream);
+  color:var(--ink);
+  line-height:1.7;
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:860px;margin:0 auto;padding:28px 20px 80px}
+
+/* ---------- HEADER ---------- */
+header.hero{
+  text-align:center;
+  padding:34px 24px 30px;
+  position:relative;
+}
+.kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.78rem;font-weight:600;letter-spacing:.12em;
+  color:var(--orange-deep);text-transform:uppercase;
+  background:#FFEAD9;border:1px solid #FFD3B0;
+  padding:6px 14px;border-radius:100px;margin-bottom:18px;
+}
+.kicker .dot{width:7px;height:7px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 4px #FFD9BE}
+h1.title{
+  font-size:clamp(1.7rem,5vw,2.6rem);font-weight:700;line-height:1.25;
+  letter-spacing:-.01em;
+}
+h1.title .hl{
+  color:var(--orange-deep);
+  position:relative;white-space:nowrap;
+}
+.subtitle{margin-top:12px;color:var(--ink-soft);font-size:1rem;font-weight:500}
+.meta-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+.chip{
+  background:var(--paper);border:1px solid var(--line);
+  padding:7px 15px;border-radius:100px;font-size:.85rem;font-weight:600;
+  color:var(--ink-soft);box-shadow:0 2px 8px rgba(209,78,12,.06)
+}
+.chip b{color:var(--orange-deep)}
+
+/* ---------- TABS ---------- */
+.tabs{
+  display:flex;gap:6px;background:var(--paper);border:1px solid var(--line);
+  border-radius:16px;padding:6px;margin:8px auto 26px;max-width:420px;
+  box-shadow:0 4px 16px rgba(209,78,12,.07)
+}
+.tab{
+  flex:1;text-align:center;padding:11px 8px;border-radius:11px;
+  font-weight:600;font-size:.96rem;cursor:pointer;border:none;background:none;
+  color:var(--ink-soft);font-family:inherit;transition:.18s;
+}
+.tab.active{background:linear-gradient(135deg,var(--orange),var(--orange-soft));color:#fff;box-shadow:var(--shadow)}
+
+.panel{display:none;animation:fade .35s ease}
+.panel.show{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* ---------- QUIZ CARD ---------- */
+.card{
+  background:var(--paper);border:1px solid var(--line);border-radius:22px;
+  box-shadow:var(--shadow);overflow:hidden;
+}
+.qbar{
+  height:8px;background:#FBE7D8;position:relative;
+}
+.qbar .fill{height:100%;width:0;background:linear-gradient(90deg,var(--orange),var(--amber));transition:width .4s ease;border-radius:0 6px 6px 0}
+.qbody{padding:26px 26px 8px}
+.qtop{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
+.qcount{font-size:.84rem;font-weight:700;color:var(--orange-deep);background:#FFEAD9;padding:5px 13px;border-radius:100px}
+.qscore{font-size:.84rem;font-weight:600;color:var(--ink-soft)}
+.qscore b{color:var(--green)}
+.qtext{font-size:1.12rem;font-weight:600;line-height:1.55;margin-bottom:20px;color:var(--ink)}
+
+.choices{display:flex;flex-direction:column;gap:11px}
+.choice{
+  display:flex;align-items:flex-start;gap:13px;
+  border:1.5px solid var(--line);border-radius:14px;padding:14px 16px;
+  cursor:pointer;background:var(--paper);transition:.15s;font-family:inherit;
+  text-align:left;width:100%;color:var(--ink);font-size:1rem;line-height:1.5;
+}
+.choice:hover:not(.locked){border-color:var(--orange-soft);background:#FFFaF5;transform:translateX(2px)}
+.choice .ltr{
+  flex-shrink:0;width:28px;height:28px;border-radius:9px;
+  display:grid;place-items:center;font-weight:700;font-size:.92rem;
+  background:#FFF0E5;color:var(--orange-deep);border:1px solid #FFD9BE;transition:.15s;
+}
+.choice.selected{border-color:var(--orange);background:#FFF4EC}
+.choice.selected .ltr{background:var(--orange);color:#fff;border-color:var(--orange)}
+.choice.correct{border-color:var(--green);background:#EAF8F1}
+.choice.correct .ltr{background:var(--green);color:#fff;border-color:var(--green)}
+.choice.wrong{border-color:var(--red);background:#FBEDED}
+.choice.wrong .ltr{background:var(--red);color:#fff;border-color:var(--red)}
+.choice.locked{cursor:default}
+
+.explain{
+  margin:18px 0 4px;border-radius:14px;padding:15px 17px;
+  background:#FFF6EE;border:1px solid #FFE0C7;font-size:.95rem;line-height:1.6;
+  display:none;
+}
+.explain.show{display:block;animation:fade .3s}
+.explain .etag{font-weight:700;color:var(--orange-deep);margin-right:6px}
+.explain.ok{background:#EAF8F1;border-color:#BCE8D3}
+.explain.ok .etag{color:var(--green)}
+
+.qfoot{display:flex;gap:11px;padding:6px 26px 24px;flex-wrap:wrap}
+.btn{
+  font-family:inherit;font-weight:600;font-size:.98rem;cursor:pointer;
+  border-radius:13px;padding:13px 22px;border:none;transition:.15s;
+}
+.btn-primary{background:linear-gradient(135deg,var(--orange),var(--orange-soft));color:#fff;box-shadow:var(--shadow);flex:1}
+.btn-primary:hover{filter:brightness(1.05);transform:translateY(-1px)}
+.btn-primary:disabled{opacity:.45;cursor:not-allowed;transform:none;filter:none}
+.btn-ghost{background:#FFF0E5;color:var(--orange-deep);border:1px solid #FFD9BE}
+.btn-ghost:hover{background:#FFE6D3}
+
+/* tools row */
+.tools{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
+.toggle{
+  display:inline-flex;align-items:center;gap:8px;background:var(--paper);
+  border:1px solid var(--line);border-radius:100px;padding:7px 14px;
+  font-size:.85rem;font-weight:600;color:var(--ink-soft);cursor:pointer;user-select:none;
+}
+.toggle input{display:none}
+.toggle .sw{width:34px;height:19px;border-radius:100px;background:#E7D5C6;position:relative;transition:.2s}
+.toggle .sw::after{content:"";position:absolute;top:2px;left:2px;width:15px;height:15px;border-radius:50%;background:#fff;transition:.2s;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.toggle input:checked + .sw{background:var(--orange)}
+.toggle input:checked + .sw::after{left:17px}
+
+/* ---------- RESULT ---------- */
+.result{text-align:center;padding:44px 28px}
+.ring{width:160px;height:160px;margin:0 auto 18px;position:relative}
+.ring svg{transform:rotate(-90deg)}
+.ring .pct{position:absolute;inset:0;display:grid;place-content:center;font-weight:700;font-size:2.2rem;color:var(--orange-deep)}
+.ring .pct small{display:block;font-size:.8rem;font-weight:600;color:var(--ink-soft);margin-top:-4px}
+.result h2{font-size:1.5rem;margin-bottom:8px}
+.result p{color:var(--ink-soft);margin-bottom:22px}
+.result .stat-row{display:flex;gap:14px;justify-content:center;margin-bottom:24px;flex-wrap:wrap}
+.stat{background:var(--cream);border:1px solid var(--line);border-radius:14px;padding:14px 22px;min-width:96px}
+.stat b{display:block;font-size:1.5rem;color:var(--orange-deep)}
+.stat span{font-size:.82rem;color:var(--ink-soft);font-weight:600}
+
+/* ---------- SUMMARY ---------- */
+.sum-intro{
+  background:var(--paper);border:1px solid var(--line);border-radius:18px;
+  padding:20px 22px;margin-bottom:18px;box-shadow:0 4px 16px rgba(209,78,12,.06);
+}
+.sum-intro p{color:var(--ink-soft);font-size:.97rem}
+.acc{
+  background:var(--paper);border:1px solid var(--line);border-radius:16px;
+  margin-bottom:12px;overflow:hidden;box-shadow:0 2px 10px rgba(209,78,12,.05)
+}
+.acc-head{
+  display:flex;align-items:center;gap:14px;padding:16px 18px;cursor:pointer;
+  font-weight:600;font-size:1.04rem;user-select:none;transition:.15s;
+}
+.acc-head:hover{background:#FFFaF5}
+.acc-num{
+  flex-shrink:0;width:34px;height:34px;border-radius:10px;display:grid;place-items:center;
+  font-weight:700;font-size:.92rem;color:#fff;
+  background:linear-gradient(135deg,var(--orange),var(--orange-soft));
+}
+.acc-head .arrow{margin-left:auto;color:var(--orange);transition:.25s;font-size:1.1rem}
+.acc.open .arrow{transform:rotate(180deg)}
+.acc-body{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.acc-inner{padding:4px 20px 20px 66px}
+.acc-inner ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.acc-inner li{position:relative;padding-left:18px;font-size:.96rem;color:var(--ink-soft);line-height:1.55}
+.acc-inner li::before{content:"";position:absolute;left:0;top:11px;width:7px;height:7px;border-radius:2px;background:var(--orange-soft)}
+.acc-inner li b{color:var(--ink);font-weight:600}
+.acc-inner .hi{color:var(--orange-deep);font-weight:700}
+.keyfact{
+  display:inline-block;background:#FFEAD9;border:1px solid #FFD3B0;color:var(--orange-deep);
+  font-weight:700;border-radius:8px;padding:1px 8px;font-size:.92em;
+}
+.footer{text-align:center;margin-top:34px;color:var(--ink-soft);font-size:.85rem}
+.footer b{color:var(--orange-deep)}
+@media(max-width:560px){
+  .qbody{padding:20px 18px 6px}.qfoot{padding:6px 18px 20px}
+  .acc-inner{padding:4px 16px 18px 16px}
+  .qtext{font-size:1.05rem}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <span class="kicker"><span class="dot"></span>เตรียมสอบราชการ</span>
+    <h1 class="title">พระราชบัญญัติ<br><span class="hl">วิธีการงบประมาณ พ.ศ. 2561</span></h1>
+    <p class="subtitle">โปรแกรมข้อสอบปรนัย พร้อมเฉลยละเอียด และสรุปรายมาตรา</p>
+    <div class="meta-row">
+      <span class="chip"><b id="qtotal">38</b> ข้อสอบ</span>
+      <span class="chip"><b>8</b> หมวด</span>
+      <span class="chip"><b>61</b> มาตรา</span>
+    </div>
+  </header>
+
+  <div class="tabs">
+    <button class="tab active" data-tab="quiz">📝 ทำข้อสอบ</button>
+    <button class="tab" data-tab="summary">📖 สรุปเนื้อหา</button>
+  </div>
+
+  <!-- ===== QUIZ PANEL ===== -->
+  <section class="panel show" id="panel-quiz">
+    <div class="tools">
+      <label class="toggle"><input type="checkbox" id="shuffleQ" checked><span class="sw"></span>สลับข้อ</label>
+      <label class="toggle"><input type="checkbox" id="shuffleC" checked><span class="sw"></span>สลับตัวเลือก</label>
+      <label class="toggle"><input type="checkbox" id="instant" checked><span class="sw"></span>เฉลยทันที</label>
+    </div>
+
+    <div class="card" id="quizCard">
+      <div class="qbar"><div class="fill" id="bar"></div></div>
+      <div class="qbody">
+        <div class="qtop">
+          <span class="qcount" id="qcount">ข้อ 1 / 38</span>
+          <span class="qscore" id="qscore">คะแนน <b>0</b></span>
+        </div>
+        <div class="qtext" id="qtext">—</div>
+        <div class="choices" id="choices"></div>
+        <div class="explain" id="explain"></div>
+      </div>
+      <div class="qfoot">
+        <button class="btn btn-ghost" id="restartBtn">เริ่มใหม่</button>
+        <button class="btn btn-primary" id="nextBtn" disabled>ตรวจคำตอบ</button>
+      </div>
+    </div>
+
+    <!-- result -->
+    <div class="card" id="resultCard" style="display:none">
+      <div class="result">
+        <div class="ring">
+          <svg width="160" height="160">
+            <circle cx="80" cy="80" r="70" fill="none" stroke="#FBE7D8" stroke-width="14"/>
+            <circle id="ringFill" cx="80" cy="80" r="70" fill="none" stroke="url(#g)" stroke-width="14" stroke-linecap="round" stroke-dasharray="439.8" stroke-dashoffset="439.8"/>
+            <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F1641E"/><stop offset="1" stop-color="#FBA94C"/></linearGradient></defs>
+          </svg>
+          <div class="pct"><span id="pctNum">0</span>%<small>คะแนน</small></div>
+        </div>
+        <h2 id="resultTitle">เก่งมาก!</h2>
+        <p id="resultMsg">—</p>
+        <div class="stat-row">
+          <div class="stat"><b id="rCorrect">0</b><span>ตอบถูก</span></div>
+          <div class="stat"><b id="rWrong">0</b><span>ตอบผิด</span></div>
+          <div class="stat"><b id="rTotal">0</b><span>ทั้งหมด</span></div>
+        </div>
+        <button class="btn btn-primary" id="againBtn" style="max-width:240px;margin:0 auto">ทำข้อสอบอีกครั้ง</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SUMMARY PANEL ===== -->
+  <section class="panel" id="panel-summary">
+    <div class="sum-intro">
+      <p>สรุปสาระสำคัญรายหมวด/รายมาตรา ของ <b>พ.ร.บ. วิธีการงบประมาณ พ.ศ. 2561</b> เน้นจุดที่ออกสอบบ่อย โดยเฉพาะ <span class="keyfact">ตัวเลข</span> ระยะเวลา และผู้มีอำนาจหน้าที่ — แตะที่หัวข้อเพื่อเปิด/ปิด</p>
+    </div>
+    <div id="summaryWrap"></div>
+  </section>
+
+  <div class="footer">โปรแกรมข้อสอบสรุปจาก <b>พ.ร.บ. วิธีการงบประมาณ พ.ศ. 2561</b> · ใช้เพื่อทบทวนเตรียมสอบเท่านั้น</div>
+</div>
+
+<script>
+// ชุดข้อสอบ พ.ร.บ. วิธีการงบประมาณ พ.ศ. 2561
+// answer = index ของตัวเลือกที่ถูกต้อง (0-based)
+const QUESTIONS = [
+  {
+    q: "พระราชบัญญัติวิธีการงบประมาณ พ.ศ. 2561 ประกอบด้วยหมวด บทเฉพาะกาล และมาตรา จำนวนเท่าใด",
+    choices: [
+      "8 หมวด 1 บทเฉพาะกาล 61 มาตรา",
+      "8 หมวด 2 บทเฉพาะกาล 61 มาตรา",
+      "7 หมวด 1 บทเฉพาะกาล 61 มาตรา",
+      "8 หมวด 1 บทเฉพาะกาล 60 มาตรา"
+    ],
+    answer: 0,
+    explain: "พ.ร.บ. นี้ประกอบด้วย 8 หมวด 1 บทเฉพาะกาล จำนวน 61 มาตรา"
+  },
+  {
+    q: "ข้อใดคือ \"ปีงบประมาณ\" ตามบทนิยามมาตรา 4",
+    choices: [
+      "ตั้งแต่ 1 มกราคม ถึง 31 ธันวาคมของปีเดียวกัน",
+      "ตั้งแต่ 1 ตุลาคมของปีหนึ่ง ถึง 30 กันยายนของปีถัดไป",
+      "ตั้งแต่ 1 ตุลาคมของปีหนึ่ง ถึง 30 กันยายนของปีเดียวกัน",
+      "ตั้งแต่ 1 เมษายนของปีหนึ่ง ถึง 31 มีนาคมของปีถัดไป"
+    ],
+    answer: 1,
+    explain: "ปีงบประมาณ = ระยะเวลาตั้งแต่วันที่ 1 ตุลาคมของปีหนึ่ง ถึงวันที่ 30 กันยายนของปีถัดไป และให้ใช้ปี พ.ศ. ที่ถัดไปนั้นเป็นชื่อสำหรับปีงบประมาณนั้น"
+  },
+  {
+    q: "\"งบประมาณรายจ่าย\" ตามบทนิยาม หมายถึงข้อใด",
+    choices: [
+      "จำนวนเงินอย่างต่ำที่อนุญาตให้จ่ายได้ตามวัตถุประสงค์ที่กำหนด",
+      "จำนวนเงินที่หน่วยงานของรัฐได้รับจริงในแต่ละปีงบประมาณ",
+      "จำนวนเงินอย่างสูงที่อนุญาตให้จ่ายหรือให้ก่อหนี้ผูกพันได้ตามวัตถุประสงค์และภายในระยะเวลาที่กำหนด",
+      "จำนวนเงินที่แบ่งสรรให้จ่ายหรือก่อหนี้ผูกพันในระยะเวลาหนึ่ง"
+    ],
+    answer: 2,
+    explain: "งบประมาณรายจ่าย = จำนวนเงินอย่าง \"สูง\" ที่อนุญาตให้จ่ายหรือก่อหนี้ผูกพันได้ ระวังหลอก: ข้อ D คือนิยามของ \"เงินจัดสรร\""
+  },
+  {
+    q: "\"เงินจัดสรร\" ตามบทนิยาม หมายถึงข้อใด",
+    choices: [
+      "ส่วนหนึ่งของงบประมาณรายจ่ายที่แบ่งสรรให้จ่าย หรือให้ก่อหนี้ผูกพันในระยะเวลาหนึ่ง",
+      "บรรดาเงินทั้งปวงที่หน่วยงานของรัฐจัดเก็บไว้เป็นกรรมสิทธิ์",
+      "จำนวนเงินอย่างสูงที่อนุญาตให้จ่ายหรือก่อหนี้ผูกพันได้",
+      "เงินที่ตั้งไว้เพื่อจัดสรรให้แก่หน่วยรับงบประมาณใช้จ่าย"
+    ],
+    answer: 0,
+    explain: "เงินจัดสรร = ส่วนหนึ่งของงบประมาณรายจ่ายที่แบ่งสรรให้จ่าย หรือให้ก่อหนี้ผูกพันในระยะเวลาหนึ่ง"
+  },
+  {
+    q: "\"หน่วยรับงบประมาณ\" ตามบทนิยาม ให้หมายความรวมถึงหน่วยงานใดเป็นการเฉพาะ",
+    choices: [
+      "ธนาคารแห่งประเทศไทย",
+      "สภากาชาดไทย",
+      "สำนักงานคณะกรรมการพัฒนาการเศรษฐกิจและสังคมแห่งชาติ",
+      "กระทรวงการคลัง"
+    ],
+    answer: 1,
+    explain: "หน่วยรับงบประมาณ = หน่วยงานของรัฐที่ขอรับหรือได้รับจัดสรรงบประมาณรายจ่าย และให้หมายความรวมถึง \"สภากาชาดไทย\" ด้วย"
+  },
+  {
+    q: "\"หน่วยงานของรัฐ\" ตามบทนิยาม มีกี่ประเภท",
+    choices: ["5 ประเภท", "6 ประเภท", "7 ประเภท", "8 ประเภท"],
+    answer: 2,
+    explain: "หน่วยงานของรัฐมี 7 ประเภท ได้แก่ (1) ส่วนราชการ (2) รัฐวิสาหกิจ (3) หน่วยงานของรัฐสภา ศาล องค์กรอิสระ องค์กรอัยการ (4) องค์การมหาชน (5) ทุนหมุนเวียนที่มีฐานะเป็นนิติบุคคล (6) อปท. (7) หน่วยงานอื่นของรัฐตามที่กฎหมายกำหนด"
+  },
+  {
+    q: "บริษัทจำกัดจะเป็น \"รัฐวิสาหกิจ\" ได้ ส่วนราชการหรือรัฐวิสาหกิจต้องมีทุนรวมอยู่ด้วยเกินกว่าร้อยละเท่าใด",
+    choices: ["เกินร้อยละ 25", "ตั้งแต่ร้อยละ 50 ขึ้นไป", "เกินร้อยละ 50", "เกินร้อยละ 75"],
+    answer: 2,
+    explain: "ต้องมีทุนรวมอยู่ด้วย \"เกินร้อยละ 50\" ระวังหลอก: ไม่ใช่ \"ตั้งแต่ร้อยละ 50 ขึ้นไป\" เพราะถ้าเท่ากับ 50 พอดีไม่นับ"
+  },
+  {
+    q: "ผู้ใดเป็นผู้รักษาการตามพระราชบัญญัตินี้ (ม.5)",
+    choices: [
+      "นายกรัฐมนตรี เพียงผู้เดียว",
+      "รัฐมนตรีว่าการกระทรวงการคลัง เพียงผู้เดียว",
+      "นายกรัฐมนตรี และผู้อำนวยการสำนักงบประมาณ",
+      "นายกรัฐมนตรี และรัฐมนตรีว่าการกระทรวงการคลัง"
+    ],
+    answer: 3,
+    explain: "ให้นายกรัฐมนตรี และรัฐมนตรีว่าการกระทรวงการคลัง รักษาการตามพระราชบัญญัตินี้"
+  },
+  {
+    q: "คำว่า \"ผู้อำนวยการ\" และ \"รัฐมนตรี\" ตามบทนิยาม หมายถึงผู้ใดตามลำดับ",
+    choices: [
+      "ผู้อำนวยการสำนักงบประมาณ / รัฐมนตรีว่าการกระทรวงการคลัง",
+      "ผู้อำนวยการสำนักงบประมาณ / นายกรัฐมนตรี",
+      "ปลัดสำนักนายกรัฐมนตรี / รัฐมนตรีว่าการกระทรวงการคลัง",
+      "ผู้อำนวยการสำนักงบประมาณ / รัฐมนตรีเจ้าสังกัด"
+    ],
+    answer: 0,
+    explain: "ผู้อำนวยการ = ผู้อำนวยการสำนักงบประมาณ ส่วน รัฐมนตรี = รัฐมนตรีว่าการกระทรวงการคลัง"
+  },
+  {
+    q: "การจัดทำงบประมาณ การบริหารงบประมาณรายจ่าย การควบคุมงบประมาณ ฯลฯ นอกจากต้องปฏิบัติตาม พ.ร.บ. นี้แล้ว ต้องสอดคล้องกับกฎหมายใด (ม.6)",
+    choices: [
+      "กฎหมายว่าด้วยการบริหารหนี้สาธารณะ",
+      "กฎหมายว่าด้วยวินัยการเงินการคลังของรัฐ",
+      "กฎหมายว่าด้วยระเบียบบริหารราชการแผ่นดิน",
+      "กฎหมายว่าด้วยเงินคงคลัง"
+    ],
+    answer: 1,
+    explain: "ต้องปฏิบัติตาม พ.ร.บ. นี้ และสอดคล้องกับ \"กฎหมายว่าด้วยวินัยการเงินการคลังของรัฐ\""
+  },
+  {
+    q: "เอกสารประกอบการเสนองบประมาณประจำปีต่อรัฐสภา (ม.10) อย่างน้อยต้องมีกี่รายการ",
+    choices: ["7 รายการ", "8 รายการ", "9 รายการ", "10 รายการ"],
+    answer: 2,
+    explain: "ม.10 กำหนดเอกสารประกอบอย่างน้อย 9 รายการ โดยรายการที่ (9) คือ ร่างพระราชบัญญัติงบประมาณรายจ่ายประจำปี"
+  },
+  {
+    q: "ในกรณีที่ พ.ร.บ. งบประมาณรายจ่ายประจำปีออกใช้ไม่ทันปีงบประมาณใหม่ ให้ดำเนินการอย่างไร (ม.12)",
+    choices: [
+      "ให้หยุดการเบิกจ่ายงบประมาณทั้งหมดจนกว่ากฎหมายจะมีผลใช้บังคับ",
+      "ให้ใช้งบประมาณรายจ่ายประจำปีที่ล่วงแล้วไปพลางก่อนได้ ตามหลักเกณฑ์ที่ผู้อำนวยการกำหนดโดยอนุมัตินายกรัฐมนตรี",
+      "ให้ใช้งบประมาณรายจ่ายประจำปีที่ล่วงแล้วไปพลางก่อนได้ ตามหลักเกณฑ์ที่คณะรัฐมนตรีกำหนด",
+      "ให้รัฐมนตรีว่าการกระทรวงการคลังอนุมัติงบประมาณชั่วคราวตามความจำเป็น"
+    ],
+    answer: 1,
+    explain: "ให้ใช้งบประมาณรายจ่ายประจำปีที่ล่วงแล้วไปพลางก่อนได้ ตามหลักเกณฑ์และเงื่อนไขที่ \"ผู้อำนวยการ\" กำหนดโดย \"อนุมัตินายกรัฐมนตรี\""
+  },
+  {
+    q: "งบประมาณรายจ่ายที่กำหนดในกฎหมายว่าด้วยงบประมาณรายจ่าย (ม.14) อาจจำแนกได้กี่ประเภท",
+    choices: ["6 ประเภท", "7 ประเภท", "8 ประเภท", "9 ประเภท"],
+    answer: 2,
+    explain: "จำแนกได้ 8 ประเภท เช่น งบกลาง, งบของหน่วยรับงบประมาณ, งบบูรณาการ, งบบุคลากร, งบสำหรับทุนหมุนเวียน, งบเพื่อชำระหนี้ภาครัฐ, งบเพื่อชดใช้เงินคงคลัง และงบเพื่อชดใช้เงินทุนสำรองจ่าย"
+  },
+  {
+    q: "ข้อใดกล่าวถูกต้องเกี่ยวกับ \"งบประมาณรายจ่ายงบกลาง\" (ม.15)",
+    choices: [
+      "ตั้งไว้สำหรับแผนงานบูรณาการที่คณะรัฐมนตรีอนุมัติ",
+      "ตั้งไว้เพื่อจัดสรรให้หน่วยรับงบประมาณใช้จ่าย โดยแยกต่างหาก และให้มีรายการเงินสำรองจ่ายเพื่อกรณีฉุกเฉินหรือจำเป็นด้วย",
+      "ตั้งไว้เพื่อการบริหารงานบุคลากรภาครัฐ",
+      "ตั้งไว้สำหรับการก่อหนี้ผูกพันข้ามปีงบประมาณ"
+    ],
+    answer: 1,
+    explain: "งบกลางตั้งไว้เพื่อจัดสรรให้หน่วยรับงบประมาณใช้จ่าย โดยแยกต่างหากจากงบของหน่วยรับงบประมาณ และให้มีรายการเงินสำรองจ่ายเพื่อกรณีฉุกเฉินหรือจำเป็นด้วย"
+  },
+  {
+    q: "งบประมาณรายจ่ายบูรณาการ ต้องมีหน่วยรับงบประมาณร่วมกันรับผิดชอบดำเนินการจำนวนเท่าใด (ม.16)",
+    choices: [
+      "ตั้งแต่หนึ่งหน่วยขึ้นไป",
+      "ตั้งแต่สองหน่วยขึ้นไป",
+      "ตั้งแต่สามหน่วยขึ้นไป",
+      "ไม่น้อยกว่าห้าหน่วย"
+    ],
+    answer: 1,
+    explain: "งบบูรณาการต้องมีหน่วยรับงบประมาณ \"ตั้งแต่สองหน่วยขึ้นไป\" ร่วมกันรับผิดชอบ และต้องสอดคล้องกับยุทธศาสตร์ชาติ"
+  },
+  {
+    q: "ผู้อำนวยการต้องเสนองบประมาณประจำปีต่อนายกรัฐมนตรี เพื่อคณะรัฐมนตรีเสนอต่อรัฐสภาเป็นเวลาอย่างน้อยเท่าใดก่อนวันเริ่มปีงบประมาณ (ม.20)",
+    choices: ["อย่างน้อย 30 วัน", "อย่างน้อย 2 เดือน", "อย่างน้อย 3 เดือน", "อย่างน้อย 6 เดือน"],
+    answer: 2,
+    explain: "ต้องเสนออย่างน้อย \"3 เดือน\" ก่อนวันเริ่มปีงบประมาณนั้น"
+  },
+  {
+    q: "ในการจัดทำกรอบประมาณการรายจ่าย ประมาณการรายรับ และฐานะการคลังของรัฐบาล ต้องจัดทำเป็นการล่วงหน้าไม่น้อยกว่ากี่ปี (ม.24)",
+    choices: ["ไม่น้อยกว่า 2 ปี", "ไม่น้อยกว่า 3 ปี", "ไม่น้อยกว่า 4 ปี", "ไม่น้อยกว่า 5 ปี"],
+    answer: 1,
+    explain: "กำหนดกรอบประมาณการล่วงหน้า \"ไม่น้อยกว่า 3 ปี\""
+  },
+  {
+    q: "ในการจัดทำงบประมาณประจำปี ให้สำนักงบประมาณเป็นหน่วยงานหลัก โดยร่วมกับหน่วยงานใดบ้าง (ม.24)",
+    choices: [
+      "กระทรวงการคลัง, สศช., และสำนักงานการตรวจเงินแผ่นดิน",
+      "กระทรวงการคลัง, สศช., และธนาคารแห่งประเทศไทย",
+      "กระทรวงการคลัง, ธนาคารแห่งประเทศไทย, และสำนักงานสภาพัฒนาการเศรษฐกิจฯ ร่วมกับ ธ.ออมสิน",
+      "กระทรวงการคลัง, ธนาคารแห่งประเทศไทย, และกรมบัญชีกลาง"
+    ],
+    answer: 1,
+    explain: "ร่วมกับ กระทรวงการคลัง, สำนักงานคณะกรรมการพัฒนาการเศรษฐกิจและสังคมแห่งชาติ (สศช.), และธนาคารแห่งประเทศไทย"
+  },
+  {
+    q: "กรณีหน่วยรับงบประมาณจะต้องก่อหนี้ผูกพันงบประมาณมากกว่าหนึ่งปีงบประมาณ ต้องเสนอคณะรัฐมนตรีอนุมัติก่อน สำหรับรายการที่มีวงเงินตั้งแต่เท่าใดขึ้นไป (ม.26)",
+    choices: [
+      "ตั้งแต่ 500 ล้านบาทขึ้นไป",
+      "ตั้งแต่ 1,000 ล้านบาทขึ้นไป",
+      "เกินกว่า 1,000 ล้านบาท",
+      "ตั้งแต่ 2,000 ล้านบาทขึ้นไป"
+    ],
+    answer: 1,
+    explain: "วงเงิน \"ตั้งแต่ 1,000 ล้านบาทขึ้นไป\" ต้องเสนอคณะรัฐมนตรีพิจารณาอนุมัติก่อนยื่นคำขอตั้งงบประมาณต่อผู้อำนวยการ"
+  },
+  {
+    q: "การขอตั้งงบประมาณรายจ่ายของจังหวัดและกลุ่มจังหวัด ผู้ใดมีหน้าที่รวบรวมคำขอ และยื่นต่อผู้ใด (ม.27)",
+    choices: [
+      "ผู้ว่าราชการจังหวัด ยื่นต่อผู้อำนวยการโดยตรง",
+      "ผู้ว่าราชการจังหวัด/หัวหน้ากลุ่มจังหวัด รวบรวมคำขอ ยื่นต่อรัฐมนตรีเจ้าสังกัดเพื่อเสนอต่อผู้อำนวยการ",
+      "ผู้ว่าราชการจังหวัด ยื่นต่อรัฐมนตรีว่าการกระทรวงมหาดไทยเพื่อเสนอต่อผู้อำนวยการ",
+      "ปลัดจังหวัด รวบรวมคำขอ ยื่นต่อรัฐมนตรีว่าการกระทรวงมหาดไทย"
+    ],
+    answer: 1,
+    explain: "ผู้ว่าราชการจังหวัด/ผู้ว่าฯ ที่เป็นหัวหน้ากลุ่มจังหวัด รวบรวมคำขอ แล้วยื่นต่อ \"รัฐมนตรีเจ้าสังกัด\" เพื่อเสนอต่อผู้อำนวยการ (ระวังหลอกกับข้อ มท. ซึ่งเป็นกรณี อปท. ตาม ม.29)"
+  },
+  {
+    q: "การขอตั้งงบประมาณของรัฐสภา ศาลยุติธรรม ศาลปกครอง องค์กรอิสระ ฯลฯ ให้ยื่นคำขอตั้งงบประมาณต่อผู้ใด (ม.28)",
+    choices: [
+      "ต่อผู้อำนวยการสำนักงบประมาณ",
+      "ต่อคณะรัฐมนตรี ภายในระยะเวลาที่คณะรัฐมนตรีกำหนด",
+      "ต่อรัฐมนตรีว่าการกระทรวงการคลัง",
+      "ต่อนายกรัฐมนตรี ภายในระยะเวลาที่นายกรัฐมนตรีกำหนด"
+    ],
+    answer: 1,
+    explain: "หน่วยงานเหล่านี้ทำหน้าที่เป็นหน่วยรับงบประมาณ โดยยื่นคำขอตั้งงบประมาณต่อ \"คณะรัฐมนตรี\" ภายในระยะเวลาที่คณะรัฐมนตรีกำหนด"
+  },
+  {
+    q: "การขอตั้งงบประมาณเพื่อสนับสนุนองค์กรปกครองส่วนท้องถิ่นเป็นเงินอุดหนุน ให้ อปท. ยื่นคำขอต่อผู้ใด (ม.29)",
+    choices: [
+      "ต่อผู้อำนวยการสำนักงบประมาณโดยตรง",
+      "ต่อผู้ว่าราชการจังหวัดเพื่อเสนอต่อผู้อำนวยการ",
+      "ต่อรัฐมนตรีว่าการกระทรวงมหาดไทยเพื่อเสนอต่อผู้อำนวยการ",
+      "ต่อรัฐมนตรีว่าการกระทรวงการคลังเพื่อเสนอต่อผู้อำนวยการ"
+    ],
+    answer: 2,
+    explain: "ให้ อปท. ยื่นคำขอต่อ \"รัฐมนตรีว่าการกระทรวงมหาดไทย\" เพื่อเสนอต่อผู้อำนวยการ"
+  },
+  {
+    q: "ถ้าหน่วยรับงบประมาณมิได้ยื่นคำขอตั้งงบประมาณภายในระยะเวลาที่กำหนด หรือยื่นโดยไม่มีรายงานเงินนอกงบประมาณ จะเกิดผลอย่างไร (ม.30)",
+    choices: [
+      "ให้หน่วยรับงบประมาณนั้นไม่ได้รับการจัดสรรงบประมาณในปีนั้น",
+      "ให้คณะรัฐมนตรีพิจารณาตั้งงบประมาณให้ตามที่เห็นสมควร",
+      "ให้ผู้อำนวยการตั้งงบประมาณรายจ่ายประจำปีให้ได้ตามที่เห็นสมควร",
+      "ให้รัฐมนตรีเจ้าสังกัดตั้งงบประมาณแทนภายใน 15 วัน"
+    ],
+    answer: 2,
+    explain: "ให้ \"ผู้อำนวยการ\" ตั้งงบประมาณรายจ่ายประจำปีให้ได้ตามที่เห็นสมควร"
+  },
+  {
+    q: "งบประมาณรายจ่ายของหน่วยรับงบประมาณ จะโอนหรือนำไปใช้สำหรับหน่วยรับงบประมาณอื่นได้หรือไม่ (ม.35)",
+    choices: [
+      "โอนได้เสมอ หากผู้อำนวยการอนุมัติ",
+      "โอนไม่ได้ เว้นแต่กรณีตามที่กฎหมายกำหนด เช่น มี พ.ร.บ. ให้โอนได้ หรือมี พ.ร.ฎ. รวม/โอนส่วนราชการ",
+      "โอนได้เฉพาะกรณีคณะรัฐมนตรีอนุมัติเท่านั้น",
+      "โอนได้เฉพาะภายในกระทรวงเดียวกัน"
+    ],
+    answer: 1,
+    explain: "หลักคือโอนไปหน่วยอื่นมิได้ เว้นแต่ข้อยกเว้น เช่น (1) มี พ.ร.บ. ให้โอน (2) มี พ.ร.ฎ. รวม/โอนส่วนราชการ (3) โอนงบบูรณาการภายใต้แผนเดียวกัน (4) โอนงบบุคลากรภายใต้แผนงานบุคลากรภาครัฐ"
+  },
+  {
+    q: "การก่อหนี้ผูกพันข้ามปีงบประมาณ (ม.41) ให้ผู้อำนวยการเสนอคณะรัฐมนตรีพิจารณาอนุมัติภายในกี่วันนับแต่วันที่กฎหมายว่าด้วยงบประมาณรายจ่ายมีผลใช้บังคับ",
+    choices: ["ภายใน 30 วัน", "ภายใน 45 วัน", "ภายใน 60 วัน", "ภายใน 90 วัน"],
+    answer: 2,
+    explain: "ให้เสนอคณะรัฐมนตรีพิจารณาอนุมัติการก่อหนี้ผูกพันภายใน \"60 วัน\" นับแต่วันที่กฎหมายว่าด้วยงบประมาณรายจ่ายมีผลใช้บังคับ"
+  },
+  {
+    q: "การขอเบิกเงินจากคลังตามงบประมาณรายจ่ายประจำปี กรณีก่อหนี้ผูกพันและกันเงินไว้แล้ว สามารถขยายเวลาขอเบิกได้อีกไม่เกินเท่าใด และหากจำเป็นต้องเบิกภายหลังจะทำอย่างไร (ม.43)",
+    choices: [
+      "ขยายได้อีกไม่เกิน 3 เดือน และทำความตกลงกับสำนักงบประมาณเพื่อขยายอีกไม่เกิน 3 เดือน",
+      "ขยายได้อีกไม่เกิน 6 เดือน และทำความตกลงกับกระทรวงการคลังเพื่อขยายอีกไม่เกิน 6 เดือน",
+      "ขยายได้อีกไม่เกิน 6 เดือน และทำความตกลงกับสำนักงบประมาณเพื่อขยายอีกไม่เกิน 6 เดือน",
+      "ขยายได้อีกไม่เกิน 1 ปี และทำความตกลงกับกระทรวงการคลังเพื่อขยายอีกไม่เกิน 6 เดือน"
+    ],
+    answer: 1,
+    explain: "ขยายได้อีกไม่เกิน 6 เดือนของปีงบประมาณถัดไป และหากจำเป็นต้องเบิกภายหลัง ให้ทำความตกลงกับ \"กระทรวงการคลัง\" เพื่อขยายอีกไม่เกิน 6 เดือน"
+  },
+  {
+    q: "\"เงินทุนสำรองจ่าย\" ตามมาตรา 45 กำหนดไว้เป็นจำนวนเท่าใด",
+    choices: [
+      "10,000 ล้านบาท",
+      "50,000 ล้านบาท",
+      "100,000 ล้านบาท",
+      "500,000 ล้านบาท"
+    ],
+    answer: 1,
+    explain: "เงินทุนสำรองจ่าย เป็นจำนวน \"50,000 ล้านบาท\" จ่ายได้กรณีจำเป็นเร่งด่วน และงบกลางรายการเงินสำรองจ่ายเพื่อกรณีฉุกเฉินหรือจำเป็นไม่เพียงพอ โดยอนุมัติคณะรัฐมนตรี"
+  },
+  {
+    q: "ระบบการติดตามและประเมินผลที่ผู้อำนวยการจัดวาง (ม.46) ต้องประกอบด้วยช่วงเวลาใดบ้าง",
+    choices: [
+      "เฉพาะระหว่างการใช้จ่ายงบประมาณเท่านั้น",
+      "ก่อนการจัดสรรงบประมาณ และภายหลังการใช้จ่ายงบประมาณ",
+      "ก่อนการจัดสรร ระหว่างการใช้จ่าย และภายหลังการใช้จ่ายงบประมาณ",
+      "ระหว่างการใช้จ่าย และภายหลังการใช้จ่ายงบประมาณ"
+    ],
+    answer: 2,
+    explain: "ต้องครอบคลุมทั้ง 3 ช่วง คือ ก่อนการจัดสรรงบประมาณ ระหว่างการใช้จ่ายงบประมาณ และภายหลังจากการใช้จ่ายงบประมาณ"
+  },
+  {
+    q: "เมื่อสิ้นปีงบประมาณ ให้รัฐมนตรีประกาศรายงานการรับจ่ายเงินงบประมาณประจำปีและเงินทุนสำรองจ่ายในราชกิจจานุเบกษาภายในกี่วัน (ม.49)",
+    choices: ["ภายใน 30 วัน", "ภายใน 45 วัน", "ภายใน 60 วัน", "ภายใน 90 วัน"],
+    answer: 2,
+    explain: "ให้ประกาศในราชกิจจานุเบกษาภายใน \"60 วัน\""
+  },
+  {
+    q: "หน่วยรับงบประมาณต้องรายงานผลการใช้จ่ายงบประมาณและผลการปฏิบัติงานให้ผู้อำนวยการทราบภายในกี่วันนับแต่วันสิ้นปีงบประมาณ (ม.50)",
+    choices: ["ภายใน 30 วัน", "ภายใน 45 วัน", "ภายใน 60 วัน", "ภายใน 90 วัน"],
+    answer: 1,
+    explain: "หน่วยรับงบประมาณรายงานให้ผู้อำนวยการทราบภายใน \"45 วัน\" นับแต่วันสิ้นปีงบประมาณ"
+  },
+  {
+    q: "ผู้อำนวยการต้องจัดทำรายงานผลการใช้จ่ายงบประมาณและผลการปฏิบัติงานเสนอต่อคณะรัฐมนตรีภายในกี่วันนับแต่วันสิ้นปีงบประมาณ (ม.50)",
+    choices: ["ภายใน 45 วัน", "ภายใน 60 วัน", "ภายใน 90 วัน", "ภายใน 120 วัน"],
+    answer: 2,
+    explain: "ผู้อำนวยการเสนอต่อคณะรัฐมนตรีภายใน \"90 วัน\" นับแต่วันสิ้นปีงบประมาณ (ระวังหลอกกับ 45 วันของหน่วยรับงบประมาณ)"
+  },
+  {
+    q: "การรายงานการโอนงบประมาณรายจ่ายงบกลาง หรือการโอนงบบูรณาการ/งบบุคลากรระหว่างหน่วยรับงบประมาณ ให้ผู้อำนวยการเสนอต่อคณะรัฐมนตรีเพื่อรายงานต่อรัฐสภาภายในกี่วัน (ม.51)",
+    choices: ["ภายใน 30 วัน", "ภายใน 45 วัน", "ภายใน 60 วัน", "ภายใน 90 วัน"],
+    answer: 0,
+    explain: "ให้เสนอต่อคณะรัฐมนตรีเพื่อรายงานต่อรัฐสภาภายใน \"30 วัน\" นับแต่วันสิ้นปีงบประมาณนั้น"
+  },
+  {
+    q: "ข้อใดกล่าวถูกต้องเกี่ยวกับความรับผิด กรณีเจ้าหน้าที่ของรัฐจ่ายเงินหรือก่อหนี้ผูกพันโดยฝ่าฝืน พ.ร.บ. นี้ (ม.52)",
+    choices: [
+      "รับผิดเฉพาะทางอาญาเท่านั้น ไม่ต้องชดใช้เงิน",
+      "นอกจากความรับผิดทางอาญาแล้ว ต้องรับผิดชดใช้เงินที่จ่ายไป รวมถึงค่าสินไหมทดแทนด้วย",
+      "ต้องชดใช้เงินที่จ่ายไปเท่านั้น โดยไม่มีความรับผิดทางอาญา",
+      "ไม่ต้องรับผิดหากผู้บังคับบัญชาเป็นผู้สั่งการ"
+    ],
+    answer: 1,
+    explain: "นอกจากความรับผิดทางอาญาแล้ว ต้องรับผิดชดใช้เงินที่จ่ายไปหรือต้องผูกพันจะต้องจ่าย ตลอดจนค่าสินไหมทดแทนใด ๆ ให้แก่หน่วยรับงบประมาณ"
+  },
+  {
+    q: "ผู้ใดได้รับยกเว้นไม่ต้องรับผิดตามมาตรา 52 วรรคหนึ่ง",
+    choices: [
+      "ผู้ที่กระทำตามคำสั่งของผู้บังคับบัญชาทุกกรณี",
+      "บุคคลภายนอกผู้ได้รับประโยชน์จากการกระทำ",
+      "ผู้ที่ได้ทักท้วงคำสั่งของผู้บังคับบัญชา หรือบันทึกข้อโต้แย้งเป็นหนังสือไว้แล้วว่าการปฏิบัติตามคำสั่งอาจไม่ชอบด้วยกฎหมายหรือระเบียบ",
+      "ลูกจ้างและพนักงานราชการทุกคน"
+    ],
+    answer: 2,
+    explain: "ไม่ใช้บังคับแก่ผู้ที่ได้ทักท้วงคำสั่ง หรือบันทึกข้อโต้แย้งเป็นหนังสือไว้แล้วว่าการปฏิบัติตามคำสั่งนั้นอาจไม่ชอบด้วยกฎหมายหรือระเบียบ"
+  },
+  {
+    q: "ตามบทเฉพาะกาล (ม.53) ให้มีการปรับปรุงหรือแก้ไขเพิ่มเติมบทนิยามคำว่า \"รัฐวิสาหกิจ\" ในกฎหมายอื่นให้แล้วเสร็จภายในกี่ปี",
+    choices: ["ภายใน 1 ปี", "ภายใน 3 ปี", "ภายใน 5 ปี", "ภายใน 10 ปี"],
+    answer: 2,
+    explain: "ให้ดำเนินการให้แล้วเสร็จภายใน \"5 ปี\" นับแต่วันที่พระราชบัญญัตินี้ใช้บังคับ"
+  },
+  {
+    q: "บทเฉพาะกาล (ม.53) อ้างถึงบทนิยามคำว่า \"รัฐวิสาหกิจ\" ตามกฎหมายฉบับใด",
+    choices: [
+      "พระราชบัญญัติวิธีการงบประมาณ พ.ศ. 2502 และที่แก้ไขเพิ่มเติม",
+      "พระราชบัญญัติวิธีการงบประมาณ พ.ศ. 2561",
+      "พระราชบัญญัติวินัยการเงินการคลังของรัฐ พ.ศ. 2561",
+      "พระราชบัญญัติเงินคงคลัง พ.ศ. 2491"
+    ],
+    answer: 0,
+    explain: "อ้างถึงบทนิยาม \"รัฐวิสาหกิจ\" ตามมาตรา 4 แห่งพระราชบัญญัติวิธีการงบประมาณ พ.ศ. 2502 และที่แก้ไขเพิ่มเติม"
+  },
+  {
+    q: "การโอนงบประมาณในแผนงานหรือรายการอื่น โดยปกติต้องได้รับอนุมัติจากผู้อำนวยการ แต่กรณีใดที่ผู้อำนวยการอนุมัติเองไม่ได้ ต้องได้รับอนุมัติจากคณะรัฐมนตรี (ม.36)",
+    choices: [
+      "การโอนเพื่อเพิ่มงบประมาณรายจ่ายบุคลากร",
+      "การโอนที่เป็นผลให้เพิ่มรายจ่ายประเภทเงินราชการลับ หรือเป็นแผนงาน/โครงการใหม่",
+      "การโอนงบกลางระหว่างรายการในงบกลางด้วยกัน",
+      "การโอนงบบูรณาการภายใต้แผนงานเดียวกัน"
+    ],
+    answer: 1,
+    explain: "ผู้อำนวยการจะอนุมัติมิได้ในกรณีที่เป็นผลให้เพิ่มรายจ่ายประเภท \"เงินราชการลับ\" หรือเป็น \"แผนงานหรือโครงการใหม่\" เว้นแต่ได้รับอนุมัติจากคณะรัฐมนตรี"
+  },
+  {
+    q: "การจ่ายเงินหรือก่อหนี้ผูกพัน โดยปกติต้องได้รับอนุมัติเงินจัดสรรจากผู้อำนวยการก่อน แต่มีข้อยกเว้นในกรณีใด (ม.40)",
+    choices: [
+      "รายจ่ายตามงบประมาณรายจ่ายงบกลางทุกกรณี",
+      "รายจ่ายตามงบประมาณรายจ่ายบุคลากรและรายจ่ายอื่นที่ผู้อำนวยการกำหนดโดยความเห็นชอบของคณะรัฐมนตรี",
+      "รายจ่ายที่มีวงเงินต่ำกว่า 1,000 ล้านบาท",
+      "รายจ่ายของหน่วยงานของรัฐสภาและองค์กรอิสระ"
+    ],
+    answer: 1,
+    explain: "ข้อยกเว้นคือรายจ่ายตามงบประมาณรายจ่ายบุคลากรและรายจ่ายอื่นที่ผู้อำนวยการกำหนดโดยความเห็นชอบของคณะรัฐมนตรี ให้จ่ายหรือก่อหนี้ผูกพันได้โดยไม่ต้องขออนุมัติเงินจัดสรร"
+  }
+];
+
+/* ============ TABS ============ */
+document.querySelectorAll('.tab').forEach(t=>{
+  t.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(x=>x.classList.remove('show'));
+    t.classList.add('active');
+    document.getElementById('panel-'+t.dataset.tab).classList.add('show');
+  });
+});
+
+/* ============ QUIZ ENGINE ============ */
+const el = id=>document.getElementById(id);
+let order=[], idx=0, score=0, wrong=0, answered=false, curChoices=[], curAnswer=0;
+
+document.getElementById('qtotal').textContent = QUESTIONS.length;
+
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+
+function startQuiz(){
+  el('quizCard').style.display='';
+  el('resultCard').style.display='none';
+  order = el('shuffleQ').checked ? shuffle(QUESTIONS.map((_,i)=>i)) : QUESTIONS.map((_,i)=>i);
+  idx=0; score=0; wrong=0;
+  el('qscore').innerHTML='คะแนน <b>0</b>';
+  renderQ();
+}
+
+function renderQ(){
+  answered=false;
+  const q = QUESTIONS[order[idx]];
+  el('qcount').textContent = `ข้อ ${idx+1} / ${order.length}`;
+  el('bar').style.width = ((idx)/order.length*100)+'%';
+  el('qtext').textContent = q.q;
+
+  // build choices (optionally shuffled)
+  let pairs = q.choices.map((c,i)=>({c,correct:i===q.answer}));
+  if(el('shuffleC').checked) pairs = shuffle(pairs);
+  curAnswer = pairs.findIndex(p=>p.correct);
+  curChoices = pairs;
+
+  const letters=['ก','ข','ค','ง','จ'];
+  const box = el('choices'); box.innerHTML='';
+  pairs.forEach((p,i)=>{
+    const b=document.createElement('button');
+    b.className='choice';
+    b.innerHTML=`<span class="ltr">${letters[i]}</span><span>${p.c}</span>`;
+    b.addEventListener('click',()=>selectChoice(i,b));
+    box.appendChild(b);
+  });
+
+  const ex=el('explain'); ex.className='explain'; ex.innerHTML='';
+  el('nextBtn').disabled=true;
+  el('nextBtn').textContent = el('instant').checked ? 'ตรวจคำตอบ' : 'ข้อถัดไป';
+}
+
+let selectedIdx=-1;
+function selectChoice(i,btn){
+  if(answered) return;
+  selectedIdx=i;
+  document.querySelectorAll('.choice').forEach(c=>c.classList.remove('selected'));
+  btn.classList.add('selected');
+  el('nextBtn').disabled=false;
+  if(!el('instant').checked){
+    el('nextBtn').textContent = (idx===order.length-1)?'ดูผลคะแนน':'ข้อถัดไป';
+  }
+}
+
+function reveal(){
+  answered=true;
+  const q = QUESTIONS[order[idx]];
+  const nodes=document.querySelectorAll('.choice');
+  nodes.forEach((n,i)=>{
+    n.classList.add('locked');
+    if(i===curAnswer) n.classList.add('correct');
+    else if(i===selectedIdx) n.classList.add('wrong');
+  });
+  const ok = selectedIdx===curAnswer;
+  if(ok){score++; el('qscore').innerHTML=`คะแนน <b>${score}</b>`;}
+  else wrong++;
+  const ex=el('explain');
+  ex.className='explain show'+(ok?' ok':'');
+  ex.innerHTML=`<span class="etag">${ok?'✓ ถูกต้อง':'✗ เฉลย'}</span>${q.explain}`;
+  el('nextBtn').disabled=false;
+  el('nextBtn').textContent = (idx===order.length-1)?'ดูผลคะแนน':'ข้อถัดไป';
+}
+
+el('nextBtn').addEventListener('click',()=>{
+  if(selectedIdx<0) return;
+  if(el('instant').checked && !answered){ reveal(); return; }
+  // non-instant mode: tally on advance
+  if(!el('instant').checked){
+    if(selectedIdx===curAnswer) score++; else wrong++;
+    el('qscore').innerHTML=`คะแนน <b>${score}</b>`;
+  }
+  if(idx===order.length-1){ showResult(); return; }
+  idx++; selectedIdx=-1; renderQ();
+});
+
+el('restartBtn').addEventListener('click',startQuiz);
+el('againBtn').addEventListener('click',startQuiz);
+
+function showResult(){
+  el('bar').style.width='100%';
+  el('quizCard').style.display='none';
+  el('resultCard').style.display='';
+  const total=order.length;
+  const correct=score;
+  const pct=Math.round(correct/total*100);
+  el('rCorrect').textContent=correct;
+  el('rWrong').textContent=total-correct;
+  el('rTotal').textContent=total;
+  // animate ring + number
+  const circ=439.8;
+  const off=circ-(circ*pct/100);
+  setTimeout(()=>{el('ringFill').style.transition='stroke-dashoffset 1s ease';el('ringFill').style.strokeDashoffset=off;},80);
+  let n=0;const step=Math.max(1,Math.round(pct/40));
+  const iv=setInterval(()=>{n+=step;if(n>=pct){n=pct;clearInterval(iv);}el('pctNum').textContent=n;},25);
+
+  let title,msg;
+  if(pct>=90){title='ยอดเยี่ยมมาก! 🏆';msg='แม่นยำระดับพร้อมเข้าห้องสอบ ทบทวนข้อที่พลาดอีกนิดก็เพอร์เฟกต์';}
+  else if(pct>=75){title='เก่งมาก! 🎯';msg='พื้นฐานแน่น เหลือเก็บรายละเอียดตัวเลขและระยะเวลาให้ครบ';}
+  else if(pct>=50){title='มาถูกทางแล้ว 💪';msg='เข้าใจภาพรวมดี ลองกลับไปอ่านสรุปหมวดที่ยังพลาดบ่อย';}
+  else {title='สู้ต่อนะ! 📚';msg='แนะนำอ่านสรุปเนื้อหารายมาตราก่อน แล้วกลับมาทำซ้ำอีกรอบ';}
+  el('resultTitle').textContent=title;
+  el('resultMsg').textContent=msg;
+}
+
+/* ============ SUMMARY CONTENT ============ */
+const SUMMARY=[
+  {h:'โครงสร้าง & บทนิยาม (ม.4)', items:[
+    'ประกอบด้วย <span class="hi">8 หมวด 1 บทเฉพาะกาล 61 มาตรา</span>',
+    'ปีงบประมาณ = <b>1 ต.ค. ปีหนึ่ง → 30 ก.ย. ปีถัดไป</b> (ใช้ พ.ศ. ปีถัดไปเป็นชื่อ)',
+    '<b>งบประมาณรายจ่าย</b> = จำนวนเงิน<span class="hi">อย่างสูง</span>ที่อนุญาตให้จ่าย/ก่อหนี้ผูกพันได้',
+    '<b>เงินจัดสรร</b> = ส่วนหนึ่งของงบฯ ที่แบ่งสรรให้จ่าย/ก่อหนี้ผูกพันในระยะเวลาหนึ่ง',
+    '<b>เงินนอกงบประมาณ</b> = เงินที่ต้องนำส่งคลัง แต่มีกฎหมายอนุญาตให้เก็บไว้ใช้จ่ายได้',
+    '<b>หน่วยรับงบประมาณ</b> รวมถึง <span class="hi">สภากาชาดไทย</span> ด้วย',
+  ]},
+  {h:'นิยามหน่วยงาน', items:[
+    '<b>หน่วยงานของรัฐ</b> มี <span class="hi">7 ประเภท</span> (ส่วนราชการ / รัฐวิสาหกิจ / หน่วยงานรัฐสภา-ศาล-องค์กรอิสระ-อัยการ / องค์การมหาชน / ทุนหมุนเวียนที่เป็นนิติบุคคล / อปท. / หน่วยงานอื่นของรัฐ)',
+    '<b>รัฐวิสาหกิจ</b> (บริษัท) = ส่วนราชการ/รัฐวิสาหกิจมีทุนรวมอยู่ด้วย <span class="hi">เกินร้อยละ 50</span>',
+    '<b>ส่วนราชการ</b> รวมถึง จังหวัด และกลุ่มจังหวัด ด้วย',
+    '<b>ผู้อำนวยการ</b> = ผอ.สำนักงบประมาณ · <b>รัฐมนตรี</b> = รมว.คลัง',
+  ]},
+  {h:'หมวด 1 บททั่วไป (ม.5–9)', items:[
+    'ผู้รักษาการ = <span class="hi">นายกรัฐมนตรี + รมว.คลัง</span> (ม.5)',
+    'การจัดทำ/บริหาร/ควบคุม/ประเมินผลงบฯ ต้องสอดคล้องกับ <b>กฎหมายว่าด้วยวินัยการเงินการคลังของรัฐ</b> (ม.6)',
+    'การโอนงบฯ ทำได้เฉพาะกรณีจำเป็นตามที่ พ.ร.บ. นี้กำหนดเท่านั้น (ม.7)',
+    'หัวหน้าหน่วยรับงบฯ มอบหมายผู้บริหารคนหนึ่งประสานงานงบฯ + แจ้งสำนักงบประมาณ (ม.9)',
+  ]},
+  {h:'หมวด 2 ลักษณะของงบประมาณ (ม.10–18)', items:[
+    'เอกสารประกอบงบฯ ประจำปีต่อรัฐสภา อย่างน้อย <span class="hi">9 รายการ</span> (ม.10)',
+    'ถ้ารายรับต่ำกว่ารายจ่าย → แถลงวิธีหาเงินส่วนขาดดุล; ถ้าสูงกว่า → แถลงวิธีจัดการส่วนเกินดุล (ม.11)',
+    'พ.ร.บ.งบฯ ออกไม่ทัน → ใช้งบฯ ปีก่อนไปพลางก่อน ตามที่ <b>ผู้อำนวยการ</b> กำหนดโดย<b>อนุมัตินายกฯ</b> (ม.12)',
+    'ประเภทงบประมาณรายจ่าย จำแนกได้ <span class="hi">8 ประเภท</span> (ม.14)',
+    'งบบูรณาการ = ตั้งไว้สำหรับแผนงานบูรณาการที่ ครม. อนุมัติ มีหน่วยรับงบฯ <span class="hi">ตั้งแต่ 2 หน่วยขึ้นไป</span> ต้องสอดคล้องยุทธศาสตร์ชาติ (ม.16)',
+    'งบรายจ่ายข้ามปี = ใช้ได้เกินปีงบฯ ต้องกำหนดเวลาสิ้นสุด ตามหลักเกณฑ์ ผอ. โดยความเห็นชอบ ครม. (ม.18)',
+  ]},
+  {h:'หมวด 3 หน้าที่และอำนาจของ ผอ. (ม.19–22)', items:[
+    'ผอ. กำหนดยุทธศาสตร์การจัดสรรงบฯ โดยความเห็นชอบ ครม. (ม.19)',
+    'ผอ. เสนองบฯ ประจำปีต่อนายกฯ อย่างน้อย <span class="hi">3 เดือน</span> ก่อนวันเริ่มปีงบฯ (ม.20)',
+    'ผอ. มีอำนาจเรียกหน่วยรับงบฯ ชี้แจง + เข้าตรวจบัญชี เอกสาร หลักฐาน (ม.21)',
+    'พนักงานเจ้าหน้าที่ที่ ผอ. มอบหมาย = เจ้าพนักงานตามประมวลกฎหมายอาญา (ม.22)',
+  ]},
+  {h:'หมวด 4 การจัดทำงบประมาณ (ม.23–32)', items:[
+    'สำนักงบประมาณเป็นหน่วยงานหลัก ร่วมกับ <b>กระทรวงการคลัง + สศช. + ธปท.</b> (ม.24)',
+    'กรอบประมาณการรายจ่าย/รายรับ/ฐานะการคลัง ล่วงหน้า <span class="hi">ไม่น้อยกว่า 3 ปี</span> (ม.24)',
+    'ก่อหนี้ผูกพัน > 1 ปีงบฯ วงเงิน <span class="hi">ตั้งแต่ 1,000 ล้านบาทขึ้นไป</span> → เสนอ ครม. อนุมัติก่อน (ม.26)',
+    'งบฯ จังหวัด/กลุ่มจังหวัด → ผู้ว่าฯ รวบรวม ยื่นต่อ <b>รัฐมนตรีเจ้าสังกัด</b> เพื่อเสนอ ผอ. (ม.27)',
+    'งบฯ รัฐสภา/ศาล/องค์กรอิสระ/อัยการ → ยื่นต่อ <b>คณะรัฐมนตรี</b> (ม.28)',
+    'งบฯ อุดหนุน อปท. → อปท. ยื่นต่อ <b>รมว.มหาดไทย</b> เพื่อเสนอ ผอ. (ม.29)',
+    'ไม่ยื่นคำขอตามกำหนด/ไม่มีรายงานเงินนอกงบฯ → <b>ผอ. ตั้งงบฯ ให้ตามที่เห็นสมควร</b> (ม.30)',
+  ]},
+  {h:'หมวด 5 การบริหารงบประมาณรายจ่าย (ม.33–36)', items:[
+    'งบฯ หน่วยหนึ่ง จะโอนไปหน่วยอื่นมิได้ <b>เว้นแต่</b> มี พ.ร.บ. ให้โอน / พ.ร.ฎ. รวม-โอนส่วนราชการ / โอนงบบูรณาการในแผนเดียวกัน / โอนงบบุคลากรในแผนบุคลากรภาครัฐ (ม.35)',
+    'โอนไปแผนงาน/รายการอื่น ต้องได้รับอนุมัติ ผอ. — แต่ ผอ. อนุมัติเองไม่ได้ถ้าเพิ่ม<span class="hi">เงินราชการลับ</span>หรือเป็น<span class="hi">แผนงาน/โครงการใหม่</span> ต้องให้ <b>ครม.</b> อนุมัติ (ม.36)',
+    'งบกลาง: ผอ. จัดสรรให้หน่วยรับงบฯ เบิกจ่ายตรงได้ และโดยอนุมัตินายกฯ โอนระหว่างรายการในงบกลางได้ (ม.36)',
+  ]},
+  {h:'หมวด 6 การควบคุมงบประมาณ (ม.37–45)', items:[
+    'รัฐมนตรี (รมว.คลัง) รับผิดชอบควบคุมการเบิกจ่าย + ออกระเบียบโดยความเห็นชอบ ครม. (ม.37)',
+    'จ่ายเงิน/ก่อหนี้ผูกพัน ต้องได้รับ<b>อนุมัติเงินจัดสรรจาก ผอ. ก่อน</b> เว้นแต่ <span class="hi">งบบุคลากร</span>และรายจ่ายอื่นที่ ผอ. กำหนด (ม.40)',
+    'ก่อหนี้ผูกพันข้ามปี → ผอ. รวบรวมเสนอ ครม. อนุมัติภายใน <span class="hi">60 วัน</span> นับแต่กฎหมายงบฯ ใช้บังคับ (ม.41)',
+    'ขอเบิกเงินจากคลัง ทำได้ภายในปีงบฯ; ก่อหนี้+กันเงินแล้ว ขยายได้อีก <span class="hi">ไม่เกิน 6 เดือน</span> และตกลงกับ <b>กระทรวงการคลัง</b> ขยายได้อีกไม่เกิน 6 เดือน (ม.43–44)',
+    'เงินทุนสำรองจ่าย = <span class="hi">50,000 ล้านบาท</span> ใช้กรณีจำเป็นเร่งด่วน โดยอนุมัติ ครม. (ม.45)',
+  ]},
+  {h:'หมวด 7 การประเมินผลและการรายงาน (ม.46–51)', items:[
+    'ผอ. จัดวางระบบติดตามประเมินผล ครอบคลุม <span class="hi">ก่อนจัดสรร / ระหว่างใช้จ่าย / ภายหลังใช้จ่าย</span> (ม.46)',
+    'หน่วยรับงบฯ ต้องมีระบบประเมินผลภายใน และ<b>เปิดเผยต่อสาธารณชน</b> (ม.47)',
+    'รัฐมนตรีประกาศรายงานการรับจ่ายเงินงบฯ + เงินทุนสำรองจ่าย ในราชกิจจาฯ ภายใน <span class="hi">60 วัน</span> (ม.49)',
+    'หน่วยรับงบฯ รายงานผลให้ ผอ. ภายใน <span class="hi">45 วัน</span> → ผอ. เสนอ ครม. ภายใน <span class="hi">90 วัน</span> นับแต่สิ้นปีงบฯ (ม.50)',
+    'รายงานการโอนงบกลาง/งบบูรณาการ/งบบุคลากร เสนอ ครม. เพื่อรายงานรัฐสภาภายใน <span class="hi">30 วัน</span> นับแต่สิ้นปีงบฯ (ม.51)',
+  ]},
+  {h:'หมวด 8 ความรับผิด & บทเฉพาะกาล (ม.52–53)', items:[
+    'จ่ายเงิน/ก่อหนี้ฝ่าฝืน พ.ร.บ. → นอกจากผิดอาญาแล้ว ต้อง<b>ชดใช้เงิน + ค่าสินไหมทดแทน</b> (ม.52)',
+    'บุคคลภายนอกที่ได้ประโยชน์ต้องร่วมรับผิด เว้นแต่สุจริต ไม่รู้เท่าถึงการฝ่าฝืน (ม.52)',
+    'ผู้ที่<b>ทักท้วงคำสั่ง / บันทึกข้อโต้แย้งเป็นหนังสือ</b>ไว้แล้ว → ได้รับยกเว้นความรับผิด (ม.52)',
+    'บทเฉพาะกาล: ปรับปรุงนิยาม "รัฐวิสาหกิจ" (อ้างอิง พ.ร.บ.วิธีการงบประมาณ <b>พ.ศ. 2502</b>) ในกฎหมายอื่นให้เสร็จภายใน <span class="hi">5 ปี</span> (ม.53)',
+  ]},
+];
+
+const sw=document.getElementById('summaryWrap');
+SUMMARY.forEach((s,i)=>{
+  const d=document.createElement('div');
+  d.className='acc'+(i===0?' open':'');
+  d.innerHTML=`<div class="acc-head"><span class="acc-num">${i+1}</span>${s.h}<span class="arrow">▾</span></div>
+    <div class="acc-body"><div class="acc-inner"><ul>${s.items.map(it=>`<li>${it}</li>`).join('')}</ul></div></div>`;
+  sw.appendChild(d);
+  const head=d.querySelector('.acc-head'), body=d.querySelector('.acc-body');
+  head.addEventListener('click',()=>{
+    const open=d.classList.toggle('open');
+    body.style.maxHeight = open ? body.scrollHeight+'px' : '0';
+  });
+});
+// open first by default
+const first=sw.querySelector('.acc.open .acc-body');
+if(first) first.style.maxHeight=first.scrollHeight+'px';
+
+/* init */
+startQuiz();
+
+</script>
+</body>
+</html>

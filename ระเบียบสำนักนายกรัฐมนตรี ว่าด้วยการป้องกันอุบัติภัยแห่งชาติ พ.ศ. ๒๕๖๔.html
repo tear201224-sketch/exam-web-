@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบสรุปย่อและข้อสอบระเบียบการป้องกันอุบัติภัยแห่งชาติ พ.ศ. ๒๕๖๔</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Sarabun -->
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sarabun: ['Sarabun', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            200: '#fed7aa',
+                            300: '#fdba74',
+                            400: '#fb923c',
+                            500: '#f97316', // Primary Premium Orange
+                            600: '#ea580c',
+                            700: '#c2410c',
+                            800: '#9a3412',
+                            900: '#7c2d12',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background-color: #fcfcfd;
+        }
+        /* Premium custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #fed7aa;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f97316;
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased min-h-screen flex flex-col">
+
+    <!-- Top Premium Navigation Bar -->
+    <header class="sticky top-0 z-40 bg-white border-b border-orange-100 shadow-sm backdrop-blur-md bg-white/95">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-500 to-amber-500 flex items-center justify-center text-white shadow-md shadow-brand-500/20">
+                        <i class="fa-solid fa-shield-cat text-lg"></i>
+                    </div>
+                    <div>
+                        <span class="font-bold text-base sm:text-lg text-slate-900 tracking-tight block leading-tight">ป้องกันอุบัติภัยแห่งชาติ ๒๕๖๔</span>
+                        <span class="text-[10px] sm:text-xs text-brand-600 font-semibold tracking-wider uppercase">สรุปครบถ้วน (ข้อ 1-14) & คลังข้อสอบปราบเซียน (๓๐ ข้อ)</span>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-1.5 sm:gap-2">
+                    <button onclick="switchTab('summary')" id="tab-summary-btn" class="px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg font-medium text-xs sm:text-sm transition-all duration-200 bg-brand-500 text-white shadow-sm">
+                        <i class="fa-solid fa-book-open mr-1.5"></i> สรุปย่อ
+                    </button>
+                    <button onclick="switchTab('quiz')" id="tab-quiz-btn" class="px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg font-medium text-xs sm:text-sm transition-all duration-200 text-slate-600 hover:text-brand-600 hover:bg-brand-50">
+                        <i class="fa-solid fa-graduation-cap mr-1.5"></i> ทำข้อสอบ (๓๐ ข้อ)
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- SECTION 1: SUMMARY TAB -->
+        <div id="summary-section" class="space-y-8">
+            
+            <!-- Hero Banner (Vibrant background preventing white text wash issues in ภาพ.png) -->
+            <div class="relative rounded-3xl p-6 sm:p-10 shadow-xl overflow-hidden text-white" style="background: linear-gradient(135deg, #e65100 0%, #b71c1c 100%);">
+                <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                <div class="relative z-10 max-w-4xl">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold bg-white/20 text-white border border-white/30 mb-4">
+                        <i class="fa-solid fa-calendar-check"></i> ประกาศราชกิจจานุเบกษา: ๓ กุมภาพันธ์ ๒๕๖๔
+                    </span>
+                    <h1 class="text-xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight mb-4 leading-tight text-white drop-shadow-md">
+                        ระเบียบสำนักนายกรัฐมนตรี ว่าด้วยการป้องกันอุบัติภัยแห่งชาติ พ.ศ. ๒๕๖๔
+                    </h1>
+                    <p class="text-orange-50 text-xs sm:text-sm leading-relaxed max-w-3xl">
+                        อาศัยอำนาจตามความในมาตรา ๑๑ (๘) แห่ง พ.ร.บ. ระเบียบบริหารราชการแผ่นดิน พ.ศ. ๒๕๓๔ ลงนามโดย พลเอก ประยุทธ์ จันทร์โอชา นายกรัฐมนตรี ณ วันที่ ๒๘ มกราคม พ.ศ. ๒๕๖๔ บังคับใช้วันถัดไป คือวันที่ <span class="text-amber-300 font-bold underline decoration-amber-300">๔ กุมภาพันธ์ พ.ศ. ๒๕๖๔</span>
+                    </p>
+                </div>
+                <div class="absolute right-0 bottom-0 opacity-10 transform translate-x-12 translate-y-12 hidden lg:block">
+                    <i class="fa-solid fa-building-shield text-[240px] text-white"></i>
+                </div>
+            </div>
+
+            <!-- บททั่วไป คำนิยาม และประเด็นยกเลิก (ข้อ 1 - 4) -->
+            <div class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+                <div class="bg-gradient-to-r from-orange-600 to-brand-500 px-6 py-4 flex items-center justify-between text-white">
+                    <h2 class="font-bold flex items-center gap-2 text-sm sm:text-base">
+                        <i class="fa-solid fa-align-left"></i> บททั่วไปและข้อมูลพื้นฐาน (ข้อ ๑ - ๔)
+                    </h2>
+                    <span class="text-xs bg-white/20 px-2.5 py-1 rounded-full font-bold">หมวด ๑</span>
+                </div>
+                <div class="p-6 space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm">
+                        <div class="space-y-3">
+                            <h4 class="font-bold text-slate-950 border-b pb-2 flex items-center gap-1.5 text-sm sm:text-base">
+                                <span class="w-2 h-2 rounded-full bg-brand-500"></span> ข้อ ๑ - ๓: การจัดทำ วันบังคับใช้ และการยกเลิกกฎเก่า
+                            </h4>
+                            <ul class="text-slate-600 space-y-3 list-none pl-0">
+                                <li><strong>ข้อ ๑ (ชื่อระเบียบ):</strong> ระเบียบสำนักนายกรัฐมนตรี ว่าด้วยการป้องกันอุบัติภัยแห่งชาติ พ.ศ. ๒๕๖๔</li>
+                                <li><strong>ข้อ ๒ (การบังคับใช้):</strong> มีผลตั้งแต่วันที่ <span class="text-brand-600 font-bold">๔ กุมภาพันธ์ ๒๕๖๔</span> (วันถัดจากวันประกาศในราชกิจจานุเบกษา)</li>
+                                <li><strong>ข้อ ๓ (การยกเลิก):</strong> ยกเลิกระเบียบการป้องกันอุบัติภัยแห่งชาติฉบับก่อนหน้าทั้งหมด <span class="text-red-600 font-bold">รวมทั้งสิ้น ๕ ฉบับ</span> (พ.ศ. ๒๕๓๘, ๒๕๔๓, ๒๕๔๖, ๒๕๔๘, และ ๒๕๕๐) เพื่อหลอมรวมเป็นฉบับใหม่นี้</li>
+                            </ul>
+                        </div>
+
+                        <div class="space-y-3">
+                            <h4 class="font-bold text-slate-950 border-b pb-2 flex items-center gap-1.5 text-sm sm:text-base">
+                                <span class="w-2 h-2 rounded-full bg-brand-500"></span> ข้อ ๔: บทนิยามศัพท์ (จุดระวังลวงสูงสุด)
+                            </h4>
+                            <div class="bg-orange-50/50 p-4 rounded-xl border border-orange-100 space-y-2.5 text-slate-600">
+                                <p>
+                                    <strong class="text-brand-700">"อุบัติภัย"</strong> หมายถึง ภัยที่เกิดจากอุบัติเหตุเนื่องจากการทำงาน หรืออุบัติเหตุในเคหสถาน หรือในที่สาธารณะ หรืออุบัติเหตุจราจรทางน้ำ ทางอากาศ หรือทางบก <span class="text-red-600 font-bold underline">แต่มิให้หมายความรวมถึงอุบัติเหตุทางถนน</span> (เพราะอุบัติเหตุทางถนนมีระเบียบแยกจัดการต่างหาก)
+                                </p>
+                                <p>
+                                    <strong class="text-brand-700">"หน่วยงานของรัฐ"</strong> หมายถึง กระทรวง, ทบวง, กรม, ราชการส่วนภูมิภาค, ราชการส่วนท้องถิ่น, องค์การของรัฐ และรัฐวิสาหกิจ
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- คณะกรรมการป้องกันอุบัติภัยแห่งชาติ (กปอ.) (ข้อ 5) -->
+            <div class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+                <div class="bg-gradient-to-r from-orange-50 to-brand-50/30 px-6 py-4 border-b border-orange-100">
+                    <h2 class="font-bold text-slate-950 flex items-center gap-2 text-sm sm:text-base">
+                        <i class="fa-solid fa-users text-brand-600"></i> โครงสร้างคณะกรรมการป้องกันอุบัติภัยแห่งชาติ (กปอ.) (ข้อ ๕)
+                    </h2>
+                </div>
+                <div class="p-6">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs sm:text-sm">
+                        <!-- ประธาน & รองประธาน -->
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-100 relative overflow-hidden">
+                            <span class="absolute -right-3 -top-3 text-4xl text-slate-200/50 font-bold">1</span>
+                            <h4 class="font-bold text-slate-900 text-sm mb-2 border-b pb-1"><i class="fa-solid fa-user-tie text-brand-500"></i> ผู้บริหารบอร์ด</h4>
+                            <ul class="space-y-1.5 text-slate-600">
+                                <li><strong>ประธาน:</strong> นายกรัฐมนตรี หรือ รองนายกรัฐมนตรีซึ่งนายกรัฐมนตรีมอบหมาย</li>
+                                <li><strong>รองประธาน:</strong> รัฐมนตรีว่าการกระทรวงมหาดไทย</li>
+                            </ul>
+                        </div>
+                        <!-- กรรมการโดยตำแหน่ง -->
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-100 relative overflow-hidden">
+                            <span class="absolute -right-3 -top-3 text-4xl text-slate-200/50 font-bold">2</span>
+                            <h4 class="font-bold text-slate-900 text-sm mb-2 border-b pb-1"><i class="fa-solid fa-shield-halved text-brand-500"></i> กรรมการโดยตำแหน่ง</h4>
+                            <p class="text-slate-500 leading-relaxed">
+                                ปลัดสำนักนายกฯ, ปลัดกระทรวงต่างๆ (กลาโหม, อว., คมนาคม, ดีอีเอส, ทรัพยากรฯ, มท., แรงงาน, ศธ., สธ., อุตสาหกรรม), อธิบดีกรมโยธาธิการและผังเมือง, อธิบดีกรมส่งเสริมการปกครองท้องถิ่น, ผอ.สำนักงานการบินพลเรือนแห่งประเทศไทย (CAAT), ผู้ว่าฯ กทม. <span class="text-red-600 font-bold font-semibold">(ไม่มีปลัดกระทรวงการคลัง!)</span>
+                            </p>
+                        </div>
+                        <!-- ผู้ช่วยเลขานุการ & เลขานุการ -->
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-100 relative overflow-hidden">
+                            <span class="absolute -right-3 -top-3 text-4xl text-slate-200/50 font-bold">3</span>
+                            <h4 class="font-bold text-slate-900 text-sm mb-2 border-b pb-1"><i class="fa-solid fa-envelope-open-text text-brand-500"></i> คณะธุรการและสารบรรณ</h4>
+                            <ul class="space-y-1.5 text-slate-600">
+                                <li><strong>เลขานุการ:</strong> อธิบดีกรมป้องกันและบรรเทาสาธารณภัย (ปภ.)</li>
+                                <li><strong>ผู้ช่วยเลขานุการ:</strong> ข้าราชการ ปภ. <strong class="text-brand-600">ไม่เกินสองคน</strong> ซึ่งอธิบดี ปภ. เป็นผู้แต่งตั้ง</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- เกณฑ์ผู้ทรงคุณวุฒิ และ การพ้นจากตำแหน่ง (ข้อ 6 - 7) -->
+            <div class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+                <div class="bg-gradient-to-r from-orange-600 to-brand-500 px-6 py-4 text-white">
+                    <h3 class="font-bold flex items-center gap-2 text-sm sm:text-base">
+                        <i class="fa-solid fa-gavel"></i> คณะกรรมการผู้ทรงคุณวุฒิ และหลักเกณฑ์การรักษาการ (ข้อ ๖ - ๗)
+                    </h3>
+                </div>
+                <div class="p-6 space-y-4">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 text-xs sm:text-sm">
+                        <!-- วาระผู้ทรงคุณวุฒิ -->
+                        <div class="space-y-2 bg-slate-50 p-4 rounded-xl border border-slate-100">
+                            <h4 class="font-bold text-slate-900 mb-2 border-b pb-1.5"><i class="fa-solid fa-hourglass-half text-brand-600"></i> วาระการดำรงตำแหน่ง (ข้อ ๖)</h4>
+                            <ul class="space-y-1.5 text-slate-600 list-disc pl-4">
+                                <li>ได้รับการแต่งตั้งโดยประธานกรรมการป้องกันอุบัติภัยแห่งชาติ จำนวน<strong class="text-brand-600">ไม่เกินสี่คน</strong></li>
+                                <li>มีวาระการดำรงตำแหน่งคราวละ <strong class="text-brand-600">๔ ปี</strong></li>
+                                <li>กรณีพ้นตำแหน่งก่อนวาระ ผู้เข้ามารับตำแหน่งแทนจะอยู่ได้เท่ากับ <strong class="text-brand-600">วาระที่เหลืออยู่</strong> ของคนที่ตนแทน</li>
+                                <li>เมื่อพ้นตำแหน่งตามวาระ <span class="font-semibold text-emerald-600">อาจได้รับแต่งตั้งอีกได้</span> (ระเบียบไม่ได้ล็อคจำกัดวาระติดต่อกันเหมือนระเบียบอื่น!)</li>
+                                <li>หากครบวาระแต่ยังไม่มีการตั้งคนใหม่ ให้คนเดิม <strong class="text-slate-800">ปฏิบัติหน้าที่ต่อไปจนกว่าคนใหม่จะเข้ารับหน้าที่</strong></li>
+                            </ul>
+                        </div>
+                        <!-- เหตุพ้นจากตำแหน่งก่อนวาระ -->
+                        <div class="space-y-2 bg-slate-50 p-4 rounded-xl border border-slate-100">
+                            <h4 class="font-bold text-slate-900 mb-2 border-b pb-1.5"><i class="fa-solid fa-user-xmark text-brand-600"></i> เหตุพ้นจากตำแหน่งก่อนวาระ (ข้อ ๗)</h4>
+                            <div class="grid grid-cols-2 gap-3 text-slate-600 text-xs">
+                                <div class="bg-white p-2.5 rounded border border-slate-150">๑. ตาย</div>
+                                <div class="bg-white p-2.5 rounded border border-slate-150">๒. ลาออก</div>
+                                <div class="bg-white p-2.5 rounded border border-slate-150">๓. ประธานกรรมการให้ออก เพราะบกพร่องต่อหน้าที่/ประพฤติเสื่อมเสีย</div>
+                                <div class="bg-white p-2.5 rounded border border-slate-150 text-red-600 font-semibold border-red-100 bg-red-50/30">๔. เป็นบุคคลล้มละลายทุจริต <br><span class="text-[10px] font-normal text-slate-500">(ต้องล้มละลายทุจริต ไม่ใช่ล้มละลายปกติ)</span></div>
+                                <div class="bg-white p-2.5 rounded border border-slate-150">๕. เป็นคนไร้ความสามารถ หรือคนเสมือนไร้ความสามารถ</div>
+                                <div class="bg-white p-2.5 rounded border border-slate-150 text-red-600 font-semibold border-red-100 bg-red-50/30">๖. โทษจำคุกถึงที่สุด <br><span class="text-[10px] font-normal text-slate-500">(เว้นแต่กระทำโดยประมาท หรือลหุโทษ)</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- องค์ประชุม หน้าที่ และอำนาจ (ข้อ 8 - 11) -->
+            <div class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+                <div class="bg-gradient-to-r from-orange-600 to-brand-500 px-6 py-4 text-white">
+                    <h3 class="font-bold flex items-center gap-2 text-sm sm:text-base">
+                        <i class="fa-solid fa-circle-nodes"></i> การประชุม หน้าที่และอำนาจของ กปอ. (ข้อ ๘ - ๑๑)
+                    </h3>
+                </div>
+                <div class="p-6 space-y-4">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 text-xs sm:text-sm">
+                        <!-- องค์ประชุมและการมติ -->
+                        <div class="space-y-2 bg-slate-50 p-4 rounded-xl border border-slate-100">
+                            <h4 class="font-bold text-slate-900 mb-2 border-b pb-1.5"><i class="fa-solid fa-comments text-brand-600"></i> เกณฑ์การประชุมและการลงมติ (ข้อ ๘)</h4>
+                            <ul class="space-y-2 text-slate-600">
+                                <li><strong>องค์ประชุม:</strong> ต้องมีกรรมการมาประชุม <strong class="text-brand-600">ไม่น้อยกว่ากึ่งหนึ่ง</strong> ของกรรมการทั้งหมด</li>
+                                <li><strong>ผู้ปฏิบัติหน้าที่ประธานประชุม:</strong> ประธาน กปอ. -> รองประธาน (รมว.มหาดไทย) -> หากไม่มีทั้งคู่ ให้ที่ประชุมเลือกกรรมการคนหนึ่งทำหน้าที่ประธานในคราวนั้น</li>
+                                <li><strong>มติที่ประชุม:</strong> ถือเสียงข้างมาก (๑ กรรมการ = ๑ เสียง) หากคะแนนเสียงเท่ากันสองฝ่าย ให้ประธานในที่ประชุม <strong class="text-brand-600">ออกเสียงเพิ่มขึ้นอีกหนึ่งเสียงเพื่อชี้ขาด</strong></li>
+                                <li><strong>ข้อ ๑๐ (คณะอนุกรรมการ):</strong> กปอ. มีอำนาจแต่งตั้งอนุกรรมการหรือที่ปรึกษาได้ โดยการประชุมอนุกรรมการให้นำกฎเกณฑ์การประชุมของ กปอ. มาใช้บังคับโดยอนุโลม</li>
+                                <li><strong>ข้อ ๑๑ (เบี้ยประชุม):</strong> ประธาน กรรมการ ที่ปรึกษา และอนุกรรมการ ได้รับเบี้ยประชุมตามที่ <strong class="text-brand-600">กระทรวงการคลังกำหนด</strong></li>
+                            </ul>
+                        </div>
+                        <!-- หน้าที่และอำนาจ กปอ. -->
+                        <div class="space-y-2 bg-slate-50 p-4 rounded-xl border border-slate-100">
+                            <h4 class="font-bold text-slate-900 mb-2 border-b pb-1.5"><i class="fa-solid fa-toolbox text-brand-600"></i> อำนาจหน้าที่ กปอ. ๗ ประการ (ข้อ ๙)</h4>
+                            <ol class="space-y-1.5 text-slate-600 list-decimal pl-4">
+                                <li><strong>เสนอนโยบาย</strong> มาตรการ และแนวทางการป้องกันอุบัติภัยเสนอต่อ <strong class="text-slate-800">คณะรัฐมนตรี (ครม.)</strong></li>
+                                <li><strong>เสนอแนะแนวทางปฏิบัติ</strong> ประสานงานหน่วยงานรัฐที่นำนโยบายของ ครม. ไปดำเนินการ</li>
+                                <li>จัดทำข้อเสนอแนะ ให้ความเห็น ปัญหาข้อขัดข้องต่างๆ เสนอต่อ <strong class="text-slate-800">นายกรัฐมนตรี</strong></li>
+                                <li>เสนอความเห็นและข้อสังเกตต่อ <strong class="text-slate-800">นายกรัฐมนตรี</strong> ในการให้มีกฎหมายหรือปรับปรุงกฎหมายป้องกันอุบัติภัย</li>
+                                <li>ติดตามประเมินผลนโยบาย มาตรการ และแนวทางการป้องกันอุบัติภัย</li>
+                                <li>แต่งตั้งที่ปรึกษาตามมติบอร์ด</li>
+                                <li>ปฏิบัติการเรื่องป้องกันอุบัติภัยอื่นตามที่นายกฯ มอบหมาย</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- สำนักงานเลขานุการ ปภ. และผู้รักษาการระเบียบ (ข้อ 12 - 14) -->
+            <div class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+                <div class="bg-gradient-to-r from-orange-600 to-brand-500 px-6 py-4 text-white">
+                    <h3 class="font-bold flex items-center gap-2 text-sm sm:text-base">
+                        <i class="fa-solid fa-folder-open"></i> บทบาทของ ปภ. และผู้รักษาการตามระเบียบ (ข้อ ๑๒ - ๑๔)
+                    </h3>
+                </div>
+                <div class="p-6 space-y-4">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 text-xs sm:text-sm">
+                        <!-- หน้าที่ ปภ. สำนักเลขาฯ -->
+                        <div class="space-y-2 bg-slate-50 p-4 rounded-xl border border-slate-100">
+                            <h4 class="font-bold text-slate-900 mb-2 border-b pb-1.5"><i class="fa-solid fa-building text-brand-600"></i> ปภ. ในฐานะสำนักงานเลขานุการ กปอ. (ข้อ ๑๒)</h4>
+                            <ul class="space-y-1.5 text-slate-600 list-none pl-0">
+                                <li><i class="fa-solid fa-check text-brand-500 mr-1"></i> เป็นหน่วยงานกลางในการเสนอแนะ ประสานงาน ติดตาม ประเมินผลภาครัฐและเอกชน</li>
+                                <li><i class="fa-solid fa-check text-brand-500 mr-1"></i> สนับสนุนส่งเสริมงานวิชาการ การศึกษา เผยแพร่ จัดฝึกอบรม สัมมนา</li>
+                                <li><i class="fa-solid fa-check text-brand-500 mr-1"></i> <strong class="text-brand-600">เป็นศูนย์กลางข้อมูลและสถิติเกี่ยวกับอุบัติภัย</strong></li>
+                                <li><i class="fa-solid fa-check text-brand-500 mr-1"></i> ปฏิบัติงานร่วม สนับสนุน หรือหน้าที่อื่นๆ ตามที่บอร์ด กปอ. มอบหมาย</li>
+                            </ul>
+                        </div>
+                        <!-- แหล่งงบประมาณ & ผู้รักษาการ -->
+                        <div class="space-y-2 bg-slate-50 p-4 rounded-xl border border-slate-100 flex flex-col justify-between">
+                            <div>
+                                <h4 class="font-bold text-slate-900 mb-2 border-b pb-1.5"><i class="fa-solid fa-coins text-brand-600"></i> เรื่องงบประมาณและเบี้ยประชุม (ข้อ ๑๓)</h4>
+                                <p class="text-slate-600 mb-3">
+                                    ค่าเบี้ยประชุมและค่าใช้จ่ายของ กปอ. และอนุกรรมการทั้งหมด <strong class="text-brand-600 font-bold">ให้เบิกจ่ายจากงบประมาณของกรมป้องกันและบรรเทาสาธารณภัย (ปภ.)</strong>
+                                </p>
+                            </div>
+                            <div class="bg-orange-50 p-3 rounded-lg border border-orange-100 text-xs text-slate-700">
+                                <strong class="text-brand-700 font-bold block mb-1"><i class="fa-solid fa-user-shield"></i> ข้อ ๑๔: ใครคือผู้รักษาการตามระเบียบตัวจริง?</strong>
+                                <p>ระเบียบฉบับนี้กำหนดให้ <strong class="text-red-600">รัฐมนตรีว่าการกระทรวงมหาดไทย</strong> เป็นผู้รักษาการตามระเบียบนี้ (แม้ว่านายกรัฐมนตรี พลเอก ประยุทธ์ จันทร์โอชา จะเป็นผู้ลงนามประกาศก็ตาม)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA to Quiz -->
+            <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-xl bg-orange-100 text-brand-600 flex items-center justify-center flex-shrink-0 text-xl">
+                        <i class="fa-solid fa-clipboard-list"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-950 text-sm sm:text-base">แบบทดสอบเตรียมสอบ กปอ. ๓๐ ข้อ (ยากพิเศษ)</h4>
+                        <p class="text-xs text-slate-400 mt-0.5">คัดสรรจุดออกสอบจากระเบียบการป้องกันอุบัติภัยแห่งชาติ พ.ศ. ๒๕๖๔ ครบทุกแง่มุม</p>
+                    </div>
+                </div>
+                <button onclick="switchTab('quiz')" class="bg-brand-500 hover:bg-brand-600 text-white font-bold text-sm py-2.5 px-5 rounded-xl shadow-sm transition-all flex items-center justify-center gap-2">
+                    เริ่มประเมินความรู้ <i class="fa-solid fa-arrow-right text-xs"></i>
+                </button>
+            </div>
+
+        </div>
+
+        <!-- SECTION 2: QUIZ TAB -->
+        <div id="quiz-section" class="hidden max-w-3xl mx-auto space-y-6">
+            
+            <!-- Quiz Header Card -->
+            <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                    <h2 class="text-lg sm:text-xl font-bold text-slate-900 flex items-center gap-2">
+                        <i class="fa-solid fa-list-check text-brand-500"></i> แบบทดสอบเจาะลึกระเบียบการป้องกันอุบัติภัยแห่งชาติ ๒๕๖๔
+                    </h2>
+                    <p class="text-xs text-slate-400 mt-1">ประเมินทักษะความรอบรู้จำนวน ๓๐ ข้อ (อ้างอิง: ระเบียบ กปอ. พ.ศ. ๒๕๖๔)</p>
+                </div>
+                <!-- Progress display -->
+                <div class="flex items-center gap-3 flex-shrink-0">
+                    <div class="text-right">
+                        <span class="text-xs text-slate-400 block font-medium">ข้อที่</span>
+                        <span id="current-question-indicator" class="text-lg font-bold text-brand-600">1/30</span>
+                    </div>
+                    <div class="w-24 sm:w-32 bg-slate-100 h-2 rounded-full overflow-hidden">
+                        <div id="quiz-progress-bar" class="bg-brand-500 h-full transition-all duration-300" style="width: 3.33%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quiz Play Box -->
+            <div id="quiz-play-box" class="space-y-6">
+                <!-- Question Statement Card -->
+                <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-100 shadow-sm relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-1.5 h-full bg-brand-500"></div>
+                    <span class="text-[10px] font-bold text-brand-600 uppercase tracking-wider block mb-2">คำถามสำหรับการเตรียมสอบ</span>
+                    <h3 id="question-text" class="text-sm sm:text-base md:text-lg font-bold text-slate-900 leading-relaxed">
+                        กำลังเตรียมความพร้อมของคำถาม...
+                    </h3>
+                </div>
+
+                <!-- Answer Options Box -->
+                <div id="options-container" class="space-y-3">
+                    <!-- Dynamic choices inject here -->
+                </div>
+
+                <!-- Explanation/Rationale (Hidden until answered) -->
+                <div id="explanation-box" class="hidden bg-slate-50 p-5 sm:p-6 rounded-2xl border border-slate-150 transition-all duration-300">
+                    <div class="flex gap-3">
+                        <div id="explanation-icon-container" class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-white">
+                            <!-- Icon dynamic -->
+                        </div>
+                        <div>
+                            <h4 id="explanation-title" class="font-bold text-xs sm:text-sm"></h4>
+                            <p id="explanation-body" class="text-xs sm:text-sm text-slate-600 mt-1.5 leading-relaxed"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nav Controls -->
+                <div class="flex items-center justify-between">
+                    <button id="hint-btn" onclick="toggleHint()" class="inline-flex items-center gap-1.5 text-slate-500 hover:text-brand-600 font-semibold text-xs sm:text-sm transition-colors py-2 px-3 rounded-lg hover:bg-slate-50">
+                        <i class="fa-regular fa-lightbulb"></i> <span id="hint-text-label">แสดงคำใบ้</span>
+                    </button>
+                    
+                    <button id="next-btn" onclick="goToNextQuestion()" class="hidden bg-brand-500 hover:bg-brand-600 text-white text-xs sm:text-sm font-semibold py-2.5 px-5 sm:px-6 rounded-xl shadow-sm transition-all items-center gap-1.5">
+                        <span>ถัดไป</span> <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                </div>
+                
+                <!-- Hint Text Box (Hidden by default) -->
+                <div id="hint-display-box" class="hidden bg-amber-50/50 border border-amber-100 p-4 rounded-xl text-xs sm:text-sm text-amber-800 leading-relaxed">
+                    <strong class="font-bold"><i class="fa-solid fa-circle-question mr-1"></i> คำใบ้ช่วยคิด:</strong> <span id="hint-content">...</span>
+                </div>
+            </div>
+
+            <!-- Quiz Score/Summary Screen (Hidden by default) -->
+            <div id="quiz-score-box" class="hidden bg-white p-6 sm:p-8 rounded-3xl border border-slate-100 shadow-sm text-center space-y-6">
+                <div class="w-20 h-20 sm:w-24 sm:h-24 bg-brand-50 rounded-full flex items-center justify-center mx-auto border-2 border-brand-100 relative">
+                    <i class="fa-solid fa-trophy text-3xl sm:text-4xl text-brand-500"></i>
+                    <div class="absolute -top-1 -right-1 bg-amber-500 text-white text-[9px] px-2 py-0.5 rounded-full font-bold">สำเร็จ</div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl sm:text-2xl font-black text-slate-900">ทดสอบเสร็จสมบูรณ์!</h3>
+                    <p class="text-xs text-slate-400 mt-1">เกณฑ์ประเมินระดับความรอบรู้ระเบียบการป้องกันอุบัติภัยแห่งชาติ ๒๕๖๔</p>
+                </div>
+
+                <!-- Score Board -->
+                <div class="max-w-xs mx-auto bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                    <span class="text-xs text-slate-500 uppercase tracking-widest font-semibold block">คะแนนของคุณ</span>
+                    <span id="final-score-display" class="text-4xl sm:text-5xl font-extrabold text-brand-600 my-2 block">0 / 30</span>
+                    <span id="score-assessment" class="text-xs sm:text-sm font-bold text-slate-700 block">ประเมินผล</span>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                    <button onclick="restartQuiz()" class="bg-brand-500 hover:bg-brand-600 text-white font-bold text-xs sm:text-sm py-3 px-6 rounded-xl shadow-sm transition-all">
+                        <i class="fa-solid fa-arrows-rotate mr-1"></i> ทำใหม่อีกครั้ง
+                    </button>
+                    <button onclick="switchTab('summary')" class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs sm:text-sm py-3 px-6 rounded-xl transition-all">
+                        กลับไปอ่านสรุปย่อกฎหมาย
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-100 py-6 mt-12">
+        <div class="max-w-7xl mx-auto px-4 text-center space-y-2 text-xs text-slate-400">
+            <p>สรุปและวิเคราะห์คลังข้อสอบตามระเบียบสำนักนายกรัฐมนตรี ว่าด้วยการป้องกันอุบัติภัยแห่งชาติ พ.ศ. ๒๕๖๔</p>
+            <p>&copy; 2026 ระบบการเรียนรู้ออนไลน์เตรียมสอบข้าราชการไทย บรรเทาสาธารณภัยและความมั่นคง</p>
+        </div>
+    </footer>
+
+    <!-- Quiz JS Logic -->
+    <script>
+        // 30 highly challenging questions mapped strictly to "อุบัติภัยแห่งชาติ.pdf" / "อุบัติเหตุทางถนน.pdf"
+        const quizData = [
+            {
+                question: "กฎหมายและวรรคมาตราใดในพระราชบัญญัติหลัก ที่ใช้เป็นฐานอำนาจในการตรา 'ระเบียบสำนักนายกรัฐมนตรี ว่าด้วยการป้องกันอุบัติภัยแห่งชาติ พ.ศ. ๒๕๖๔'?",
+                options: [
+                    { text: "มาตรา ๑๑ (๘) แห่งพระราชบัญญัติระเบียบบริหารราชการแผ่นดิน พ.ศ. ๒๕๓๔", isCorrect: true, rationale: "ระเบียบสำนักนายกรัฐมนตรีฉบับนี้ ตราขึ้นโดยอาศัยอำนาจตามความในมาตรา ๑๑ (๘) แห่งพระราชบัญญัติระเบียบบริหารราชการแผ่นดิน พ.ศ. ๒๕๓๔ โดยความเห็นชอบของคณะรัฐมนตรี" },
+                    { text: "มาตรา ๑๑ (๔) แห่งพระราชบัญญัติระเบียบบริหารราชการแผ่นดิน พ.ศ. ๒๕๓๔", isCorrect: false, rationale: "มาตรา ๑๑ (๔) เกี่ยวข้องกับการมอบหมายราชการ แต่การตราระเบียบปฏิบัติระดับสำนักนายกฯ ต้องอาศัยมาตรา ๑๑ (๘)" },
+                    { text: "มาตรา ๕ แห่งพระราชบัญญัติป้องกันและบรรเทาสาธารณภัย พ.ศ. ๒๕๕๐", isCorrect: false, rationale: "แม้จะเป็นเรื่องบรรเทาสาธารณภัย แต่ระเบียบสำนักนายกรัฐมนตรีฉบับนี้ อ้างอิงพระราชบัญญัติระเบียบบริหารราชการแผ่นดิน พ.ศ. ๒๕๓๔ เป็นฐานอำนาจหลักในการออกระเบียบ" },
+                    { text: "มาตรา ๔๑ แห่งพระราชบัญญัติวินัยการเงินการคลังของรัฐ พ.ศ. ๒๕๖๑", isCorrect: false, rationale: "เป็นมาตราฐานสำหรับออกระเบียบเงินทดรองราชการ ไม่ใช่ระเบียบปฏิบัติการป้องกันอุบัติภัยของสำนักนายกฯ" }
+                ],
+                hint: "ฐานกฎหมายสูงสุดในการออกระเบียบสำนักนายกฯ คือ พ.ร.บ. ระเบียบบริหารราชการแผ่นดิน พ.ศ. ๒๕๓๔ มาตรา ๑๑ วงเล็บแปด"
+            },
+            {
+                question: "ระเบียบสำนักนายกรัฐมนตรี ว่าด้วยการป้องกันอุบัติภัยแห่งชาติ พ.ศ. ๒๕๖๔ เริ่มมีผลบังคับใช้อย่างเป็นทางการเมื่อใด?",
+                options: [
+                    { text: "วันที่ ๒๘ มกราคม พ.ศ. ๒๕๖๔", isCorrect: false, rationale: "วันที่ ๒๘ มกราคม ๒๕๖๔ เป็นเพียงวันที่นายกรัฐมนตรีลงนามประกาศระเบียบนี้" },
+                    { text: "วันที่ ๓ กุมภาพันธ์ พ.ศ. ๒๕๖๔", isCorrect: false, rationale: "วันที่ ๓ กุมภาพันธ์ ๒๕๖๔ เป็นวันที่ประกาศในราชกิจจานุเบกษา" },
+                    { text: "วันที่ ๔ กุมภาพันธ์ พ.ศ. ๒๕๖๔", isCorrect: true, rationale: "ข้อ ๒ ระบุว่า 'ระเบียบนี้ให้ใช้บังคับตั้งแต่วันถัดจากวันประกาศในราชกิจจานุเบกษาเป็นต้นไป' เมื่อประกาศในราชกิจจานุเบกษาในวันที่ ๓ กุมภาพันธ์ ๒๕๖๔ จึงมีผลบังคับใช้ในวันที่ ๔ กุมภาพันธ์ ๒๕๖๔" },
+                    { text: "วันที่ ๕ กุมภาพันธ์ พ.ศ. ๒๕๖๔", isCorrect: false, rationale: "เป็นวันหลังจากวันเริ่มมีผลบังคับใช้จริงไปแล้ว ๑ วัน" }
+                ],
+                hint: "มองหาตัวเลข 'วันถัดจากวันประกาศในราชกิจจานุเบกษา' (ประกาศในราชกิจจานุเบกษาวันที่ ๓ กุมภาพันธ์ ๒๕๖๔)"
+            },
+            {
+                question: "ข้อใดเป็นวันที่นายกรัฐมนตรีได้ทำการลงนามประกาศใช้ระเบียบสำนักนายกรัฐมนตรีฉบับนี้อย่างเป็นทางการ?",
+                options: [
+                    { text: "วันที่ ๒๘ มกราคม พ.ศ. ๒๕๖๔", isCorrect: true, rationale: "ระเบียบฉบับนี้ระบุท้ายประกาศลงชื่อโดย พลเอก ประยุทธ์ จันทร์โอชา นายกรัฐมนตรี ณ วันที่ ๒๘ มกราคม พ.ศ. ๒๕๖๔" },
+                    { text: "วันที่ ๓ กุมภาพันธ์ พ.ศ. ๒๕๖๔", isCorrect: false, rationale: "วันนี้เป็นวันประกาศในราชกิจจานุเบกษา ไม่ใช่วันลงนามท้ายระเบียบ" },
+                    { text: "วันที่ ๔ กุมภาพันธ์ พ.ศ. ๒๕๖๔", isCorrect: false, rationale: "วันนี้เป็นวันที่มีผลเริ่มบังคับใช้จริงตามระเบียบข้อ ๒" },
+                    { text: "วันที่ ๑ มีนาคม พ.ศ. ๒๕๖๔", isCorrect: false, rationale: "เป็นตัวเลขสมมติ ไม่มีอยู่จริงในระเบียบฉบับนี้" }
+                ],
+                hint: "วันลงนามประกาศโดยนายกรัฐมนตรี จะเกิดขึ้นก่อนวันเผยแพร่ในราชกิจจานุเบกษาประมาณเกือบหนึ่งสัปดาห์"
+            },
+            {
+                question: "ระเบียบสำนักนายกรัฐมนตรีฉบับปี พ.ศ. ๒๕๖๔ นี้ ส่งผลให้มีการยกเลิกระเบียบสำนักนายกรัฐมนตรี ว่าด้วยการป้องกันอุบัติภัยแห่งชาติ ฉบับเก่ารวมทั้งสิ้นกี่ฉบับ?",
+                options: [
+                    { text: "๓ ฉบับ", isCorrect: false, rationale: "ระเบียบเก่ามีจำนวนการแก้ไขเพิ่มเติมมากกว่านั้น" },
+                    { text: "๔ ฉบับ", isCorrect: false, rationale: "ยังไม่ครอบคลุมครบถ้วนทุกฉบับที่มีการประกาศยกเลิกตามข้อ ๓" },
+                    { text: "๕ ฉบับ", isCorrect: true, rationale: "ข้อ ๓ ของระเบียบ ได้ระบุยกเลิกระเบียบสำนักนายกรัฐมนตรี ว่าด้วยการป้องกันอุบัติภัยแห่งชาติ ทั้งสิ้น ๕ ฉบับ ตั้งแต่ฉบับปี พ.ศ. ๒๕๓๘ ไปจนถึงฉบับที่ ๕ พ.ศ. ๒๕๕๐" },
+                    { text: "๖ ฉบับ", isCorrect: false, rationale: "เป็นจำนวนตัวเลขที่เกินกว่าที่บัญญัติไว้จริงในข้อ ๓" }
+                ],
+                hint: "เมื่อนับจำนวนข้อย่อยใน ข้อ ๓ (๑) ถึง (๕) จะได้คำตอบ"
+            },
+            {
+                question: "ตามบทนิยามในข้อ ๔ คำว่า 'อุบัติภัย' 'ไม่หมายความรวมถึง' ภัยที่เกิดขึ้นจากสถานการณ์ประเภทใดอย่างเด็ดขาด?",
+                options: [
+                    { text: "อุบัติเหตุจากการทำงานในอุตสาหกรรม", isCorrect: false, rationale: "อุบัติเหตุเนื่องจากการทำงาน จัดเป็นอุบัติภัยตามความหมายข้อ ๔" },
+                    { text: "อุบัติเหตุในเคหสถานหรือในที่สาธารณะ", isCorrect: false, rationale: "อุบัติเหตุในเคหสถานหรือสาธารณะ นั่งอยู่ในความหมายของคำว่าอุบัติภัย" },
+                    { text: "อุบัติเหตุเนื่องจากการจราจรทางน้ำหรือทางอากาศ", isCorrect: false, rationale: "การจราจรทางน้ำ ทางอากาศ และทางบก จัดเป็นอุบัติภัยทั้งหมด ยกเว้นทางถนน" },
+                    { text: "อุบัติเหตุทางถนน", isCorrect: true, rationale: "ข้อ ๔ นิยาม 'อุบัติภัย' ไว้อย่างชัดเจนว่า 'แต่ไม่หมายความรวมถึงอุบัติเหตุทางถนน' (เนื่องจากอุบัติเหตุทางถนนมี พ.ร.บ. หรือระเบียบการป้องกันและลดอุบัติเหตุทางถนนแยกต่างหาก)" }
+                ],
+                hint: "ระเบียบนี้แยกส่วนงานบริหารอุบัติเหตุจราจรประเภทหนึ่งออกไป ซึ่งมีศูนย์อำนวยการความปลอดภัยทางถนน (ศปถ.) ดูแลเฉพาะอยู่แล้ว"
+            },
+            {
+                question: "ภัยพิบัติหรืออุบัติเหตุในสถานการณ์ใดต่อไปนี้ ที่ได้รับการระบุและคุ้มครองอยู่ในคำจำกัดความของ 'อุบัติภัย' ตามระเบียบข้อ ๔?",
+                options: [
+                    { text: "อุบัติเหตุรถยนต์ส่วนบุคคลชนเสาไฟบนถนนสาธารณะ", isCorrect: false, rationale: "นี่เป็นอุบัติเหตุทางถนน ซึ่งได้รับข้อยกเว้นไม่นับเป็นอุบัติภัยตามระเบียบนี้" },
+                    { text: "อุบัติเหตุรถไฟขนสินค้าชนกับรถพ่วง ณ จุดตัดทางผ่านรถไฟสาธารณะ", isCorrect: false, rationale: "แม้จะเป็นรถไฟ แต่การชนบนทางตัดถนนเข้าข่ายอุบัติเหตุทางถนนที่ยกเว้น" },
+                    { text: "อุบัติเหตุเครื่องจักรหนีบมือคนงานในโรงงานประกอบชิ้นส่วนยานยนต์", isCorrect: true, rationale: "ข้อ ๔ นิยามอุบัติภัยรวมถึง 'ภัยที่เกิดจากอุบัติเหตุเนื่องจากการทำงาน' ซึ่งการบาดเจ็บในโรงงานจากการทำงานตรงตามเกณฑ์พอดี" },
+                    { text: "ภัยพิบัติที่เกิดจากแผ่นดินไหวรุนแรงจนตึกถล่มในเขตเมืองหลวง", isCorrect: false, rationale: "แผ่นดินไหวจัดเป็นภัยพิบัติทางธรรมชาติระดับชาติ (สาธารณภัย) ไม่ได้เริ่มจากอุบัติเหตุการทำงาน เคหสถาน หรือการจราจร" }
+                ],
+                hint: "มองหาอุบัติเหตุที่เกิดขึ้นเนื่องจากการประกอบอาชีพ ทำงาน หรือเกิดขึ้นภายในบ้านเรือน/ที่อยู่อาศัย"
+            },
+            {
+                question: "ตามคำนิยามในข้อ ๔ ข้อใดกล่าวถึงขอบข่ายความหมายของ 'หน่วยงานของรัฐ' ได้ถูกต้องและครบถ้วนที่สุด?",
+                options: [
+                    { text: "กระทรวง ทบวง กรม และราชการส่วนภูมิภาค เท่านั้น", isCorrect: false, rationale: "นิยามของระเบียบนี้ครอบคลุมกว้างขวางกว่าราชการบริหารส่วนกลางและส่วนภูมิภาค" },
+                    { text: "กระทรวง ทบวง กรม ราชการส่วนภูมิภาค ราชการส่วนท้องถิ่น องค์การของรัฐ และรัฐวิสาหกิจ", isCorrect: true, rationale: "นิยามข้อ ๔ บัญญัติคำจำกัดความไว้ตรงตัว: 'หน่วยงานของรัฐ' หมายความว่า กระทรวง ทบวง กรม ราชการส่วนภูมิภาค ราชการส่วนท้องถิ่น องค์การของรัฐ และรัฐวิสาหกิจ" },
+                    { text: "เฉพาะหน่วยงานในสังกัดกระทรวงมหาดไทย และกรมป้องกันและบรรเทาสาธารณภัย", isCorrect: false, rationale: "เป็นหน่วยงานปฏิบัติหน้าที่เลขาฯ แต่ขอบข่ายหน่วยงานรัฐตามข้อ ๔ มีขอบเขตกว้างถึงรัฐวิสาหกิจและส่วนท้องถิ่นด้วย" },
+                    { text: "กระทรวง ทบวง กรม ราชการส่วนภูมิภาค และองค์กรปกครองส่วนท้องถิ่น แต่ไม่รวมถึงรัฐวิสาหกิจ", isCorrect: false, rationale: "นิยามของระเบียบนี้ระบุรวมรัฐวิสาหกิจเข้ามาด้วยอย่างชัดเจน" }
+                ],
+                hint: "เป็นคำนิยามของหน่วยงานภาครัฐที่ครอบคลุมครบทุกระบบบริหารราชการไทย รวมถึงองค์การของรัฐและหน่วยธุรกิจของรัฐ"
+            },
+            {
+                question: "ใครคือผู้ดำรงตำแหน่งเป็น 'ประธานกรรมการ' ในคณะกรรมการป้องกันอุบัติภัยแห่งชาติ (กปอ.) ตามระเบียบข้อ ๕?",
+                options: [
+                    { text: "รัฐมนตรีว่าการกระทรวงมหาดไทย", isCorrect: false, rationale: "รมว.มหาดไทย ดำรงตำแหน่งเป็น 'รองประธานกรรมการ' กปอ. ไม่ใช่ประธาน" },
+                    { text: "นายกรัฐมนตรี หรือรองนายกรัฐมนตรีซึ่งนายกรัฐมนตรีมอบหมาย", isCorrect: true, rationale: "ข้อ ๕ (๑) บัญญัติว่า 'นายกรัฐมนตรีหรือรองนายกรัฐมนตรีซึ่งนายกรัฐมนตรีมอบหมาย เป็นประธานกรรมการ'" },
+                    { text: "ปลัดสำนักนายกรัฐมนตรี", isCorrect: false, rationale: "ปลัดสำนักนายกรัฐมนตรีเป็นเพียงหนึ่งในกรรมการโดยตำแหน่ง" },
+                    { text: "อธิบดีกรมป้องกันและบรรเทาสาธารณภัย", isCorrect: false, rationale: "อธิบดี ปภ. ดำรงตำแหน่งเป็นกรรมการและเลขานุการของ กปอ." }
+                ],
+                hint: "เป็นตำแหน่งผู้นำสูงสุดในโครงสร้างราชการแผ่นดินของไทย หรือผู้รักษาราชการแทนที่ได้รับสิทธิ์ส่งต่อ"
+            },
+            {
+                question: "ผู้ดำรงตำแหน่งใดต่อไปนี้ ทำหน้าที่เป็น 'รองประธานกรรมการ' ในคณะกรรมการ กปอ. ตามข้อ ๕ (๒)?",
+                options: [
+                    { text: "รัฐมนตรีว่าการกระทรวงมหาดไทย", isCorrect: true, rationale: "ตามข้อ ๕ (๒) ได้กำหนดให้ 'รัฐมนตรีว่าการกระทรวงมหาดไทยเป็นรองประธานกรรมการ' กปอ." },
+                    { text: "รัฐมนตรีว่าการกระทรวงคมนาคม", isCorrect: false, rationale: "รมว.คมนาคม ไม่ได้ร่วมเป็นรองประธานในบอร์ด กปอ. นี้ (แตกต่างจากบอร์ด ศปถ. หรือ นปถ. ที่มีคมนาคมนั่งเก้าอี้รองประธาน)" },
+                    { text: "ปลัดกระทรวงมหาดไทย", isCorrect: false, rationale: "ปลัดกระทรวงมหาดไทยเป็นเพียงกรรมการโดยตำแหน่งตามข้อ ๕ (๓)" },
+                    { text: "อธิบดีกรมป้องกันและบรรเทาสาธารณภัย", isCorrect: false, rationale: "อธิบดี ปภ. ทำหน้าที่เป็นกรรมการและเลขานุการ" }
+                ],
+                hint: "เป็นรัฐมนตรีเจ้ากระทรวงที่ดูแลและกำกับสายงานความมั่นคงภายใน ท้องถิ่น และการป้องกันภัยพลเรือนทั้งหมด"
+            },
+            {
+                question: "บุคคลในตำแหน่งใดต่อไปนี้ 'ไม่ได้' นั่งเป็นกรรมการโดยตำแหน่งในบอร์ดคณะกรรมการ กปอ. ตามระเบียบข้อ ๕ (๓)?",
+                options: [
+                    { text: "ปลัดกระทรวงการอุดมศึกษา วิทยาศาสตร์ วิจัยและนวัตกรรม (อว.)", isCorrect: false, rationale: "ปลัดกระทรวง อว. ได้รับการระบุชัดเจนให้เป็นกรรมการตามข้อ ๕ (๓)" },
+                    { text: "ปลัดกระทรวงการคลัง", isCorrect: true, rationale: "ปลัดกระทรวงการคลัง 'ไม่ได้' เป็นกรรมการ กปอ. โดยตำแหน่งตามข้อ ๕ (๓) (จุดลวงยอดฮิตในข้อสอบกฎหมายบริหารงานบรรเทาภัย)" },
+                    { text: "ผู้อำนวยการสำนักงานการบินพลเรือนแห่งประเทศไทย (กพท.)", isCorrect: false, rationale: "กพท. (CAAT) เกี่ยวข้องกับอุบัติภัยทางอากาศ จึงมี ผอ. นั่งเป็นกรรมการด้วย" },
+                    { text: "ผู้ว่าราชการกรุงเทพมหานคร", isCorrect: false, rationale: "ผู้ว่าฯ กทม. ได้รับการแต่งตั้งให้ร่วมเป็นกรรมการโดยตำแหน่งใน กปอ." }
+                ],
+                hint: "ลองมองหากระทรวงการคลัง หรือตรวจสอบว่ากระทรวงใดที่ไม่ได้ดูแลเรื่องวิชาการ เทคโนโลยี คมนาคม หรือสังคมแผ่นดินโดยตรงในแง่อุบัติภัย"
+            },
+            {
+                question: "ตามระเบียบข้อ ๕ ใครเป็นผู้มีอำนาจหน้าที่แต่งตั้ง 'ผู้ช่วยเลขานุการ' ของคณะกรรมการ กปอ. และสามารถแต่งตั้งได้จำนวนไม่เกินกี่คน?",
+                options: [
+                    { text: "อธิบดีกรมป้องกันและบรรเทาสาธารณภัย แต่งตั้งข้าราชการในกรม ปภ. ไม่เกินสองคน", isCorrect: true, rationale: "ข้อ ๕ วรรคท้ายระบุว่า 'ให้อธิบดีกรมป้องกันและบรรเทาสาธารณภัยแต่งตั้งข้าราชการในกรมป้องกันและบรรเทาสาธารณภัยจำนวนไม่เกินสองคน เป็นกรรมการและผู้ช่วยเลขานุการ'" },
+                    { text: "ประธานกรรมการ กปอ. แต่งตั้งข้าราชการจากสำนักนายกรัฐมนตรี ไม่เกินสี่คน", isCorrect: false, rationale: "ประธานแต่งตั้งเฉพาะผู้ทรงคุณวุฒิ แต่ผู้ช่วยเลขาฯ เป็นอำนาจคัดเลือกและแต่งตั้งของเลขานุการ (อธิบดี ปภ.)" },
+                    { text: "รัฐมนตรีว่าการกระทรวงมหาดไทย แต่งตั้งข้าราชการจากสำนักงานปลัด มท. ไม่เกินสามคน", isCorrect: false, rationale: "รมว.มหาดไทย คุมนโยบายแต่ไม่มีสายงานแต่งตั้งผู้ช่วยธุรการตรงจุดนี้" },
+                    { text: "ปลัดกระทรวงมหาดไทย แต่งตั้งข้าราชการระดับ ๖ ขึ้นไปจำนวนหนึ่งคน", isCorrect: false, rationale: "ระเบียบมอบอำนาจเด็ดขาดในการเลือกทีมเลขาฯ สนับสนุนให้แก่ อธิบดี ปภ." }
+                ],
+                hint: "เลขานุการ (อธิบดี ปภ.) ย่อมเป็นผู้เลือกทีมงานผู้ช่วยในกรมของตนเองเพื่อสนับสนุนงานสารบรรณ"
+            },
+            {
+                question: "คณะกรรมการ กปอ. มีกรรมการผู้ทรงคุณวุฒิจำนวนกี่คน และได้รับการแต่งตั้งโดยบุคคลใดตามระเบียบข้อ ๕ (๔)?",
+                options: [
+                    { text: "จำนวนไม่เกินสี่คน ซึ่งประธานกรรมการแต่งตั้ง", isCorrect: true, rationale: "ตามข้อ ๕ (๔) ระบุองค์ประกอบผู้ทรงคุณวุฒิว่า: 'ผู้ทรงคุณวุฒิซึ่งประธานกรรมการแต่งตั้งจากผู้มีประสบการณ์หรือมีผลงานด้านการป้องกันอุบัติภัย จำนวนไม่เกินสี่คน เป็นกรรมการ'" },
+                    { text: "จำนวนไม่เกินห้าคน ซึ่งคณะรัฐมนตรีแต่งตั้ง", isCorrect: false, rationale: "จำนวนไม่เกินห้าคนเป็นโควตาบอร์ดอื่น (เช่น นปถ. หรือ ศปถ.) ส่วน กปอ. มีเพียงไม่เกินสี่คน และตั้งโดยประธานกรรมการ กปอ." },
+                    { text: "จำนวนสี่คนพอดี ซึ่งอธิบดี ปภ. เป็นผู้แต่งตั้งโดยความเห็นชอบจากคลัง", isCorrect: false, rationale: "กฎหมายระบุเพดานสูงสุดคือ 'ไม่เกินสี่คน' และอำนาจตั้งอยู่ที่ประธานบอร์ด" },
+                    { text: "จำนวนไม่เกินห้าคน ซึ่งได้รับการเสนอชื่อจากกระทรวงสาธารณสุข", isCorrect: false, rationale: "เป็นจำนวนตัวเลขและวิธีเสนอชื่อที่แต่งตั้งขึ้นมาเพื่อหลอก" }
+                ],
+                hint: "จำนวนโควตาผู้ทรงคุณวุฒิใน กปอ. จะน้อยกว่าโควตาของ นปถ. หรือ ศปถ. อยู่ ๑ คน และแต่งตั้งโดยผู้ถือค้อนคุมบอร์ดสูงสุด"
+            },
+            {
+                question: "วาระการดำรงตำแหน่งของกรรมการผู้ทรงคุณวุฒิในบอร์ด กปอ. กำหนดไว้คราวละกี่ปี และข้อกำหนดการกลับเข้าดำรงตำแหน่งระบุไว้ว่าอย่างไรตามข้อ ๖?",
+                options: [
+                    { text: "คราวละสี่ปี และอาจได้รับการแต่งตั้งใหม่อีกได้ (โดยระเบียบไม่ได้ระบุจำกัดจำนวนวาระติดต่อกันไว้)", isCorrect: true, rationale: "ข้อ ๖ ระบุสั้นๆ: 'กรรมการผู้ทรงคุณวุฒิ มีวาระอยู่ในตำแหน่งคราวละสี่ปี' และวรรคท้ายระบุ 'กรรมการผู้ทรงคุณวุฒิซึ่งพ้นจากตำแหน่งตามวาระอาจได้รับแต่งตั้งอีกได้' (ไม่มีคำจำกัดความว่าไม่เกินสองวาระติดต่อกัน ซึ่งแตกต่างจากระเบียบลดอุบัติเหตุจราจร)" },
+                    { text: "คราวละสี่ปี และอาจได้รับแต่งตั้งใหม่อีกได้ แต่ต้องไม่เกินสองวาระติดต่อกันอย่างเด็ดขาด", isCorrect: false, rationale: "นี่เป็นกฎเกณฑ์ของบอร์ด นปถ. (ลดอุบัติเหตุจราจร) แต่บอร์ด กปอ. (อุบัติภัยแห่งชาติ) ไม่มีคำสั่งล็อคเพดานวาระติดต่อกันนี้" },
+                    { text: "คราวละสองปี และดำรงตำแหน่งติดต่อกันได้สูงสุดไม่เกินสามวาระสะสม", isCorrect: false, rationale: "วาระงานราชการผู้ทรงคุณวุฒิของบอร์ด กปอ. คือ สี่ปีเต็ม" },
+                    { text: "คราวละสี่ปี และดำรงตำแหน่งได้เพียงวาระเดียวในชีวิตเท่านั้น", isCorrect: false, rationale: "กฎหมายเปิดทางให้ผู้ทรงคุณวุฒิทำงานต่อได้ตามการแต่งตั้งของประธานเมื่อพ้นวาระลง" }
+                ],
+                hint: "วาระการดำรงตำแหน่งตามมาตรฐานคือสี่ปี และระเบียบปี ๒๕๖๔ นี้ไม่ได้ห้ามแต่งตั้งซ้ำหลายวาระติดต่อกันเหมือนระเบียบทางถนน"
+            },
+            {
+                question: "กรณีที่กรรมการผู้ทรงคุณวุฒิ กปอ. พ้นจากตำแหน่งก่อนครบวาระสี่ปี สถานภาพของผู้ที่ได้รับแต่งตั้งให้เข้าดำรงตำแหน่งแทนจะเป็นอย่างไรตามข้อ ๖ วรรคสอง?",
+                options: [
+                    { text: "ให้อยู่ในตำแหน่งต่อไปได้เต็มรอบสี่ปีเต็ม เพื่อให้โอกาสปฏิบัติราชการอย่างต่อเนื่อง", isCorrect: false, rationale: "ไม่ได้เริ่มวาระนับหนึ่งใหม่เต็มสี่ปี เพื่อให้รอบการปรับบอร์ดสอดคล้องกัน" },
+                    { text: "ให้อยู่ในตำแหน่งเท่ากับวาระที่เหลืออยู่ของกรรมการผู้ทรงคุณวุฒิซึ่งตนลงไปแทนที่", isCorrect: true, rationale: "ตามข้อ ๖ วรรคสองระบุว่า 'ให้ผู้ได้รับแต่งตั้งให้ดำรงตำแหน่งแทน... อยู่ในตำแหน่งเท่ากับวาระที่เหลืออยู่ของกรรมการผู้ทรงคุณวุฒิซึ่งได้แต่งตั้งไว้แล้ว'" },
+                    { text: "ให้ทำหน้าที่รักษาการแทนเป็นเวลา ๑๘๐ วัน และให้พ้นตำแหน่งเมื่อครบกำหนด", isCorrect: false, rationale: "การทำงานในสัดส่วนทดแทนวาระที่เหลืออยู่ไม่มีการกำหนดขีดจำกัด ๑๘๐ วันคงที่" },
+                    { text: "ให้สลับเก้าอี้ไปเป็นที่ปรึกษาของบอร์ด กปอ. ทันทีเมื่อสมาชิกรอบหลักครบกำหนดหมดวาระ", isCorrect: false, rationale: "เป็นทางเลือกที่ตั้งขึ้นมาเพื่อหลอกผู้เข้าสอบในด้านการบริหารบุคคล" }
+                ],
+                hint: "เป็นการรักษาจังหวะวาระงานของคณะกรรมการทั้งบอร์ดให้สอดคล้องกัน โดยผู้มาทีหลังจะอยู่รับช่วงต่อตามระยะเวลาที่เหลือ"
+            },
+            {
+                question: "หากกรรมการผู้ทรงคุณวุฒิ กปอ. หมดวาระสี่ปีลงแล้ว แต่ประธานกรรมการยังไม่ได้ทำการลงเซ็นแต่งตั้งผู้ทรงคุณวุฒิคนใหม่ขึ้นมาทดแทน สถานภาพของผู้ทรงคนเก่าจะเป็นอย่างไรตามข้อ ๖ วรรคสาม?",
+                options: [
+                    { text: "ให้ระงับการออกเสียงและการประชุมทันทีเนื่องจากขาดสภาพความชอบธรรมตามกฎหมายคลัง", isCorrect: false, rationale: "การสั่งยุติบทบาทจะทำให้ระบบการประชุมเพื่อป้องกันภัยขาดบุคลากรเฉพาะด้านสะดุดตัวลง" },
+                    { text: "ให้พ้นจากตำแหน่งโดยเด็ดขาดในวันรุ่งขึ้น และให้ปลัดกระทรวงมหาดไทยรักษาหน้าที่แทน", isCorrect: false, rationale: "ข้าราชการประจำในบอร์ดไม่สามารถถือสิทธิ์สลับบทบาทแทนผู้ทรงคุณวุฒิได้" },
+                    { text: "ให้กรรมการผู้ทรงคุณวุฒิซึ่งพ้นจากตำแหน่งตามวาระนั้นอยู่ในตำแหน่งเพื่อดำเนินงานต่อไปจนกว่าคนใหม่จะเข้ารับหน้าที่", isCorrect: true, rationale: "ข้อ ๖ วรรคสามบัญญัติว่า 'ให้กรรมการผู้ทรงคุณวุฒิซึ่งพ้นจากตำแหน่งตามวาระนั้นอยู่ในตำแหน่งเพื่อดำเนินงานต่อไปจนกว่ากรรมการผู้ทรงคุณวุฒิซึ่งได้รับแต่งตั้งใหม่เข้ารับหน้าที่'" },
+                    { text: "ให้ประธานในที่ประชุมแต่งตั้งเลขานุการ กปอ. ปฏิบัติราชการแทนชั่วคราวเป็นรายสัปดาห์", isCorrect: false, rationale: "เป็นวิธีปฏิบัติที่ไม่ถูกต้องตามโครงสร้างการต่อวาระของผู้รักษาการ" }
+                ],
+                hint: "เป็นเกณฑ์ 'ผู้รักษาการปฏิบัติหน้าที่ต่อเพื่อป้องกันสุญญากาศในราชการแผ่นดิน'"
+            },
+            {
+                question: "กรณีใดต่อไปนี้ที่ระเบียบข้อ ๗ ระบุว่าเป็นเหตุทำให้กรรมการผู้ทรงคุณวุฒิ กปอ. พ้นจากตำแหน่งก่อนครบวาระ?",
+                options: [
+                    { text: "เป็นบุคคลล้มละลาย", isCorrect: false, rationale: "ข้อ ๗ (๔) ระบุความผิดเฉพาะเจาะจงว่า 'เป็นบุคคลล้มละลายทุจริต' ไม่ใช่เพียงการล้มละลายปกติ" },
+                    { text: "เป็นคนไร้ความสามารถหรือคนเสมือนไร้ความสามารถ", isCorrect: true, rationale: "ตามข้อ ๗ (๕) กำหนดว่าการตกเป็นคนไร้ความสามารถ หรือคนเสมือนไร้ความสามารถ เป็นเหตุให้พ้นจากตำแหน่งทันที" },
+                    { text: "ได้รับโทษจำคุกโดยคำพิพากษาถึงที่สุดสำหรับความผิดที่ได้กระทำโดยประมาท", isCorrect: false, rationale: "ข้อ ๗ (๖) บัญญัติข้อยกเว้นไว้ชัดเจน: 'เว้นแต่โทษสำหรับความผิดที่ได้กระทำโดยประมาทหรือความผิดลหุโทษ' ดังนั้นความผิดฐานประมาทไม่ทำให้พ้นจากเก้าอี้" },
+                    { text: "ลาออกจากราชการครูหรืองานสถาบันอุดมศึกษาเอกชน", isCorrect: false, rationale: "ผู้ทรงคุณวุฒิไม่จำเป็นต้องครองตำแหน่งข้าราชการประจำ การลาออกจากงานภายนอกไม่ส่งผลต่อเก้าอี้ผู้ทรง กปอ. นอกเสียจากยื่นหนังสือ 'ลาออก' จากการเป็นกรรมการ กปอ." }
+                ],
+                hint: "หาอาการทางกาย/จิตใจที่จำกัดความสามารถส่วนบุคคลอย่างสมบูรณ์ในการตัดสินคดีหรือความชอบธรรมทางนิติกรรม"
+            },
+            {
+                question: "ประธานกรรมการ กปอ. มีสิทธิสั่งให้กรรมการผู้ทรงคุณวุฒิพ้นจากตำแหน่งก่อนครบวาระได้โดยอิงสาเหตุและพฤติกรรมใดตามข้อ ๗ (๓)?",
+                options: [
+                    { text: "เพราะขาดประชุมติดต่อกันเกินสามครั้งโดยไม่มีใบลาแจ้งอย่างเป็นลายลักษณ์อักษร", isCorrect: false, rationale: "ระเบียบฉบับนี้ไม่มีการเขียนระบุเรื่องการขาดประชุมสามครั้งให้พ้นตำแหน่งไว้ในข้อ ๗" },
+                    { text: "เพราะบกพร่องต่อหน้าที่หรือมีความประพฤติเสื่อมเสีย", isCorrect: true, rationale: "ตามข้อ ๗ (๓) ประธานกรรมการมีสิทธิ์สั่งให้ออกได้ 'เพราะบกพร่องต่อหน้าที่หรือมีความประพฤติเสื่อมเสีย'" },
+                    { text: "เพราะมีความเห็นต่างเชิงนโยบายการจัดทำแผนยุทธศาสตร์ป้องกันอุบัติภัยของประเทศ", isCorrect: false, rationale: "การเห็นต่างทางวิชาการและนโยบายเป็นเกณฑ์สิทธิ์ผู้ทรงคุณวุฒิ ไม่ใช่เหตุให้ออกทางวินัยราชการ" },
+                    { text: "เพราะได้รับสัญชาติอื่นหรือย้ายภูมิลำเนาออกไปนอกราชอาณาจักรเป็นการชั่วคราว", isCorrect: false, rationale: "ระเบียบไม่ได้ระบุเงื่อนไขภูมิลำเนานอกราชอาณาจักรไว้เป็นขีดจำกัดในข้อ ๗" }
+                ],
+                hint: "เป็นคีย์เวิร์ดมาตรฐานความประพฤติและวินัยการทำงานของข้าราชการ/บุคคลสาธารณะที่ประธานใช้ประเมิน"
+            },
+            {
+                question: "ข้อใดถูกต้องตามข้อกฎหมายที่สุดเกี่ยวกับ 'องค์ประชุม' ในการประชุมของคณะกรรมการ กปอ. ตามข้อ ๘?",
+                options: [
+                    { text: "ต้องมีกรรมการมาประชุมไม่น้อยกว่ากึ่งหนึ่งของกรรมการทั้งหมด จึงจะเป็นองค์ประชุม", isCorrect: true, rationale: "ข้อ ๘ วรรคหนึ่งระบุชัดเจน: 'การประชุม กปอ. ต้องมีกรรมการมาประชุมไม่น้อยกว่ากึ่งหนึ่งของกรรมการทั้งหมด จึงจะเป็นองค์ประชุม'" },
+                    { text: "ต้องมีกรรมการมาประชุมไม่น้อยกว่า ๒ ใน ๓ ของกรรมการทั้งหมด จึงจะเป็นองค์ประชุม", isCorrect: false, rationale: "สัดส่วน ๒ ใน ๓ สูงเกินไปสำหรับบอร์ดประชุมปฏิบัติราชการทั่วไป" },
+                    { text: "ต้องมีกรรมการมาประชุมไม่น้อยกว่ากึ่งหนึ่งของกรรมการเฉพาะส่วนราชการโดยไม่นับผู้ทรงคุณวุฒิ", isCorrect: false, rationale: "การคำนวณองค์ประชุมต้องนับสัดส่วนรวมจากจำนวนกรรมการทั้งหมดที่มีอยู่จริงในบอร์ด" },
+                    { text: "กรรมการทุกคนต้องมาประชุมครบ ๑๐๐% เพื่อความชอบธรรมในการลงนามมติสำคัญ", isCorrect: false, rationale: "เกณฑ์มาครบบังคับ ๑๐๐% เป็นไปไม่ได้ในทางปฏิบัติของข้าราชการระดับสูง" }
+                ],
+                hint: "ยึดหลักมาตรฐานองค์ประชุมของคณะราชการส่วนใหญ่ของไทย คือ ครึ่งหนึ่งของจำนวนสมาชิกทั้งหมด"
+            },
+            {
+                question: "ในการประชุม กปอ. ครั้งหนึ่ง ประธานและรองประธาน (รมว.มหาดไทย) ต่างติดราชการด่วนที่ต่างประเทศพร้อมกัน ใครจะขึ้นทำหน้าที่เป็นประธานในที่ประชุมคราวนั้นตามข้อ ๘ วรรคสอง?",
+                options: [
+                    { text: "ปลัดสำนักนายกรัฐมนตรี ในฐานะกรรมการที่มีลำดับอาวุโสสูงสุด", isCorrect: false, rationale: "ปลัดสำนักนายกฯ ไม่มีสิทธิ์เลื่อนขึ้นคุมประธานโดยอัติโนมัติตามเกณฑ์ลำดับอาวุโส" },
+                    { text: "ให้อธิบดีกรมป้องกันและบรรเทาสาธารณภัย ในฐานะเลขานุการบอร์ดทำหน้าที่ประธาน", isCorrect: false, rationale: "เลขานุการทำหน้าที่บันทึกและรวบรวมมติ ประสานงาน ไม่สามารถขึ้นไปทำหน้าที่ประธานคุมที่ประชุมข้ามหน้าคณะกรรมการอื่นได้" },
+                    { text: "ให้กรรมการที่มาประชุมเลือกกรรมการคนหนึ่งเป็นประธานในที่ประชุม", isCorrect: true, rationale: "ข้อ ๘ วรรคสองระบุชัด: 'ถ้ารองประธานกรรมการไม่มาประชุมหรือไม่อาจปฏิบัติหน้าที่ได้ ให้กรรมการที่มาประชุมเลือกกรรมการคนหนึ่งเป็นประธานในที่ประชุม'" },
+                    { text: "ต้องสั่งเลื่อนการประชุมออกไปทันทีจนกว่านายกรัฐมนตรีหรือรองประธานจะกลับประเทศ", isCorrect: false, rationale: "เพื่อไม่ให้เกิดความล่าช้าในงานความปลอดภัยและการป้องกันภัย จึงมีช่องเลือกตั้งประธานเฉพาะคราวนั้นแทน" }
+                ],
+                hint: "เมื่อระบบระเบียบตัวบุคคลระดับสูงหมดลง บอร์ดจะทำหน้าที่ลงประชามติเลือกสมาชิกในห้องขึ้นมา ๑ คนมาเคาะค้อนคุม"
+            },
+            {
+                question: "การวินิจฉัยชี้ขาดและการลงมติของที่ประชุม กปอ. ข้อใดกล่าวถูกต้องที่สุดในกรณีที่มีจำนวน 'คะแนนเสียงของกรรมการสองฝ่ายเท่ากันพอดี'?",
+                options: [
+                    { text: "ให้ประธานในที่ประชุมออกเสียงเพิ่มขึ้นอีกเสียงหนึ่งเป็นเสียงชี้ขาด (หนึ่งคนออกคะแนนเสียงสองรอบ)", isCorrect: true, rationale: "ข้อ ๘ วรรคสามระบุ: 'การวินิจฉัยชี้ขาดของที่ประชุมให้ถือเสียงข้างมาก... ถ้าคะแนนเสียงเท่ากันให้ประธานในที่ประชุมออกเสียงเพิ่มขึ้นอีกเสียงหนึ่งเป็นเสียงชี้ขาด'" },
+                    { text: "ให้เสนอมติไปสู่การตัดสินชี้ขาดขั้นสุดท้ายโดยสภาผู้แทนราษฎร", isCorrect: false, rationale: "สภาผู้แทนราษฎรดูแลกฎหมายนิติบัญญัติ ไม่ได้คุมลงมติรายวันของคณะกรรมการบริหารบอร์ด" },
+                    { text: "ให้ถือว่ามตินั้นถูกปัดตกไปทันที และห้ามนำเรื่องเดิมเข้ามาพิจารณาใหม่ใน ๑๘๐ วัน", isCorrect: false, rationale: "ไม่ใช่เกณฑ์ปัดตกทันทีเพื่อความต่อเนื่องในการทำงาน กฎหมายจึงยกสิทธิ์พิเศษให้ประธาน" },
+                    { text: "ให้อธิบดีกรมป้องกันและบรรเทาสาธารณภัยเป็นผู้ตัดสินใจเคาะชี้ขาดในขั้นตอนสุดท้าย", isCorrect: false, rationale: "เลขานุการทำหน้าที่อำนวยธุรการ ไม่มีเกณฑ์ลงเสียงชี้ขาดแทนบอร์ดหลักได้" }
+                ],
+                hint: "ผู้คุมหัวโต๊ะ (ประธานที่ประชุม) จะได้รับสิทธิในการออกคะแนนเสียงซ้ำรอบที่สองในฐานะลูกศรตัดสินชี้ขาด"
+            },
+            {
+                question: "ข้อใดต่อไปนี้ 'ไม่ใช่' อำนาจหน้าที่ของคณะกรรมการป้องกันอุบัติภัยแห่งชาติ (กปอ.) ตามข้อ ๙?",
+                options: [
+                    { text: "เสนอนโยบาย มาตรการ และแนวทางเกี่ยวกับการป้องกันอุบัติภัยต่อคณะรัฐมนตรี", isCorrect: false, rationale: "นี่เป็นอำนาจหน้าที่หลักข้อแรกของ กปอ. ตามข้อ ๙ (๑)" },
+                    { text: "จัดทำข้อเสนอแนะและให้ความเห็นเกี่ยวกับการปฏิบัติงานของหน่วยงานของรัฐเสนอต่อนายกฯ", isCorrect: false, rationale: "เป็นหน้าที่สำคัญข้อ ๙ (๓)" },
+                    { text: "ลงนามอนุมัติงบประมาณรายจ่ายพิเศษและออกบทลงโทษทางอาญาแก่ผู้ประกอบการที่ละเมิดกฎหมายควบคุมอาคาร", isCorrect: true, rationale: "กปอ. เป็นคณะกรรมการเชิงนโยบายและประสานงานข้อเสนอแนะกฎหมาย ไม่มีอำนาจอนุมัติเงินงบประมาณแผ่นดินทางอาญา หรือออกบทลงโทษแก่ภาคเอกชนได้เอง" },
+                    { text: "ติดตามและประเมินผลการปฏิบัติตามนโยบาย มาตรการ และแนวทางเกี่ยวกับการป้องกันอุบัติภัย", isCorrect: false, rationale: "เป็นหน้าที่หลักในการควบคุมประเมินผลตามข้อ ๙ (๕)" }
+                ],
+                hint: "บอร์ด กปอ. ทำหน้าที่ให้คำปรึกษา เสนอนโยบาย แนะนำ และติดตามประเมินผล แต่ไม่มีสายงานใช้อำนาจศาลลงโทษเอกชนตรงๆ"
+            },
+            {
+                question: "ตามระเบียบข้อ ๙ (๔) หากคณะกรรมการ กปอ. มีความเห็นและข้อสังเกตเกี่ยวกับการให้มีกฎหมาย หรือแก้ไขปรับปรุงกฎหมายป้องกันอุบัติภัย จะต้องเสนอดังกล่าวต่อผู้ใด?",
+                options: [
+                    { text: "รัฐมนตรีว่าการกระทรวงยุติธรรม", isCorrect: false, rationale: "แม้จะเป็นเรื่องกฎหมาย แต่ระเบียบกำหนดให้ยื่นเสนอขึ้นตรงต่อหัวหน้ารัฐบาล" },
+                    { text: "นายกรัฐมนตรี", isCorrect: true, rationale: "ตามข้อ ๙ (๔) กปอ. มีหน้าที่ 'เสนอความเห็นและข้อสังเกตต่อนายกรัฐมนตรีเกี่ยวกับการให้มีกฎหมาย หรือแก้ไขปรับปรุงกฎหมายเกี่ยวกับการป้องกันอุบัติภัย'" },
+                    { text: "คณะรัฐมนตรี (ครม.) ทุกคนร่วมกันลงนามรับร่าง", isCorrect: false, rationale: "กฎหมายระบุเฉพาะเจาะจงให้เสนอต่อนายกรัฐมนตรีในฐานะหัวหน้าฝ่ายบริหารผู้รักษาการบอร์ด นปถ./กปอ." },
+                    { text: "อธิบดีกรมบัญชีกลาง", isCorrect: false, rationale: "กรมบัญชีกลางดูแลการคลัง ไม่ยุ่งเกี่ยวกับการพิจารณาร่างกฎหมายอุบัติภัยของประเทศ" }
+                ],
+                hint: "ยื่นต่อผู้นำสูงสุดผู้ถือสิทธิ์รักษาการระเบียบสำนักนายกฯ ทั้งหมด (หรือผู้ดำรงตำแหน่งนายกรัฐมนตรี)"
+            },
+            {
+                question: "คณะกรรมการ กปอ. มีสิทธิแต่งตั้งคณะอนุกรรมการหรือที่ปรึกษาเพื่อเป้าหมายใด และการจัดประชุมคณะอนุกรรมการต้องยึดแนวทางข้อกฎหมายข้อใดตามระเบียบข้อ ๑๐?",
+                options: [
+                    { text: "เพื่อพิจารณาหรือปฏิบัติการอย่างใดอย่างหนึ่งตามมอบหมาย โดยให้นำกฎเกณฑ์การประชุม กปอ. (ข้อ ๘) มาบังคับใช้โดยอนุโลม", isCorrect: true, rationale: "ข้อ ๑๐ ระบุว่า กปอ. มีอำนาจแต่งตั้งที่ปรึกษา/อนุกรรมการ และวรรคสองระบุ 'การประชุมคณะอนุกรรมการให้นำข้อ ๘ มาใช้บังคับโดยอนุโลม'" },
+                    { text: "เพื่ออนุมัติวงเงินโครงการความมั่นคง โดยต้องใช้มติที่ประชุมสภาความปลอดภัยแห่งชาติชี้ขาด", isCorrect: false, rationale: "การเงินและความมั่นคงของทหารเป็นสายงานของบอร์ดความมั่นคง ไม่ใช่บอร์ดอนุกรรมการ กปอ." },
+                    { text: "เพื่อแต่งตั้งผู้แทนภาคอุตสาหกรรม และต้องมีคะแนนเสียงเห็นชอบจากปลัดกระทรวงการคลังเป็นสำคัญ", isCorrect: false, rationale: "ไม่ปรากฏชื่อปลัดกระทรวงคลังในการพิจารณาประชุมคณะอนุกรรมการตามระเบียบข้อนี้" },
+                    { text: "เพื่อร่วมลงพื้นที่บรรเทาทุกข์น้ำท่วม และต้องมาประชุมครบ ๑๐๐% เพื่ออนุมัติโครงการ", isCorrect: false, rationale: "การประชุมอนุกรรมการยึดองค์ประชุมครึ่งเดียว (กึ่งหนึ่ง) ตามข้อ ๘ เช่นเดียวกัน" }
+                ],
+                hint: "คณะอนุกรรมการจะรับงานตามที่บอร์ดใหญ่แบ่งมอบหมาย และเกณฑ์การประชุม (องค์ประชุมกึ่งหนึ่ง/เสียงชี้ขาด) จะลอกแบบมาจากบอร์ดประชุมหลัก"
+            },
+            {
+                question: "ค่าเบี้ยประชุมและประโยชน์ตอบแทนอื่นของประธานกรรมการ กรรมการ ที่ปรึกษา และอนุกรรมการ กปอ. ถูกกำหนดโดยหน่วยงานราชการใดตามข้อ ๑๑?",
+                options: [
+                    { text: "สำนักงบประมาณ", isCorrect: false, rationale: "สำนักงบประมาณจัดสรรกองทุนใหญ่ แต่หลักเกณฑ์และอัตราจ่ายกำหนดโดยเจ้ากระทรวงการคลัง" },
+                    { text: "กระทรวงการคลัง", isCorrect: true, rationale: "ข้อ ๑๑ บัญญัติว่า 'ให้ประธานกรรมการ กรรมการ ที่ปรึกษา และอนุกรรมการ ได้รับเบี้ยประชุมและประโยชน์ตอบแทนอื่นตามที่กระทรวงการคลังกำหนด'" },
+                    { text: "กรมป้องกันและบรรเทาสาธารณภัย", isCorrect: false, rationale: "ปภ. เป็นผู้เบิกจ่ายเงินตามกรอบ แต่วิธีและเกณฑ์ตัวเลขถูกครอบด้วยกฎกระทรวงการคลัง" },
+                    { text: "คณะรัฐมนตรี", isCorrect: false, rationale: "ไม่ต้องนำยอดจ่ายเบี้ยรายวันเข้าสู่กระบวนการพิจารณาเห็นชอบของ ครม. ทั้งคณะ" }
+                ],
+                hint: "หน่วยงานกระทรวงหลักของชาติที่คุมนโยบายการเบิกจ่ายสวัสดิการและเบี้ยประชุมภาครัฐทั้งหมด"
+            },
+            {
+                question: "ตามระเบียบข้อ ๑๒ ส่วนราชการใดทำหน้าที่เป็นสำนักงานเลขานุการของคณะกรรมการ กปอ. ประจำประเทศไทย?",
+                options: [
+                    { text: "สำนักงานปลัดสำนักนายกรัฐมนตรี", isCorrect: false, rationale: "ไม่ได้คุมงานธุรการของบอร์ดป้องกันอุบัติภัยแผ่นดินนี้" },
+                    { text: "กรมป้องกันและบรรเทาสาธารณภัย", isCorrect: true, rationale: "ตามข้อ ๑๒ บัญญัติชัด: 'ให้กรมป้องกันและบรรเทาสาธารณภัย เรียกโดยย่อว่า ปภ. ทำหน้าที่สำนักงานเลขานุการของ กปอ.'" },
+                    { text: "กองบัญชาการตำรวจจราจรแห่งชาติ", isCorrect: false, rationale: "ตำรวจดูแลกฎหมายแต่ไม่รับบทบาทธุรการของคณะกรรมการนี้" },
+                    { text: "สถาบันการแพทย์ฉุกเฉินแห่งชาติ", isCorrect: false, rationale: "ดูแลงานช่วยชีวิตโรงพยาบาลและรถฉุกเฉิน แต่ไม่รับหน้าที่ธุรการ กปอ." }
+                ],
+                hint: "ใช้ชื่อย่อทางการคือ 'ปภ.' สังกัดอยู่ภายใต้กระทรวงมหาดไทย"
+            },
+            {
+                question: "บทบาทข้อใดต่อไปนี้ที่ระเบียบข้อ ๑๒ (๓) มอบหมายให้กรมป้องกันและบรรเทาสาธารณภัย (ปภ.) ทำหน้าที่คุมระบบข้อมูลระดับชาติ?",
+                options: [
+                    { text: "เป็นศูนย์จัดซื้อจัดจ้างกลางอุปกรณ์เตือนภัยพิบัติประจำทุกหมู่บ้านทั่วไทย", isCorrect: false, rationale: "ปภ. ทำหน้าที่จัดซื้อในภารกิจตนเอง แต่ข้อความนี้ไม่ใช่ข้อกฎหมายธุรการของบอร์ด กปอ." },
+                    { text: "เป็นศูนย์กลางข้อมูลและสถิติเกี่ยวกับอุบัติภัย", isCorrect: true, rationale: "ตามข้อ ๑๒ (๓) ปภ. มีหน้าที่โดยตรงในการ 'เป็นศูนย์กลางข้อมูลและสถิติเกี่ยวกับอุบัติภัย'" },
+                    { text: "เป็นหน่วยคุมกำลังพลเคลื่อนที่เร็วเข้ากู้ชีพผู้บาดเจ็บตามแนวชายแดน", isCorrect: false, rationale: "หน่วยกู้ภัยทำหน้าที่ แต่ไม่ใช่บทบาทเลขาบอร์ด กปอ. ที่ระบุในระเบียบปี ๒๕๖๔" },
+                    { text: "เป็นผู้กำหนดเกณฑ์การสอบเลื่อนขั้นตำแหน่งวิศวกรโรงงานอุตสาหกรรมในสังกัดกระทรวงอุตสาหกรรม", isCorrect: false, rationale: "เป็นหน้าที่ของกระทรวงอุตสาหกรรม ปภ. เข้าไปยุ่งเกี่ยวในการคัดเลือกวิศวกรของหน่วยงานอื่นไม่ได้" }
+                ],
+                hint: "เรื่องการศึกษา วางแผนนโยบาย สิ่งที่บอร์ดต้องการมากที่สุดคือ 'แหล่งรวมตัวเลขสถิติภาพรวมอุบัติเหตุทำงานและอุบัติภัยของแผ่นดิน'"
+            },
+            {
+                question: "ค่าเบี้ยประชุมและค่าใช้จ่ายทั้งหมดในการดำเนินงานดำเนินงานของบอร์ด กปอ. และคณะอนุกรรมการ ให้เบิกจ่ายผ่านช่องทางและงบประมาณหน่วยงานใดตามข้อ ๑๓?",
+                options: [
+                    { text: "งบประมาณประจำปีของ กระทรวงการคลัง", isCorrect: false, rationale: "กระทรวงคลังออกเกณฑ์อัตราค่าเบิกจ่าย แต่ไม่ได้ให้ยืมกระเป๋าเงินงบกระทรวงตนเองมาจ่ายให้บอร์ดอื่น" },
+                    { text: "งบประมาณประจำปีของ กรมป้องกันและบรรเทาสาธารณภัย (ปภ.)", isCorrect: true, rationale: "ตามข้อ ๑๓ บัญญัติว่า 'ค่าเบี้ยประชุมและค่าใช้จ่ายที่เกี่ยวข้องกับการดำเนินงานของ กปอ. และคณะอนุกรรมการที่แต่งตั้งโดย กปอ. ให้เบิกจ่ายจากงบประมาณของ ปภ.'" },
+                    { text: "เงินงบกลางในอำนาจสั่งจ่ายโดยตรงของ นายกรัฐมนตรี", isCorrect: false, rationale: "การดึงงบกลางมาจ่ายรายวันเป็นเรื่องยุ่งยากและขัดวินัยคลัง บอร์ดทั่วไปใช้เงินของหน่วยเลขาฯ" },
+                    { text: "งบประมาณประจำปีของ สำนักงานปลัดสำนักนายกรัฐมนตรี", isCorrect: false, rationale: "สำนักงานปลัดสำนักนายกฯ ไม่ได้รับภาระเบิกจ่ายงบนี้" }
+                ],
+                hint: "จ่ายจากเงินงบประมาณประจำปีของหน่วยงานฝ่ายเลขาฯ ของบอร์ดนั้นๆ (สังกัดกระทรวงมหาดไทย)"
+            },
+            {
+                question: "ใครคือผู้ดำรงตำแหน่งเป็น 'ผู้รักษาการตามระเบียบนี้' ตัวจริงที่กฎหมายมอบหมายอำนาจไว้ในข้อ ๑๔?",
+                options: [
+                    { text: "นายกรัฐมนตรี", isCorrect: false, rationale: "พลเอก ประยุทธ์ เป็นผู้ลงนามท้ายประกาศ แต่ตามกฎหมาย ข้อ ๑๔ ได้มอบหมายให้รัฐมนตรีเจ้ากระทรวงอื่นรักษาการแทน" },
+                    { text: "รัฐมนตรีว่าการกระทรวงมหาดไทย", isCorrect: true, rationale: "ตามข้อ ๑๔ ระบุสั้นและเด็ดขาด: 'ให้รัฐมนตรีว่าการกระทรวงมหาดไทยรักษาการตามระเบียบนี้'" },
+                    { text: "ปลัดกระทรวงการคลัง ร่วมกับ ปลัดสำนักนายกรัฐมนตรี", isCorrect: false, rationale: "ปลัดกระทรวงคลังรักษาการเฉพาะระเบียบการเงิน แต่ไม่ใช่ระเบียบปฏิบัติการด้านอุบัติภัยสำนักนายกฯ ฉบับนี้" },
+                    { text: "อธิบดีกรมป้องกันและบรรเทาสาธารณภัย", isCorrect: false, rationale: "นั่งในตำแหน่งเลขาฯ บอร์ด แต่อำนาจเซ็นรักษากฎกติกาเป็นของข้าราชการฝ่ายการเมือง (รัฐมนตรี)" }
+                ],
+                hint: "เป็นรัฐมนตรีผู้คุมกองกำลังบรรเทาสาธารณภัยและการปกครองส่วนภูมิภาคทั้งหมดของกระทรวงมหาดไทย"
+            },
+            {
+                question: "ตามโครงสร้างบอร์ด กปอ. ข้อ ๕ ข้อใดต่อไปนี้คือจำนวนข้าราชการในสังกัด ปภ. ที่อธิบดี ปภ. สามารถคัดเลือกเพื่อแต่งตั้งให้ทำหน้าที่เป็น 'ผู้ช่วยเลขานุการ'?",
+                options: [
+                    { text: "จำนวนหนึ่งคนถ้วน", isCorrect: false, rationale: "จำนวนหนึ่งคนน้อยกว่ากรอบเพดานสูงสุดที่ระเบียบอนุญาต" },
+                    { text: "จำนวนไม่เกินสองคน", isCorrect: true, rationale: "ข้อ ๕ วรรคท้าย บัญญัติว่าให้อธิบดี ปภ. แต่งตั้งข้าราชการในกรมป้องกันและบรรเทาสาธารณภัย 'จำนวนไม่เกินสองคน เป็นกรรมการและผู้ช่วยเลขานุการ'" },
+                    { text: "จำนวนไม่เกินสามคน", isCorrect: false, rationale: "ตัวเลขสามคนเกินโควตาที่กฎหมายอนุญาตสำหรับผู้ช่วยธุรการชุดนี้" },
+                    { text: "จำนวนตามความเหมาะสมโดยไม่ต้องจำกัดโควตา", isCorrect: false, rationale: "กฎหมายคุมการแต่งตั้งเพื่อป้องกันการทับซ้อนและเบิกจ่ายเบี้ยประชุมเกินขอบเขต" }
+                ],
+                hint: "เป็นจำนวนตัวเลขเดียวกันกับโควตาผู้ช่วยเลขานุการตามระเบียบความปลอดภัยทางถนน"
+            },
+            {
+                question: "หากกรรมการผู้ทรงคุณวุฒิ กปอ. ต้องการลาออกจากตำแหน่งก่อนครบวาระสี่ปี จะต้องยื่นหนังสือลาออกต่อผู้ใดจึงจะมีผลสมบูรณ์?",
+                options: [
+                    { text: "ยื่นต่อ อธิบดีกรมป้องกันและบรรเทาสาธารณภัย ในฐานะเลขานุการบอร์ด", isCorrect: false, rationale: "เลขานุการมีหน้าที่รับเรื่องและตรวจสอบประสาน แต่ไม่ใช่ผู้ลงนามอนุมัติหรือแต่งตั้งผู้ทรงตั้งแต่แรก" },
+                    { text: "ยื่นต่อ ประธานกรรมการป้องกันอุบัติภัยแห่งชาติ (ผู้เซ็นแต่งตั้ง)", isCorrect: true, rationale: "ตามกฎหมายหลัก การยื่น 'ลาออก' ของผู้ทรงคุณวุฒิที่ได้รับแต่งตั้งจากประธานบอร์ด จะต้องยื่นเอกสารความประสงค์และมีผลเมื่อส่งถึงตัวผู้มีอำนาจแต่งตั้ง (ประธานกรรมการ กปอ.)" },
+                    { text: "ยื่นต่อ รัฐมนตรีว่าการกระทรวงมหาดไทย ในฐานะผู้รักษาการระเบียบ", isCorrect: false, rationale: "แม้จะเป็นผู้รักษาการระเบียบ แต่ผู้ลงนามมีอำนาจตั้งและรับใบลาออกของผู้ทรงคุณวุฒิ กปอ. คือประธาน กปอ." },
+                    { text: "ยื่นต่อ ปลัดสำนักนายกรัฐมนตรี เพื่อเข้าเสนอสู่ที่ประชุมสภาผู้แทนราษฎรต่อไป", isCorrect: false, rationale: "ไม่ต้องเสนอสภาผู้แทนราษฎรในการลาออกของบอร์ดฝ่ายบริหาร" }
+                ],
+                hint: "สอดคล้องตามหลักปกครองของไทย: ได้รับแต่งตั้งโดยอำนาจใคร ย่อมยื่นหนังสือลาออกต่อคนผู้นั้นเป็นสำคัญ"
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let hasAnswered = false;
+
+        // Switch Tabs Logic
+        function switchTab(tab) {
+            const summaryBtn = document.getElementById('tab-summary-btn');
+            const quizBtn = document.getElementById('tab-quiz-btn');
+            const summarySec = document.getElementById('summary-section');
+            const quizSec = document.getElementById('quiz-section');
+
+            if (tab === 'summary') {
+                summaryBtn.className = "px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg font-medium text-xs sm:text-sm transition-all duration-200 bg-brand-500 text-white shadow-sm";
+                quizBtn.className = "px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg font-medium text-xs sm:text-sm transition-all duration-200 text-slate-600 hover:text-brand-600 hover:bg-brand-50";
+                summarySec.classList.remove('hidden');
+                quizSec.classList.add('hidden');
+            } else {
+                quizBtn.className = "px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg font-medium text-xs sm:text-sm transition-all duration-200 bg-brand-500 text-white shadow-sm";
+                summaryBtn.className = "px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg font-medium text-xs sm:text-sm transition-all duration-200 text-slate-600 hover:text-brand-600 hover:bg-brand-50";
+                quizSec.classList.remove('hidden');
+                summarySec.classList.add('hidden');
+                initQuiz();
+            }
+        }
+
+        // Initialize / Restart Quiz
+        function initQuiz() {
+            currentQuestionIndex = 0;
+            score = 0;
+            hasAnswered = false;
+            document.getElementById('quiz-play-box').classList.remove('hidden');
+            document.getElementById('quiz-score-box').classList.add('hidden');
+            showQuestion();
+        }
+
+        // Render Current Question
+        function showQuestion() {
+            hasAnswered = false;
+            const q = quizData[currentQuestionIndex];
+            
+            // Set Progress Indicators
+            document.getElementById('current-question-indicator').innerText = `${currentQuestionIndex + 1}/${quizData.length}`;
+            document.getElementById('quiz-progress-bar').style.width = `${((currentQuestionIndex + 1) / quizData.length) * 100}%`;
+            
+            // Set Question Statement
+            document.getElementById('question-text').innerText = `[ข้อที่ ${currentQuestionIndex + 1}] ${q.question}`;
+            
+            // Hide next button & hint box
+            document.getElementById('next-btn').classList.add('hidden');
+            document.getElementById('explanation-box').classList.add('hidden');
+            
+            // Reset hint btn
+            const hintDisplay = document.getElementById('hint-display-box');
+            hintDisplay.classList.add('hidden');
+            document.getElementById('hint-text-label').innerText = "แสดงคำใบ้";
+            document.getElementById('hint-content').innerText = q.hint;
+
+            // Generate Option Cards
+            const container = document.getElementById('options-container');
+            container.innerHTML = '';
+            
+            q.options.forEach((opt, idx) => {
+                const optId = `opt-${idx}`;
+                const card = document.createElement('div');
+                card.id = optId;
+                card.onclick = () => selectOption(idx);
+                card.className = "p-3 sm:p-4 bg-white hover:bg-orange-50/50 border border-slate-150 hover:border-brand-300 rounded-xl cursor-pointer transition-all duration-150 flex items-start gap-3 shadow-sm";
+                
+                // Bullet icon placeholder
+                card.innerHTML = `
+                    <div class="w-5 h-5 sm:w-6 sm:h-6 rounded-full border border-slate-300 flex items-center justify-center flex-shrink-0 text-[10px] sm:text-xs font-semibold text-slate-400 bg-slate-50 transition-all opt-bullet">
+                        ${String.fromCharCode(65 + idx)}
+                    </div>
+                    <div class="text-xs sm:text-sm font-medium text-slate-800 flex-grow leading-relaxed">${opt.text}</div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Toggle Hint Display
+        function toggleHint() {
+            const hintBox = document.getElementById('hint-display-box');
+            const hintLabel = document.getElementById('hint-text-label');
+            if (hintBox.classList.contains('hidden')) {
+                hintBox.classList.remove('hidden');
+                hintLabel.innerText = "ซ่อนคำใบ้";
+            } else {
+                hintBox.classList.add('hidden');
+                hintLabel.innerText = "แสดงคำใบ้";
+            }
+        }
+
+        // Select Option Handling
+        function selectOption(selectedIdx) {
+            if (hasAnswered) return; // Prevent multiple clicks
+            hasAnswered = true;
+            
+            const q = quizData[currentQuestionIndex];
+            const isCorrect = q.options[selectedIdx].isCorrect;
+            
+            if (isCorrect) score++;
+
+            // Visual markers for choices
+            q.options.forEach((opt, idx) => {
+                const card = document.getElementById(`opt-${idx}`);
+                const bullet = card.querySelector('.opt-bullet');
+                
+                // Remove interactive styles
+                card.className = card.className.replace('hover:bg-orange-50/50', '').replace('hover:border-brand-300', '').replace('cursor-pointer', '');
+                
+                if (opt.isCorrect) {
+                    // Correct green styling
+                    card.classList.add('border-green-500', 'bg-green-50/80');
+                    bullet.className = "w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-green-500 text-white flex items-center justify-center flex-shrink-0 text-[10px] sm:text-xs font-semibold";
+                    bullet.innerHTML = '<i class="fa-solid fa-check text-[9px] sm:text-[11px]"></i>';
+                } else if (idx === selectedIdx) {
+                    // Incorrect red styling
+                    card.classList.add('border-red-500', 'bg-red-50/80');
+                    bullet.className = "w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-red-500 text-white flex items-center justify-center flex-shrink-0 text-[10px] sm:text-xs font-semibold";
+                    bullet.innerHTML = '<i class="fa-solid fa-xmark text-[9px] sm:text-[11px]"></i>';
+                } else {
+                    card.classList.add('opacity-60');
+                }
+            });
+
+            // Show explanation/rationale box
+            const expBox = document.getElementById('explanation-box');
+            const expIcon = document.getElementById('explanation-icon-container');
+            const expTitle = document.getElementById('explanation-title');
+            const expBody = document.getElementById('explanation-body');
+            
+            expBox.classList.remove('hidden');
+            
+            if (isCorrect) {
+                expIcon.className = "w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-white bg-green-500 shadow-sm";
+                expIcon.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+                expTitle.className = "font-bold text-xs sm:text-sm text-green-700";
+                expTitle.innerText = "คำตอบถูกต้อง!";
+            } else {
+                expIcon.className = "w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-white bg-red-500 shadow-sm";
+                expIcon.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i>';
+                expTitle.className = "font-bold text-xs sm:text-sm text-red-600";
+                expTitle.innerText = "คำตอบยังไม่ถูกต้อง";
+            }
+            
+            expBody.innerText = q.options[selectedIdx].rationale;
+            
+            // Show next button
+            const nextBtn = document.getElementById('next-btn');
+            nextBtn.classList.remove('hidden');
+            if (currentQuestionIndex === quizData.length - 1) {
+                nextBtn.innerHTML = '<span>ดูผลการสอบทั้งหมด</span> <i class="fa-solid fa-square-poll-vertical ml-1.5"></i>';
+            } else {
+                nextBtn.innerHTML = '<span>ข้อต่อไป</span> <i class="fa-solid fa-chevron-right text-[10px] ml-1.5"></i>';
+            }
+        }
+
+        // Progress or finish quiz
+        function goToNextQuestion() {
+            if (currentQuestionIndex < quizData.length - 1) {
+                currentQuestionIndex++;
+                showQuestion();
+            } else {
+                showQuizResult();
+            }
+        }
+
+        // Show Scoreboard Screen
+        function showQuizResult() {
+            document.getElementById('quiz-play-box').classList.add('hidden');
+            
+            const scoreBox = document.getElementById('quiz-score-box');
+            scoreBox.classList.remove('hidden');
+            
+            document.getElementById('final-score-display').innerText = `${score} / ${quizData.length}`;
+            
+            const assessment = document.getElementById('score-assessment');
+            if (score === 30) {
+                assessment.innerText = "ระดับ: 🏆 ระดับตำนาน (ตอบถูกต้องครบ 30/30 ระดับประธานบอร์ด กปอ. ตัวจริง)";
+                assessment.className = "text-xs sm:text-sm font-bold text-emerald-600 block";
+            } else if (score >= 25) {
+                assessment.innerText = "ระดับ: 🥇 ยอดเยี่ยม (เกรดเอ ผ่านมาตรฐานความรอบรู้กฎหมายป้องกันภัยพิบัติระดับชาติ)";
+                assessment.className = "text-xs sm:text-sm font-bold text-teal-600 block";
+            } else if (score >= 18) {
+                assessment.innerText = "ระดับ: 🥈 ผ่านเกณฑ์ดีมาก (ความรู้ระดับมาตรฐานราชการ มีพลาดจุดลวงเล็กน้อย)";
+                assessment.className = "text-xs sm:text-sm font-bold text-amber-600 block";
+            } else {
+                assessment.innerText = "ระดับ: ⚠️ ควรทบทวนสรุปสาระสำคัญข้อที่ ๑ - ๑๔ และเรื่องข้อยกเว้นอุบัติภัยอีกครั้ง";
+                assessment.className = "text-xs sm:text-sm font-bold text-red-500 block";
+            }
+        }
+
+        function restartQuiz() {
+            initQuiz();
+        }
+
+        // Start app in summary tab on load
+        window.onload = function() {
+            switchTab('summary');
+        };
+    </script>
+</body>
+</html>

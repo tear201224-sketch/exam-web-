@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบเรียนรู้และทดสอบระเบียบเงินทดรองราชการ พ.ศ. 2568</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Sarabun -->
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sarabun: ['Sarabun', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            200: '#fed7aa',
+                            300: '#fdba74',
+                            400: '#fb923c',
+                            500: '#f97316', // Primary Orange
+                            600: '#ea580c',
+                            700: '#c2410c',
+                            800: '#9a3412',
+                            900: '#7c2d12',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background-color: #fcfcfd;
+        }
+        /* Custom scrollbar for premium feel */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #fdba74;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f97316;
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased min-h-screen flex flex-col">
+
+    <!-- Top Premium Navigation Bar -->
+    <header class="sticky top-0 z-40 bg-white border-b border-orange-100 shadow-sm backdrop-blur-md bg-white/95">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-500 to-amber-500 flex items-center justify-center text-white shadow-md shadow-brand-500/20">
+                        <i class="fa-solid fa-scale-balanced text-lg"></i>
+                    </div>
+                    <div>
+                        <span class="font-bold text-lg text-slate-900 tracking-tight block leading-tight">ระเบียบเงินทดรองราชการฯ ๒๕๖๘</span>
+                        <span class="text-xs text-brand-600 font-medium tracking-wider uppercase">สรุปครบถ้วน (ข้อ 1-41) & คลังข้อสอบปราบเซียน (๓๐ ข้อ)</span>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-2">
+                    <button onclick="switchTab('summary')" id="tab-summary-btn" class="px-4 py-2 rounded-lg font-medium text-sm transition-all duration-200 bg-brand-500 text-white shadow-sm">
+                        <i class="fa-solid fa-file-invoice mr-1.5"></i> สรุปสาระสำคัญ
+                    </button>
+                    <button onclick="switchTab('quiz')" id="tab-quiz-btn" class="px-4 py-2 rounded-lg font-medium text-sm transition-all duration-200 text-slate-600 hover:text-brand-600 hover:bg-brand-50">
+                        <i class="fa-solid fa-graduation-cap mr-1.5"></i> ทำข้อสอบ (๓๐ ข้อ)
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- SECTION 1: SUMMARY TAB -->
+        <div id="summary-section" class="space-y-8">
+            
+            <!-- Hero Banner -->
+            <div class="relative bg-gradient-to-br from-brand-900 via-brand-800 to-amber-950 text-white rounded-3xl p-8 sm:p-10 shadow-xl overflow-hidden">
+                <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                <div class="relative z-10 max-w-3xl">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-brand-500/30 text-brand-200 border border-brand-500/30 mb-4">
+                        <i class="fa-solid fa-circle-check"></i> ประกาศในราชกิจจานุเบกษา วันที่ ๑๐ พฤศจิกายน ๒๕๖๘
+                    </span>
+                    <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight mb-4">
+                        ระเบียบกระทรวงการคลัง ว่าด้วยเงินทดรองราชการเพื่อช่วยเหลือผู้ประสบภัยพิบัติกรณีฉุกเฉิน พ.ศ. ๒๕๖๘
+                    </h1>
+                    <p class="text-slate-200 text-sm sm:text-base leading-relaxed">
+                        วิเคราะห์และรวบรวมเนื้อหาจากไฟล์เอกสารต้นฉบับ <span class="underline decoration-amber-400 font-semibold">"20251117032640.pdf"</span> เจาะลึกรายข้อ ตั้งแต่ข้อ ๑ ถึงข้อ ๔๑ ครบถ้วนทุกประเด็นสำคัญสำหรับข้าราชการและผู้เตรียมตัวสอบ
+                    </p>
+                </div>
+                <div class="absolute right-0 bottom-0 opacity-10 transform translate-x-10 translate-y-10 hidden lg:block">
+                    <i class="fa-solid fa-shield-halved text-[240px]"></i>
+                </div>
+            </div>
+
+            <!-- 1. บททั่วไป นิยาม และการบังคับใช้ (ข้อ 1 - 7) -->
+            <div class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+                <div class="bg-gradient-to-r from-orange-500 to-amber-500 px-6 py-4 flex items-center justify-between text-white">
+                    <h2 class="font-bold flex items-center gap-2">
+                        <i class="fa-solid fa-gavel"></i> บททั่วไปและคำนิยามสำคัญ (ข้อ ๑ - ๗)
+                    </h2>
+                    <span class="text-xs bg-white/20 px-2.5 py-1 rounded-full font-bold">ข้อมูลปูพื้นฐาน</span>
+                </div>
+                <div class="p-6 space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <h4 class="font-bold text-slate-900 border-b pb-2 flex items-center gap-1.5">
+                                <span class="w-2 h-2 rounded-full bg-brand-500"></span> ข้อมูลทางเทคนิคและวันบังคับใช้
+                            </h4>
+                            <ul class="text-xs text-slate-600 space-y-2 list-disc pl-4">
+                                <li><strong>ชื่อระเบียบ:</strong> ระเบียบกระทรวงการคลัง ว่าด้วยเงินทดรองราชการเพื่อช่วยเหลือผู้ประสบภัยพิบัติกรณีฉุกเฉิน พ.ศ. ๒๕๖๘</li>
+                                <li><strong>วันประกาศ:</strong> ๑๐ พฤศจิกายน ๒๕๖๘ โดยรัฐมนตรีว่าการกระทรวงการคลัง (เอกนิติ นิติทัณฑ์ประภาศ)</li>
+                                <li><strong>วันเริ่มใช้บังคับ (ข้อ ๒):</strong> มีผลบังคับตั้งแต่วันที่ <span class="text-brand-600 font-bold">๑๑ พฤศจิกายน ๒๕๖๘ เป็นต้นไป</span> (ถัดจากวันประกาศในราชกิจจานุเบกษา)</li>
+                                <li><strong>การยกเลิก (ข้อ ๓):</strong> ให้ยกเลิกระเบียบฉบับเดิม พ.ศ. ๒๕๖๒ ทันที</li>
+                                <li><strong>ข้อยกเว้นไม่ใช้บังคับ (ข้อ ๔):</strong> ไม่ใช้กับกรณีฉุกเฉินในการรักษาความมั่นคงของประเทศ พ.ศ. ๒๕๖๒ (มีระเบียบแยกเฉพาะต่างหาก)</li>
+                                <li><strong>ผู้รักษาการตามระเบียบ (ข้อ ๖):</strong> <span class="text-brand-600 font-bold">ปลัดกระทรวงการคลัง</span> และมีอำนาจกำหนดหลักเกณฑ์วิธีปฏิบัติต่างๆ</li>
+                                <li><strong>การนอกเหนือเกณฑ์หรือยกเว้นปฏิบัติ (ข้อ ๗):</strong> ส่วนราชการต้องทำความตกลงโดยตรงกับ <span class="text-brand-600 font-bold">กระทรวงการคลัง</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="space-y-2">
+                            <h4 class="font-bold text-slate-900 border-b pb-2 flex items-center gap-1.5">
+                                <span class="w-2 h-2 rounded-full bg-brand-500"></span> นิยามศัพท์ทางกฎหมายที่ห้ามจำสับสน (ข้อ ๕)
+                            </h4>
+                            <ul class="text-xs text-slate-600 space-y-2.5">
+                                <li class="bg-orange-50/50 p-2.5 rounded-lg border border-orange-100">
+                                    <strong class="text-brand-700">"ภัยพิบัติ"</strong> หมายถึง สาธารณภัยต่างๆ (อัคคีภัย, วาตภัย, อุทกภัย, ภัยแล้ง, โรคระบาดในสัตว์/พืช, โรคระบาดในมนุษย์, ภัยสงคราม, การก่อการร้าย ฯลฯ) ไม่ว่าเกิดจากธรรมชาติหรือมีบุคคล/สัตว์ทำให้เกิดขึ้น ที่ก่ออันตรายแก่ชีวิต ร่างกาย หรือทรัพย์สินของประชาชน
+                                </li>
+                                <li class="bg-orange-50/50 p-2.5 rounded-lg border border-orange-100">
+                                    <strong class="text-brand-700">"ผู้ประสบภัยพิบัติ"</strong> หมายความว่า ผู้ได้รับความเดือดร้อนหรือเสียหายจากภัยพิบัติกรณีฉุกเฉิน <span class="text-red-600 font-semibold underline">แต่มิให้รวมถึง ส่วนราชการหรือหน่วยงานของรัฐ</span>
+                                </li>
+                                <li class="bg-orange-50/50 p-2.5 rounded-lg border border-orange-100">
+                                    <strong class="text-brand-700">"ในเชิงป้องกันหรือยับยั้ง"</strong> การดำเนินการกับสถานการณ์ภัยพิบัติที่คาดหมายว่าจะเกิดขึ้นในเวลาอันใกล้ และจำต้องป้องกันแก้ไขโดยฉับพลันทันที เพื่อลดผลกระทบ
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. วงเงินและการอนุมัติจ่าย (ข้อ 8 - 10) -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                
+                <!-- Left/Middle Content: Deep Dive Summary Cards -->
+                <div class="lg:col-span-2 space-y-6">
+                    
+                    <!-- วงเงินทดรองราชการตามประเภทหน่วยงาน (ข้อ 8) -->
+                    <div class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+                        <div class="bg-gradient-to-r from-orange-50 to-amber-50/50 px-6 py-4 border-b border-orange-100 flex items-center justify-between">
+                            <h2 class="font-bold text-slate-900 flex items-center gap-2">
+                                <i class="fa-solid fa-wallet text-brand-600"></i> หมวด ๑: สรุปวงเงินและการอนุมัติจ่าย (ข้อ ๘ - ๑๐)
+                            </h2>
+                            <span class="text-xs bg-brand-100 text-brand-700 px-2 py-1 rounded-md font-semibold">ข้อ 8 - 10</span>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-sm text-slate-600 mb-4">
+                                เป็นวงเงินที่ส่วนราชการมีไว้เพื่อทดรองจ่ายช่วยเหลือผู้ประสบภัยในระหว่างที่ยังไม่ได้รับจัดสรรงบประมาณรายจ่าย
+                            </p>
+                            
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-left border-collapse">
+                                    <thead>
+                                        <tr class="border-b border-slate-100 text-xs font-semibold text-slate-400 uppercase tracking-wider">
+                                            <th class="py-3 px-2">ส่วนราชการที่มีวงเงิน (ข้อ ๘)</th>
+                                            <th class="py-3 px-2 text-right">วงเงินทดรอง (บาท)</th>
+                                            <th class="py-3 px-2 text-center">ผู้มีอำนาจอนุมัติ (ข้อ ๙)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-slate-50 text-sm">
+                                        <tr>
+                                            <td class="py-3 px-2 font-medium text-slate-900">สำนักเลขาธิการนายกรัฐมนตรี</td>
+                                            <td class="py-3 px-2 text-right text-brand-600 font-bold">100,000,000</td>
+                                            <td class="py-3 px-2 text-center text-slate-500">นายกรัฐมนตรี</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-3 px-2 font-medium text-slate-900">สำนักงานปลัดกระทรวงกลาโหม <span class="text-xs text-slate-400 block">(จัดสรรต่อในสังกัดได้ตามจำเป็น)</span></td>
+                                            <td class="py-3 px-2 text-right text-brand-600 font-bold">100,000,000</td>
+                                            <td class="py-3 px-2 text-center text-slate-500">ปลัดกระทรวงกลาโหม</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-3 px-2 font-medium text-slate-900">สำนักงานปลัดกระทรวงเกษตรและสหกรณ์</td>
+                                            <td class="py-3 px-2 text-right text-brand-600 font-bold">100,000,000</td>
+                                            <td class="py-3 px-2 text-center text-slate-500">ปลัดกระทรวงเกษตรฯ</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-3 px-2 font-medium text-slate-900">กรมป้องกันและบรรเทาสาธารณภัย (ปภ.)</td>
+                                            <td class="py-3 px-2 text-right text-brand-600 font-bold">100,000,000</td>
+                                            <td class="py-3 px-2 text-center text-slate-500">อธิบดีกรม ปภ.</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-3 px-2 font-medium text-slate-900">สำนักงานปลัดกระทรวงมหาดไทย</td>
+                                            <td class="py-3 px-2 text-right text-brand-600 font-bold">50,000,000</td>
+                                            <td class="py-3 px-2 text-center text-slate-500">ปลัดกระทรวงมหาดไทย</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-3 px-2 font-medium text-slate-900">สำนักงานป้องกันและบรรเทาสาธารณภัยจังหวัด <span class="text-brand-600 font-medium">(แห่งละ)</span></td>
+                                            <td class="py-3 px-2 text-right text-brand-600 font-bold">50,000,000</td>
+                                            <td class="py-3 px-2 text-center text-slate-500">ผู้ว่าราชการจังหวัด</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-3 px-2 font-medium text-slate-900">สำนักงานปลัดกระทรวงการพัฒนาสังคมฯ (พม.)</td>
+                                            <td class="py-3 px-2 text-right text-brand-600 font-bold">10,000,000</td>
+                                            <td class="py-3 px-2 text-center text-slate-500">ปลัดกระทรวง พม.</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-3 px-2 font-medium text-slate-900">สำนักงานปลัดกระทรวงสาธารณสุข</td>
+                                            <td class="py-3 px-2 text-right text-brand-600 font-bold">10,000,000</td>
+                                            <td class="py-3 px-2 text-center text-slate-500">ปลัดกระทรวงสาธารณสุข</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <div class="mt-4 p-4 bg-orange-50/50 rounded-xl border border-orange-100 text-xs text-slate-600 space-y-2">
+                                <p class="font-semibold text-slate-800"><i class="fa-solid fa-clock-rotate-left mr-1 text-brand-500"></i> ข้อ ๑๐: การยุติการอนุมัติจ่ายเงินทดรองราชการ (ให้ยุติเมื่อเกิดกรณีใดกรณีหนึ่งก่อน):</p>
+                                <ul class="list-disc pl-4 space-y-1">
+                                    <li>๑. ได้รับจัดสรรงบประมาณรายจ่ายเพื่อช่วยเหลือผู้ประสบภัยแล้ว</li>
+                                    <li>๒. สิ้นสุดระยะเวลาการให้ความช่วยเหลือตามประกาศเขตภัยพิบัติฯ</li>
+                                    <li>๓. มีการประกาศยุติโดยอธิบดี ปภ. หรือผู้ว่าราชการจังหวัด แล้วแต่กรณี</li>
+                                </ul>
+                                <p class="font-semibold text-slate-800 pt-1"><i class="fa-solid fa-calendar-day mr-1 text-brand-500"></i> เงินสดสำรองจ่ายสำหรับวันหยุดราชการ (ข้อ ๙ วรรคสาม):</p>
+                                <p class="pl-4">หากคาดว่าจะเกิดภัยขึ้นและจำเป็นต้องสำรองเงินสดไว้ช่วยประชาชนในวันหยุดราชการ <strong class="text-brand-600">ผู้ว่าราชการจังหวัด</strong> มีอำนาจเบิกเงินทดรองมาถือสำรองจ่ายได้ตามความเหมาะสม และให้นำเงินที่เหลือส่งคืนคลังเมื่อภัยสิ้นสุดลง</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. คณะกรรมการ และการประกาศเขตความช่วยเหลือ (หมวด 2 & 3) -->
+                    <div class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+                        <div class="bg-gradient-to-r from-orange-50 to-amber-50/50 px-6 py-4 border-b border-orange-100">
+                            <h2 class="font-bold text-slate-900 flex items-center gap-2">
+                                <i class="fa-solid fa-users text-brand-600"></i> หมวด ๒ - ๓: คณะกรรมการและการอนุมัติช่วยเหลือ (ข้อ ๑๑ - ๒๖)
+                            </h2>
+                        </div>
+                        <div class="p-6 space-y-6">
+                            
+                            <!-- คณะกรรมการ -->
+                            <div>
+                                <h3 class="font-bold text-slate-900 text-sm mb-3 flex items-center gap-2">
+                                    <span class="w-1.5 h-4 bg-brand-500 rounded"></span> คณะกรรมการช่วยเหลือระดับท้องที่
+                                </h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
+                                        <h4 class="font-bold text-brand-600 text-sm mb-1">ก.ช.ภ.อ. / ก.ช.ภ.กอ. (ระดับอำเภอ/กิ่งอำเภอ) (ข้อ ๑๑)</h4>
+                                        <p class="text-xs text-slate-700"><strong>ประธาน:</strong> นายอำเภอ หรือ ปลัดอำเภอหัวหน้ากิ่งอำเภอ</p>
+                                        <p class="text-xs text-slate-700"><strong>เลขาฯ:</strong> ปลัดอำเภอหัวหน้ากลุ่ม หรือฝ่ายความมั่นคง</p>
+                                    </div>
+                                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
+                                        <h4 class="font-bold text-brand-600 text-sm mb-1">ก.ช.ภ.จ. (ระดับจังหวัด) (ข้อ ๑๓)</h4>
+                                        <p class="text-xs text-slate-700"><strong>ประธาน:</strong> ผู้ว่าราชการจังหวัด</p>
+                                        <p class="text-xs text-slate-700"><strong>เลขาฯ:</strong> หัวหน้าสำนักงานป้องกันและบรรเทาสาธารณภัยจังหวัด</p>
+                                    </div>
+                                </div>
+                                <p class="text-[11px] text-brand-700 mt-2 font-medium">
+                                    *ข้อ ๑๕: องค์ประชุมคณะกรรมการต้องไม่น้อยกว่า <strong>กึ่งหนึ่ง</strong> จึงจะเป็นองค์ประชุม มติถือเสียงข้างมาก หากเท่ากันประธานออกอีก 1 เสียงเป็นเสียงชี้ขาด
+                                </p>
+                            </div>
+
+                            <!-- การประกาศเขตภัยและการร้องขอสนับสนุน -->
+                            <div class="border-t border-slate-100 pt-4 space-y-3">
+                                <h3 class="font-bold text-slate-900 text-sm flex items-center gap-2">
+                                    <span class="w-1.5 h-4 bg-brand-500 rounded"></span> การประกาศเขตช่วยเหลือผู้ประสบภัยฯ (ข้อ ๒๐)
+                                </h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+                                    <div class="bg-orange-50 p-3 rounded-lg border border-orange-100/50">
+                                        <strong>กรุงเทพมหานคร:</strong> อนุมัติประกาศโดย <strong class="text-brand-600">อธิบดีกรม ปภ.</strong>
+                                    </div>
+                                    <div class="bg-orange-50 p-3 rounded-lg border border-orange-100/50">
+                                        <strong>จังหวัดอื่น:</strong> อนุมัติโดย <strong class="text-brand-600">ผู้ว่าฯ ร่วมกับ ก.ช.ภ.จ.</strong> (หากฉุกเฉินด่วนมากและประชุม ก.ช.ภ.จ. ไม่ทัน ผู้ว่าฯ อนุมัติประกาศล่วงหน้าไปก่อนได้)
+                                    </div>
+                                </div>
+                                
+                                <h3 class="font-bold text-slate-900 text-sm pt-2 flex items-center gap-2">
+                                    <span class="w-1.5 h-4 bg-brand-500 rounded"></span> การยืมเงินระหว่างส่วนราชการ (ข้อ ๒๕)
+                                </h3>
+                                <p class="text-xs text-slate-600 leading-relaxed">
+                                    กรณีขอการสนับสนุนด้วยความจำเป็นเร่งด่วนทางเครื่องมือสื่อสาร ให้ยืนยันเป็นหนังสือภายหลังโดยด่วนที่สุด และการขอสนับสนุนระหว่างส่วนราชการด้วยกัน <span class="font-bold text-brand-600">จะต้องจัดทำ "สัญญายืมเงิน" ตามระเบียบราชการเสมอ</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. การชดใช้คลัง ตรวจสอบติดตาม และจัดซื้อพัสดุ (ข้อ 27 - 41) -->
+                    <div class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+                        <div class="bg-gradient-to-r from-orange-50 to-amber-50/50 px-6 py-4 border-b border-orange-100">
+                            <h2 class="font-bold text-slate-900 flex items-center gap-2">
+                                <i class="fa-solid fa-list-check text-brand-600"></i> หมวด ๔ - ๖: พัสดุ ชดใช้คืน และการตรวจสอบติดตาม (ข้อ ๒๗ - ๔๑)
+                            </h2>
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-slate-600">
+                                <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 space-y-1.5">
+                                    <h4 class="font-bold text-slate-900 text-sm flex items-center gap-1.5">
+                                        <i class="fa-solid fa-box text-brand-600"></i> จัดหาพัสดุ (ข้อ ๓๔)
+                                    </h4>
+                                    <p>การจัดหาพัสดุ ตรวจรับ และบริหารพัสดุเพื่อช่วยเหลือประชาชน ต้องเป็นไปตาม <strong class="text-slate-800">กฎหมายว่าด้วยการจัดซื้อจัดจ้างและการบริหารพัสดุภาครัฐ</strong> อย่างเคร่งครัด</p>
+                                </div>
+                                
+                                <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 space-y-1.5">
+                                    <h4 class="font-bold text-slate-900 text-sm flex items-center gap-1.5">
+                                        <i class="fa-solid fa-magnifying-glass text-brand-600"></i> การตรวจสอบภายใน (ข้อ ๓๕)
+                                    </h4>
+                                    <p>ให้ตรวจสอบภายในจังหวัด/ส่วนราชการ ดำเนินการตรวจสอบการจ่ายเงินและรายงานให้ผู้มีอำนาจทราบ <strong class="text-brand-600">ภายใน ๓๐ วัน</strong> นับแต่วันที่สิ้นสุดระยะเวลาช่วยเหลือ</p>
+                                </div>
+                            </div>
+
+                            <div class="p-4 bg-orange-50/30 rounded-xl border border-orange-100 text-xs text-slate-600 space-y-2">
+                                <h4 class="font-bold text-slate-900 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-user-shield text-brand-600"></i> คณะกรรมการตรวจสอบติดตามกระทรวงการคลัง (ข้อ ๓๗ - ๓๘)
+                                </h4>
+                                <ul class="list-disc pl-4 space-y-1">
+                                    <li><strong>ประธานกรรมการ:</strong> อธิบดีกรมบัญชีกลาง</li>
+                                    <li><strong>กรรมการ:</strong> ผู้แทนสำนักงบประมาณ, ผู้แทนสำนักงานการตรวจเงินแผ่นดิน (สตง.)</li>
+                                    <li><strong>กรรมการและเลขานุการ:</strong> ผู้แทนกรมบัญชีกลาง</li>
+                                    <li><strong>บทเฉพาะกาล (ข้อ ๓๙ - ๔๑):</strong> หากมีภัยพิบัติค้างอยู่ก่อนหน้าวันที่ระเบียบใหม่ใช้ ให้ปฏิบัติตามระเบียบปี ๒๕๖๒ ต่อไปจนกว่าแล้วเสร็จ และใช้หลักเกณฑ์เดิมไปพลางก่อนจนกว่าจะมีระเบียบอัตราใหม่</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right Content: Sidebar Tips & Quick Checklists -->
+                <div class="space-y-6">
+                    
+                    <!-- Quick Reference Box -->
+                    <div class="bg-gradient-to-b from-brand-50 to-orange-100/30 p-6 rounded-2xl border border-orange-100">
+                        <h3 class="font-bold text-slate-900 mb-3 flex items-center gap-1.5 text-sm">
+                            <i class="fa-solid fa-circle-exclamation text-brand-500"></i> เช็คลิสต์เด็ดประเด็นเด่น
+                        </h3>
+                        <ul class="space-y-3 text-xs text-slate-600">
+                            <li class="flex gap-2">
+                                <span class="text-brand-500 font-bold">•</span>
+                                <span><strong>ความถูกต้องของพัสดุ:</strong> การจัดซื้อจัดจ้างฉุกเฉินก็ต้องเข้า พ.ร.บ. จัดซื้อจัดจ้างฯ เสมอ</span>
+                            </li>
+                            <li class="flex gap-2">
+                                <span class="text-brand-500 font-bold">•</span>
+                                <span><strong>รายงานกรมบัญชีกลาง:</strong> จัดส่งรายงานตรวจจ่ายเงินภายใน <strong>๑๕ วัน</strong> นับแต่ได้รับรายงานจากผู้ตรวจสอบภายใน (ข้อ ๓๖)</span>
+                            </li>
+                            <li class="flex gap-2">
+                                <span class="text-brand-500 font-bold">•</span>
+                                <span><strong>สัญญายืมเงิน:</strong> เป็นข้อบังคับสำคัญเมื่อสนับสนุนเงินระหว่างหน่วยงานข้ามเขต/สังกัด</span>
+                            </li>
+                            <li class="flex gap-2">
+                                <span class="text-brand-500 font-bold">•</span>
+                                <span><strong>มติคณะกรรมการ:</strong> หากคะแนนสองฝ่ายเท่ากัน ให้ประธานเป็นผู้ตัดสินชี้ขาด (หนึ่งคนออกสองเสียง)</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- CTA to Quiz -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm text-center space-y-4">
+                        <div class="w-14 h-14 bg-brand-500 text-white rounded-2xl flex items-center justify-center mx-auto shadow-md shadow-brand-500/20">
+                            <i class="fa-solid fa-graduation-cap text-2xl animate-bounce"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-950 text-sm">คลังข้อสอบระดับยากพิเศษ ๓๐ ข้อ</h4>
+                            <p class="text-xs text-slate-400 mt-1">ข้อสอบปรนัยเจาะลึกครบทุกมิติ พร้อมคำใบ้และเฉลยที่ตอบคำถามคาใจทุกแง่มุมกฎหมาย</p>
+                        </div>
+                        <button onclick="switchTab('quiz')" class="w-full bg-brand-500 hover:bg-brand-600 text-white font-medium text-sm py-2.5 px-4 rounded-xl shadow-sm transition-all">
+                            เริ่มทำข้อสอบเลย <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- SECTION 2: QUIZ TAB -->
+        <div id="quiz-section" class="hidden max-w-3xl mx-auto space-y-6">
+            
+            <!-- Quiz Header Card -->
+            <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                    <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                        <i class="fa-solid fa-clipboard-question text-brand-500"></i> แบบทดสอบวัดระดับความรู้ระเบียบ ๒๕๖๘ (๓๐ ข้อ)
+                    </h2>
+                    <p class="text-xs text-slate-400 mt-1">ระเบียบกระทรวงการคลังว่าด้วยเงินทดรองราชการฯ พ.ศ. ๒๕๖๘ (จำนวน ๓๐ ข้อ)</p>
+                </div>
+                <!-- Progress display -->
+                <div class="flex items-center gap-3">
+                    <div class="text-right">
+                        <span class="text-xs text-slate-400 block font-medium">ข้อที่</span>
+                        <span id="current-question-indicator" class="text-lg font-bold text-brand-600">1/30</span>
+                    </div>
+                    <div class="w-32 bg-slate-100 h-2 rounded-full overflow-hidden">
+                        <div id="quiz-progress-bar" class="bg-brand-500 h-full transition-all duration-300" style="width: 3.33%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quiz Play Box -->
+            <div id="quiz-play-box" class="space-y-6">
+                <!-- Question Statement Card -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-1.5 h-full bg-brand-500"></div>
+                    <span class="text-xs font-semibold text-brand-600 uppercase tracking-wider block mb-2">คำถามประเมินความรู้</span>
+                    <h3 id="question-text" class="text-base sm:text-lg font-bold text-slate-900 leading-relaxed">
+                        กำลังโหลดคำถาม...
+                    </h3>
+                </div>
+
+                <!-- Answer Options Box -->
+                <div id="options-container" class="space-y-3">
+                    <!-- Dynamic choices inject here -->
+                </div>
+
+                <!-- Explanation/Rationale (Hidden until answered) -->
+                <div id="explanation-box" class="hidden bg-slate-50 p-6 rounded-2xl border border-slate-150 transition-all duration-300">
+                    <div class="flex gap-3">
+                        <div id="explanation-icon-container" class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-white">
+                            <!-- Icon dynamic -->
+                        </div>
+                        <div>
+                            <h4 id="explanation-title" class="font-bold text-sm"></h4>
+                            <p id="explanation-body" class="text-xs text-slate-600 mt-1 leading-relaxed"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nav Controls -->
+                <div class="flex items-center justify-between">
+                    <button id="hint-btn" onclick="toggleHint()" class="inline-flex items-center gap-1.5 text-slate-500 hover:text-brand-600 font-semibold text-xs transition-colors py-2 px-3 rounded-lg hover:bg-slate-50">
+                        <i class="fa-regular fa-lightbulb"></i> <span id="hint-text-label">แสดงคำใบ้</span>
+                    </button>
+                    
+                    <button id="next-btn" onclick="goToNextQuestion()" class="hidden bg-brand-500 hover:bg-brand-600 text-white text-sm font-semibold py-2.5 px-6 rounded-xl shadow-sm transition-all items-center gap-1.5">
+                        <span>ถัดไป</span> <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                </div>
+                
+                <!-- Hint Text Box (Hidden by default) -->
+                <div id="hint-display-box" class="hidden bg-amber-50/50 border border-amber-100 p-4 rounded-xl text-xs text-amber-800 leading-relaxed">
+                    <strong class="font-bold"><i class="fa-solid fa-circle-question mr-1"></i> คำใบ้ช่วยคิด:</strong> <span id="hint-content">...</span>
+                </div>
+            </div>
+
+            <!-- Quiz Score/Summary Screen (Hidden by default) -->
+            <div id="quiz-score-box" class="hidden bg-white p-8 rounded-3xl border border-slate-100 shadow-sm text-center space-y-6">
+                <div class="w-24 h-24 bg-brand-50 rounded-full flex items-center justify-center mx-auto border-2 border-brand-100 relative">
+                    <i class="fa-solid fa-trophy text-4xl text-brand-500"></i>
+                    <div class="absolute -top-1 -right-1 bg-amber-500 text-white text-[10px] px-2 py-0.5 rounded-full font-bold">สำเร็จ</div>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-black text-slate-900">ทดสอบเสร็จสมบูรณ์!</h3>
+                    <p class="text-xs text-slate-400 mt-1">เกณฑ์ประเมินระดับความรอบรู้ระเบียบเงินทดรองราชการ ๒๕๖๘</p>
+                </div>
+
+                <!-- Score Board -->
+                <div class="max-w-xs mx-auto bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                    <span class="text-xs text-slate-500 uppercase tracking-widest font-semibold block">คะแนนของคุณ</span>
+                    <span id="final-score-display" class="text-5xl font-extrabold text-brand-600 my-2 block">0 / 30</span>
+                    <span id="score-assessment" class="text-xs font-bold text-slate-700 block">ประเมินผล</span>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                    <button onclick="restartQuiz()" class="bg-brand-500 hover:bg-brand-600 text-white font-bold text-sm py-3 px-6 rounded-xl shadow-sm transition-all">
+                        <i class="fa-solid fa-arrows-rotate mr-1"></i> ทำใหม่อีกครั้ง
+                    </button>
+                    <button onclick="switchTab('summary')" class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-sm py-3 px-6 rounded-xl transition-all">
+                        กลับไปอ่านสรุปสาระสำคัญ
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-100 py-6 mt-12">
+        <div class="max-w-7xl mx-auto px-4 text-center space-y-2 text-xs text-slate-400">
+            <p>สรุปและจำลองแบบทดสอบตามระเบียบกระทรวงการคลัง ว่าด้วยเงินทดรองราชการเพื่อช่วยเหลือผู้ประสบภัยพิบัติกรณีฉุกเฉิน พ.ศ. ๒๕๖๘</p>
+            <p>&copy; 2026 ระบบการเรียนรู้ออนไลน์ คลังข้อสอบเตรียมสอบระเบียบราชการไทย</p>
+        </div>
+    </footer>
+
+    <!-- Quiz JS Logic -->
+    <script>
+        const quizData = [
+            {
+                question: "หน่วยงานใดต่อไปนี้ มี 'วงเงินทดรองราชการเพื่อช่วยเหลือผู้ประสบภัยพิบัติกรณีฉุกเฉิน' ต่ำที่สุดตามระเบียบกระทรวงการคลัง พ.ศ. ๒๕๖๘?",
+                options: [
+                    { text: "สำนักงานปลัดกระทรวงมหาดไทย", isCorrect: false, rationale: "สำนักงานปลัดกระทรวงมหาดไทย ได้รับจัดสรรจำนวน ๕๐,๐๐๐,๐๐๐ บาท ซึ่งยังสูงกว่าบางกระทรวง" },
+                    { text: "สำนักงานปลัดกระทรวงกลาโหม", isCorrect: false, rationale: "สำนักงานปลัดกระทรวงกลาโหม มีวงเงินสูงถึง ๑๐๐,๐๐๐,๐๐๐ บาท ซึ่งสามารถจัดสรรต่อให้หน่วยงานในสังกัดได้" },
+                    { text: "สำนักงานปลัดกระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์", isCorrect: true, rationale: "สำนักงานปลัดกระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ ได้รับจัดสรร ๑๐,๐๐๐,๐๐๐ บาท เท่ากับสำนักงานปลัดกระทรวงสาธารณสุข ซึ่งเป็นวงเงินทดรองราชการที่ต่ำที่สุดตามที่กำหนดในข้อ ๘" },
+                    { text: "สำนักงานป้องกันและบรรเทาสาธารณภัยจังหวัด", isCorrect: false, rationale: "สำนักงานป้องกันและบรรเทาสาธารณภัยจังหวัด ได้รับวงเงินสูงถึง 'แห่งละ' ๕๐,๐๐๐,๐๐๐ บาท" }
+                ],
+                hint: "ลองทบทวนดูว่ากลุ่มสำนักงานปลัดกระทรวงที่รับผิดชอบด้านการเยียวยาเบื้องต้นและการแพทย์ มีวงเงินที่ได้รับจัดสรรเพียง 10 ล้านบาท"
+            },
+            {
+                question: "ผู้ว่าราชการจังหวัดมีอำนาจจัดสรรเงินทดรองราชการของ สปภ.จังหวัด ให้แก่อำเภอหรือกิ่งอำเภอได้ตามจำเป็นและเหมาะสม โดยแต่ละแห่งต้องมีวงเงินไม่เกินเท่าใด และหากจำเป็นต้องจัดสรรเพิ่มเติมอีก จะต้องดำเนินการอย่างไร?",
+                options: [
+                    { text: "ไม่เกิน ๕๐๐,๐๐๐ บาทต่อแห่ง และสามารถอนุมัติได้เองโดยไม่ต้องรายงานใคร", isCorrect: false, rationale: "ข้อ ๘ วรรคสองกำหนดวงเงินสูงสุดไว้ที่ ๑,๐๐๐,๐๐๐ บาท ไม่ใช่ ๕๐๐,๐๐๐ บาท" },
+                    { text: "ไม่เกิน ๑,๐๐๐,๐๐๐ บาทต่อแห่ง และสามารถอนุมัติได้เอง แต่ต้องได้รับความเห็นชอบจาก ก.ช.ภ.จ. ก่อน", isCorrect: false, rationale: "การจัดสรรเงินทดรองให้ระดับอำเภอนี้เป็นอำนาจโดยตรงของผู้ว่าราชการจังหวัด ไม่จำเป็นต้องขอมติ ก.ช.ภ.จ. แต่ต้องแจ้งส่วนราชการที่ระบุตามกฎหมาย" },
+                    { text: "ไม่เกิน ๑,๐๐๐,๐๐๐ บาทต่อแห่ง และหากมีความจำเป็นจะจัดสรรเพิ่มเติมให้อีกก็ได้ โดยต้องแจ้งกระทรวงการคลังทราบ", isCorrect: true, rationale: "ตามข้อ ๘ กำหนดกรอบของอำเภอ/กิ่งอำเภอไว้ที่ไม่เกินแห่งละ ๑,๐๐๐,๐๐๐ บาท และระบุชัดเจนว่าหากจำเป็นสามารถจัดสรรเพิ่มเติมได้ แต่ต้องแจ้งกระทรวงการคลังทราบด้วย" },
+                    { text: "ไม่เกิน ๕,๐๐๐,๐๐๐ บาทต่อแห่ง และหากเพิ่มเติมต้องได้รับอนุมัติล่วงหน้าจากปลัดกระทรวงมหาดไทย", isCorrect: false, rationale: "จำนวนวงเงิน ๕,๐๐๐,๐๐๐ บาท เป็นตัวเลขที่ตั้งขึ้นมาเพื่อหลอก และไม่ต้องขออนุมัติล่วงหน้าจากปลัดกระทรวงมหาดไทย" }
+                ],
+                hint: "ตัวเลขขีดจำกัดสูงสุดของแต่ละอำเภอคือ 1 ล้านบาท และผู้ควบคุมดูแลระบบการเงินการคลังคือกระทรวงการคลัง"
+            },
+            {
+                question: "ในกรณีที่มีเหตุอันควรคาดหมายว่าจะเกิดภัยพิบัติกรณีฉุกเฉินขึ้น และมีความจำเป็นต้องเตรียมเงินสดเพื่อจ่ายช่วยผู้ประสบภัยในวันหยุดราชการ ใครเป็นผู้มีอำนาจเบิกเงินทดรองราชการไว้สำรองจ่ายได้?",
+                options: [
+                    { text: "ผู้ว่าราชการจังหวัด โดยมีอำนาจเบิกเงินทดรองได้ตามความเหมาะสมจำเป็น", isCorrect: true, rationale: "ตามข้อ ๙ วรรคสาม หากมีเหตุคาดหมายได้ว่าจะเกิดภัย และมีความจำเป็นต้องเตรียมเงินสดในวันหยุดราชการ ให้ 'ผู้ว่าราชการจังหวัดนั้น' มีอำนาจเบิกเงินทดรองราชการไว้สำรองจ่ายได้ตามความเหมาะสมจำเป็น และเมื่อภัยสิ้นสุดลงให้นำเงินที่เหลือส่งคืนคลัง" },
+                    { text: "นายอำเภอ หรือปลัดอำเภอผู้เป็นหัวหน้าประจำกิ่งอำเภอ ร่วมกับนายกองค์กรปกครองส่วนท้องถิ่น", isCorrect: false, rationale: "การเบิกเงินสดสำรองสำหรับวันหยุดราชการตามกฎหมายข้อนี้ระบุให้เป็นอำนาจของผู้ว่าราชการจังหวัดเป็นหลัก" },
+                    { text: "หัวหน้าสำนักงานป้องกันและบรรเทาสาธารณภัยจังหวัด โดยความเห็นชอบของคลังจังหวัด", isCorrect: false, rationale: "แม้ ปภ. จังหวัดจะเป็นผู้รับผิดชอบงาน แต่ระเบียบกำหนดให้เป็นอำนาจพิจารณาของผู้ว่าราชการจังหวัดโดยตรง" },
+                    { text: "ปลัดกระทรวงมหาดไทย โดยอนุมัติจากอธิบดีกรมบัญชีกลาง", isCorrect: false, rationale: "อำนาจนี้เป็นอำนาจระดับพื้นที่ (จังหวัด) เพื่อให้เกิดความรวดเร็วและยืดหยุ่นในการแก้ไขสถานการณ์เฉพาะหน้า" }
+                ],
+                hint: "ระเบียบนี้มอบอำนาจเด็ดขาดในกรณีเร่งด่วนระดับจังหวัดให้แก่ผู้นำสูงสุดของจังหวัดนั้น"
+            },
+            {
+                question: "เมื่อเกิดสถานการณ์ที่คาดหมายว่าจะเกิดภัยพิบัติกรณีฉุกเฉินในเวลาอันใกล้ และจำเป็นต้องป้องกันและยับยั้งภัยพิบัติโดยฉับพลันในจังหวัดสุพรรณบุรี ข้อใดกล่าวถึงหลักเกณฑ์การใช้จ่ายเงินทดรองราชการ 'ในเชิงป้องกันหรือยับยั้ง' ได้ถูกต้องที่สุด?",
+                options: [
+                    { text: "ผู้ว่าราชการจังหวัดสุพรรณบุรี มีอำนาจอนุมัติจ่ายเงินได้ไม่เกิน ๑๐,๐๐๐,๐๐๐ บาท โดยไม่ต้องประกาศเขตการให้ความช่วยเหลือผู้ประสบภัย", isCorrect: true, rationale: "ตามข้อ ๑๘ (๒) ในกรณีจังหวัดอื่นนอกจากกรุงเทพมหานคร ให้เป็นอำนาจหน้าที่ของสำนักงาน ปภ.จังหวัด โดยผู้ว่าราชการจังหวัดเป็นผู้อนุมัติจ่ายเงินในวงเงินไม่เกิน ๑๐,๐๐๐,๐๐๐ บาท โดยไม่ต้องประกาศเขตการช่วยเหลือฯ" },
+                    { text: "ผู้ว่าราชการจังหวัดสุพรรณบุรี สามารถอนุมัติได้ไม่จำกัดวงเงิน ตราบเท่าที่ไม่เกิน ๕๐,๐๐๐,๐๐๐ บาทของวงเงินจังหวัด", isCorrect: false, rationale: "การจ่ายเงินทดรองในเชิงป้องกันหรือยับยั้งจำกัดไว้ไม่เกิน ๑๐,๐๐๐,๐๐๐ บาทตามข้อ ๑๘" },
+                    { text: "หัวหน้าสำนักงานป้องกันและบรรเทาสาธารณภัยจังหวัดสุพรรณบุรี เป็นผู้อนุมัติจ่ายเงินหลังจากประชุม ก.ช.ภ.จ.", isCorrect: false, rationale: "ผู้อนุมัติคือผู้ว่าราชการจังหวัด ไม่ใช่หัวหน้า ปภ. จังหวัด และกระทำได้เลยโดยไม่ต้องรอประชุม ก.ช.ภ.จ." },
+                    { text: "ต้องมีการร่วมลงนามระหว่างผู้ว่าราชการจังหวัดกับอธิบดีกรมป้องกันและบรรเทาสาธารณภัยจึงจะมีผลสมบูรณ์", isCorrect: false, rationale: "ในจังหวัดอื่น อำนาจเป็นของผู้ว่าราชการจังหวัดฝ่ายเดียว ส่วนอธิบดีกรม ปภ. มีอำนาจสำหรับพื้นที่กรุงเทพมหานคร" }
+                ],
+                hint: "การดำเนินการในเชิงป้องกันหรือยับยั้งตามข้อ 18 มีเพดานวงเงินอยู่ที่ 10 ล้านบาท และในต่างจังหวัดเป็นอำนาจผู้ว่าฯ"
+            },
+            {
+                question: "การป้องกันหรือยับยั้งภัยพิบัติฉุกเฉินกรณีใดต่อไปนี้ ที่ระเบียบข้อ ๑๘ ระบุไว้ชัดเจนว่า 'ห้ามนำวงเงินทดรองราชการในเชิงป้องกันหรือยับยั้ง (๑๐ ล้านบาท) ไปใช้ปฏิบัติการโดยตรง'?",
+                options: [
+                    { text: "ภัยพิบัติอันเกิดจากเหตุวาตภัย และคลื่นยักษ์ในเขตพื้นที่ชายฝั่ง", isCorrect: false, rationale: "วาตภัยสามารถใช้เงินทดรองเชิงป้องกันตามเกณฑ์ปกติได้หากคาดหมายว่าจะเกิดอันตรายรุนแรง" },
+                    { text: "ภัยที่เกิดจากโรคหรือการระบาดของสัตว์ หรือแมลง หรือศัตรูพืชทุกชนิด หรือพืชทุกชนิด", isCorrect: true, rationale: "ข้อ ๑๘ วรรคท้ายระบุชัดเจนว่า เกณฑ์การจ่ายเชิงป้องกัน/ยับยั้งไม่ใช้บังคับกับภัยที่เกิดจากโรคหรือการระบาดของสัตว์ แมลง ศัตรูพืช หรือพืชทุกชนิด ซึ่งกระทรวงเกษตรและสหกรณ์ต้องดำเนินการตามข้อ ๑๙ โดยใช้งบประมาณตัวเองก่อน" },
+                    { text: "ภัยอันเกิดจากโรคที่แพร่หรือระบาดในมนุษย์อย่างรุนแรง", isCorrect: false, rationale: "แม้จะเป็นโรคระบาดในมนุษย์ แต่ระเบียบไม่ได้มีข้อจำกัดข้อยกเว้นแบบเดียวกับกรณีโรคสัตว์และพืชของกระทรวงเกษตรฯ" },
+                    { text: "ภัยพิบัติอันเนื่องมาจากการกระทำของผู้ก่อการร้าย หรือกองกำลังจากนอกประเทศ", isCorrect: false, rationale: "ภัยประเภทนี้สามารถใช้เงินเชิงป้องกันปกติได้ตามอำนาจของหัวหน้าหน่วยงานในพื้นที่เมื่อคาดว่าจะเกิดความเสียหาย" }
+                ],
+                hint: "ข้อยกเว้นนี้ส่งมอบให้กระทรวงที่ดูแลเกี่ยวกับพืชและสัตว์เป็นผู้รับผิดชอบตามภารกิจหลักโดยใช้งบประมาณหลักของกระทรวงก่อน"
+            },
+            {
+                question: "องค์ประกอบของ 'คณะกรรมการให้ความช่วยเหลือผู้ประสบภัยพิบัติอำเภอ' (ก.ช.ภ.อ.) และ 'คณะกรรมการให้ความช่วยเหลือผู้ประสบภัยพิบัติจังหวัด' (ก.ช.ภ.จ.) ข้อใดระบุตำแหน่ง 'กรรมการและเลขานุการ' ได้ถูกต้องแม่นยำที่สุดตามกฎหมาย?",
+                options: [
+                    { text: "ก.ช.ภ.อ. มีปลัดอำเภอผู้รับผิดชอบงานป้องกันภัยเป็นเลขานุการ / ก.ช.ภ.จ. มีโยธาธิการและผังเมืองจังหวัดเป็นเลขานุการ", isCorrect: false, rationale: "โยธาธิการและผังเมืองจังหวัดเป็นเพียงกรรมการใน ก.ช.ภ.จ. ไม่ใช่เลขานุการ" },
+                    { text: "ก.ช.ภ.อ. มีปลัดอำเภอหัวหน้ากลุ่มหรือฝ่ายความมั่นคงเป็นเลขานุการ / ก.ช.ภ.จ. มีหัวหน้าสำนักงานป้องกันและบรรเทาสาธารณภัยจังหวัดเป็นเลขานุการ", isCorrect: true, rationale: "ระบุไว้ชัดเจนในข้อ ๑๑ ว่าเลขานุการ ก.ช.ภ.อ. คือ ปลัดอำเภอหัวหน้ากลุ่มหรือฝ่ายความมั่นคง และข้อ ๑๓ ว่าเลขานุการ ก.ช.ภ.จ. คือ หัวหน้าสำนักงาน ปภ. จังหวัด" },
+                    { text: "ก.ช.ภ.อ. มีหัวหน้า ปภ. สาขาเป็นเลขานุการ / ก.ช.ภ.จ. มีคลังจังหวัดเป็นเลขานุการ", isCorrect: false, rationale: "คลังจังหวัดและหัวหน้า ปภ.สาขา ไม่ได้ทำหน้าที่เป็นเลขาฯ ตามประกาศระเบียบนี้" },
+                    { text: "ก.ช.ภ.อ. มีผู้แทนองค์กรปกครองส่วนท้องถิ่นเป็นเลขานุการ / ก.ช.ภ.จ. มีปลัดจังหวัดเป็นเลขานุการ", isCorrect: false, rationale: "ปลัดจังหวัดและผู้แทน อปท. ทำหน้าที่เป็นคณะกรรมการ ไม่ใช่เลขานุการของคณะกรรมการ" }
+                ],
+                hint: "เลขานุการของคณะกรรมการจังหวัดคือหัวหน้าหน่วยงานราชการที่รับผิดชอบภัยพิบัติโดยตรง ส่วนระดับอำเภอเป็นงานของฝ่ายความมั่นคง"
+            },
+            {
+                question: "เมื่อมีการจ่ายเงินทดรองราชการเพื่อช่วยเหลือผู้ประสบภัยพิบัติกรณีฉุกเฉินไปแล้ว ส่วนราชการหลัก (ข้อ 8(1)-(7)) จะต้องรวบรวมใบสำคัญและเอกสารส่งให้หน่วยงานใด และภายในกำหนดเวลาใดนับแต่ได้รับเงินจากคลัง?",
+                options: [
+                    { text: "ส่งให้สำนักงานการตรวจเงินแผ่นดิน (สตง.) ภายใน ๓๐ วันทำการ", isCorrect: false, rationale: "สตง. มีหน้าที่ตรวจสอบรายงานผลการใช้จ่ายภายหลัง แต่ไม่ได้เป็นผู้รับส่งเบิกเงินหักผลักส่งชดใช้คลัง" },
+                    { text: "ส่งให้กรมบัญชีกลาง ภายใน ๖๐ วันทำการ", isCorrect: true, rationale: "ตามข้อ ๓๐ (๑) กำหนดให้ส่วนราชการหลัก รวบรวมและตรวจสอบความถูกต้องของเอกสารหลักฐาน และจัดส่งให้ 'กรมบัญชีกลางภายในหกสิบวันทำการ' นับแต่วันที่ได้รับเงินจากคลังเพื่อทำการเบิกงบชดใช้โดยเร็ว" },
+                    { text: "ส่งให้คลังจังหวัด ภายใน ๖๐ วันปฏิทิน", isCorrect: false, rationale: "กฎหมายระบุเป็น 'วันทำการ' ไม่ใช่ 'วันปฏิทิน' ซึ่งมีความแตกต่างอย่างมากในทางกฎหมายและวิธีปฏิบัติ" },
+                    { text: "ส่งให้กระทรวงมหาดไทย ภายใน ๙๐ วันทำการ", isCorrect: false, rationale: "กระทรวงมหาดไทยไม่ได้ทำหน้าที่รับชดใช้เงินทดรองสำหรับทุกส่วนราชการตามระเบียบนี้" }
+                ],
+                hint: "หน่วยงานกลางของกระทรวงการคลังที่ดูแลเรื่องการเบิกจ่ายเงินจากคลังคือกรมบัญชีกลาง และกำหนดเวลาคือ 60 วันทำงานปกติ"
+            },
+            {
+                question: "ในกรณีที่ สปภ.จังหวัด ได้รับการจัดสรรหรือได้รับโอนเงินทดรองราชการไปใช้ปฏิบัติงาน จะต้องรวบรวมและส่งเอกสารใบสำคัญมายังหน่วยงานต้นสังกัด (กรม ปภ.) ภายในกำหนดกี่วันทำการ และการโอนงบประมาณชดใช้ทั้งหมดต้องเสร็จสิ้นภายในกี่วันทำการ?",
+                options: [
+                    { text: "ส่งให้ กรม ปภ. ใน ๓๐ วันทำการ / ดำเนินการชดใช้เสร็จสิ้นใน ๖๐ วันทำการ", isCorrect: false, rationale: "ตัวเลขเวลาระยะนี้สั้นกว่าที่ระเบียบการคลังกำหนดไว้สำหรับหน่วยงานสาขา" },
+                    { text: "ส่งให้ กรม ปภ. ใน ๖๐ วันทำการ / ดำเนินการชดใช้เสร็จสิ้นใน ๑๒๐ วันทำการ", isCorrect: true, rationale: "ตามข้อ ๓๑ กำหนดว่า สปภ.จังหวัด ต้องส่งเอกสารจ่ายเงินให้กรม ปภ. ภายใน ๖๐ วันทำการนับแต่ได้รับเงินจากคลัง และการดำเนินการขอรับโอนงบประมาณเพื่อชดใช้เงินทดรองราชการทั้งหมดต้องเสร็จสิ้นภายใน ๑๒๐ วันทำการ" },
+                    { text: "ส่งให้ กรม ปภ. ใน ๖๐ วันปฏิทิน / ดำเนินการชดใช้เสร็จสิ้นใน ๑๒๐ วันปฏิทิน", isCorrect: false, rationale: "ระเบียบนี้อ้างอิงระยะเวลาเป็น 'วันทำการ' (Working Days) ทั้งหมด ไม่ใช่วันปฏิทิน" },
+                    { text: "ส่งให้ กรม ปภ. ใน ๙๐ วันทำการ / ดำเนินการชดใช้เสร็จสิ้นใน ๑๘๐ วันทำการ", isCorrect: false, rationale: "กรอบเวลา ๙๐ วัน และ ๑๘๐ วัน เป็นตัวเลือกที่ตั้งขึ้นเพื่อหลอก" }
+                ],
+                hint: "ระยะเวลาส่งมอบขั้นแรกคือ 60 วัน และเวลารวมเบ็ดเสร็จสำหรับการชดใช้เงินคืนคลังทั้งหมดคือสองเท่าของระยะแรก"
+            },
+            {
+                question: "หากเกิดภัยพิบัติกรณีฉุกเฉินขึ้นในเดือนสิงหาคมและกันยายน และได้จ่ายเงินทดรองราชการไปแล้ว แต่ไม่สามารถขอรับโอนงบประมาณเพื่อชดใช้ได้ทันในปีงบประมาณนั้น ข้อใดกล่าวถึงสถานะและแนวทางปฏิบัติทางกฎหมายได้ถูกต้องที่สุด?",
+                options: [
+                    { text: "เงินทดรองนั้นจะกลายเป็นหนี้สูญ และต้องตั้งคณะกรรมการสอบสวนหาผู้รับผิดชอบทางละเมิด", isCorrect: false, rationale: "ไม่ถือเป็นหนี้สูญ เนื่องจากเป็นเงินช่วยเหลือผู้ประสบภัยอย่างถูกต้องตามขั้นตอนราชการ" },
+                    { text: "ให้นำไปขอรับโอนงบประมาณชดใช้ในปีงบประมาณถัดไป โดยถือว่าเป็นค่าใช้จ่ายที่ได้รับอนุมัติให้ก่อหนี้ผูกพันเกินกว่าหรือนอกเหนือไปจากที่กำหนดไว้ใน พ.ร.บ. งบประมาณรายจ่าย", isCorrect: true, rationale: "ระบุไว้ชัดเจนในข้อ ๓๒ เพื่อแก้ปัญหาเงินทดรองข้ามปีงบประมาณ โดยกฎหมายคุ้มครองให้ถือเป็นรายการก่อหนี้ผูกพันเกินกว่าหรือนอกเหนืองบประมาณที่ได้รับอนุมัติไว้เดิมได้เลย" },
+                    { text: "ผู้ว่าราชการจังหวัดหรืออธิบดีกรม ปภ. ต้องรับผิดชอบใช้เงินคืนคลังเป็นการส่วนตัวไปก่อน", isCorrect: false, rationale: "ไม่ต้องรับผิดส่วนตัวเนื่องจากเป็นการจ่ายเงินราชการที่ได้รับอนุมัติตามกฎระเบียบอย่างถูกต้อง" },
+                    { text: "ให้ทำเรื่องขอยกเว้นจากรัฐมนตรีว่าการกระทรวงการคลังเพื่อแปรญัตตินำเงินงบกลางของปีปัจจุบันมาจ่ายชดใช้ทันที", isCorrect: false, rationale: "ขั้นตอนตามกฎหมายกำหนดให้ยกยอดไปตั้งรับในปีงบถัดไปตามข้อ ๓๒ โดยไม่ต้องทำเรื่องขอแปรญัตติในสภาใหม่" }
+                ],
+                hint: "เดือนสิงหาคมและกันยายนคือสองเดือนสุดท้ายก่อนสิ้นปีงบประมาณ (30 กันยายน) ระเบียบจึงเปิดช่องให้โยกไปชดใช้ในปีงบใหม่ในฐานะหนี้ผูกพันพิเศษ"
+            },
+            {
+                question: "ในกรณีการจ่ายเงินเยียวยาหรือค่าใช้จ่ายใดๆ แก่ประชาชนผู้ประสบภัยพิบัติ แต่ผู้รับเงินไม่มีใบเสร็จรับเงินให้ไว้เป็นหลักฐาน หรือไม่สามารถลงลายมือชื่อในเอกสารรับเงินปกติของทางราชการได้ จะต้องปฏิบัติตามข้อใดจึงจะถูกต้องตามระเบียบนี้?",
+                options: [
+                    { text: "ต้องให้ข้าราชการระดับ ๖ ขึ้นไปจำนวนสองคนร่วมลงชื่อรับรองเพื่อใช้แทนใบเสร็จ", isCorrect: false, rationale: "ไม่มีข้อกำหนดเรื่องการใช้ข้าราชการระดับ ๖ รับรองแทนลายมือชื่อผู้ประสบภัยในกรณีนี้" },
+                    { text: "ให้ทำหนังสือมอบอำนาจให้กำนันหรือผู้ใหญ่บ้านเป็นผู้ลงชื่อรับเงินแทนผู้ประสบภัย", isCorrect: false, rationale: "ผู้ประสบภัยต้องได้รับการบันทึกและลงลายมือชื่อรับรองด้วยตนเอง ยกเว้นกรณีเฉพาะที่กฎหมายกำหนดไว้ต่างหาก" },
+                    { text: "ให้ผู้รับเงินลงลายมือชื่อรับเงินใน 'ใบสำคัญรับเงิน' เพื่อใช้เป็นหลักฐานการจ่าย", isCorrect: true, rationale: "ข้อ ๒๙ กำหนดไว้โดยตรงว่า หากผู้รับเงินไม่มีใบเสร็จรับเงิน หรือไม่ได้ลงชื่อไว้ในหลักฐานจ่ายของทางราชการ ให้ผู้รับเงินลงชื่อรับเงินใน 'ใบสำคัญรับเงิน' เพื่อใช้เป็นหลักฐานการจ่ายของการเงินได้ทันที" },
+                    { text: "ไม่สามารถจ่ายเงินให้ได้ เนื่องจากขัดต่อพระราชบัญญัติวินัยการเงินการคลังของรัฐ พ.ศ. ๒๕๖๑", isCorrect: false, rationale: "แม้จะมีวินัยเข้มงวด แต่ระเบียบข้อ ๒๙ มีการยืดหยุ่นไว้เพื่อให้ความช่วยเหลือประชาชนที่กำลังเดือดร้อนเฉพาะหน้าไม่ต้องหยุดชะงัก" }
+                ],
+                hint: "เครื่องมือยืดหยุ่นทางการเงินเพื่อแก้ปัญหากรณีประชาชนไม่มีหลักฐานการรับเงินสำเร็จรูปคือใบสำคัญชนิดหนึ่งที่ผู้ประสบภัยลงชื่อรับเอง"
+            },
+            
+            {
+                question: "ระเบียบกระทรวงการคลัง ว่าด้วยเงินทดรองราชการเพื่อช่วยเหลือผู้ประสบภัยพิบัติกรณีฉุกเฉิน พ.ศ. ๒๕๖๘ มีผลใช้บังคับตามกฎหมายตั้งแต่วันใด?",
+                options: [
+                    { text: "วันที่ ๑๖ ตุลาคม พ.ศ. ๒๕๖๘ ซึ่งเป็นวันที่ประกาศในระเบียบ", isCorrect: false, rationale: "๑๖ ตุลาคม พ.ศ. ๒๕๖๘ เป็นเพียงวันลงนามท้ายประกาศระเบียบของรัฐมนตรีคลัง ไม่ใช่วันเริ่มบังคับใช้" },
+                    { text: "วันที่ ๑๐ พฤศจิกายน พ.ศ. ๒๕๖๘ ซึ่งเป็นวันที่ประกาศในราชกิจจานุเบกษา", isCorrect: false, rationale: "๑๐ พฤศจิกายน พ.ศ. ๒๕๖๘ เป็นวันประกาศราชกิจจานุเบกษา แต่กฎหมายเริ่มบังคับวันถัดไป" },
+                    { text: "วันที่ ๑๑ พฤศจิกายน พ.ศ. ๒๕๖๘ ซึ่งเป็นวันถัดจากวันประกาศในราชกิจจานุเบกษา", isCorrect: true, rationale: "ตามข้อ ๒ ของระเบียบ 'ระเบียบนี้ให้ใช้บังคับตั้งแต่วันถัดจากวันประกาศในราชกิจจานุเบกษาเป็นต้นไป' เมื่อประกาศในราชกิจจานุเบกษา วันที่ ๑๐ พฤศจิกายน ๒๕๖๘ จึงบังคับใช้ในวันที่ ๑๑ พฤศจิกายน ๒๕๖๘" },
+                    { text: "วันที่ ๑ มกราคม พ.ศ. ๒๕๖๙ เป็นต้นไป เพื่อความสะดวกในการเริ่มปีงบประมาณและบัญชีใหม่", isCorrect: false, rationale: "ไม่มีการเลื่อนไปเริ่มวันปีใหม่ เริ่มถัดจากวันประกาศทันที" }
+                ],
+                hint: "ลองนึกถึงวลีทางกฎหมายทั่วไปที่ว่า 'ให้ใช้บังคับตั้งแต่วันถัดจากวันประกาศในราชกิจจานุเบกษาเป็นต้นไป'"
+            },
+            {
+                question: "บุคคลหรือหน่วยงานกลุ่มใดต่อไปนี้ ที่ไม่เข้าข่ายและ 'ไม่รวมอยู่ในคำนิยาม' ของคำว่า 'ผู้ประสบภัยพิบัติ' ตามระเบียบฉบับปี พ.ศ. ๒๕๖๘?",
+                options: [
+                    { text: "ประชาชนสัญชาติไทยที่บ้านพักอาศัยพังเสียหายทั้งหมด", isCorrect: false, rationale: "ประชาชนที่ได้รับความเสียหายในชีวิตและทรัพย์สินคือกลุ่มหลักที่กฎหมายมุ่งช่วยเหลือ" },
+                    { text: "ผู้ประกอบการร้านค้ารายย่อยที่สินค้าเปียกน้ำเสียหายจากอุทกภัย", isCorrect: false, rationale: "ร้านค้ารายย่อยและเกษตรกรถือเป็นประชาชนที่ได้รับการบรรเทาความเดือดร้อนได้ตามเกณฑ์ช่วยเหลือ" },
+                    { text: "ส่วนราชการ หรือหน่วยงานของรัฐ ที่ทรัพย์สินหรืออาคารสำนักงานได้รับความเสียหาย", isCorrect: true, rationale: "ตามข้อ ๕ ของระเบียบ นิยามของ 'ผู้ประสบภัยพิบัติ' คือผู้ได้รับความเดือดร้อนหรือเสียหาย 'แต่ไม่รวมถึงส่วนราชการหรือหน่วยงานของรัฐ' เนื่องจากหน่วยงานรัฐจะมีงบประมาณปกติในการจัดหาหรือซ่อมแซมสิ่งก่อสร้างของตนเอง" },
+                    { text: "คนต่างด้าวที่เข้ามาอยู่อาศัยและทำงานโดยถูกต้องตามกฎหมายในท้องถิ่นที่เกิดภัย", isCorrect: false, rationale: "คนต่างด้าวที่เดือดร้อนในพื้นที่ภัยพิบัติได้รับการดูแลด้านมนุษยธรรมและการบรรเทาทุกข์ทั่วไปตามความเหมาะสม" }
+                ],
+                hint: "กฎหมายคลังฉบับนี้ต้องการเอาเงินทดรองไปช่วยชีวิตและความเป็นอยู่ของราษฎร ไม่ได้ตั้งขึ้นมาให้หน่วยงานรัฐนำไปใช้ซ่อมบำรุงสถานที่ของตัวเอง"
+            },
+            {
+                question: "ข้าราชการประจำในตำแหน่งใดทำหน้าที่เป็น 'ผู้รักษาการตามระเบียบนี้' และหากมีกรณีที่อยู่นอกเหนือจากระเบียบ จะต้องเสนอทำความตกลงกับหน่วยงานใด?",
+                options: [
+                    { text: "อธิบดีกรมบัญชีกลาง / ทำความตกลงกับกรมบัญชีกลาง", isCorrect: false, rationale: "อธิบดีกรมบัญชีกลางแม้จะเป็นประธานบอร์ดติดตาม แต่ไม่ใช่ผู้รักษาการระเบียบตามข้อ ๖" },
+                    { text: "ปลัดกระทรวงการคลัง / ทำความตกลงกับกระทรวงการคลัง", isCorrect: true, rationale: "ข้อ ๖ กำหนดให้ 'ปลัดกระทรวงการคลังรักษาการตามระเบียบนี้' และข้อ ๗ กำหนดว่ากรณีไม่ได้ระบุไว้ หรือการยกเว้นปฏิบัติ ให้ส่วนราชการขอทำความตกลงกับ 'กระทรวงการคลัง'" },
+                    { text: "ปลัดกระทรวงมหาดไทย / ทำความตกลงกับกรมป้องกันและบรรเทาสาธารณภัย", isCorrect: false, rationale: "งานบรรเทาภัยพิบัติเป็นของมหาดไทย แต่ระเบียบกฎหมายระบบคลังนี้ เป็นอำนาจของกระทรวงการคลัง" },
+                    { text: "รัฐมนตรีว่าการกระทรวงการคลัง / ทำความตกลงกับคณะรัฐมนตรี", isCorrect: false, rationale: "รัฐมนตรีเป็นข้าราชการการเมืองและเป็นผู้ลงนามออกระเบียบ แต่ผู้รักษาการตามกฎหมายข้อ ๖ คือ ปลัดกระทรวงการคลัง" }
+                ],
+                hint: "ระเบียบนี้ออกโดยกระทรวงการคลัง ดังนั้นหัวหน้าข้าราชการประจำของคลังคือผู้รักษาการ และการตกลงข้อยกเว้นต้องทำตรงกับกระทรวงการคลัง"
+            },
+            {
+                question: "หากวงเงินทดรองราชการของส่วนราชการที่จัดสรรไว้เดิมไม่เพียงพอต่อการช่วยเหลือภัยพิบัติ ส่วนราชการดังกล่าวจะต้องดำเนินการตามขั้นตอนใดจึงจะถูกต้องตามข้อ ๘ วรรคสาม?",
+                options: [
+                    { text: "ให้ทำเรื่องเสนอต่อที่ประชุมคณะรัฐมนตรีเพื่อขอมติอนุมัติงบกลางสำรองจ่ายทดแทน", isCorrect: false, rationale: "ขั้นตอนตามระเบียบนี้ไม่ต้องเสนอ ครม. ใหม่ในกรณีขยายวงเงินทดรองราชการปกติ" },
+                    { text: "ให้ขอขยายวงเงินทดรองราชการเพิ่มโดยตรงต่อกระทรวงการคลัง แล้วรายงานให้นายกรัฐมนตรีทราบ", isCorrect: true, rationale: "ตามข้อ ๘ วรรคสาม 'กรณีที่วงเงินทดรองราชการไม่พอ... สามารถขอขยายวงเงินทดรองราชการเพิ่มโดยตรงต่อกระทรวงการคลังได้ แล้วให้รายงานการอนุมัติดังกล่าวให้นายกรัฐมนตรีทราบ'" },
+                    { text: "ให้ยืมวงเงินทดรองราชการของจังหวัดใกล้เคียงมาใช้ทดรองจ่ายไปพลางก่อนโดยแจ้ง สตง. รับทราบ", isCorrect: false, rationale: "ไม่สามารถโยกวงเงินข้ามหน่วยงานหรือข้ามจังหวัดได้โดยตรงด้วยดุลพินิจตนเอง ต้องทำสัญญายืมเงินหรือขอขยายวงเงิน" },
+                    { text: "ให้อธิบดีกรมบัญชีกลางใช้อำนาจตามพระราชบัญญัติวินัยการเงินการคลังอนุมัติจัดสรรเพิ่มเติมทันที", isCorrect: false, rationale: "อำนาจอนุมัติขยายวงเงินทดรองราชการเป็นอำนาจของกระทรวงการคลัง (รัฐมนตรี/ปลัด)" }
+                ],
+                hint: "การบริหารเงินทดรองเป็นเรื่องการอนุมัติวงเงินของกระทรวงคลัง และต้องรายงานระดับสูงสุดของฝ่ายบริหารคือนายกรัฐมนตรี"
+            },
+            {
+                question: "ตามข้อ ๙ การมอบหมายอำนาจอนุมัติจ่ายเงินทดรองราชการแทนตัวจริงของหัวหน้าหน่วยงานหลัก สามารถมอบหมายให้แก่บุคคลกลุ่มใดได้บ้างตามระเบียบข้อกฎหมาย?",
+                options: [
+                    { text: "ข้าราชการ พนักงานราชการ และลูกจ้างประจำในสังกัดคนใดก็ได้ที่ผ่านการคัดเลือก", isCorrect: false, rationale: "กฎหมายระบุเฉพาะ 'ข้าราชการ' เท่านั้น ไม่ได้รวมถึงพนักงานราชการหรือลูกจ้าง" },
+                    { text: "ข้าราชการในสังกัดเท่านั้น", isCorrect: true, rationale: "ตามข้อ ๙ วรรคสอง 'ผู้มีอำนาจอนุมัติจ่ายเงินทดรองราชการ... อาจมอบหมายให้บุคคลอื่นซึ่งเป็นข้าราชการในสังกัดอนุมัติจ่ายเงินทดรองราชการแทนตนก็ได้'" },
+                    { text: "ผู้ว่าราชการจังหวัด หรือนายกองค์กรปกครองส่วนท้องถิ่นในเขตท้องที่นั้น", isCorrect: false, rationale: "การมอบหมายงานอนุมัติจ่ายเงินของหัวหน้ากระทรวงหลัก (ปลัดกระทรวง/อธิบดี) ต้องส่งต่อให้ข้าราชการในสังกัดตนเองเท่านั้น" },
+                    { text: "ผู้ใดก็ได้ตามที่เห็นสมควรเนื่องจากเป็นกรณีฉุกเฉินและจำเป็นเร่งด่วนเฉพาะหน้า", isCorrect: false, rationale: "เนื่องจากเป็นเรื่องการอนุมัติเงินหลวงและอำนาจปกครองทางกฎหมายคลัง จึงจำกัดไว้เฉพาะข้าราชการประจำในสังกัด" }
+                ],
+                hint: "พิจารณาผู้ที่มีความรับผิดชอบทางวินัยและกฎหมายละเมิดเต็มรูปแบบในระบบราชการไทย"
+            },
+            {
+                question: "ข้อใดคือองค์ประกอบของ 'ประธานกรรมการ' ในคณะกรรมการให้ความช่วยเหลือผู้ประสบภัยพิบัติระดับอำเภอ (ก.ช.ภ.อ.) หรือกิ่งอำเภอ (ก.ช.ภ.กอ.) ตามข้อ ๑๑?",
+                options: [
+                    { text: "ผู้ว่าราชการจังหวัด หรือปลัดจังหวัดที่ได้รับมอบหมาย", isCorrect: false, rationale: "ผู้ว่าฯ และปลัดจังหวัด เป็นโครงสร้างของ ก.ช.ภ.จ. (ระดับจังหวัด)" },
+                    { text: "นายอำเภอ หรือปลัดอำเภอผู้เป็นหัวหน้าประจำกิ่งอำเภอ", isCorrect: true, rationale: "ข้อ ๑๑ กำหนดให้ 'นายอำเภอหรือปลัดอำเภอผู้เป็นหัวหน้าประจำกิ่งอำเภอ เป็นประธานกรรมการ' ของ ก.ช.ภ.อ. หรือ ก.ช.ภ.กอ. ตามลำดับ" },
+                    { text: "หัวหน้าสำนักงานป้องกันและบรรเทาสาธารณภัยจังหวัดสาขา", isCorrect: false, rationale: "หัวหน้า ปภ. ไม่ได้เป็นประธานในระดับท้องที่อำเภอ" },
+                    { text: "ผู้แทนกระทรวงมหาดไทย หรือนายกเทศมนตรีประจำอำเภอ", isCorrect: false, rationale: "ผู้แทนกระทรวงมหาดไทยหรือผู้แทน อปท. เป็นเพียงกรรมการ ไม่ใช่ประธาน" }
+                ],
+                hint: "โครงสร้างการบริหารราชการแผ่นดินส่วนภูมิภาคในระดับอำเภอคือหน้าที่ของนายอำเภอหรือหัวหน้าประจำกิ่งอำเภอ"
+            },
+            {
+                question: "เกณฑ์การประชุมของคณะกรรมการ ก.ช.ภ.อ. หรือ ก.ช.ภ.จ. ข้อใดกล่าวถูกต้องที่สุดเกี่ยวกับ 'องค์ประชุม' และ 'การตัดสินกรณีคะแนนเสียงเท่ากัน'?",
+                options: [
+                    { text: "ต้องมีกรรมการมาประชุมไม่น้อยกว่า ๒ ใน ๓ / หากเท่ากันให้นายอำเภอหรือผู้ว่าฯ ส่งเรื่องให้กระทรวงการคลังตัดสินชี้ขาด", isCorrect: false, rationale: "สัดส่วน ๒ ใน ๓ และส่งให้กระทรวงคลังตัดสินเป็นการตั้งตัวเลขหลอก" },
+                    { text: "ต้องมีกรรมการมาประชุมไม่น้อยกว่ากึ่งหนึ่ง / หากเท่ากันให้ประธานในที่ประชุมลงคะแนนอีกหนึ่งเสียงชี้ขาด", isCorrect: true, rationale: "ข้อ ๑๕ วรรคหนึ่งกำหนดองค์ประชุมไว้ที่ไม่น้อยกว่ากึ่งหนึ่ง และวรรคสามระบุว่ามติให้ถือเสียงข้างมาก 'กรณีที่มีคะแนนเสียงเท่ากัน ให้ประธานในที่ประชุมลงคะแนนเสียงอีกหนึ่งเสียงเป็นเสียงชี้ขาด'" },
+                    { text: "กรรมการทุกคนต้องมาประชุมครบ ๑๐๐% เนื่องจากเป็นเรื่องบรรเทาทุกข์ของราษฎร / หากเสียงเท่ากันให้ถือตามมติผู้แทนกรมบัญชีกลาง", isCorrect: false, rationale: "หากใช้เกณฑ์ครบทุกคนจะทำให้ระบบการประชุมเพื่อช่วยชาวบ้านล่าช้าและทำไม่ทัน" },
+                    { text: "กรรมการมาประชุมอย่างน้อย ๕ คน / หากเสียงเท่ากันให้ใช้วิธีลงคะแนนลับโดยกรรมการส่วนใหญ่ในท้องที่", isCorrect: false, rationale: "เกณฑ์ ๕ คนและการโหวตลับไม่มีบัญญัติไว้ในระเบียบข้อ ๑๕" }
+                ],
+                hint: "ใช้กติกามาตรฐานคณะกรรมการราชการไทยทั่วไป: กึ่งหนึ่งเป็นองค์ประชุม และประธานออกเสียงชี้ขาดในรอบสอง"
+            },
+            {
+                question: "วัตถุประสงค์ของการให้ความช่วยเหลือผู้ประสบภัยพิบัติกรณีฉุกเฉินตามระเบียบนี้ (ข้อ ๑๖) ข้อใดกล่าวถึงเจตนารมณ์ดั้งเดิมของกฎหมายได้ถูกต้องที่สุด?",
+                options: [
+                    { text: "เพื่อฟื้นฟูและชดใช้ความเสียหายให้กับผู้ประสบภัยพิบัติทุกรายเต็มตามความพึงพอใจ", isCorrect: false, rationale: "กฎหมายไม่มีวัตถุประสงค์เพื่อชดใช้มูลค่าทรัพย์สินตามราคาเต็มแก่ประชาชน" },
+                    { text: "เพื่อซ่อมแซมสิ่งก่อสร้างที่ชำรุดเสียหายให้มีความถาวร แข็งแรง และขยายขนาดดีขึ้นกว่าเดิม", isCorrect: false, rationale: "เงินทดรองห้ามใช้สร้างสิ่งก่อสร้างถาวรหรือสร้างขึ้นใหม่" },
+                    { text: "เพื่อบรรเทาความเดือดร้อนเฉพาะหน้าของผู้ประสบภัยพิบัติ แต่มิได้มุ่งหมายที่จะชดใช้ความเสียหายให้แก่ผู้ใด", isCorrect: true, rationale: "ตามข้อ ๑๖ ระบุไว้อย่างตรงไปตรงมาว่า 'โดยมุ่งหมายที่จะบรรเทาความเดือดร้อนเฉพาะหน้าของผู้ประสบภัยพิบัติ แต่มิได้มุ่งหมายที่จะชดใช้ความเสียหายให้แก่ผู้ใด'" },
+                    { text: "เพื่อสนับสนุนงบประมาณพัฒนาโครงสร้างพื้นฐานทดแทนระบบระบายน้ำของแต่ละจังหวัด", isCorrect: false, rationale: "การสร้างและปรับโครงสร้างพื้นฐานถาวรเป็นหน้าที่ของงบลงทุนหลักของประเทศหรือท้องถิ่น ไม่ใช่เงินทดรองฉุกเฉิน" }
+                ],
+                hint: "คีย์เวิร์ดของเงินทดรองราชการคือ 'บรรเทาเฉพาะหน้า' และไม่ได้ตั้งขึ้นมาเพื่อ 'ชดใช้หรือเยียวยาทดแทนค่าเสียหาย'"
+            },
+            {
+                question: "ค่าใช้จ่ายใดต่อไปนี้ที่ระเบียบข้อ ๑๗ ระบุไว้ชัดเจนว่า 'ห้าม' นำเงินทดรองราชการเพื่อช่วยเหลือผู้ประสบภัยพิบัติกรณีฉุกเฉินไปใช้จ่ายอย่างเด็ดขาด?",
+                options: [
+                    { text: "ค่าซ่อมแซมบ่อน้ำหรือสระเก็บน้ำในชุมชนที่ถูกตะกอนดินโคลนทับถมเสียหายชั่วคราว", isCorrect: false, rationale: "การซ่อมแซมเล็กน้อยเพื่อให้ชุมชนมีน้ำใช้ชั่วคราวเข้าเงื่อนไขบรรเทาเฉพาะหน้า" },
+                    { text: "ค่าใช้จ่ายในการจัดซื้ออาหาร น้ำดื่ม เสื้อผ้า และยาเวชภัณฑ์แจกจ่ายผู้ประสบอุทกภัย", isCorrect: false, rationale: "เป็นรายจ่ายด้านความจำเป็นในการดำรงชีพของประชาชนที่กระทำได้ทันที" },
+                    { text: "ค่าสร้างอาคารอพยพถาวรหลังใหม่ทดแทนศูนย์เดิม หรือสร้างเขื่อนคอนกรีตถาวรกันดินตลิ่งพัง", isCorrect: true, rationale: "ตามข้อ ๑๗ ระบุว่า 'ไม่สามารถใช้จ่ายเงินทดรองราชการเพื่อสร้างสิ่งก่อสร้างหรือสาธารณูปโภคที่ถาวรหรือก่อสร้างใหม่ได้'" },
+                    { text: "ค่าเต็นท์และส้วมเคลื่อนที่ชั่วคราวเพื่อแจกจ่ายราษฎรในระหว่างที่อพยพหนีภัย", isCorrect: false, rationale: "เป็นอุปกรณ์บรรเทาทุกข์ชั่วคราวที่จ่ายได้ตามความจำเป็นเหมาะสม" }
+                ],
+                hint: "สิ่งที่ระเบียบห้ามคือการ 'สร้างสิ่งก่อสร้างใหม่หรือสาธารณูปโภคถาวร' (ถาวรวัตถุ)"
+            },
+            {
+                question: "สำหรับการให้ความช่วยเหลือผู้ประสบภัยพิบัติในพื้นที่กรุงเทพมหานคร ในเชิงป้องกันหรือยับยั้ง (วงเงินไม่เกิน ๑๐,๐๐๐,๐๐๐ บาท) เป็นอำนาจหน้าที่และการตัดสินอนุมัติของบุคคลในตำแหน่งใด?",
+                options: [
+                    { text: "ผู้ว่าราชการกรุงเทพมหานคร", isCorrect: false, rationale: "แม้จะเป็นพื้นที่ กทม. แต่ตามระเบียบข้อ ๑๘ ไม่ได้ให้อำนาจเงินทดรองนี้แก่ผู้ว่าฯ กทม." },
+                    { text: "อธิบดีกรมป้องกันและบรรเทาสาธารณภัย", isCorrect: true, rationale: "ตามข้อ ๑๘ (๑) 'ในกรณีกรุงเทพมหานคร ให้เป็นอำนาจหน้าที่ของกรมป้องกันและบรรเทาสาธารณภัย โดยอธิบดีกรมป้องกันและบรรเทาสาธารณภัยเป็นผู้มีอำนาจอนุมัติจ่ายเงิน'" },
+                    { text: "รัฐมนตรีว่าการกระทรวงมหาดไทย", isCorrect: false, rationale: "รัฐมนตรีมหาดไทยดูแลภาพรวมการปกครองแต่ไม่มีอำนาจอนุมัติข้อ ๑๘ นี้" },
+                    { text: "ปลัดกระทรวงการคลัง ร่วมกับผู้แทน กทม.", isCorrect: false, rationale: "ปลัดกระทรวงคลังรักษาการระเบียบแต่ไม่เป็นผู้อนุมัติใช้จ่ายเงินเชิงป้องกันระดับพื้นที่ กทม." }
+                ],
+                hint: "พิจารณาหัวหน้าส่วนราชการที่มีหน้าที่รับผิดชอบภัยพิบัติโดยตรงในระดับกรมของกระทรวงมหาดไทย"
+            },
+            
+            {
+                question: "การประกาศกำหนดพื้นที่และระยะเวลาของการให้ความช่วยเหลือผู้ประสบภัยพิบัติกรณีฉุกเฉินในจังหวัดลำปางตามระเบียบข้อ ๒๐ เป็นอำนาจอนุมัติของใคร?",
+                options: [
+                    { text: "ผู้ว่าราชการจังหวัดลำปาง แต่อนุมัติร่วมกับ ก.ช.ภ.จ. ลำปาง", isCorrect: true, rationale: "ข้อ ๒๐ (๒) ระบุว่ากรณีเกิดภัยในจังหวัดอื่นนอกจากกรุงเทพมหานคร ให้เป็นอำนาจของ 'ผู้ว่าราชการจังหวัดร่วมกับ ก.ช.ภ.จ.'" },
+                    { text: "อธิบดีกรมป้องกันและบรรเทาสาธารณภัย ร่วมกับผู้ว่าฯ ลำปาง", isCorrect: false, rationale: "อธิบดีกรม ปภ. มีอำนาจเฉพาะกรณีเกิดภัยในเขตกรุงเทพมหานครตามข้อ ๒๐ (๑)" },
+                    { text: "นายอำเภอในท้องที่ร่วมกับองค์กรปกครองส่วนท้องถิ่น", isCorrect: false, rationale: "ระดับอำเภอและ อปท. ไม่มีอำนาจออกประกาศเขตการช่วยเหลือระดับจังหวัด" },
+                    { text: "ผู้ว่าราชการจังหวัดลำปางแต่เพียงผู้เดียวในทุกสถานการณ์โดยไม่ต้องปรึกษาคณะกรรมการ", isCorrect: false, rationale: "ผู้ว่าฯ มีสิทธิออกประกาศไปก่อนได้เฉพาะกรณีที่ประชุม ก.ช.ภ.จ. ไม่ทันท่วงทีตามเงื่อนไขข้อ ๒๐ วรรคสาม แต่เกณฑ์ปกติระบุให้ผู้ว่าฯ ร่วมกับ ก.ช.ภ.จ." }
+                ],
+                hint: "ในจังหวัดต่างจังหวัด โครงสร้างอำนาจหน้าที่คือการผสมผสานระหว่างหัวหน้าจังหวัดและบอร์ดพิจารณาภัยพิบัติประจำจังหวัด"
+            },
+            {
+                question: "ในจังหวัดอื่นนอกเหนือจาก กทม. หากเกิดภัยพิบัติฉุกเฉินด่วนมากและมีความเดือดร้อนแสนสาหัสของราษฎร แต่ไม่สามารถเรียกประชุม ก.ช.ภ.จ. ได้ทันท่วงที ผู้ว่าราชการจังหวัดมีอำนาจดำเนินการอย่างไรตามระเบียบข้อ ๒๐ วรรคสาม?",
+                options: [
+                    { text: "ต้องทำเรื่องเสนอผ่านเครื่องมือสื่อสารถึงปลัดกระทรวงมหาดไทยเพื่อสั่งการอนุญาตแทน", isCorrect: false, rationale: "ไม่ต้องเสนอปลัดกระทรวงมหาดไทยให้ล่าช้าขั้นตอนปฏิบัติ" },
+                    { text: "ให้ทำหนังสือขออนุมัติล่วงหน้าจากปลัดกระทรวงการคลังเป็นการเร่งด่วนทางโทรสาร", isCorrect: false, rationale: "กระทรวงคลังไม่มีหน้าที่ประกาศเขตภัยพิบัติประจำท้องที่จังหวัดแทนผู้ว่าฯ" },
+                    { text: "มีอำนาจพิจารณาประกาศเขตการให้ความช่วยเหลือผู้ประสบภัยพิบัติกรณีฉุกเฉินไปก่อนได้โดยไม่ต้องขอความเห็นชอบจาก ก.ช.ภ.จ.", isCorrect: true, rationale: "ตามข้อ ๒๐ วรรคสาม 'หากไม่สามารถประชุม ก.ช.ภ.จ. ได้ทันท่วงที และผู้ว่าราชการจังหวัดเห็นว่าความเสียหายดังกล่าวเป็นไปตามระเบียบนี้ ก็ให้มีอำนาจพิจารณาประกาศเขตการช่วยเหลือ...ไปก่อนได้โดยไม่ต้องขอความเห็นชอบจาก ก.ช.ภ.จ.'" },
+                    { text: "ไม่สามารถทำได้เด็ดขาด ต้องรอจนกว่าจะมีกรรมการครบองค์ประชุมกึ่งหนึ่งจึงประกาศได้ตามกฎหมาย", isCorrect: false, rationale: "ภัยพิบัติฉุกเฉินคาดเดาไม่ได้ กฎหมายจึงเปิดช่องทางด่วนพิเศษ (Fast-track) คุ้มครองผู้ว่าราชการจังหวัดไว้" }
+                ],
+                hint: "กฎหมายต้องการช่วยราษฎรให้เร็วที่สุดในนาทีวิกฤต จึงมอบเอกสิทธิ์ให้ผู้ว่าฯ ลุยประกาศไปก่อนได้"
+            },
+            {
+                question: "กรณีขอรับการสนับสนุนการช่วยเหลือประชาชนอย่างเร่งด่วนสุดชีวิต แต่ไม่สามารถจัดส่งเอกสารหนังสืออย่างเป็นทางการได้ทัน ระเบียบข้อ ๒๕ ยินยอมให้ปฏิบัติตามข้อใดจึงจะถูกต้อง?",
+                options: [
+                    { text: "ให้เบิกจ่ายเงินสดล่วงหน้าไปใช้โดยไม่ต้องบันทึกหลักฐานใดๆ แล้วค่อยมาลงบันทึกหลังจากภัยจบลง", isCorrect: false, rationale: "ขัดต่อวินัยการเงินการคลังของรัฐและมีความเสี่ยงต่อความรับผิดส่วนตัว" },
+                    { text: "ให้ขอรับการสนับสนุนผ่านเครื่องมือสื่อสารหรือวิธีอื่นใด และต้องยืนยันเป็นหนังสือในภายหลังโดยด่วนที่สุด", isCorrect: true, rationale: "ตามข้อ ๒๕ วรรคสอง 'กรณีที่มีความจำเป็นเร่งด่วนไม่อาจขอรับการสนับสนุนเป็นหนังสือได้ ให้ขอรับการสนับสนุน...โดยเครื่องมือสื่อสารใด ๆ หรือโดยวิธีอื่นใดและให้ยืนยันเป็นหนังสือในภายหลังโดยด่วนที่สุด'" },
+                    { text: "ให้แจ้งข้อมูลทางวาจาผ่านกำนันหรือผู้ใหญ่บ้านในพื้นที่ และให้ถือว่าบันทึกชั่วคราวนั้นมีผลสมบูรณ์แล้ว", isCorrect: false, rationale: "การแจ้งทางวาจาโดยไม่มีหนังสือยืนยันตามหลังอย่างเป็นทางการไม่สามารถนำมาใช้เคลียร์ยอดบัญชีคลังได้" },
+                    { text: "ให้ข้ามไปขอการสนับสนุนจากส่วนภูมิภาคและทำเรื่องเบิกจ่ายหักบัญชีกลางโดยผ่านคลังจังหวัดแทน", isCorrect: false, rationale: "ไม่สามารถลัดขั้นตอนการคลังปกติแบบไร้หลักฐานได้" }
+                ],
+                hint: "สามารถใช้การส่งผ่านวิทยุสื่อสาร โทรศัพท์ หรือแอปพลิเคชันได้ก่อน แต่หัวใจสำคัญคือต้องส่งเอกสารกระดาษยืนยันตามหลังมาทันที"
+            },
+            {
+                question: "การขอรับการสนับสนุนช่วยเหลือผู้ประสบภัยพิบัติ 'ระหว่างส่วนราชการด้วยกัน' ตามระเบียบข้อ ๒๕ วรรคสาม มีเงื่อนไขกฎหมายทางการเงินสำคัญอย่างไร?",
+                options: [
+                    { text: "ไม่ต้องทำเอกสารใดๆ เนื่องจากถือเป็นหน่วยงานของรัฐภายใต้รัฐบาลเดียวกัน", isCorrect: false, rationale: "แม้จะเป็นหน่วยงานรัฐเหมือนกันแต่บัญชีเงินทดรองราชการถือเป็นเงินหลวงคนละตะกร้า ต้องมีหลักฐานสัญญาผูกพัน" },
+                    { text: "ให้ส่วนราชการจัดทำบันทึกข้อตกลงร่วมกัน (MOU) ยื่นต่ออธิบดีกรมบัญชีกลาง", isCorrect: false, rationale: "บันทึกข้อตกลงไม่ใช่เอกสารสัญญายืมเงินชดใช้ระบบคลัง" },
+                    { text: "ให้ส่วนราชการทำสัญญายืมเงินตามระเบียบของทางราชการ", isCorrect: true, rationale: "ข้อ ๒๕ วรรคท้ายระบุชัดเจนว่า 'การขอรับการสนับสนุนระหว่างส่วนราชการตามวรรคหนึ่งและวรรคสอง ให้ส่วนราชการทำสัญญายืมเงินตามระเบียบของทางราชการ'" },
+                    { text: "ให้ผู้ว่าราชการจังหวัดลงนามเป็นค้ำประกันการคืนเงินทดรองในสัญญาส่วนตัว", isCorrect: false, rationale: "ผู้ว่าราชการจังหวัดไม่ใช่ลูกหนี้ค้ำประกันส่วนบุคคล" }
+                ],
+                hint: "เครื่องมือทางกฎหมายคลังในการโยกย้ายเงินสดไปสนับสนุนหน่วยงานอื่นคือ 'สัญญายืมเงิน'"
+            },
+            {
+                question: "การตรวจรับ จัดหาพัสดุ และบริหารพัสดุต่างๆ เพื่อเยียวยาผู้เดือดร้อนจากภัยพิบัติกรณีฉุกเฉินให้ส่วนราชการถือปฏิบัติตามกฎหมายหลักฉบับใดตามข้อ ๓๔?",
+                options: [
+                    { text: "ระเบียบคณะกรรมการป้องกันและบรรเทาสาธารณภัยแห่งชาติ พ.ศ. ๒๕๕๘", isCorrect: false, rationale: "ระเบียบ ปภ. เป็นระเบียบฝ่ายปฏิบัติการ แต่อุตสาหกรรมการจัดซื้อต้องใช้กฎหมายพัสดุหลัก" },
+                    { text: "กฎหมายว่าด้วยการจัดซื้อจัดจ้างและการบริหารพัสดุภาครัฐ", isCorrect: true, rationale: "ข้อ ๓๔ บัญญัติว่า 'การจัดหาพัสดุ การตรวจรับพัสดุ และการบริหารพัสดุ เพื่อช่วยเหลือผู้ประสบภัยพิบัติ ให้ส่วนราชการถือปฏิบัติตามกฎหมายว่าด้วยการจัดซื้อจัดจ้างและการบริหารพัสดุภาครัฐ'" },
+                    { text: "กฎหมายระเบียบบริหารราชการแผ่นดิน พ.ศ. ๒๕๓๔", isCorrect: false, rationale: "เป็นกฎหมายโครงสร้างอำนาจหน้าที่จัดระเบียบกระทรวง ทบวง กรม ไม่ใช่เรื่องพัสดุโดยตรง" },
+                    { text: "ตามประกาศเกณฑ์และวิธีการเฉพาะของผู้ว่าราชการจังหวัดโดยยกเว้นกฎหมายพัสดุได้ทั้งหมด", isCorrect: false, rationale: "ผู้ว่าฯ ไม่มีอำนาจยกเว้นพระราชบัญญัติหรือกฎหมายจัดซื้อจัดจ้างของประเทศได้เอง" }
+                ],
+                hint: "จำไว้ว่าไม่ว่าจะด่วนแค่ไหน การจัดหาของหลวงแจกประชาชนก็ต้องเดินตามพระราชบัญญัติจัดซื้อจัดจ้างฉบับหลักของประเทศ"
+            },
+            {
+                question: "ในด้านการตรวจสอบ (ข้อ ๓๕) ผู้ตรวจสอบภายในของส่วนราชการหรือจังหวัด ต้องดำเนินการตรวจสอบผลการใช้จ่ายเงิน และรายงานผลให้ผู้มีอำนาจทราบภายในกำหนดกี่วันนับแต่วันสิ้นสุดการช่วยเหลือ?",
+                options: [
+                    { text: "ภายในสิบห้าวัน นับแต่วันที่ได้รับใบสำคัญจ่าย", isCorrect: false, rationale: "ตัวเลข ๑๕ วันเป็นเวลาส่งรายงานต่อกรมบัญชีกลาง ไม่ใช่ผู้ตรวจสอบภายในรายงานจังหวัด" },
+                    { text: "ภายในสามสิบวัน นับแต่วันที่สิ้นสุดระยะเวลาการให้ความช่วยเหลือ", isCorrect: true, rationale: "ตามข้อ ๓๕ (๑) และ (๒) กำหนดให้ผู้ตรวจสอบภายในรายงานผลการตรวจสอบให้ผู้มีอำนาจทราบ 'ภายในสามสิบวันนับแต่วันที่สิ้นสุดระยะเวลาการให้ความช่วยเหลือ'" },
+                    { text: "ภายในหกสิบวันทำการ นับแต่วันที่ได้รับจัดสรรงบประมาณชดใช้", isCorrect: false, rationale: "หกสิบวันทำการคือกรอบเวลาการยื่นหลักฐานให้กรมบัญชีกลาง" },
+                    { text: "ภายในเก้าสิบวัน นับแต่วันที่เกิดภัยพิบัติฉุกเฉินวันแรก", isCorrect: false, rationale: "ไม่มีข้อกำหนดเก้าสิบวันปฏิทินในข้อการตรวจสอบภายในจังหวัดตามระเบียบนี้" }
+                ],
+                hint: "ระยะเวลาทำงานในการตรวจงานของฝ่ายตรวจสอบภายในเพื่อความรวดเร็วและควบคุมคือประมาณ 1 เดือน"
+            },
+            {
+                question: "หน่วยงานราชการใดทำหน้าที่เป็น 'ศูนย์ประสานงานเกี่ยวกับการใช้จ่ายเงินทดรองราชการเพื่อช่วยเหลือผู้ประสบภัยพิบัติกรณีฉุกเฉินของจังหวัด' ตามระเบียบข้อ ๓๕?",
+                options: [
+                    { text: "สำนักงานป้องกันและบรรเทาสาธารณภัยจังหวัด", isCorrect: false, rationale: "สปภ. จังหวัด เป็นหน่วยปฏิบัติการกู้ภัยและเสนอเรื่องช่วย แต่ไม่ใช่ศูนย์ประสานเงินและการคลังหลัก" },
+                    { text: "สำนักงานจังหวัด (กลุ่มงานอำนวยการ)", isCorrect: false, rationale: "สำนักงานจังหวัดดูแลนโยบายแผนงานของผู้ว่าฯ แต่ไม่ใช่ระบบประสานเงินหลวงโดยตรง" },
+                    { text: "สำนักงานคลังจังหวัด", isCorrect: true, rationale: "ตามข้อ ๓๕ วรรคท้าย 'ให้สำนักงานคลังจังหวัดเป็นศูนย์ประสานงานเกี่ยวกับการใช้จ่ายเงินทดรองราชการเพื่อช่วยเหลือผู้ประสบภัยพิบัติกรณีฉุกเฉินของจังหวัด'" },
+                    { text: "สำนักงานการตรวจเงินแผ่นดินภูมิภาคประจำจังหวัดนั้นๆ", isCorrect: false, rationale: "สตง. ภูมิภาคเป็นหอคอยตรวจเงินภายนอก (External Audit) ไม่ได้เป็นศูนย์ข้อมูลการเงินภายในของผู้ว่าราชการจังหวัด" }
+                ],
+                hint: "หน่วยงานการเงินการคลังที่เป็นผู้แทนกระทรวงคลังในระดับภูมิภาคประจำทุกจังหวัด"
+            },
+            {
+                question: "เมื่อส่วนราชการและจังหวัดได้รับรายงานผลตรวจสอบการใช้จ่ายเงินจากผู้ตรวจสอบภายในแล้ว จะต้องส่งรายงานผลไปยัง 'กรมบัญชีกลาง' ภายในกำหนดเวลาใดนับแต่ได้รับรายงานดังกล่าว?",
+                options: [
+                    { text: "ภายในสามสิบวันนับแต่วันสิ้นสุดระยะช่วยเหลือ", isCorrect: false, rationale: "เป็นระยะเวลาตรวจของฝ่ายตรวจสอบภายใน" },
+                    { text: "ภายในหกสิบวันทำการนับแต่ได้รับงบประมาณ", isCorrect: false, rationale: "กรอบเวลาหกสิบวันทำการสำหรับส่งใบสำคัญเบิกผลักส่งชดใช้คืนคลัง" },
+                    { text: "ภายในสิบห้าวัน นับแต่วันที่ได้รับรายงานผลการตรวจสอบดังกล่าว", isCorrect: true, rationale: "ตามข้อ ๓๖ 'ให้ส่วนราชการและจังหวัดส่งรายงานผลการตรวจสอบ...ไปยังกรมบัญชีกลาง...ภายในสิบห้าวันนับแต่วันที่ได้รับรายงานผลการตรวจสอบดังกล่าว'" },
+                    { text: "ภายในเจ็ดวันทำการทันที เพื่อป้องกันความรับผิดวินัยคลัง", isCorrect: false, rationale: "ระเบียบอนุญาตกรอบเวลาที่ผ่อนปรนสมเหตุสมผลคือ ๑๕ วันปฏิทิน" }
+                ],
+                hint: "ระยะเวลานี้สั้นและรวดเร็วเพราะผลการตรวจภายในจังหวัดสรุปเสร็จเรียบร้อยแล้ว จึงส่งกรมบัญชีกลางในครึ่งเดือน"
+            },
+            {
+                question: "บุคคลในตำแหน่งใดทำหน้าที่เป็น 'ประธานกรรมการ' ในคณะกรรมการตรวจสอบติดตามการใช้จ่ายเงินทดรองราชการกระทรวงการคลัง ตามข้อ ๓๗?",
+                options: [
+                    { text: "ปลัดกระทรวงการคลัง", isCorrect: false, rationale: "ปลัดกระทรวงรักษาการตามระเบียบแต่ไม่ลงมาเป็นประธานบอร์ดตรวจสอบติดตามด้วยตัวเอง" },
+                    { text: "อธิบดีกรมบัญชีกลาง", isCorrect: true, rationale: "ตามข้อ ๓๗ กำหนดโครงสร้างคณะกรรมการโดยมี 'อธิบดีกรมบัญชีกลาง เป็นประธานกรรมการ'" },
+                    { text: "อธิบดีกรมป้องกันและบรรเทาสาธารณภัย", isCorrect: false, rationale: "อธิบดีกรม ปภ. เป็นหน่วยใช้งานเงิน ไม่สามารถเป็นคนมาเป็นประธานทีมตรวจสอบตัวเองได้เพื่อความโปร่งใส" },
+                    { text: "ผู้ว่าการตรวจเงินแผ่นดิน (สตง.)", isCorrect: false, rationale: "ผู้แทน สตง. เป็นเพียงกรรมการตรวจสอบร่วม ไม่ได้เป็นประธานบอร์ดตามกลไกกระทรวงคลังนี้" }
+                ],
+                hint: "หัวหน้าส่วนราชการระดับกรมของกระทรวงคลังที่มีหน้าที่รับผิดชอบเบิกจ่ายเงินแผ่นดินและการเบิกงบหักผลักส่งชดใช้เงินแผ่นดิน"
+            },
+            {
+                question: "บทเฉพาะกาลข้อ ๓๙ กำหนดว่า ภัยพิบัติกรณีฉุกเฉินที่ 'เกิดขึ้นอยู่ก่อนวันที่ระเบียบใหม่ใช้บังคับ' และยังคงค้างไม่แล้วเสร็จ จะต้องยึดแนวทางปฏิบัติข้อใด?",
+                options: [
+                    { text: "ให้ยกเลิกรายการจ่ายทั้งหมด แล้วโอนเงินคืนคลังจังหวัดเพื่อเข้าบัญชีระเบียบปี ๒๕๖๘ ใหม่ทันที", isCorrect: false, rationale: "หากทำเช่นนี้จะกระทบการช่วยเหลือราษฎรที่กำลังเดือดร้อนและเกิดภัยค้างอยู่" },
+                    { text: "ให้ถือปฏิบัติตามระเบียบกระทรวงการคลังฯ พ.ศ. ๒๕๖๒ จนกว่าจะดำเนินการแล้วเสร็จ เว้นแต่ขั้นตอนใดที่ยังไม่ได้เริ่ม ให้ถือปฏิบัติตามระเบียบ พ.ศ. ๒๕๖๘", isCorrect: true, rationale: "ตามข้อ ๓๙ 'ภัยพิบัติกรณีฉุกเฉินที่เกิดขึ้นอยู่ก่อนวันที่ระเบียบนี้ใช้บังคับ ให้ถือปฏิบัติตามระเบียบ... พ.ศ. ๒๕๖๒ จนกว่าจะดำเนินการแล้วเสร็จ เว้นแต่การดำเนินการขั้นตอนใดที่ยังไม่ได้เริ่มดำเนินการ ให้ถือปฏิบัติตามระเบียบนี้'" },
+                    { text: "ให้ใช้ดุลพินิจสูงสุดของผู้ว่าราชการจังหวัดในการตัดสินใจเลือกระเบียบฉบับใดฉบับหนึ่งเพียงฉบับเดียวตลอดโครงการ", isCorrect: false, rationale: "ระเบียบของระบบราชการกำหนดไว้อย่างชัดเจนในบทเฉพาะกาล ไม่ได้ยกให้เป็นดุลพินิจอิสระเลือกใช้สลับไปมาตามอำเภอใจ" },
+                    { text: "ให้ถือเป็นโมฆะและขอจัดตั้งงบประมาณรายจ่ายพิเศษจากสำนักงบประมาณชดใช้แทนระเบียบเดิม", isCorrect: false, rationale: "โครงการเดิมยังดำเนินต่อไปได้ตามความคุ้มครองชั่วคราวของระเบียบ ๒๕๖๒ เดิม" }
+                ],
+                hint: "สิ่งที่ดำเนินงานค้างคาให้ใช้กฎเก่าคุ้มครองจนจบ ยกเว้นอะไรที่เป็นของใหม่ยังไม่เริ่มต้นก็ให้ย้ายมาเดินตามกฎใหม่ ๒๕๖๘"
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let hasAnswered = false;
+
+        // Switch Tabs Logic
+        function switchTab(tab) {
+            const summaryBtn = document.getElementById('tab-summary-btn');
+            const quizBtn = document.getElementById('tab-quiz-btn');
+            const summarySec = document.getElementById('summary-section');
+            const quizSec = document.getElementById('quiz-section');
+
+            if (tab === 'summary') {
+                summaryBtn.className = "px-4 py-2 rounded-lg font-medium text-sm transition-all duration-200 bg-brand-500 text-white shadow-sm";
+                quizBtn.className = "px-4 py-2 rounded-lg font-medium text-sm transition-all duration-200 text-slate-600 hover:text-brand-600 hover:bg-brand-50";
+                summarySec.classList.remove('hidden');
+                quizSec.classList.add('hidden');
+            } else {
+                quizBtn.className = "px-4 py-2 rounded-lg font-medium text-sm transition-all duration-200 bg-brand-500 text-white shadow-sm";
+                summaryBtn.className = "px-4 py-2 rounded-lg font-medium text-sm transition-all duration-200 text-slate-600 hover:text-brand-600 hover:bg-brand-50";
+                quizSec.classList.remove('hidden');
+                summarySec.classList.add('hidden');
+                initQuiz();
+            }
+        }
+
+        // Initialize / Restart Quiz
+        function initQuiz() {
+            currentQuestionIndex = 0;
+            score = 0;
+            hasAnswered = false;
+            document.getElementById('quiz-play-box').classList.remove('hidden');
+            document.getElementById('quiz-score-box').classList.add('hidden');
+            showQuestion();
+        }
+
+        // Render Current Question
+        function showQuestion() {
+            hasAnswered = false;
+            const q = quizData[currentQuestionIndex];
+            
+            // Set Progress Indicators
+            document.getElementById('current-question-indicator').innerText = `${currentQuestionIndex + 1}/${quizData.length}`;
+            document.getElementById('quiz-progress-bar').style.width = `${((currentQuestionIndex + 1) / quizData.length) * 100}%`;
+            
+            // Set Question Statement
+            document.getElementById('question-text').innerText = `[ข้อที่ ${currentQuestionIndex + 1}] ${q.question}`;
+            
+            // Hide next button & hint box
+            document.getElementById('next-btn').classList.add('hidden');
+            document.getElementById('explanation-box').classList.add('hidden');
+            
+            // Reset hint btn
+            const hintDisplay = document.getElementById('hint-display-box');
+            hintDisplay.classList.add('hidden');
+            document.getElementById('hint-text-label').innerText = "แสดงคำใบ้";
+            document.getElementById('hint-content').innerText = q.hint;
+
+            // Generate Option Cards
+            const container = document.getElementById('options-container');
+            container.innerHTML = '';
+            
+            q.options.forEach((opt, idx) => {
+                const optId = `opt-${idx}`;
+                const card = document.createElement('div');
+                card.id = optId;
+                card.onclick = () => selectOption(idx);
+                card.className = "p-4 bg-white hover:bg-orange-50/50 border border-slate-150 hover:border-brand-300 rounded-xl cursor-pointer transition-all duration-150 flex items-start gap-3 shadow-sm";
+                
+                // Bullet icon placeholder
+                card.innerHTML = `
+                    <div class="w-6 h-6 rounded-full border border-slate-300 flex items-center justify-center flex-shrink-0 text-xs font-semibold text-slate-400 bg-slate-50 transition-all opt-bullet">
+                        ${String.fromCharCode(65 + idx)}
+                    </div>
+                    <div class="text-sm font-medium text-slate-800 flex-grow leading-relaxed">${opt.text}</div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Toggle Hint Display
+        function toggleHint() {
+            const hintBox = document.getElementById('hint-display-box');
+            const hintLabel = document.getElementById('hint-text-label');
+            if (hintBox.classList.contains('hidden')) {
+                hintBox.classList.remove('hidden');
+                hintLabel.innerText = "ซ่อนคำใบ้";
+            } else {
+                hintBox.classList.add('hidden');
+                hintLabel.innerText = "แสดงคำใบ้";
+            }
+        }
+
+        // Select Option Handling
+        function selectOption(selectedIdx) {
+            if (hasAnswered) return; // Prevent multiple clicks
+            hasAnswered = true;
+            
+            const q = quizData[currentQuestionIndex];
+            const isCorrect = q.options[selectedIdx].isCorrect;
+            
+            if (isCorrect) score++;
+
+            // Visual markers for choices
+            q.options.forEach((opt, idx) => {
+                const card = document.getElementById(`opt-${idx}`);
+                const bullet = card.querySelector('.opt-bullet');
+                
+                // Remove interactive styles
+                card.className = card.className.replace('hover:bg-orange-50/50', '').replace('hover:border-brand-300', '').replace('cursor-pointer', '');
+                
+                if (opt.isCorrect) {
+                    // Correct green styling
+                    card.classList.add('border-green-500', 'bg-green-50/80');
+                    bullet.className = "w-6 h-6 rounded-full bg-green-500 text-white flex items-center justify-center flex-shrink-0 text-xs font-semibold";
+                    bullet.innerHTML = '<i class="fa-solid fa-check"></i>';
+                } else if (idx === selectedIdx) {
+                    // Incorrect red styling
+                    card.classList.add('border-red-500', 'bg-red-50/80');
+                    bullet.className = "w-6 h-6 rounded-full bg-red-500 text-white flex items-center justify-center flex-shrink-0 text-xs font-semibold";
+                    bullet.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+                } else {
+                    card.classList.add('opacity-60');
+                }
+            });
+
+            // Show explanation/rationale box
+            const expBox = document.getElementById('explanation-box');
+            const expIcon = document.getElementById('explanation-icon-container');
+            const expTitle = document.getElementById('explanation-title');
+            const expBody = document.getElementById('explanation-body');
+            
+            expBox.classList.remove('hidden');
+            
+            if (isCorrect) {
+                expIcon.className = "w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-white bg-green-500 shadow-sm";
+                expIcon.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+                expTitle.className = "font-bold text-sm text-green-700";
+                expTitle.innerText = "ตอบถูกต้อง! ยอดเยี่ยมมาก";
+            } else {
+                expIcon.className = "w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-white bg-red-500 shadow-sm";
+                expIcon.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i>';
+                expTitle.className = "font-bold text-sm text-red-600";
+                expTitle.innerText = "คำตอบของคุณยังไม่ถูกต้อง";
+            }
+            
+            expBody.innerText = q.options[selectedIdx].rationale;
+            
+            // Show next button
+            const nextBtn = document.getElementById('next-btn');
+            nextBtn.classList.remove('hidden');
+            if (currentQuestionIndex === quizData.length - 1) {
+                nextBtn.innerHTML = '<span>ดูผลลัพธ์คะแนน</span> <i class="fa-solid fa-square-poll-vertical ml-1.5"></i>';
+            } else {
+                nextBtn.innerHTML = '<span>ข้อถัดไป</span> <i class="fa-solid fa-chevron-right text-xs ml-1.5"></i>';
+            }
+        }
+
+        // Progress or finish quiz
+        function goToNextQuestion() {
+            if (currentQuestionIndex < quizData.length - 1) {
+                currentQuestionIndex++;
+                showQuestion();
+            } else {
+                showQuizResult();
+            }
+        }
+
+        // Show Scoreboard Screen
+        function showQuizResult() {
+            document.getElementById('quiz-play-box').classList.add('hidden');
+            
+            const scoreBox = document.getElementById('quiz-score-box');
+            scoreBox.classList.remove('hidden');
+            
+            document.getElementById('final-score-display').innerText = `${score} / ${quizData.length}`;
+            
+            const assessment = document.getElementById('score-assessment');
+            if (score === 30) {
+                assessment.innerText = "ระดับ: 🏆 สุดยอดผู้เชี่ยวชาญสูงสุด (คะแนนเต็ม 30/30 ระดับตำนาน)";
+                assessment.className = "text-sm font-bold text-emerald-600 block";
+            } else if (score >= 25) {
+                assessment.innerText = "ระดับ: 🥇 ยอดเยี่ยม (เกรดเอ มีความเข้าใจกฎหมายเชิงลึกขั้นสูง)";
+                assessment.className = "text-sm font-bold text-teal-600 block";
+            } else if (score >= 18) {
+                assessment.innerText = "ระดับ: 🥈 ผ่านเกณฑ์ดี (มีความรู้ดีเยี่ยม แต่อาจมีพลาดรายละเอียดจุดเล็กน้อย)";
+                assessment.className = "text-sm font-bold text-amber-600 block";
+            } else {
+                assessment.innerText = "ระดับ: ⚠️ ควรกลับไปเปิดอ่านสรุปสาระสำคัญข้อที่ ๑ - ๔๑ อีกครั้งเพื่อทบทวน";
+                assessment.className = "text-sm font-bold text-red-500 block";
+            }
+        }
+
+        function restartQuiz() {
+            initQuiz();
+        }
+
+        // Start app in summary tab
+        window.onload = function() {
+            switchTab('summary');
+        };
+    </script>
+</body>
+</html>

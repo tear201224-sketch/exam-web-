@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>แผน ปภ. แห่งชาติ 2564–2570 · สรุป + ข้อสอบ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;500;600;700&family=Sarabun:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#fff7f0;
+    --paper:#ffffff;
+    --line:#f1e1d2;
+    --line-strong:#ffd2ac;
+    --ink:#33271c;
+    --ink-dim:#6b5a4a;
+    --ink-faint:#9a8a7a;
+    --orange:#f56a00;
+    --orange-2:#ff8a2b;
+    --orange-soft:#fff0e3;
+    --orange-tint:#fff6ee;
+    --red:#e0413f;
+    --red-soft:#fdecec;
+    --green:#1f9d63;
+    --green-soft:#e8f7ef;
+    --mono:'IBM Plex Mono',monospace;
+    --radius:14px;
+    --shadow:0 1px 2px rgba(120,70,20,.04), 0 8px 24px rgba(180,90,20,.06);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:'Sarabun',system-ui,sans-serif;
+    background:
+      radial-gradient(900px 420px at 90% -8%, #ffe6cf 0%, transparent 60%),
+      radial-gradient(700px 360px at -8% 4%, #ffeede 0%, transparent 55%),
+      var(--bg);
+    color:var(--ink);min-height:100vh;line-height:1.62;
+    padding:22px 16px 80px;
+  }
+  .wrap{max-width:780px;margin:0 auto}
+
+  /* ---------- header ---------- */
+  .masthead{
+    background:linear-gradient(135deg,var(--orange),var(--orange-2));
+    border-radius:18px;padding:26px 26px 22px;color:#fff;
+    box-shadow:0 10px 30px rgba(245,106,0,.22);position:relative;overflow:hidden;
+  }
+  .masthead::after{
+    content:"";position:absolute;right:-40px;top:-40px;width:180px;height:180px;border-radius:50%;
+    background:rgba(255,255,255,.12);
+  }
+  .masthead .eyebrow{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;opacity:.9;margin-bottom:8px}
+  .masthead h1{font-family:'Anuphan',sans-serif;font-weight:700;font-size:1.55rem;line-height:1.22;letter-spacing:-.01em;position:relative}
+  .masthead p{opacity:.95;margin-top:6px;font-size:.95rem;position:relative}
+
+  /* ---------- tabs ---------- */
+  .tabs{display:flex;gap:8px;margin:18px 0 22px;position:sticky;top:10px;z-index:20}
+  .tab{
+    flex:1;cursor:pointer;border:1px solid var(--line);background:var(--paper);
+    border-radius:12px;padding:13px;text-align:center;
+    font-family:'Anuphan',sans-serif;font-weight:600;font-size:1rem;color:var(--ink-dim);
+    transition:.15s;box-shadow:var(--shadow);user-select:none;
+  }
+  .tab:hover{border-color:var(--line-strong)}
+  .tab[aria-selected="true"]{background:var(--orange);color:#fff;border-color:var(--orange)}
+  .tab small{display:block;font-weight:400;font-size:.74rem;opacity:.85;margin-top:1px}
+
+  .panel{display:none}
+  .panel.active{display:block;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+  /* ---------- card ---------- */
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:26px 24px;box-shadow:var(--shadow)}
+  @media(max-width:560px){.card{padding:20px 16px}body{padding:16px 10px 70px}.masthead h1{font-size:1.32rem}}
+
+  /* ---------- summary ---------- */
+  .sum h2{
+    font-family:'Anuphan',sans-serif;font-weight:700;font-size:1.18rem;color:var(--orange);
+    margin:26px 0 12px;padding-bottom:8px;border-bottom:2px solid var(--orange-soft);
+    display:flex;align-items:center;gap:10px;
+  }
+  .sum h2:first-child{margin-top:0}
+  .sum h2 .num{
+    font-family:var(--mono);font-size:.78rem;background:var(--orange);color:#fff;
+    width:26px;height:26px;border-radius:7px;display:grid;place-items:center;flex:none;
+  }
+  .sum h3{font-family:'Anuphan',sans-serif;font-weight:600;font-size:1rem;color:var(--ink);margin:16px 0 8px}
+  .sum p{color:var(--ink-dim);margin-bottom:10px}
+  .sum ul{list-style:none;margin:6px 0 12px}
+  .sum li{position:relative;padding-left:20px;margin-bottom:6px;color:var(--ink-dim)}
+  .sum li::before{content:"▸";position:absolute;left:0;color:var(--orange);font-size:.9rem}
+  .sum b{color:var(--ink)}
+  .sum .hl{background:linear-gradient(transparent 60%, #ffe0c2 60%);padding:0 2px;font-weight:600;color:var(--ink)}
+
+  .callout{
+    background:var(--orange-tint);border:1px solid var(--line);border-left:4px solid var(--orange);
+    border-radius:0 10px 10px 0;padding:12px 15px;margin:12px 0;color:var(--ink-dim);font-size:.95rem;
+  }
+  .callout b{color:var(--ink)}
+  .formula{
+    font-family:var(--mono);text-align:center;background:#fff;border:1px dashed var(--line-strong);
+    border-radius:10px;padding:14px;margin:12px 0;color:var(--orange);font-weight:600;font-size:.95rem;line-height:1.6;
+  }
+
+  table.tb{width:100%;border-collapse:collapse;margin:10px 0 14px;font-size:.93rem}
+  table.tb th,table.tb td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+  table.tb th{background:var(--orange-soft);color:var(--ink);font-family:'Anuphan',sans-serif;font-weight:600;font-size:.85rem}
+  table.tb td{color:var(--ink-dim)}
+  table.tb td b{color:var(--ink)}
+  .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+  .dot{display:inline-block;width:11px;height:11px;border-radius:50%;vertical-align:middle;margin-right:6px}
+
+  /* ---------- quiz ---------- */
+  .meta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:4px 0 22px}
+  @media(max-width:520px){.meta-grid{grid-template-columns:1fr 1fr}}
+  .chip{border:1px solid var(--line);border-radius:12px;background:var(--orange-tint);padding:12px 14px}
+  .chip b{display:block;font-family:'Anuphan',sans-serif;font-size:1.35rem;color:var(--orange);line-height:1}
+  .chip span{font-size:.78rem;color:var(--ink-faint)}
+
+  .field-label{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;color:var(--ink-faint);text-transform:uppercase;margin-bottom:9px}
+  .modes{display:flex;gap:8px;margin-bottom:22px;flex-wrap:wrap}
+  .mode{
+    flex:1;min-width:90px;cursor:pointer;text-align:center;border:1px solid var(--line);
+    border-radius:11px;background:var(--paper);padding:13px 8px;
+    font-family:'Anuphan',sans-serif;font-weight:600;color:var(--ink-dim);transition:.15s;user-select:none;
+  }
+  .mode small{display:block;font-weight:400;font-size:.72rem;color:var(--ink-faint);margin-top:2px}
+  .mode[aria-pressed="true"]{border-color:var(--orange);background:var(--orange);color:#fff}
+  .mode[aria-pressed="true"] small{color:#ffe7d3}
+
+  .btn{width:100%;cursor:pointer;border:none;font-family:'Anuphan',sans-serif;font-weight:700;font-size:1.05rem;border-radius:12px;padding:15px;transition:.15s}
+  .btn-go{background:var(--orange);color:#fff;box-shadow:0 6px 16px rgba(245,106,0,.25)}
+  .btn-go:hover{filter:brightness(1.05)}
+  .btn-ghost{background:transparent;border:1px solid var(--line-strong);color:var(--orange);font-size:.95rem;padding:13px}
+  .btn-ghost:hover{background:var(--orange-soft)}
+  .btn-row{display:flex;gap:10px;margin-top:14px}
+  .btn-row .btn{margin:0}
+
+  .prog-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px}
+  .qcount{font-family:var(--mono);font-size:.78rem;color:var(--ink-dim)}
+  .score-live{font-family:var(--mono);font-size:.78rem;color:var(--orange);font-weight:600}
+  .track{height:7px;border-radius:7px;background:var(--orange-soft);overflow:hidden;margin-bottom:24px}
+  .bar{height:100%;width:0;background:linear-gradient(90deg,var(--orange),var(--orange-2));transition:width .35s ease}
+
+  .qcat{display:inline-block;font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);background:var(--orange-soft);padding:4px 10px;border-radius:20px;margin-bottom:14px}
+  .qtext{font-family:'Anuphan',sans-serif;font-weight:600;font-size:1.2rem;line-height:1.45;margin-bottom:20px;color:var(--ink)}
+
+  .opts{display:flex;flex-direction:column;gap:10px}
+  .opt{
+    display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:12px;
+    background:var(--paper);padding:13px 14px;cursor:pointer;transition:.12s;width:100%;text-align:left;
+    font-family:'Sarabun',sans-serif;font-size:1rem;color:var(--ink);line-height:1.5;
+  }
+  .opt:hover:not(:disabled){border-color:var(--line-strong);background:var(--orange-tint)}
+  .opt:disabled{cursor:default}
+  .opt .key{font-family:var(--mono);font-weight:600;font-size:.82rem;flex:none;width:26px;height:26px;border-radius:7px;display:grid;place-items:center;border:1px solid var(--line);color:var(--ink-dim);margin-top:1px}
+  .opt.correct{border-color:var(--green);background:var(--green-soft)}
+  .opt.correct .key{background:var(--green);color:#fff;border-color:var(--green)}
+  .opt.wrong{border-color:var(--red);background:var(--red-soft)}
+  .opt.wrong .key{background:var(--red);color:#fff;border-color:var(--red)}
+  .opt.dim{opacity:.55}
+
+  .explain{margin-top:16px;border-left:3px solid var(--orange);background:var(--orange-tint);border-radius:0 10px 10px 0;padding:13px 16px;font-size:.95rem;color:var(--ink-dim);display:none}
+  .explain.show{display:block;animation:fade .25s ease}
+  .explain b{color:var(--ink)}
+
+  .nav{margin-top:22px}
+
+  .result-hero{text-align:center;padding:6px 0 16px}
+  .result-ring{width:140px;height:140px;border-radius:50%;margin:0 auto 16px;display:grid;place-items:center;padding:10px}
+  .result-ring .pct{font-family:'Anuphan',sans-serif;font-weight:700;font-size:2.3rem;line-height:1}
+  .result-ring .of{font-family:var(--mono);font-size:.76rem;color:var(--ink-dim);margin-top:4px}
+  .verdict{font-family:'Anuphan',sans-serif;font-weight:700;font-size:1.35rem;margin-bottom:6px}
+  .verdict-sub{color:var(--ink-dim);margin-bottom:22px}
+
+  .review-h{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);margin:10px 0 12px}
+  .rev{border:1px solid var(--line);border-radius:12px;padding:14px 15px;margin-bottom:10px;background:var(--orange-tint)}
+  .rev-q{font-family:'Anuphan',sans-serif;font-weight:600;font-size:.98rem;margin-bottom:8px;display:flex;gap:9px;color:var(--ink)}
+  .rev-q .mark{flex:none;font-family:var(--mono);font-weight:600;color:var(--red)}
+  .rev-line{font-size:.9rem;color:var(--ink-dim);padding-left:22px}
+  .rev-line .you-wrong{color:var(--red)}
+  .rev-line .ans{color:var(--green);font-weight:600}
+
+  .foot{text-align:center;margin-top:24px;font-size:.8rem;color:var(--ink-faint)}
+  .hidden{display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="masthead">
+    <div class="eyebrow">Master Plan · 2564–2570</div>
+    <h1>แผนการป้องกันและบรรเทาสาธารณภัยแห่งชาติ</h1>
+    <p>สรุปสาระสำคัญ + ข้อสอบปรนัยพร้อมเฉลย สำหรับเตรียมสอบ</p>
+  </div>
+
+  <div class="tabs" role="tablist">
+    <div class="tab" id="tabSum" role="tab" aria-selected="true" tabindex="0">สรุปเนื้อหา<small>10 หัวข้อจำง่าย</small></div>
+    <div class="tab" id="tabQuiz" role="tab" aria-selected="false" tabindex="0">ทำข้อสอบ<small>45 ข้อ พร้อมเฉลย</small></div>
+  </div>
+
+  <!-- ============================ SUMMARY ============================ -->
+  <section class="panel active" id="panelSum">
+    <div class="card sum">
+
+      <h2><span class="num">1</span>ภาพรวมแผน (จำให้แม่น)</h2>
+      <div class="scroll"><table class="tb">
+        <tr><th>ประเด็น</th><th>สาระสำคัญ</th></tr>
+        <tr><td>สถานะแผน</td><td><b>แผนระดับที่ 3</b> · เป็น <b>แผนแม่บท (Master Plan)</b></td></tr>
+        <tr><td>ฐานกฎหมาย</td><td>พ.ร.บ. ปภ. 2550 <b>มาตรา 44</b></td></tr>
+        <tr><td>วิสัยทัศน์</td><td>ลดความเสี่ยงเดิม ป้องกันความเสี่ยงใหม่ เพื่อความมั่นคงปลอดภัยและยั่งยืน</td></tr>
+        <tr><td>เป้าหมายสูงสุด</td><td><b>รู้รับ–ปรับตัว–ฟื้นเร็วทั่ว–อย่างยั่งยืน (Resilience)</b></td></tr>
+        <tr><td>กรอบแนวคิด</td><td><b>Smart DRM for 3s : SEP–SDGs–SFDRR</b></td></tr>
+        <tr><td>กลไก 3 มิติ</td><td>Smart Digital / Smart Resilience / Smart Man</td></tr>
+        <tr><td>ตัวชี้วัด</td><td><b>"4 ลด 3 เพิ่ม"</b></td></tr>
+        <tr><td>บทบาท ปภ.</td><td><b>Integrator</b> · เปลี่ยน Reactive → Proactive</td></tr>
+      </table></div>
+      <h3>ตัวชี้วัด "4 ลด 3 เพิ่ม"</h3>
+      <ul>
+        <li><b>4 ลด:</b> ลดการเสียชีวิต · ผู้ได้รับผลกระทบ · ความสูญเสียเศรษฐกิจ (ต่อ GDP) · ความเสียหายโครงสร้างพื้นฐาน</li>
+        <li><b>3 เพิ่ม:</b> เพิ่มจำนวนแผน · ความเป็นหุ้นส่วนระหว่างประเทศ · ขีดความสามารถระบบเตือนภัย</li>
+      </ul>
+
+      <h2><span class="num">2</span>ตัวเลขที่มักออกสอบ (ระวังสลับกัน)</h2>
+      <div class="scroll"><table class="tb">
+        <tr><th>ตัวเลข</th><th>เรื่อง</th></tr>
+        <tr><td><b>9,700 ล้านคน</b></td><td>ประชากรโลก ภายในปี <b>พ.ศ. 2593</b></td></tr>
+        <tr><td><b>1.1 เมตร</b></td><td>ระดับน้ำทะเลสูงขึ้น ภายในปี <b>พ.ศ. 2643</b></td></tr>
+        <tr><td><b>อันดับ 8</b></td><td>ความเสี่ยงภูมิอากาศของไทย (Climate Risk Index 2020)</td></tr>
+        <tr><td><b>1 : 7</b></td><td>ลงทุน 1 เหรียญ ลดสูญเสีย 7 เหรียญ (UNDP)</td></tr>
+        <tr><td><b>ไม่เกิน 2 องศา</b></td><td>เป้าหมายความตกลงปารีส</td></tr>
+        <tr><td><b>SDGs 1, 11, 13</b></td><td>เป้าหมายที่เกี่ยวข้องกับสาธารณภัยโดยตรง</td></tr>
+      </div></table>
+
+      <h2><span class="num">3</span>บทเรียนสำคัญ (จับคู่เหตุการณ์ ↔ บทเรียน)</h2>
+      <div class="scroll"><table class="tb">
+        <tr><th>เหตุการณ์</th><th>บทเรียน</th></tr>
+        <tr><td>อุทกภัยบางสะพาน (2559–61)</td><td>ยกระดับภัย <b>ระดับ 3 ครั้งแรก</b></td></tr>
+        <tr><td>วิกฤตถ้ำหลวง (2561)</td><td><b>Unified Command</b> + ความร่วมมือระหว่างประเทศ</td></tr>
+        <tr><td>เรือฟินิกซ์ล่ม (2561)</td><td>มาตรฐานความปลอดภัยท่องเที่ยว</td></tr>
+        <tr><td>พายุปาบึก (2562)</td><td><b>อพยพล่วงหน้า</b> (บทเรียนแหลมตะลุมพุก)</td></tr>
+        <tr><td>หมิงตี้ระเบิด (2564)</td><td><b>ภัยสารเคมี</b> + เทคโนโลยีแจ้งเตือน</td></tr>
+        <tr><td>COVID-19</td><td>New Normal + ภัยซ้อนภัย (Compound Hazard)</td></tr>
+      </table></div>
+
+      <h2><span class="num">4</span>ระดับการจัดการสาธารณภัย (4 ระดับ)</h2>
+      <div class="scroll"><table class="tb">
+        <tr><th>ระดับ</th><th>ขนาด</th><th>ผู้สั่งการ</th><th>องค์กร</th></tr>
+        <tr><td>1</td><td>เล็ก</td><td>ผอ.อำเภอ / ผอ.ท้องถิ่น</td><td>กอปภ.อ. / ศปก.อปท.</td></tr>
+        <tr><td>2</td><td>กลาง</td><td>ผอ.จังหวัด (ผู้ว่าฯ)</td><td>กอปภ.จ. / ศบก.จ.</td></tr>
+        <tr><td>3</td><td>ใหญ่</td><td><b>ผบ.ปภ.ช. (รมว.มหาดไทย)</b></td><td>บกปภ.ช.</td></tr>
+        <tr><td>4</td><td>ร้ายแรงฯ</td><td><b>นายกฯ / รองนายกฯ</b></td><td>บกปภ.ช.</td></tr>
+      </table></div>
+      <div class="callout">⚠️ อย่าสับสน: <b>4 ระดับการจัดการภัย</b> ≠ <b>5 สีระดับสถานการณ์</b> ≠ <b>5 ระดับสัญญาณเตือน</b><br>
+      ตำแหน่ง: ผู้บัญชาการ = รมว.มหาดไทย · <b>ผู้อำนวยการกลาง = อธิบดีกรม ปภ.</b></div>
+
+      <h2><span class="num">5</span>กลไกระดับนโยบาย: คณะกรรมการ 3 ชุดหลัก</h2>
+      <ul>
+        <li><b>กปภ.ช.</b> — ป้องกันและบรรเทาสาธารณภัยแห่งชาติ (นโยบายระดับชาติ)</li>
+        <li><b>กปอ.</b> — ป้องกันอุบัติภัยแห่งชาติ</li>
+        <li><b>กภช.</b> — บริหารระบบการเตือนภัยพิบัติแห่งชาติ</li>
+      </ul>
+
+      <h2><span class="num">6</span>5 ยุทธศาสตร์</h2>
+      <h3>ส่วนที่ 1 — ภาคการพัฒนา (ก่อนเกิดภัย)</h3>
+      <ul>
+        <li>ยุทธ 1: มุ่งเน้นการลดความเสี่ยงจากสาธารณภัย</li>
+        <li>ยุทธ 2: เพิ่มประสิทธิภาพระบบบริหารจัดการ + นวัตกรรม (Smart DRM)</li>
+        <li>ยุทธ 3: ส่งเสริมความเป็นหุ้นส่วนระหว่างประเทศ</li>
+      </ul>
+      <h3>ส่วนที่ 2 — ภาคการปฏิบัติ (ขณะ/หลังเกิดภัย)</h3>
+      <ul>
+        <li>ยุทธ 4: การจัดการในภาวะฉุกเฉินแบบบูรณาการ</li>
+        <li>ยุทธ 5: การเพิ่มประสิทธิภาพการฟื้นฟูอย่างยั่งยืน</li>
+      </ul>
+
+      <h2><span class="num">7</span>หลักการ DRM ที่ต้องท่อง</h2>
+      <div class="formula">Risk = (Hazard × Exposure × Vulnerability) ÷ Capacity<br>
+      ความเสี่ยง = (ภัย × ความล่อแหลม × ความเปราะบาง) ÷ ศักยภาพ</div>
+      <h3>มาตรการลดความเสี่ยง 4 ด้าน</h3>
+      <ul>
+        <li><b>หลีกเลี่ยง:</b> ย้ายชุมชน, ผังเมือง/โซนนิ่ง</li>
+        <li><b>ป้องกัน/ลดผลกระทบ:</b> มาตรฐานอาคาร, Eco-DRR</li>
+        <li><b>ถ่ายโอน:</b> ประกันภัย, <span class="hl">พันธบัตรสาธารณภัย (CAT bond)</span></li>
+        <li><b>ยอมรับ:</b> ฝึกซ้อม, แผนอพยพ, ศูนย์พักพิง, BCP, ระบบเตือนภัย</li>
+      </ul>
+
+      <h2><span class="num">8</span>ยุทธศาสตร์ 4 (ภาวะฉุกเฉิน) — ออกสอบเยอะ</h2>
+      <h3>สัญลักษณ์สี 5 ระดับเตือนภัย</h3>
+      <div class="scroll"><table class="tb">
+        <tr><th>สี</th><th>ภาวะ</th><th>ปฏิบัติ</th></tr>
+        <tr><td><span class="dot" style="background:#e0413f"></span>แดง</td><td>อันตรายสูงสุด</td><td>อพยพทันที</td></tr>
+        <tr><td><span class="dot" style="background:#ff8a2b"></span>ส้ม</td><td>เสี่ยงอันตรายสูง</td><td>เตรียมอพยพ</td></tr>
+        <tr><td><span class="dot" style="background:#ffce2b"></span>เหลือง</td><td>เสี่ยงอันตราย</td><td>เตรียมความพร้อม</td></tr>
+        <tr><td><span class="dot" style="background:#3d7bff"></span>น้ำเงิน</td><td>เฝ้าระวัง</td><td>ติดตามข่าวใกล้ชิด</td></tr>
+        <tr><td><span class="dot" style="background:#1f9d63"></span>เขียว</td><td>ปกติ</td><td>ติดตามข่าวประจำ</td></tr>
+      </table></div>
+      <ul>
+        <li><b>EOC</b> = สถานที่/องค์กรศูนย์ปฏิบัติการฉุกเฉิน · <b>ICS</b> = ระบบบัญชาการเหตุการณ์ (เครื่องมือสั่งการหลัก)</li>
+        <li><b>สปฉ. (ESF) = 18 ด้าน</b> (อย่าสับกับ Cluster มนุษยธรรม 9 ด้าน)</li>
+        <li>แจ้งเตือนทันทีเมื่อโอกาสเกิดภัย <span class="hl">มากกว่าร้อยละ 60</span></li>
+        <li>ศูนย์พักพิงใช้ <b>มาตรฐานสเฟียร์ (Sphere)</b></li>
+        <li>เลขฉุกเฉิน: 191 ตำรวจ · 199 อัคคีภัย · 192/1784 ปภ. · <b>1669 การแพทย์</b></li>
+      </ul>
+      <div class="callout"><b>DANA 3 ระยะ:</b> เบื้องต้น ≤ 3 ชม. → เร่งด่วน ≤ 72 ชม. → ละเอียด ≤ 2 สัปดาห์</div>
+
+      <h2><span class="num">9</span>ยุทธศาสตร์ 5 (ฟื้นฟู)</h2>
+      <ul>
+        <li>หลักการ: <b>Build Back Better and Safer (BBB&S)</b></li>
+        <li><b>PDNA</b> 5 องค์ประกอบ: Baseline → <b>DALA</b> (เสียหาย+สูญเสีย) → Impacts → Needs → Recovery Framework</li>
+      </ul>
+
+      <h2><span class="num">10</span>การขับเคลื่อน &amp; ทบทวนแผน</h2>
+      <ul>
+        <li>บรรจุแผนชาติในแผนหน่วยงาน = <b>Mainstreaming</b> (มี DRR Focal Point เป็นพี่เลี้ยง)</li>
+        <li>ทบทวนแผนเมื่อ: ข้อเท็จจริงเปลี่ยน <b>หรือ ครบ 5 ปี</b></li>
+        <li>หน่วยงานกลางด้านวิจัย (R&amp;D) = <b>กรม ปภ.</b></li>
+      </ul>
+
+      <div class="callout"><b>คำย่อที่ต้องจำ:</b> DRR (ลดความเสี่ยง) · DRM (จัดการความเสี่ยง) · EOC (ศูนย์ปฏิบัติการฉุกเฉิน) · ICS (บัญชาการเหตุการณ์) · SOP · BCP (ความต่อเนื่อง) · NSW (ประสาน ณ จุดเดียว) · JIC (ประชาสัมพันธ์ร่วม) · NbS · SFDRR (เซนได) · AADMER (อาเซียน) · SEP (เศรษฐกิจพอเพียง)</div>
+
+      <button class="btn btn-go" id="goQuizBtn" style="margin-top:8px">พร้อมแล้ว ไปทำข้อสอบ →</button>
+    </div>
+  </section>
+
+  <!-- ============================ QUIZ ============================ -->
+  <section class="panel" id="panelQuiz">
+
+    <!-- start -->
+    <div class="card" id="startScreen">
+      <div class="meta-grid">
+        <div class="chip"><b id="poolCount">45</b><span>ข้อในคลัง</span></div>
+        <div class="chip"><b>5</b><span>ยุทธศาสตร์</span></div>
+        <div class="chip"><b>4</b><span>ระดับภัย</span></div>
+      </div>
+      <p style="color:var(--ink-dim);margin-bottom:20px">ช้อยหลอกตั้งใจวางใกล้ของจริง — ตัวเลข ปีที่สลับกัน ตำแหน่งที่คล้ายกัน อ่านโจทย์ให้ครบก่อนตอบ</p>
+
+      <div class="field-label">เลือกจำนวนข้อ</div>
+      <div class="modes" id="modes">
+        <div class="mode" data-n="15" role="button" tabindex="0" aria-pressed="false">15<small>อุ่นเครื่อง</small></div>
+        <div class="mode" data-n="30" role="button" tabindex="0" aria-pressed="true">30<small>มาตรฐาน</small></div>
+        <div class="mode" data-n="all" role="button" tabindex="0" aria-pressed="false">ทั้งหมด<small>ลุยเต็ม</small></div>
+      </div>
+      <button class="btn btn-go" id="startBtn">เริ่มทำข้อสอบ</button>
+      <div class="foot">สลับลำดับข้อและตัวเลือกใหม่ทุกครั้ง · เฉลย+คำอธิบายทันทีหลังเลือก</div>
+    </div>
+
+    <!-- quiz -->
+    <div class="card hidden" id="quizScreen">
+      <div class="prog-top">
+        <span class="qcount" id="qCount">ข้อ 1 / 30</span>
+        <span class="score-live" id="scoreLive">ถูก 0</span>
+      </div>
+      <div class="track"><div class="bar" id="bar"></div></div>
+      <div class="qcat" id="qCat">หมวด</div>
+      <div class="qtext" id="qText">โจทย์</div>
+      <div class="opts" id="opts"></div>
+      <div class="explain" id="explain"></div>
+      <div class="nav"><button class="btn btn-go hidden" id="nextBtn">ข้อถัดไป</button></div>
+    </div>
+
+    <!-- result -->
+    <div class="card hidden" id="resultScreen">
+      <div class="result-hero">
+        <div class="result-ring" id="ring"></div>
+        <div class="verdict" id="verdict">—</div>
+        <div class="verdict-sub" id="verdictSub">—</div>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-go" id="retryBtn">ทำชุดใหม่</button>
+        <button class="btn btn-ghost" id="homeBtn">กลับหน้าเริ่ม</button>
+      </div>
+      <div class="review-h">ทบทวนข้อที่ตอบผิด</div>
+      <div id="reviewList"></div>
+    </div>
+  </section>
+
+  <div class="foot">อ้างอิงสาระสำคัญแผนการป้องกันและบรรเทาสาธารณภัยแห่งชาติ พ.ศ. 2564–2570</div>
+</div>
+
+<script>
+/* ===================== คลังข้อสอบ ===================== */
+const BANK = [
+ {cat:"ภาพรวมแผน", q:"แผนการป้องกันและบรรเทาสาธารณภัยแห่งชาติ พ.ศ. 2564–2570 มีสถานะเป็นแผนระดับใด และทำหน้าที่เป็นแผนประเภทใด?",
+  o:["แผนระดับที่ 2 / แผนแม่บทภายใต้ยุทธศาสตร์ชาติ","แผนระดับที่ 3 / แผนแม่บท (Master Plan)","แผนระดับที่ 1 / ยุทธศาสตร์ชาติ","แผนระดับที่ 3 / แผนปฏิบัติการระดับพื้นที่"], c:1,
+  e:"เป็น <b>แผนระดับที่ 3</b> มีผลบังคับใช้เป็น <b>แผนแม่บท (Master Plan)</b> ถ่ายทอดทิศทางจากยุทธศาสตร์ชาติ (ระดับ 1) และแผนแม่บทฯ (ระดับ 2) ลงสู่แนวทางปฏิบัติ"},
+
+ {cat:"ภาพรวมแผน", q:"แผนฉบับนี้จัดทำขึ้นตามข้อบังคับของ พ.ร.บ. ป้องกันและบรรเทาสาธารณภัย พ.ศ. 2550 มาตราใด?",
+  o:["มาตรา 4","มาตรา 44","มาตรา 46","มาตรา 34"], c:1,
+  e:"จัดทำตาม <b>มาตรา 44</b> (มาตรา 4 = นิยามสาธารณภัย, มาตรา 46 = การปฏิบัติร่วมกับหน่วยทหาร — ตัวเลขใกล้กันจึงเป็นช้อยหลอก)"},
+
+ {cat:"ภาพรวมแผน", q:"กรอบแนวคิดหลักของแผนฉบับนี้คือข้อใด?",
+  o:["Smart DRM for 3s : SEP – SDGs – SFDRR","Smart DRM for 3s : SEP – SDGs – AADMER","Smart City for 3s : SEP – SFDRR – NbS","Smart DRR for 3R : Resilience – Recovery – Response"], c:0,
+  e:"<b>Smart DRM for 3s : SEP – SDGs – SFDRR</b> บูรณาการ 3 ฐานราก คือ ปรัชญาเศรษฐกิจพอเพียง (SEP), เป้าหมายการพัฒนาที่ยั่งยืน (SDGs) และกรอบเซนได (SFDRR)"},
+
+ {cat:"ภาพรวมแผน", q:"กลไกขับเคลื่อน 3 มิติ ภายใต้กรอบ Smart DRM for 3s ประกอบด้วยข้อใด?",
+  o:["Smart Data, Smart Risk, Smart People","Smart Digital, Smart Resilience, Smart Man","Smart Tech, Smart Recovery, Smart Mind","Smart Device, Smart Response, Smart Manpower"], c:1,
+  e:"ขับเคลื่อนผ่านมิติ <b>Smart Digital</b> (เทคโนโลยี), <b>Smart Resilience</b> (ความยืดหยุ่น) และ <b>Smart Man</b> (บุคลากร)"},
+
+ {cat:"ภาพรวมแผน", q:"เป้าหมายสูงสุดของแผนคือการนำประเทศไทยไปสู่สิ่งใด?",
+  o:["ป้องกัน – เผชิญเหตุ – ฟื้นฟู อย่างบูรณาการ","รู้รับ – ปรับตัว – ฟื้นเร็วทั่ว – อย่างยั่งยืน (Resilience)","ลดความเสี่ยงเดิม – ป้องกันความเสี่ยงใหม่ (DRR)","มั่นคง – มั่งคั่ง – ยั่งยืน อย่างมีมาตรฐาน"], c:1,
+  e:"เป้าหมายสูงสุดคือ <b>“รู้รับ – ปรับตัว – ฟื้นเร็วทั่ว – อย่างยั่งยืน” (Resilience)</b> ส่วน “ลดความเสี่ยงเดิม ป้องกันความเสี่ยงใหม่” เป็น <b>วิสัยทัศน์</b> ไม่ใช่เป้าหมายสูงสุด"},
+
+ {cat:"ตัวชี้วัด", q:"ตัวชี้วัดความสำเร็จระดับชาติของแผนใช้หลักการใด?",
+  o:["3 ลด 4 เพิ่ม","4 ลด 3 เพิ่ม","5 ลด 2 เพิ่ม","4 เพิ่ม 3 ลด"], c:1,
+  e:"ใช้หลักการ <b>“4 ลด 3 เพิ่ม”</b> ตามกรอบเซนได — 4 ลด (เสียชีวิต/ผู้ได้รับผลกระทบ/เศรษฐกิจ/โครงสร้างพื้นฐาน) และ 3 เพิ่ม (แผน/หุ้นส่วนระหว่างประเทศ/ระบบเตือนภัย)"},
+
+ {cat:"ตัวชี้วัด", q:"ข้อใดไม่ใช่ส่วนหนึ่งของ “3 เพิ่ม”?",
+  o:["เพิ่มจำนวนแผนการจัดการความเสี่ยง","เพิ่มความเป็นหุ้นส่วนระหว่างประเทศ","เพิ่มขีดความสามารถระบบเตือนภัย","เพิ่มสัดส่วนงบประมาณด้านการฟื้นฟู"], c:3,
+  e:"3 เพิ่ม = แผน + หุ้นส่วนระหว่างประเทศ + ระบบเตือนภัย ส่วน <b>“เพิ่มสัดส่วนงบฯ ฟื้นฟู”</b> เป็นช้อยหลอกที่ไม่มีในตัวชี้วัด"},
+
+ {cat:"สถานการณ์ภัย", q:"UN คาดการณ์ว่าประชากรโลกจะสูงถึง 9,700 ล้านคน ภายในปี พ.ศ. ใด?",
+  o:["พ.ศ. 2573","พ.ศ. 2593","พ.ศ. 2643","พ.ศ. 2580"], c:1,
+  e:"ประชากรโลก 9,700 ล้านคน ภายในปี <b>พ.ศ. 2593</b> (ระวังสับสนกับปี 2643 ที่เป็นปีของระดับน้ำทะเล)"},
+
+ {cat:"สถานการณ์ภัย", q:"IPCC ระบุว่าระดับน้ำทะเลอาจสูงขึ้นถึงเท่าใด และภายในปีใด?",
+  o:["1.1 เมตร ภายในปี พ.ศ. 2593","1.1 เมตร ภายในปี พ.ศ. 2643","2.0 เมตร ภายในปี พ.ศ. 2643","1.5 เมตร ภายในปี พ.ศ. 2600"], c:1,
+  e:"ระดับน้ำทะเลอาจสูงขึ้นถึง <b>1.1 เมตร ภายในปี พ.ศ. 2643</b> (อย่าสลับกับปีประชากรโลก 2593)"},
+
+ {cat:"สถานการณ์ภัย", q:"ประเทศไทยถูกจัดอยู่ในกลุ่มประเทศที่มีความเสี่ยงสูงต่อการเปลี่ยนแปลงสภาพภูมิอากาศอันดับใดของโลก (Global Climate Risk Index 2020)?",
+  o:["อันดับ 6","อันดับ 8","อันดับ 10","อันดับ 13"], c:1,
+  e:"ไทยถูกจัดอยู่ <b>อันดับ 8</b> ของโลก ตาม Global Climate Risk Index 2020"},
+
+ {cat:"สถานการณ์ภัย", q:"จากการศึกษาของ UNDP การลงทุนเพื่อลดความเสี่ยง 1 เหรียญสหรัฐ สามารถลดความสูญเสียได้ประมาณเท่าใด?",
+  o:["4 เหรียญสหรัฐ","5 เหรียญสหรัฐ","7 เหรียญสหรัฐ","10 เหรียญสหรัฐ"], c:2,
+  e:"ลงทุน 1 เหรียญ ลดความสูญเสียได้ถึง <b>7 เหรียญสหรัฐ</b> — สะท้อนแนวคิด “ลงทุนวันนี้เพื่อความปลอดภัยในวันหน้า”"},
+
+ {cat:"สถานการณ์ภัย", q:"แผนฉบับนี้ปรับบทบาทของกรมป้องกันและบรรเทาสาธารณภัย (ปภ.) ให้เป็นอะไร?",
+  o:["Operator – หน่วยปฏิบัติการกู้ภัยหลัก","Integrator – หน่วยบูรณาการข้อมูลและสรรพกำลัง","Regulator – หน่วยกำกับมาตรฐานความปลอดภัย","Coordinator – หน่วยประสานงบประมาณกลาง"], c:1,
+  e:"ปรับบทบาท ปภ. เป็น <b>“Integrator”</b> หน่วยบูรณาการข้อมูลและสรรพกำลัง และเปลี่ยนจากตั้งรับ (Reactive) สู่เชิงรุก (Proactive)"},
+
+ {cat:"กรอบสากล", q:"ความตกลงปารีส (Paris Agreement) เน้นการควบคุมอุณหภูมิโลกไม่ให้สูงเกินกี่องศาเซลเซียส?",
+  o:["1.5 องศาเซลเซียส","2 องศาเซลเซียส","2.5 องศาเซลเซียส","3 องศาเซลเซียส"], c:1,
+  e:"ความตกลงปารีสเน้นควบคุมอุณหภูมิโลก <b>ไม่เกิน 2 องศาเซลเซียส</b> และส่งเสริมการปรับตัวเพื่อลดความเปราะบาง"},
+
+ {cat:"กรอบสากล", q:"กรอบความตกลงอาเซียนว่าด้วยการจัดการภัยพิบัติฯ มีชื่อย่อว่าอะไร?",
+  o:["SFDRR","AADMER","UNFCCC","INSARAG"], c:1,
+  e:"<b>AADMER</b> มีองค์ประกอบสำคัญ เช่น ACDM, SASOP และ AHA Centre"},
+
+ {cat:"กรอบสากล", q:"เป้าหมายการพัฒนาที่ยั่งยืน (SDGs) ที่เกี่ยวข้องกับสาธารณภัยโดยตรง 3 ประการ คือเป้าหมายใด?",
+  o:["เป้าหมายที่ 1, 11 และ 13","เป้าหมายที่ 3, 11 และ 13","เป้าหมายที่ 1, 9 และ 17","เป้าหมายที่ 11, 13 และ 15"], c:0,
+  e:"เกี่ยวข้องโดยตรง 3 เป้าหมาย คือ <b>1</b> (ภูมิต้านทานคนยากจน), <b>11</b> (เมืองปลอดภัย) และ <b>13</b> (ต่อสู้การเปลี่ยนแปลงสภาพภูมิอากาศ)"},
+
+ {cat:"บทเรียน", q:"วิกฤตถ้ำหลวง (พ.ศ. 2561) ให้บทเรียนสำคัญในเรื่องใดเป็นหลัก?",
+  o:["การจัดการภัยจากสารเคมีและการแจ้งเตือน","การบัญชาการเหตุการณ์ร่วม (Unified Command) และความร่วมมือระหว่างประเทศ","การอพยพประชาชนล่วงหน้า","มาตรฐานความปลอดภัยทางการท่องเที่ยว"], c:1,
+  e:"ถ้ำหลวงเป็นบทเรียนเรื่อง <b>Unified Command</b> และความร่วมมือระหว่างประเทศ (สารเคมี = หมิงตี้, อพยพล่วงหน้า = ปาบึก, ความปลอดภัยท่องเที่ยว = เรือฟินิกซ์)"},
+
+ {cat:"บทเรียน", q:"เหตุการณ์ใดเป็นบทเรียนเรื่องการอพยพประชาชนล่วงหน้าโดยใช้บทเรียนจากแหลมตะลุมพุก?",
+  o:["อุทกภัยบางสะพาน","เรือฟินิกซ์ล่ม","พายุโซนร้อนปาบึก (2562)","โรงงานหมิงตี้ระเบิด"], c:2,
+  e:"<b>พายุโซนร้อนปาบึก (2562)</b> เป็นความสำเร็จของการอพยพล่วงหน้า โดยถอดบทเรียนจากเหตุการณ์แหลมตะลุมพุกในอดีต"},
+
+ {cat:"บทเรียน", q:"อุทกภัยบางสะพาน (2559–2561) ถือเป็นเหตุการณ์ที่มีการยกระดับภัยถึงระดับใดเป็นครั้งแรก?",
+  o:["ระดับ 2 เป็นครั้งแรก","ระดับ 3 เป็นครั้งแรก","ระดับ 4 เป็นครั้งแรก","ระดับ 3 ต่อเนื่องหลายจังหวัด"], c:1,
+  e:"บางสะพานเป็นบทเรียนเรื่องความเปราะบางของสถานที่สำคัญ (โรงพยาบาล) และการ <b>ยกระดับภัยเป็นระดับ 3 ครั้งแรก</b>"},
+
+ {cat:"หลักการ DRM", q:"สมการความเสี่ยงจากสาธารณภัย (Disaster Risk Equation) เป็นอย่างไร?",
+  o:["Risk = (Hazard × Vulnerability) ÷ (Exposure × Capacity)","Risk = (Hazard × Exposure × Vulnerability) ÷ Capacity","Risk = Hazard × Exposure × Vulnerability × Capacity","Risk = (Hazard + Exposure + Vulnerability) ÷ Capacity"], c:1,
+  e:"<b>Risk = (ภัย × ความล่อแหลม × ความเปราะบาง) ÷ ศักยภาพ</b> ยิ่งศักยภาพ (Capacity) สูง ความเสี่ยงยิ่งลด"},
+
+ {cat:"หลักการ DRM", q:"ปัจจัยเสี่ยง 4 ประการที่ใช้วิเคราะห์ในการลดความเสี่ยง (DRR) ประกอบด้วยข้อใด?",
+  o:["ภัย, ความล่อแหลม, ความเปราะบาง, ศักยภาพ","ภัย, ความเสียหาย, ความสูญเสีย, การฟื้นตัว","ภัย, ความถี่, ความรุนแรง, ผลกระทบ","ความเสี่ยง, ความล่อแหลม, ความพร้อม, การเตือนภัย"], c:0,
+  e:"4 ปัจจัย = <b>ภัย (Hazard), ความล่อแหลม (Exposure), ความเปราะบาง (Vulnerability) และศักยภาพ (Capacity)</b>"},
+
+ {cat:"หลักการ DRM", q:"วงจรการจัดการความเสี่ยงจากสาธารณภัย (DRM) แบ่งเป็น 3 ระยะหลักตามลำดับใด?",
+  o:["การเตรียมพร้อม → การเผชิญเหตุ → การฟื้นฟู","การลดความเสี่ยง (ก่อนเกิดภัย) → การจัดการในภาวะฉุกเฉิน (ขณะเกิดภัย) → การฟื้นฟู (หลังเกิดภัย)","การป้องกัน → การบรรเทาทุกข์ → การเยียวยา","การประเมินความเสี่ยง → การเตือนภัย → การฟื้นฟู"], c:1,
+  e:"3 ระยะหลักคือ <b>การลดความเสี่ยง (DRR) ก่อนเกิดภัย → การจัดการในภาวะฉุกเฉิน ขณะเกิดภัย → การฟื้นฟู หลังเกิดภัย</b>"},
+
+ {cat:"ระดับการจัดการภัย", q:"การแบ่งระดับการจัดการสาธารณภัยของประเทศไทยแบ่งออกเป็นกี่ระดับ?",
+  o:["3 ระดับ","4 ระดับ","5 ระดับ","6 ระดับ"], c:1,
+  e:"แบ่งเป็น <b>4 ระดับ</b> (เล็ก/กลาง/ใหญ่/ร้ายแรงอย่างยิ่ง) — ระวังสับสนกับ <b>5 สี</b> ระดับสถานการณ์"},
+
+ {cat:"ระดับการจัดการภัย", q:"สาธารณภัยระดับ 3 (ขนาดใหญ่) ผู้ใดเป็นผู้ควบคุม สั่งการ และบัญชาการ?",
+  o:["ผู้ว่าราชการจังหวัด","อธิบดีกรม ปภ.","รัฐมนตรีว่าการกระทรวงมหาดไทย (ผบ.ปภ.ช.)","นายกรัฐมนตรี"], c:2,
+  e:"ระดับ 3 = <b>รัฐมนตรีว่าการกระทรวงมหาดไทย</b> ในฐานะ ผบ.ปภ.ช. (อย่าสับสนกับระดับ 4 = นายกฯ)"},
+
+ {cat:"ระดับการจัดการภัย", q:"สาธารณภัยระดับ 4 (ร้ายแรงอย่างยิ่ง) ผู้ใดเป็นผู้ควบคุม สั่งการ และบัญชาการ?",
+  o:["รัฐมนตรีว่าการกระทรวงมหาดไทย","นายกรัฐมนตรี หรือรองนายกรัฐมนตรีที่ได้รับมอบหมาย","อธิบดีกรม ปภ.","ผู้ว่าราชการจังหวัดร่วมกับ ก.ช.ภ.จ."], c:1,
+  e:"ระดับ 4 = <b>นายกรัฐมนตรี หรือรองนายกรัฐมนตรีที่ได้รับมอบหมาย</b> มีอำนาจสั่งการทุกหน่วยงานทั่วประเทศ"},
+
+ {cat:"ระดับการจัดการภัย", q:"สาธารณภัยระดับ 1 (ขนาดเล็ก) ผู้ใดเป็นผู้ควบคุมและสั่งการ?",
+  o:["ผู้อำนวยการอำเภอ / ผู้อำนวยการท้องถิ่น","ผู้อำนวยการจังหวัด","ผู้อำนวยการกลาง","ผู้ช่วยผู้อำนวยการจังหวัด"], c:0,
+  e:"ระดับ 1 = <b>ผู้อำนวยการอำเภอ / ผู้อำนวยการท้องถิ่น</b> ระดับ 2 จึงขยับเป็นผู้อำนวยการจังหวัด"},
+
+ {cat:"กลไกจัดการ", q:"คณะกรรมการระดับนโยบาย 3 ชุดหลักในการจัดการความเสี่ยงจากสาธารณภัย คือชุดใด?",
+  o:["กปภ.ช. / กปอ. / กภช.","กปภ.ช. / ก.ช.ภ.จ. / กนช.","กปภ.ช. / กอ.รมน. / สมช.","กปภ.จ. / กปอ. / นปท."], c:0,
+  e:"3 ชุดหลักคือ <b>กปภ.ช.</b> (ป้องกันและบรรเทาสาธารณภัยแห่งชาติ), <b>กปอ.</b> (ป้องกันอุบัติภัยแห่งชาติ) และ <b>กภช.</b> (บริหารระบบการเตือนภัยพิบัติแห่งชาติ)"},
+
+ {cat:"กลไกจัดการ", q:"ในระดับปฏิบัติ ตำแหน่ง “ผู้อำนวยการกลาง” หมายถึงผู้ใด?",
+  o:["รัฐมนตรีว่าการกระทรวงมหาดไทย","อธิบดีกรมป้องกันและบรรเทาสาธารณภัย","ปลัดกระทรวงมหาดไทย","ผู้ว่าราชการจังหวัด"], c:1,
+  e:"ผู้อำนวยการกลาง = <b>อธิบดีกรม ปภ.</b> ดูแลกองอำนวยการ ปภ. กลาง ส่วน รมว.มหาดไทย เป็น “ผู้บัญชาการ”"},
+
+ {cat:"ขอบเขตภัย", q:"นิยามสาธารณภัยตามมาตรา 4 แห่ง พ.ร.บ. ปภ. 2550 ให้รวมถึงภัยด้านความมั่นคงในเรื่องใด?",
+  o:["ภัยทางไซเบอร์และการก่อการร้าย","ภัยทางอากาศและการก่อวินาศกรรม","สงครามและการจลาจล","ภัยจากอาวุธชีวภาพ"], c:1,
+  e:"นิยามมาตรา 4 ให้รวมถึง <b>ภัยทางอากาศ และการก่อวินาศกรรม</b> เข้าไปด้วย"},
+
+ {cat:"งบประมาณ", q:"แหล่งที่มาของงบประมาณในการป้องกันและบรรเทาสาธารณภัยแบ่งเป็น 3 ส่วนหลัก คือข้อใด?",
+  o:["งบรายจ่ายประจำปี / งบกลาง / เงินนอกงบประมาณ","งบภารกิจ / งบพื้นที่ / งบบูรณาการ","งบกลาง / เงินทดรองราชการ / เงินบริจาค","งบประจำปี / กองทุน / งบฉุกเฉิน"], c:0,
+  e:"3 ส่วนหลัก = <b>งบประมาณรายจ่ายประจำปี / งบกลาง / เงินนอกงบประมาณ</b> (Function/Area/Agenda เป็นการแบ่งย่อยภายในงบรายจ่ายประจำปี)"},
+
+ {cat:"งบประมาณ", q:"งบกลางในส่วน “เงินทดรองราชการเพื่อช่วยเหลือผู้ประสบภัยพิบัติกรณีฉุกเฉิน” ดำเนินการตามระเบียบของหน่วยงานใด?",
+  o:["สำนักนายกรัฐมนตรี","กระทรวงการคลัง","กรมบัญชีกลางและสำนักงบประมาณ","กระทรวงมหาดไทย"], c:1,
+  e:"เงินทดรองราชการฯ ดำเนินการตาม <b>ระเบียบกระทรวงการคลัง</b> แบ่งเป็นวงเงินเชิงป้องกัน/ยับยั้ง และวงเงินช่วยเหลือหลังเกิดเหตุ"},
+
+ {cat:"5 ยุทธศาสตร์", q:"ยุทธศาสตร์ที่ 1–3 (ก่อนเกิดภัย) จัดอยู่ในส่วนใดของแผน?",
+  o:["ภาคการปฏิบัติ (จัดการภัยให้มีมาตรฐาน)","ภาคการพัฒนา (ลดความเสี่ยงให้มีประสิทธิภาพ)","ภาคการฟื้นฟู (ซ่อมสร้างให้ดีกว่าเดิม)","ภาคการเตือนภัย (เฝ้าระวังเชิงรุก)"], c:1,
+  e:"ยุทธศาสตร์ 1–3 = <b>ภาคการพัฒนา</b> (ก่อนเกิดภัย/ลดความเสี่ยง) ส่วนยุทธศาสตร์ 4–5 = ภาคการปฏิบัติ"},
+
+ {cat:"5 ยุทธศาสตร์", q:"ยุทธศาสตร์ที่ 4 ของแผนคือเรื่องใด?",
+  o:["การส่งเสริมความเป็นหุ้นส่วนระหว่างประเทศ","การจัดการในภาวะฉุกเฉินแบบบูรณาการ","การเพิ่มประสิทธิภาพการฟื้นฟูอย่างยั่งยืน","การมุ่งเน้นการลดความเสี่ยงจากสาธารณภัย"], c:1,
+  e:"ยุทธศาสตร์ที่ 4 = <b>การจัดการในภาวะฉุกเฉินแบบบูรณาการ</b> (ขณะเกิดภัย) ส่วนยุทธ 5 = การฟื้นฟู"},
+
+ {cat:"ยุทธศาสตร์ 1", q:"มาตรการลดความเสี่ยง 4 ด้าน ข้อใดคือ “การถ่ายโอนความเสี่ยง (Risk Transfer)”?",
+  o:["การย้ายชุมชนออกจากพื้นที่เสี่ยงและการทำผังเมือง","การกำหนดมาตรฐานการก่อสร้างอาคารต้านภัย","การทำประกันภัยพิบัติและการออกพันธบัตรสาธารณภัย (CAT bond)","การฝึกซ้อมแผนและจัดตั้งศูนย์พักพิงชั่วคราว"], c:2,
+  e:"Risk Transfer = <b>ระบบประกันภัย และเครื่องมือการเงิน เช่น พันธบัตรสาธารณภัย (CAT bond)</b> (ย้ายชุมชน=หลีกเลี่ยง, มาตรฐานอาคาร=ป้องกัน, ฝึกซ้อม=ยอมรับความเสี่ยง)"},
+
+ {cat:"การเตือนภัย", q:"ระบบการแจ้งเตือนภัยแบบครบวงจร (End-to-End Early Warning System) มี 4 องค์ประกอบหลัก ข้อใดไม่ใช่หนึ่งในนั้น?",
+  o:["การรับรู้และเข้าใจความเสี่ยง","การติดตามสถานการณ์และการพยากรณ์","การจัดสรรงบประมาณฉุกเฉิน","ความตระหนักรู้และการตอบสนองของประชาชน"], c:2,
+  e:"4 องค์ประกอบ = รับรู้ความเสี่ยง + ติดตาม/พยากรณ์ + แจ้งเตือน/สื่อสาร + ตระหนักรู้/ตอบสนอง ส่วน <b>“จัดสรรงบฯ ฉุกเฉิน”</b> เป็นช้อยหลอก"},
+
+ {cat:"การเตือนภัย", q:"ในขั้นตอนการแจ้งเตือนภัย หากประเมินแล้วพบว่ามีโอกาสเกิดภัยมากกว่าเท่าใด ให้แจ้งเตือนทันที?",
+  o:["มากกว่าร้อยละ 50","มากกว่าร้อยละ 60","มากกว่าร้อยละ 70","มากกว่าร้อยละ 80"], c:1,
+  e:"หากโอกาสเกิดภัย <b>มากกว่าร้อยละ 60</b> ให้แจ้งเตือนทันที พร้อมระบุเวลา/พื้นที่ ผลกระทบ และแนวทางปฏิบัติ"},
+
+ {cat:"ยุทธศาสตร์ 4", q:"สัญลักษณ์สี 5 ระดับในการแจ้งเตือน “ภาวะอันตรายสูงสุด – ให้อพยพทันที” คือสีใด?",
+  o:["สีส้ม","สีแดง","สีเหลือง","สีม่วง"], c:1,
+  e:"<b>สีแดง = ภาวะอันตรายสูงสุด</b> ให้อพยพทันที (ส้ม=เสี่ยงสูง เตรียมอพยพ, เหลือง=เสี่ยง เตรียมพร้อม, น้ำเงิน=เฝ้าระวัง, เขียว=ปกติ)"},
+
+ {cat:"ยุทธศาสตร์ 4", q:"สัญลักษณ์สีใดหมายถึง “ภาวะเฝ้าระวัง – ให้ติดตามข้อมูลข่าวสารอย่างใกล้ชิด”?",
+  o:["สีเขียว","สีเหลือง","สีน้ำเงิน","สีส้ม"], c:2,
+  e:"<b>สีน้ำเงิน = ภาวะเฝ้าระวัง</b> ติดตามข่าวใกล้ชิด ส่วนสีเขียว = ภาวะปกติ (ติดตามข่าวเป็นประจำ)"},
+
+ {cat:"ยุทธศาสตร์ 4", q:"การสนับสนุนการปฏิบัติงานในภาวะฉุกเฉิน (สปฉ. / ESF) บูรณาการทรัพยากรตามกลุ่มภารกิจกี่ด้าน?",
+  o:["9 ด้าน","12 ด้าน","16 ด้าน","18 ด้าน"], c:3,
+  e:"สปฉ. (Emergency Support Function) บูรณาการ <b>18 ด้าน</b> (อย่าสับสนกับกลุ่มงานมนุษยธรรม Cluster Approach ที่มี 9 ด้าน)"},
+
+ {cat:"ยุทธศาสตร์ 4", q:"เครื่องมือหลักที่ใช้เป็นมาตรฐานในการสั่งการและประสานความร่วมมือในภาวะฉุกเฉินคือระบบใด?",
+  o:["ระบบศูนย์ปฏิบัติการฉุกเฉิน (EOC)","ระบบบัญชาการเหตุการณ์ (ICS)","ระบบประสานงาน ณ จุดเดียว (NSW)","ระบบสนับสนุนการตัดสินใจ (DSS)"], c:1,
+  e:"<b>ระบบบัญชาการเหตุการณ์ (ICS)</b> เป็นเครื่องมือหลักในการสั่งการ ภายใต้โครงสร้าง EOC — EOC คือ “สถานที่/องค์กร” ส่วน ICS คือ “ระบบบัญชาการ”"},
+
+ {cat:"ยุทธศาสตร์ 4", q:"การประกาศ “เขตการให้ความช่วยเหลือผู้ประสบภัยพิบัติกรณีฉุกเฉิน” สำหรับจังหวัดอื่น (นอกจาก กทม.) ใครเป็นผู้มีอำนาจออกประกาศ?",
+  o:["อธิบดีกรม ปภ.","ผู้ว่าราชการจังหวัดร่วมกับ ก.ช.ภ.จ.","ผู้บัญชาการ ปภ.ช.","นายอำเภอร่วมกับ ก.ช.ภ.อ."], c:1,
+  e:"จังหวัดอื่น = <b>ผู้ว่าราชการจังหวัดร่วมกับ ก.ช.ภ.จ.</b> (กรณี กทม. = อธิบดีกรม ปภ.) — กรณีเร่งด่วน ผวจ. ประกาศได้ทันทีหากเข้าหลักเกณฑ์"},
+
+ {cat:"ยุทธศาสตร์ 4", q:"การประเมินความเสียหายและความต้องการ (DANA) ระยะ “การประเมินอย่างเร่งด่วน (Rapid Assessment)” ต้องดำเนินการภายในกี่ชั่วโมง?",
+  o:["ภายใน 3 ชั่วโมง","ภายใน 24 ชั่วโมง","ภายใน 72 ชั่วโมง","ภายใน 2 สัปดาห์"], c:2,
+  e:"DANA 3 ระยะ: เบื้องต้น (Initial) ภายใน 3 ชม. → <b>เร่งด่วน (Rapid) ภายใน 72 ชม.</b> → ละเอียด (Detailed) ภายใน 2 สัปดาห์"},
+
+ {cat:"ยุทธศาสตร์ 4", q:"เลขหมายฉุกเฉินใดตรงกับ “การแพทย์ฉุกเฉิน”?",
+  o:["191","199","1784","1669"], c:3,
+  e:"<b>1669 = การแพทย์ฉุกเฉิน</b> (191=ตำรวจ, 199=อัคคีภัย, 192/1784=ปภ.)"},
+
+ {cat:"การฝึกซ้อม", q:"การฝึกซ้อมแผน การซักซ้อม และการทดสอบมาตรการต่าง ๆ กำหนดให้ดำเนินการอย่างน้อยเท่าใด?",
+  o:["อย่างน้อยปีละ 1 ครั้ง","อย่างน้อยปีละ 2 ครั้ง","อย่างน้อย 2 ปีต่อครั้ง","อย่างน้อยทุกไตรมาส"], c:0,
+  e:"กำหนดให้ฝึกซ้อม <b>อย่างน้อยปีละ 1 ครั้ง</b> เพื่อสร้างความพร้อมและค้นหาจุดบกพร่องในระบบบัญชาการ"},
+
+ {cat:"ศูนย์พักพิง", q:"การจัดตั้งศูนย์พักพิงชั่วคราว ต้องดำเนินการตามมาตรฐานสากลใด?",
+  o:["มาตรฐาน INSARAG","มาตรฐานสเฟียร์ (Sphere Project)","มาตรฐาน WHO EMT","มาตรฐาน UNDAC"], c:1,
+  e:"ศูนย์พักพิงต้องดำเนินการตาม <b>มาตรฐานสเฟียร์ (Sphere Project)</b> (INSARAG=ทีมกู้ภัยในเมือง USAR, WHO=ทีมแพทย์ EMT)"},
+
+ {cat:"ยุทธศาสตร์ 3", q:"ระบบที่ใช้เป็นช่องทางหลักในการจัดการเอกสารอนุญาตนำเข้า-ส่งออกสิ่งของบรรเทาทุกข์ และยกเว้นภาษีให้บุคลากรต่างประเทศ คือระบบใด?",
+  o:["ระบบ DELSA","ระบบ NSW (National Single Window)","ระบบ SEADRIF","ระบบ AHA Centre"], c:1,
+  e:"<b>NSW (National Single Window)</b> เป็นระบบประสานงาน ณ จุดเดียว เชื่อมกับคลังข้อมูลสาธารณภัยแห่งชาติเพื่อติดตามทรัพยากร"},
+
+ {cat:"ยุทธศาสตร์ 3", q:"ในภัยระดับ 4 หน่วยงานใดเป็นหน่วยงานหลักในการประสานงานรับความช่วยเหลือจากต่างประเทศ?",
+  o:["กรมป้องกันและบรรเทาสาธารณภัย","กระทรวงการต่างประเทศ (กต.)","กระทรวงกลาโหม","สำนักงานสภาความมั่นคงแห่งชาติ"], c:1,
+  e:"ภัยระดับ 4 = <b>กระทรวงการต่างประเทศ (กต.)</b> เป็นหน่วยงานหลักในการประสานงาน และต้องได้รับความเห็นชอบจาก บกปภ.ช. ก่อน"},
+
+ {cat:"ยุทธศาสตร์ 5", q:"การประเมินความต้องการหลังเกิดสาธารณภัย (PDNA) องค์ประกอบ “DALA” หมายถึงสิ่งใด?",
+  o:["การประเมินความเสียหายและความสูญเสีย (Damage and Loss Assessment)","การวิเคราะห์ความต้องการในการฟื้นฟู","การจัดทำกรอบการฟื้นฟู (Recovery Framework)","การประเมินผลกระทบทางสังคมและสิ่งแวดล้อม"], c:0,
+  e:"<b>DALA = Damage and Loss Assessment</b> วิเคราะห์ความเสียหายทางกายภาพและความสูญเสียเชิงมูลค่าเศรษฐกิจ (เช่น รายได้ที่หายไป)"},
+
+ {cat:"ยุทธศาสตร์ 5", q:"หลักการสำคัญของการฟื้นฟูในยุทธศาสตร์ที่ 5 คือข้อใด?",
+  o:["Build Back Faster (ฟื้นฟูให้เร็วกว่าเดิม)","Build Back Better and Safer (ฟื้นฟูให้ดีกว่าและปลอดภัยกว่าเดิม)","Bounce Back Stronger (ฟื้นกลับให้แข็งแกร่งกว่าเดิม)","Restore As Usual (ฟื้นฟูให้กลับสภาพเดิม)"], c:1,
+  e:"ยึดหลัก <b>Build Back Better and Safer (BBB&S)</b> ฟื้นฟูให้ดีกว่าและปลอดภัยกว่าเดิม เพื่อลดความเสี่ยงเดิมและป้องกันความเสี่ยงใหม่"},
+
+ {cat:"การขับเคลื่อนแผน", q:"ตาม พ.ร.บ. ปภ. 2550 มาตรา 44 ต้องทบทวน/ปรับปรุงแผนเมื่อใด (กรณีครบกำหนดระยะเวลา)?",
+  o:["เมื่อประกาศใช้ครบ 3 ปี","เมื่อประกาศใช้ครบ 5 ปี","เมื่อประกาศใช้ครบ 6 ปี","เมื่อประกาศใช้ครบ 10 ปี"], c:1,
+  e:"ทบทวนเมื่อข้อเท็จจริงเปลี่ยนแปลง หรือเมื่อประกาศใช้แผน <b>ครบ 5 ปี</b>"},
+
+ {cat:"การขับเคลื่อนแผน", q:"การนำแผนระดับชาติไปบรรจุในแผนปฏิบัติราชการของแต่ละหน่วยงาน เรียกกระบวนการนี้ว่าอะไร?",
+  o:["Localizing","Mainstreaming","Cascading","Integrating"], c:1,
+  e:"เรียกว่า <b>Mainstreaming</b> — นำการลดความเสี่ยงเข้าสู่กระแสหลักของการพัฒนาและบรรจุในแผนปฏิบัติราชการ"},
+
+ {cat:"R&D", q:"หน่วยงานใดเป็นหน่วยงานกลางในการประสานความร่วมมือด้านการวิจัย (R&D) ด้านการจัดการสาธารณภัย?",
+  o:["กระทรวง อว.","กรมป้องกันและบรรเทาสาธารณภัย (ปภ.)","สำนักงานพัฒนาเทคโนโลยีอวกาศฯ (GISTDA)","สถาบันวิจัยเพื่อการพัฒนาประเทศไทย (TDRI)"], c:1,
+  e:"<b>กรม ปภ.</b> เป็นหน่วยงานกลางประสานความร่วมมือด้านการวิจัย โดยบูรณาการกับ อว., สกสว., วช., GISTDA และ TDRI"}
+];
+
+/* ===================== แท็บ ===================== */
+const $ = id => document.getElementById(id);
+function selectTab(which){
+  const sum = which==='sum';
+  $('tabSum').setAttribute('aria-selected', sum);
+  $('tabQuiz').setAttribute('aria-selected', !sum);
+  $('panelSum').classList.toggle('active', sum);
+  $('panelQuiz').classList.toggle('active', !sum);
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+$('tabSum').addEventListener('click', ()=>selectTab('sum'));
+$('tabQuiz').addEventListener('click', ()=>selectTab('quiz'));
+$('tabSum').addEventListener('keydown', e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();selectTab('sum');}});
+$('tabQuiz').addEventListener('keydown', e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();selectTab('quiz');}});
+$('goQuizBtn').addEventListener('click', ()=>selectTab('quiz'));
+
+/* ===================== กลไกข้อสอบ ===================== */
+$('poolCount').textContent = BANK.length;
+let chosenMode = 30, quiz = [], idx = 0, score = 0, answered = false;
+
+$('modes').querySelectorAll('.mode').forEach(m=>{
+  const set = ()=>{
+    $('modes').querySelectorAll('.mode').forEach(x=>x.setAttribute('aria-pressed','false'));
+    m.setAttribute('aria-pressed','true');
+    chosenMode = m.dataset.n === 'all' ? 'all' : parseInt(m.dataset.n);
+  };
+  m.addEventListener('click', set);
+  m.addEventListener('keydown', e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();set();}});
+});
+
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+
+function buildQuiz(){
+  let pool = shuffle(BANK);
+  const n = chosenMode==='all' ? pool.length : Math.min(chosenMode,pool.length);
+  pool = pool.slice(0,n);
+  quiz = pool.map(item=>{
+    const order = shuffle(item.o.map((_,i)=>i));
+    return {cat:item.cat,q:item.q,e:item.e,opts:order.map(i=>item.o[i]),correct:order.indexOf(item.c),picked:null};
+  });
+  idx=0;score=0;
+}
+function start(){
+  buildQuiz();
+  $('startScreen').classList.add('hidden');
+  $('resultScreen').classList.add('hidden');
+  $('quizScreen').classList.remove('hidden');
+  renderQ();
+}
+function renderQ(){
+  answered=false;
+  const it=quiz[idx];
+  $('qCount').textContent=`ข้อ ${idx+1} / ${quiz.length}`;
+  $('scoreLive').textContent=`ถูก ${score}`;
+  $('bar').style.width=(idx/quiz.length*100)+'%';
+  $('qCat').textContent=it.cat;
+  $('qText').textContent=it.q;
+  $('explain').classList.remove('show');$('explain').innerHTML='';
+  $('nextBtn').classList.add('hidden');
+  $('nextBtn').textContent=(idx===quiz.length-1)?'ดูผลคะแนน':'ข้อถัดไป';
+  const box=$('opts');box.innerHTML='';
+  const keys=['ก','ข','ค','ง','จ'];
+  it.opts.forEach((text,i)=>{
+    const b=document.createElement('button');
+    b.className='opt';
+    b.innerHTML=`<span class="key">${keys[i]}</span><span>${text}</span>`;
+    b.addEventListener('click',()=>pick(i,b));
+    box.appendChild(b);
+  });
+}
+function pick(i){
+  if(answered)return;answered=true;
+  const it=quiz[idx];it.picked=i;
+  $('opts').querySelectorAll('.opt').forEach((b,bi)=>{
+    b.disabled=true;
+    if(bi===it.correct)b.classList.add('correct');
+    else if(bi===i)b.classList.add('wrong');
+    else b.classList.add('dim');
+  });
+  if(i===it.correct)score++;
+  $('scoreLive').textContent=`ถูก ${score}`;
+  $('explain').innerHTML=(i===it.correct?'✓ ถูกต้อง — ':'✗ คำตอบที่ถูกคือข้อที่เน้นสีเขียว — ')+it.e;
+  $('explain').classList.add('show');
+  $('nextBtn').classList.remove('hidden');
+  $('bar').style.width=((idx+1)/quiz.length*100)+'%';
+}
+$('nextBtn').addEventListener('click',()=>{
+  if(idx<quiz.length-1){idx++;renderQ();window.scrollTo({top:0,behavior:'smooth'});}
+  else showResult();
+});
+function showResult(){
+  $('quizScreen').classList.add('hidden');
+  $('resultScreen').classList.remove('hidden');
+  const total=quiz.length, pct=Math.round(score/total*100);
+  let col='var(--red)',verdict='ต้องทบทวนอีกหน่อย',sub='ลองอ่านแท็บสรุปแล้วทำชุดใหม่ จุดที่พลาดมักเป็นตัวเลขและตำแหน่งที่คล้ายกัน';
+  if(pct>=80){col='var(--green)';verdict='ยอดเยี่ยม พร้อมสอบ';sub='แม่นทั้งเนื้อหาและช้อยหลอก รักษาระดับนี้ไว้';}
+  else if(pct>=60){col='var(--orange)';verdict='ผ่านเกณฑ์ดี';sub='ฐานแน่นแล้ว เก็บข้อที่พลาดด้านล่างให้ครบจะปลอดภัยขึ้น';}
+  else if(pct>=40){col='var(--orange-2)';verdict='พอใช้ ใกล้แล้ว';sub='เนื้อหาหลักเริ่มจับได้ เน้นทบทวนหมวดที่ตอบผิดบ่อย';}
+  $('ring').style.background=`conic-gradient(${col} ${pct*3.6}deg, var(--orange-soft) 0)`;
+  $('ring').innerHTML=`<div style="width:100%;height:100%;border-radius:50%;background:var(--paper);display:grid;place-items:center">
+    <div style="text-align:center"><div class="pct" style="color:${col}">${pct}%</div><div class="of">${score} / ${total}</div></div></div>`;
+  $('verdict').textContent=verdict;$('verdict').style.color=col;
+  $('verdictSub').textContent=sub;
+  const wrong=quiz.filter(x=>x.picked!==x.correct);
+  const list=$('reviewList');list.innerHTML='';
+  if(wrong.length===0){
+    list.innerHTML=`<div class="rev" style="text-align:center;color:var(--green)">เก็บครบทุกข้อ ไม่มีข้อผิดให้ทบทวน 🎯</div>`;
+  }else{
+    wrong.forEach(it=>{
+      const div=document.createElement('div');div.className='rev';
+      const youText=it.picked==null?'ไม่ได้ตอบ':it.opts[it.picked];
+      div.innerHTML=`<div class="rev-q"><span class="mark">✗</span><span>${it.q}</span></div>
+        <div class="rev-line">คุณตอบ: <span class="you-wrong">${youText}</span></div>
+        <div class="rev-line">คำตอบที่ถูก: <span class="ans">${it.opts[it.correct]}</span></div>
+        <div class="rev-line" style="margin-top:6px">${it.e}</div>`;
+      list.appendChild(div);
+    });
+  }
+}
+$('startBtn').addEventListener('click',start);
+$('retryBtn').addEventListener('click',start);
+$('homeBtn').addEventListener('click',()=>{
+  $('resultScreen').classList.add('hidden');
+  $('startScreen').classList.remove('hidden');
+});
+</script>
+</body>
+</html>

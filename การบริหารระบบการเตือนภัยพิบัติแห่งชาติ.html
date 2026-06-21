@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ระเบียบฯ เตือนภัยพิบัติแห่งชาติ 2552 (แก้ไขโดยฉบับที่ 2 พ.ศ. 2562) · สรุป + ข้อสอบ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;500;600;700&family=Sarabun:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#fff7f0;--paper:#ffffff;--line:#f1e1d2;--line-strong:#ffd2ac;
+    --ink:#33271c;--ink-dim:#6b5a4a;--ink-faint:#9a8a7a;
+    --orange:#f56a00;--orange-2:#ff8a2b;--orange-soft:#fff0e3;--orange-tint:#fff6ee;
+    --red:#e0413f;--red-soft:#fdecec;--green:#1f9d63;--green-soft:#e8f7ef;
+    --blue:#2f6fd6;--blue-soft:#eaf1fc;
+    --mono:'IBM Plex Mono',monospace;--radius:14px;
+    --shadow:0 1px 2px rgba(120,70,20,.04), 0 8px 24px rgba(180,90,20,.06);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{font-family:'Sarabun',system-ui,sans-serif;
+    background:radial-gradient(900px 420px at 90% -8%, #ffe6cf 0%, transparent 60%),
+      radial-gradient(700px 360px at -8% 4%, #ffeede 0%, transparent 55%),var(--bg);
+    color:var(--ink);min-height:100vh;line-height:1.62;padding:22px 16px 80px}
+  .wrap{max-width:780px;margin:0 auto}
+
+  .masthead{background:linear-gradient(135deg,var(--orange),var(--orange-2));border-radius:18px;padding:26px 26px 22px;color:#fff;box-shadow:0 10px 30px rgba(245,106,0,.22);position:relative;overflow:hidden}
+  .masthead::after{content:"";position:absolute;right:-40px;top:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.12)}
+  .masthead .eyebrow{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;opacity:.9;margin-bottom:8px}
+  .masthead h1{font-family:'Anuphan',sans-serif;font-weight:700;font-size:1.5rem;line-height:1.22;letter-spacing:-.01em;position:relative}
+  .masthead p{opacity:.95;margin-top:6px;font-size:.95rem;position:relative}
+
+  .tabs{display:flex;gap:8px;margin:18px 0 22px;position:sticky;top:10px;z-index:20}
+  .tab{flex:1;cursor:pointer;border:1px solid var(--line);background:var(--paper);border-radius:12px;padding:13px;text-align:center;font-family:'Anuphan',sans-serif;font-weight:600;font-size:1rem;color:var(--ink-dim);transition:.15s;box-shadow:var(--shadow);user-select:none}
+  .tab:hover{border-color:var(--line-strong)}
+  .tab[aria-selected="true"]{background:var(--orange);color:#fff;border-color:var(--orange)}
+  .tab small{display:block;font-weight:400;font-size:.74rem;opacity:.85;margin-top:1px}
+
+  .panel{display:none}
+  .panel.active{display:block;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:26px 24px;box-shadow:var(--shadow)}
+  @media(max-width:560px){.card{padding:20px 16px}body{padding:16px 10px 70px}.masthead h1{font-size:1.22rem}}
+
+  .sum h2{font-family:'Anuphan',sans-serif;font-weight:700;font-size:1.18rem;color:var(--orange);margin:26px 0 12px;padding-bottom:8px;border-bottom:2px solid var(--orange-soft);display:flex;align-items:center;gap:10px}
+  .sum h2:first-child{margin-top:0}
+  .sum h2 .num{font-family:var(--mono);font-size:.78rem;background:var(--orange);color:#fff;width:26px;height:26px;border-radius:7px;display:grid;place-items:center;flex:none}
+  .sum h3{font-family:'Anuphan',sans-serif;font-weight:600;font-size:1rem;color:var(--ink);margin:16px 0 8px}
+  .sum p{color:var(--ink-dim);margin-bottom:10px}
+  .sum ul{list-style:none;margin:6px 0 12px}
+  .sum li{position:relative;padding-left:20px;margin-bottom:6px;color:var(--ink-dim)}
+  .sum li::before{content:"▸";position:absolute;left:0;color:var(--orange);font-size:.9rem}
+  .sum b{color:var(--ink)}
+  .sum .hl{background:linear-gradient(transparent 60%, #ffe0c2 60%);padding:0 2px;font-weight:600;color:var(--ink)}
+
+  .callout{background:var(--orange-tint);border:1px solid var(--line);border-left:4px solid var(--orange);border-radius:0 10px 10px 0;padding:12px 15px;margin:12px 0;color:var(--ink-dim);font-size:.95rem}
+  .callout b{color:var(--ink)}
+  .callout.blue{background:var(--blue-soft);border-left-color:var(--blue)}
+
+  table.tb{width:100%;border-collapse:collapse;margin:10px 0 14px;font-size:.93rem}
+  table.tb th,table.tb td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+  table.tb th{background:var(--orange-soft);color:var(--ink);font-family:'Anuphan',sans-serif;font-weight:600;font-size:.85rem}
+  table.tb td{color:var(--ink-dim)}
+  table.tb td b{color:var(--ink)}
+  .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .old{color:#b06a4a;text-decoration:line-through;text-decoration-color:#e0a07a}
+  .new{color:var(--green);font-weight:600}
+  table.tb th.colnew{background:var(--green-soft);color:#0e5a38}
+
+  .meta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:4px 0 22px}
+  @media(max-width:520px){.meta-grid{grid-template-columns:1fr 1fr}}
+  .chip{border:1px solid var(--line);border-radius:12px;background:var(--orange-tint);padding:12px 14px}
+  .chip b{display:block;font-family:'Anuphan',sans-serif;font-size:1.35rem;color:var(--orange);line-height:1}
+  .chip span{font-size:.78rem;color:var(--ink-faint)}
+
+  .field-label{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;color:var(--ink-faint);text-transform:uppercase;margin-bottom:9px}
+  .modes{display:flex;gap:8px;margin-bottom:22px;flex-wrap:wrap}
+  .mode{flex:1;min-width:90px;cursor:pointer;text-align:center;border:1px solid var(--line);border-radius:11px;background:var(--paper);padding:13px 8px;font-family:'Anuphan',sans-serif;font-weight:600;color:var(--ink-dim);transition:.15s;user-select:none}
+  .mode small{display:block;font-weight:400;font-size:.72rem;color:var(--ink-faint);margin-top:2px}
+  .mode[aria-pressed="true"]{border-color:var(--orange);background:var(--orange);color:#fff}
+  .mode[aria-pressed="true"] small{color:#ffe7d3}
+
+  .btn{width:100%;cursor:pointer;border:none;font-family:'Anuphan',sans-serif;font-weight:700;font-size:1.05rem;border-radius:12px;padding:15px;transition:.15s}
+  .btn-go{background:var(--orange);color:#fff;box-shadow:0 6px 16px rgba(245,106,0,.25)}
+  .btn-go:hover{filter:brightness(1.05)}
+  .btn-ghost{background:transparent;border:1px solid var(--line-strong);color:var(--orange);font-size:.95rem;padding:13px}
+  .btn-ghost:hover{background:var(--orange-soft)}
+  .btn-row{display:flex;gap:10px;margin-top:14px}
+  .btn-row .btn{margin:0}
+
+  .prog-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px}
+  .qcount{font-family:var(--mono);font-size:.78rem;color:var(--ink-dim)}
+  .score-live{font-family:var(--mono);font-size:.78rem;color:var(--orange);font-weight:600}
+  .track{height:7px;border-radius:7px;background:var(--orange-soft);overflow:hidden;margin-bottom:24px}
+  .bar{height:100%;width:0;background:linear-gradient(90deg,var(--orange),var(--orange-2));transition:width .35s ease}
+
+  .qcat{display:inline-block;font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);background:var(--orange-soft);padding:4px 10px;border-radius:20px;margin-bottom:14px}
+  .qtext{font-family:'Anuphan',sans-serif;font-weight:600;font-size:1.2rem;line-height:1.45;margin-bottom:20px;color:var(--ink)}
+
+  .opts{display:flex;flex-direction:column;gap:10px}
+  .opt{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:12px;background:var(--paper);padding:13px 14px;cursor:pointer;transition:.12s;width:100%;text-align:left;font-family:'Sarabun',sans-serif;font-size:1rem;color:var(--ink);line-height:1.5}
+  .opt:hover:not(:disabled){border-color:var(--line-strong);background:var(--orange-tint)}
+  .opt:disabled{cursor:default}
+  .opt .key{font-family:var(--mono);font-weight:600;font-size:.82rem;flex:none;width:26px;height:26px;border-radius:7px;display:grid;place-items:center;border:1px solid var(--line);color:var(--ink-dim);margin-top:1px}
+  .opt.correct{border-color:var(--green);background:var(--green-soft)}
+  .opt.correct .key{background:var(--green);color:#fff;border-color:var(--green)}
+  .opt.wrong{border-color:var(--red);background:var(--red-soft)}
+  .opt.wrong .key{background:var(--red);color:#fff;border-color:var(--red)}
+  .opt.dim{opacity:.55}
+
+  .explain{margin-top:16px;border-left:3px solid var(--orange);background:var(--orange-tint);border-radius:0 10px 10px 0;padding:13px 16px;font-size:.95rem;color:var(--ink-dim);display:none}
+  .explain.show{display:block;animation:fade .25s ease}
+  .explain b{color:var(--ink)}
+
+  .nav{margin-top:22px}
+
+  .result-hero{text-align:center;padding:6px 0 16px}
+  .result-ring{width:140px;height:140px;border-radius:50%;margin:0 auto 16px;display:grid;place-items:center;padding:10px}
+  .result-ring .pct{font-family:'Anuphan',sans-serif;font-weight:700;font-size:2.3rem;line-height:1}
+  .result-ring .of{font-family:var(--mono);font-size:.76rem;color:var(--ink-dim);margin-top:4px}
+  .verdict{font-family:'Anuphan',sans-serif;font-weight:700;font-size:1.35rem;margin-bottom:6px}
+  .verdict-sub{color:var(--ink-dim);margin-bottom:22px}
+
+  .review-h{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);margin:10px 0 12px}
+  .rev{border:1px solid var(--line);border-radius:12px;padding:14px 15px;margin-bottom:10px;background:var(--orange-tint)}
+  .rev-q{font-family:'Anuphan',sans-serif;font-weight:600;font-size:.98rem;margin-bottom:8px;display:flex;gap:9px;color:var(--ink)}
+  .rev-q .mark{flex:none;font-family:var(--mono);font-weight:600;color:var(--red)}
+  .rev-line{font-size:.9rem;color:var(--ink-dim);padding-left:22px}
+  .rev-line .you-wrong{color:var(--red)}
+  .rev-line .ans{color:var(--green);font-weight:600}
+
+  .foot{text-align:center;margin-top:24px;font-size:.8rem;color:var(--ink-faint)}
+  .hidden{display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="masthead">
+    <div class="eyebrow">พ.ศ. 2552 · แก้ไขโดยฉบับที่ 2 พ.ศ. 2562</div>
+    <h1>การบริหารระบบการเตือนภัยพิบัติแห่งชาติ</h1>
+    <p>สรุปฉบับปัจจุบัน + ข้อสอบปรนัย เน้นจุด “เดิม → ใหม่” ที่ออกสอบบ่อย</p>
+  </div>
+
+  <div class="tabs" role="tablist">
+    <div class="tab" id="tabSum" role="tab" aria-selected="true" tabindex="0">สรุปเนื้อหา<small>เดิม → ใหม่</small></div>
+    <div class="tab" id="tabQuiz" role="tab" aria-selected="false" tabindex="0">ทำข้อสอบ<small>34 ข้อ พร้อมเฉลย</small></div>
+  </div>
+
+  <!-- ============================ SUMMARY ============================ -->
+  <section class="panel active" id="panelSum">
+    <div class="card sum">
+
+      <h2><span class="num">1</span>ฉบับที่ 2 พ.ศ. 2562 — แก้ทำไม</h2>
+      <p>ออกเพื่อให้สอดคล้องกับ <b>มาตรา 18 แห่ง พ.ร.บ. ปรับปรุงกระทรวง ทบวง กรม (ฉบับที่ 17) พ.ศ. 2559</b> ที่บัญญัติให้ <span class="hl">โอนอำนาจหน้าที่ของศูนย์เตือนภัยพิบัติแห่งชาติ จากสำนักงานปลัดกระทรวง ICT มาเป็นอำนาจหน้าที่ของกรมป้องกันและบรรเทาสาธารณภัย (ปภ.) กระทรวงมหาดไทย</span></p>
+      <div class="scroll"><table class="tb">
+        <tr><th>ประเด็น</th><th>สาระสำคัญ</th></tr>
+        <tr><td>อาศัยอำนาจตาม</td><td><b>มาตรา 11 (8)</b> แห่ง พ.ร.บ. ระเบียบบริหารราชการแผ่นดิน พ.ศ. 2534 (เหมือนฉบับ 2552)</td></tr>
+        <tr><td>ผู้ลงนาม</td><td><b>พลเอก ประยุทธ์ จันทร์โอชา</b> (นายกรัฐมนตรี)</td></tr>
+        <tr><td>ลงราชกิจจานุเบกษา</td><td><b>9 กรกฎาคม 2562</b> (เล่ม 136 ตอนพิเศษ 174 ง)</td></tr>
+        <tr><td>แก้ไขข้อความคลาดเคลื่อน</td><td><b>1 สิงหาคม 2562</b> — แก้ข้อ 21 บรรทัดที่ 2</td></tr>
+        <tr><td>วันใช้บังคับ</td><td>ตั้งแต่<b>วันถัดจาก</b>วันประกาศในราชกิจจานุเบกษา</td></tr>
+      </table></div>
+      <div class="callout blue">เทียบฉบับเดิม 2552: ลงนามโดย <b>นายอภิสิทธิ์ เวชชาชีวะ</b> (20/25 ธ.ค. 2552) — ระวังช้อยหลอกสลับชื่อ/ปี</div>
+
+      <h2><span class="num">2</span>สรุปสิ่งที่เปลี่ยน เดิม → ใหม่ ⭐</h2>
+      <div class="scroll"><table class="tb">
+        <tr><th>เรื่อง</th><th>เดิม (2552)</th><th class="colnew">ใหม่ (ฉบับที่ 2 / 2562)</th></tr>
+        <tr><td>ผู้รักษาการ</td><td class="old">รมว. ICT</td><td class="new">รมว. มหาดไทย</td></tr>
+        <tr><td>หน่วยเลขานุการ/ปฏิบัติการ</td><td class="old">ศภช.</td><td class="new">กรม ปภ.</td></tr>
+        <tr><td>ชื่อหมวด 2</td><td class="old">ศูนย์เตือนภัยพิบัติแห่งชาติ</td><td class="new">สำนักงานเลขานุการของ กภช.</td></tr>
+        <tr><td>ประธาน กภช.</td><td class="old">รองนายกฯ ที่นายกฯ มอบหมาย</td><td class="new">นายกฯ หรือ รองนายกฯ ที่นายกฯ มอบหมาย</td></tr>
+        <tr><td>รองประธานคนที่ 1</td><td class="old">รมว. ICT</td><td class="new">รมว. มหาดไทย</td></tr>
+        <tr><td>รองประธานคนที่ 2</td><td class="old">รมว. มหาดไทย</td><td class="new">รมว. ดิจิทัลเพื่อเศรษฐกิจและสังคม</td></tr>
+        <tr><td>กรรมการและเลขานุการ</td><td class="old">ผอ. ศภช.</td><td class="new">อธิบดีกรม ปภ.</td></tr>
+        <tr><td>ผู้ช่วยเลขานุการ</td><td class="old">จนท. ใน ศภช. ≤ 2 คน</td><td class="new">ข้าราชการกรม ปภ. ≤ 2 คน</td></tr>
+        <tr><td>วาระผู้ทรงคุณวุฒิ</td><td class="old">2 ปี</td><td class="new">4 ปี</td></tr>
+        <tr><td>องค์ประชุม</td><td class="old">ไม่น้อยกว่ากึ่งหนึ่ง</td><td class="new">ไม่น้อยกว่าหนึ่งในสาม</td></tr>
+        <tr><td>ข้อ 6/1 (เพิ่มใหม่)</td><td class="old">—</td><td class="new">เหตุพ้นตำแหน่งผู้ทรงคุณวุฒิ</td></tr>
+        <tr><td>ช่วยปฏิบัติงานที่ ปภ. (ข้อ 21)</td><td class="old">ไม่กำหนดเวลา</td><td class="new">คราวละไม่เกิน 6 เดือน</td></tr>
+      </table></div>
+      <div class="callout">⚠️ ตัวเลขที่ต้องระวังเป็นพิเศษ: <b>วาระ 2 ปี → 4 ปี</b> และ <b>องค์ประชุม กึ่งหนึ่ง → หนึ่งในสาม</b> (แต่ <b>ไม่เกิน 2 วาระติดต่อกัน</b> และ <b>ผู้ทรงคุณวุฒิไม่เกิน 5 คน</b> ยังคงเดิม)</div>
+
+      <h2><span class="num">3</span>องค์ประกอบ กภช. (ฉบับปัจจุบัน)</h2>
+      <ul>
+        <li><b>ประธาน:</b> นายกรัฐมนตรี หรือ รองนายกรัฐมนตรีที่นายกฯ มอบหมาย</li>
+        <li><b>รองประธาน 1:</b> รมว. มหาดไทย</li>
+        <li><b>รองประธาน 2:</b> รมว. ดิจิทัลเพื่อเศรษฐกิจและสังคม</li>
+        <li><b>รองประธาน 3:</b> ผู้ทรงคุณวุฒิ 1 คน (นายกฯ แต่งตั้ง)</li>
+        <li><b>กรรมการ:</b> ปลัดกระทรวงหลายกระทรวง · ผบ.สส./ทบ./ทร./ทอ. · ผบ.ตร. · อธิบดีหลายกรม · เลขาธิการ สทนช. · เลขาธิการ ศรชล. · ผอ.สสน. · ผอ. GISTDA · <b>เลขาธิการ กสทช.</b> · ผู้ทรงคุณวุฒิ ≤ 5 คน</li>
+        <li><b>กรรมการและเลขานุการ:</b> อธิบดีกรม ปภ.</li>
+        <li><b>ผู้ช่วยเลขานุการ:</b> ข้าราชการในกรม ปภ. ≤ 2 คน</li>
+      </ul>
+
+      <h2><span class="num">4</span>เหตุพ้นจากตำแหน่งผู้ทรงคุณวุฒิ (ข้อ 6/1 ใหม่)</h2>
+      <p>กรรมการผู้ทรงคุณวุฒิพ้นจากตำแหน่งเมื่อ:</p>
+      <ul>
+        <li>(1) ตาย · (2) ลาออก (ยื่นหนังสือต่อประธาน) · (3) นายกฯ ให้ออก</li>
+        <li>(4) เป็นบุคคลล้มละลายทุจริต</li>
+        <li>(5) เป็นคนไร้ความสามารถ หรือเสมือนไร้ความสามารถ</li>
+        <li>(6) ต้องโทษจำคุกโดยคำพิพากษาถึงที่สุด <b>ยกเว้นความผิดโดยประมาทหรือลหุโทษ</b></li>
+      </ul>
+      <div class="callout">พ้นก่อนวาระ → ผู้แต่งตั้งแทนอยู่ในตำแหน่ง <b>เท่ากับวาระที่เหลืออยู่</b> ของผู้ที่แต่งตั้งไว้แล้ว</div>
+
+      <h2><span class="num">5</span>การประชุม กภช. (ข้อ 8 ฉบับใหม่)</h2>
+      <ul>
+        <li>องค์ประชุม: <b>ไม่น้อยกว่าหนึ่งในสาม</b> ของกรรมการทั้งหมด</li>
+        <li>ประธานไม่อยู่ → รองประธาน <b>ตามลำดับ</b> ทำหน้าที่ ; ประธาน+รองประธานไม่อยู่ → กรรมการที่มาประชุม<b>เลือกกันเอง</b></li>
+        <li>วินิจฉัยชี้ขาด: <b>เสียงข้างมาก</b> ; คะแนนเท่ากัน <b>ประธานออกเสียงเพิ่มอีก 1 เสียง</b> เป็นเสียงชี้ขาด</li>
+      </ul>
+
+      <h2><span class="num">6</span>สำนักงานเลขานุการของ กภช. (หมวด 2 ใหม่)</h2>
+      <p><b>กรม ปภ.</b> ทำหน้าที่เป็นสำนักงานเลขานุการของ กภช. โดยมีหน้าที่ (ข้อ 10):</p>
+      <ul>
+        <li>รับผิดชอบงานธุรการ งานวิชาการ งานการประชุม และงานเลขานุการของ กภช.</li>
+        <li>ศึกษา วิเคราะห์ และจัดทำข้อเสนอเกี่ยวกับแนวทาง นโยบาย มาตรการ และแผนฯ เสนอต่อ กภช.</li>
+        <li>ประสานงานหน่วยราชการในการจัดเตรียมแนวทาง/นโยบาย/มาตรการ/แผนฯ</li>
+        <li>ประสานงานด้านการศึกษา วิเคราะห์ และวิจัยปัญหาและอุปสรรค</li>
+        <li>ปฏิบัติหน้าที่หรือดำเนินการอื่นใดที่จำเป็นตามที่ กภช. มอบหมาย</li>
+      </ul>
+
+      <h2><span class="num">7</span>เรื่องที่ยังคงเดิม (ฉบับที่ 2 ไม่ได้แก้)</h2>
+      <ul>
+        <li><b>นิยาม “ภัยพิบัติ” (ข้อ 4):</b> อัคคีภัย · วาตภัย · อุทกภัย · ธรณีพิบัติภัย ตลอดจนภัยอื่น ๆ</li>
+        <li><b>อำนาจหน้าที่ กภช. (ข้อ 7):</b> เสนอแนวทาง/นโยบาย/แผนฯ ต่อ ครม. · แต่งตั้งคณะอนุกรรมการ/คณะทำงาน · ออกระเบียบ ประกาศ คำสั่ง ฯลฯ</li>
+        <li><b>การระงับข้อขัดแย้ง:</b> หน่วยราชการไม่เห็นด้วยกับมติ กภช. → เสนอ <b>นายกรัฐมนตรีวินิจฉัยชี้ขาด</b></li>
+        <li><b>กรณีเร่งด่วน:</b> กภช. อาจเสนอ <b>ครม.</b> อนุมัติจัดสรรงบฯ เป็นกรณีพิเศษ</li>
+        <li><b>เงินงบฯ/เงินกู้/ต่างประเทศ:</b> ฉบับที่ 2 แก้ให้ <b>ปภ. กระทรวงมหาดไทย</b> เป็นผู้ขอทำความตกลง (เดิม สป.ICT)</li>
+      </ul>
+
+      <div class="callout"><b>คำย่อ:</b> กภช. = คณะกรรมการบริหารระบบการเตือนภัยพิบัติแห่งชาติ · ปภ. = กรมป้องกันและบรรเทาสาธารณภัย (เลขานุการ กภช. ฉบับปัจจุบัน) · ศภช. = ศูนย์เตือนภัยพิบัติแห่งชาติ (ตามฉบับเดิม 2552)</div>
+
+      <button class="btn btn-go" id="goQuizBtn" style="margin-top:8px">พร้อมแล้ว ไปทำข้อสอบ →</button>
+    </div>
+  </section>
+
+  <!-- ============================ QUIZ ============================ -->
+  <section class="panel" id="panelQuiz">
+    <div class="card" id="startScreen">
+      <div class="meta-grid">
+        <div class="chip"><b id="poolCount">34</b><span>ข้อในคลัง</span></div>
+        <div class="chip"><b>12</b><span>จุดที่ถูกแก้</span></div>
+        <div class="chip"><b>2562</b><span>ฉบับล่าสุด</span></div>
+      </div>
+      <p style="color:var(--ink-dim);margin-bottom:20px">เน้นข้อสอบ “เดิม → ใหม่” — ผู้รักษาการ ตำแหน่งเลขานุการ วาระ และองค์ประชุมที่เปลี่ยนตัวเลข อ่านโจทย์ว่าถามฉบับไหนให้ดี</p>
+      <div class="field-label">เลือกจำนวนข้อ</div>
+      <div class="modes" id="modes">
+        <div class="mode" data-n="12" role="button" tabindex="0" aria-pressed="false">12<small>อุ่นเครื่อง</small></div>
+        <div class="mode" data-n="20" role="button" tabindex="0" aria-pressed="true">20<small>มาตรฐาน</small></div>
+        <div class="mode" data-n="all" role="button" tabindex="0" aria-pressed="false">ทั้งหมด<small>ลุยเต็ม</small></div>
+      </div>
+      <button class="btn btn-go" id="startBtn">เริ่มทำข้อสอบ</button>
+      <div class="foot">สลับลำดับข้อและตัวเลือกใหม่ทุกครั้ง · เฉลย+คำอธิบายทันทีหลังเลือก</div>
+    </div>
+
+    <div class="card hidden" id="quizScreen">
+      <div class="prog-top">
+        <span class="qcount" id="qCount">ข้อ 1 / 20</span>
+        <span class="score-live" id="scoreLive">ถูก 0</span>
+      </div>
+      <div class="track"><div class="bar" id="bar"></div></div>
+      <div class="qcat" id="qCat">หมวด</div>
+      <div class="qtext" id="qText">โจทย์</div>
+      <div class="opts" id="opts"></div>
+      <div class="explain" id="explain"></div>
+      <div class="nav"><button class="btn btn-go hidden" id="nextBtn">ข้อถัดไป</button></div>
+    </div>
+
+    <div class="card hidden" id="resultScreen">
+      <div class="result-hero">
+        <div class="result-ring" id="ring"></div>
+        <div class="verdict" id="verdict">—</div>
+        <div class="verdict-sub" id="verdictSub">—</div>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-go" id="retryBtn">ทำชุดใหม่</button>
+        <button class="btn btn-ghost" id="homeBtn">กลับหน้าเริ่ม</button>
+      </div>
+      <div class="review-h">ทบทวนข้อที่ตอบผิด</div>
+      <div id="reviewList"></div>
+    </div>
+  </section>
+
+  <div class="foot">อ้างอิงระเบียบสำนักนายกรัฐมนตรี ว่าด้วยการบริหารระบบการเตือนภัยพิบัติแห่งชาติ พ.ศ. 2552 และฉบับที่ 2 พ.ศ. 2562</div>
+</div>
+
+<script>
+/* ===================== คลังข้อสอบ (ฉบับปัจจุบัน 2552 + ฉบับที่ 2 / 2562) ===================== */
+const BANK = [
+ {cat:"ฉบับที่ 2 / ข้อมูลทั่วไป", q:"ระเบียบสำนักนายกรัฐมนตรี ว่าด้วยการบริหารระบบการเตือนภัยพิบัติแห่งชาติ (ฉบับที่ 2) พ.ศ. 2562 ประกาศในราชกิจจานุเบกษาเมื่อใด?",
+  o:["9 กรกฎาคม 2562","20 ธันวาคม 2552","1 สิงหาคม 2562","9 กรกฎาคม 2559"], c:0,
+  e:"ฉบับที่ 2 ลงราชกิจจานุเบกษา <b>9 กรกฎาคม 2562</b> (1 ส.ค. 2562 = วันแก้ไขข้อความคลาดเคลื่อน, 20 ธ.ค. 2552 = ฉบับเดิม)"},
+
+ {cat:"ฉบับที่ 2 / ข้อมูลทั่วไป", q:"นายกรัฐมนตรีผู้ลงนามในระเบียบฉบับที่ 2 พ.ศ. 2562 คือผู้ใด?",
+  o:["นายอภิสิทธิ์ เวชชาชีวะ","พลเอก ประยุทธ์ จันทร์โอชา","นายสมคิด จาตุศรีพิทักษ์","พลเอก ประวิตร วงษ์สุวรรณ"], c:1,
+  e:"ฉบับที่ 2 ลงนามโดย <b>พลเอก ประยุทธ์ จันทร์โอชา</b> (ฉบับเดิม 2552 ลงนามโดยนายอภิสิทธิ์ เวชชาชีวะ)"},
+
+ {cat:"ฉบับที่ 2 / เหตุผล", q:"เหตุผลหลักในการออกระเบียบฉบับที่ 2 พ.ศ. 2562 คือข้อใด?",
+  o:["เพื่อโอนศูนย์เตือนภัยพิบัติแห่งชาติจาก สป.ICT มาเป็นอำนาจหน้าที่ของกรม ปภ. กระทรวงมหาดไทย","เพื่อยกฐานะศูนย์เตือนภัยพิบัติแห่งชาติขึ้นเป็นกรม","เพื่อยุบเลิกคณะกรรมการ กภช.","เพื่อโอนภารกิจไปยังกระทรวงดิจิทัลเพื่อเศรษฐกิจและสังคม"], c:0,
+  e:"ออกเพื่อให้สอดคล้องกับมาตรา 18 แห่ง พ.ร.บ. ปรับปรุงกระทรวง ทบวง กรม (ฉบับที่ 17) พ.ศ. 2559 ที่ <b>โอน ศภช. จาก สป.ICT มาเป็นของกรม ปภ. กระทรวงมหาดไทย</b>"},
+
+ {cat:"ฉบับที่ 2 / ข้อมูลทั่วไป", q:"ระเบียบฉบับที่ 2 พ.ศ. 2562 ออกโดยอาศัยอำนาจตามมาตราใด?",
+  o:["มาตรา 11 (8) แห่ง พ.ร.บ. ระเบียบบริหารราชการแผ่นดิน พ.ศ. 2534","มาตรา 18 แห่ง พ.ร.บ. ปรับปรุงกระทรวง ทบวง กรม (ฉบับที่ 17) พ.ศ. 2559","มาตรา 44 แห่ง พ.ร.บ. ป้องกันและบรรเทาสาธารณภัย พ.ศ. 2550","มาตรา 11 (6) แห่ง พ.ร.บ. ระเบียบบริหารราชการแผ่นดิน พ.ศ. 2534"], c:0,
+  e:"ยังคงอาศัยอำนาจ <b>มาตรา 11 (8)</b> เหมือนฉบับ 2552 (มาตรา 18 แห่งฉบับที่ 17/2559 เป็น “เหตุผล” ที่ต้องแก้ ไม่ใช่ฐานอำนาจในการวางระเบียบ)"},
+
+ {cat:"ฉบับที่ 2 / ข้อมูลทั่วไป", q:"การแก้ไขข้อความคลาดเคลื่อนของฉบับที่ 2 (ลงราชกิจจาฯ 1 สิงหาคม 2562) เป็นการแก้ไขเรื่องใด?",
+  o:["แก้ไขความในข้อ 21 บรรทัดที่ 2","แก้ไขเรื่องประธานกรรมการในข้อ 6","แก้ไขวาระกรรมการผู้ทรงคุณวุฒิ","แก้ไของค์ประชุมในข้อ 8"], c:0,
+  e:"แก้ไขข้อความคลาดเคลื่อนที่ <b>ข้อ 21 บรรทัดที่ 2</b> (ตัดข้อความ “หรือนายกรัฐมนตรีมีมติ...” ให้เหลือ “หรือพนักงานหรือลูกจ้างของ...”)"},
+
+ {cat:"ผู้รักษาการ", q:"ตามฉบับที่ 2 พ.ศ. 2562 ผู้ใดเป็นผู้รักษาการตามระเบียบนี้?",
+  o:["รัฐมนตรีว่าการกระทรวงเทคโนโลยีสารสนเทศและการสื่อสาร","รัฐมนตรีว่าการกระทรวงมหาดไทย","รัฐมนตรีว่าการกระทรวงดิจิทัลเพื่อเศรษฐกิจและสังคม","นายกรัฐมนตรี"], c:1,
+  e:"ฉบับที่ 2 แก้ข้อ 5 ให้ <b>รมว. มหาดไทย</b> รักษาการ (เดิม 2552 คือ รมว. ICT) — สอดคล้องกับการโอนภารกิจมาที่ ปภ."},
+
+ {cat:"ผู้รักษาการ", q:"ตามระเบียบฉบับเดิม พ.ศ. 2552 (ก่อนแก้ไข) ผู้รักษาการคือผู้ใด?",
+  o:["รัฐมนตรีว่าการกระทรวงมหาดไทย","รัฐมนตรีว่าการกระทรวงเทคโนโลยีสารสนเทศและการสื่อสาร","นายกรัฐมนตรี","ปลัดสำนักนายกรัฐมนตรี"], c:1,
+  e:"ฉบับเดิม 2552 ผู้รักษาการคือ <b>รมว. ICT</b> ฉบับที่ 2 จึงแก้เป็น รมว. มหาดไทย"},
+
+ {cat:"หน่วยเลขานุการ", q:"ตามฉบับที่ 2 หน่วยงานใดทำหน้าที่เป็นสำนักงานเลขานุการของ กภช.?",
+  o:["ศูนย์เตือนภัยพิบัติแห่งชาติ (ศภช.)","กรมป้องกันและบรรเทาสาธารณภัย (ปภ.)","สำนักงานปลัดกระทรวงดิจิทัลเพื่อเศรษฐกิจและสังคม","สำนักงานสภาความมั่นคงแห่งชาติ"], c:1,
+  e:"ฉบับที่ 2 แก้หมวด 2 ให้ <b>กรม ปภ.</b> ทำหน้าที่เป็นสำนักงานเลขานุการของ กภช. (เดิมคือ ศภช.)"},
+
+ {cat:"หน่วยเลขานุการ", q:"ฉบับที่ 2 แก้ชื่อหมวด 2 จาก “ศูนย์เตือนภัยพิบัติแห่งชาติ” เป็นชื่อใด?",
+  o:["ศูนย์เตือนภัยพิบัติแห่งชาติ","สำนักงานเลขานุการของ กภช.","กองอำนวยการเตือนภัยแห่งชาติ","ศูนย์ปฏิบัติการฉุกเฉินแห่งชาติ"], c:1,
+  e:"หมวด 2 เปลี่ยนชื่อเป็น <b>“สำนักงานเลขานุการของ กภช.”</b>"},
+
+ {cat:"คณะกรรมการ", q:"ตามฉบับที่ 2 ผู้ใดเป็นประธานกรรมการ กภช.?",
+  o:["รองนายกรัฐมนตรีที่นายกฯ มอบหมายเท่านั้น","นายกรัฐมนตรี หรือรองนายกรัฐมนตรีซึ่งนายกฯ มอบหมาย","รัฐมนตรีว่าการกระทรวงมหาดไทย","รัฐมนตรีว่าการกระทรวงดิจิทัลเพื่อเศรษฐกิจและสังคม"], c:1,
+  e:"ฉบับที่ 2 ขยายให้ <b>นายกรัฐมนตรี หรือ รองนายกฯ ที่นายกฯ มอบหมาย</b> เป็นประธาน (เดิมเป็นรองนายกฯ เท่านั้น)"},
+
+ {cat:"คณะกรรมการ", q:"ตามฉบับที่ 2 ผู้ใดเป็นรองประธานกรรมการ กภช. คนที่หนึ่ง?",
+  o:["รัฐมนตรีว่าการกระทรวงดิจิทัลเพื่อเศรษฐกิจและสังคม","รัฐมนตรีว่าการกระทรวงมหาดไทย","ปลัดกระทรวงมหาดไทย","อธิบดีกรม ปภ."], c:1,
+  e:"รองประธานคนที่ 1 = <b>รมว. มหาดไทย</b> (เดิมตำแหน่งนี้คือ รมว. ICT)"},
+
+ {cat:"คณะกรรมการ", q:"ตามฉบับที่ 2 ผู้ใดเป็นรองประธานกรรมการ กภช. คนที่สอง?",
+  o:["รัฐมนตรีว่าการกระทรวงมหาดไทย","รัฐมนตรีว่าการกระทรวงดิจิทัลเพื่อเศรษฐกิจและสังคม","รัฐมนตรีว่าการกระทรวงกลาโหม","รัฐมนตรีว่าการกระทรวงทรัพยากรธรรมชาติและสิ่งแวดล้อม"], c:1,
+  e:"รองประธานคนที่ 2 = <b>รมว. ดิจิทัลเพื่อเศรษฐกิจและสังคม</b> (ชื่อใหม่ของกระทรวง ICT เดิม)"},
+
+ {cat:"คณะกรรมการ", q:"ตามฉบับที่ 2 ผู้ใดเป็นกรรมการและเลขานุการของ กภช.?",
+  o:["ผู้อำนวยการศูนย์เตือนภัยพิบัติแห่งชาติ","อธิบดีกรมป้องกันและบรรเทาสาธารณภัย","ปลัดกระทรวงมหาดไทย","อธิบดีกรมอุตุนิยมวิทยา"], c:1,
+  e:"กรรมการและเลขานุการเปลี่ยนจาก ผอ.ศภช. เป็น <b>อธิบดีกรม ปภ.</b>"},
+
+ {cat:"คณะกรรมการ", q:"ตามฉบับที่ 2 ผู้ช่วยเลขานุการ กภช. แต่งตั้งจากผู้ใด และจำนวนเท่าใด?",
+  o:["เจ้าหน้าที่ในศูนย์เตือนภัยพิบัติแห่งชาติ ไม่เกิน 2 คน","ข้าราชการในกรม ปภ. ไม่เกิน 2 คน","ข้าราชการในกรม ปภ. ไม่เกิน 3 คน","ข้าราชการในสำนักนายกฯ ไม่เกิน 2 คน"], c:1,
+  e:"อธิบดีกรม ปภ. แต่งตั้ง <b>ข้าราชการในกรม ปภ. ไม่เกิน 2 คน</b> เป็นผู้ช่วยเลขานุการ (เดิมเป็น จนท. ใน ศภช.)"},
+
+ {cat:"คณะกรรมการ", q:"กรรมการผู้ทรงคุณวุฒิที่นายกรัฐมนตรีแต่งตั้งเป็นกรรมการ กภช. มีได้จำนวนเท่าใด?",
+  o:["ไม่เกิน 3 คน","ไม่เกิน 5 คน","ไม่เกิน 7 คน","ไม่เกิน 2 คน"], c:1,
+  e:"ผู้ทรงคุณวุฒิที่เป็นกรรมการ <b>ไม่เกิน 5 คน</b> (จำนวนนี้ไม่เปลี่ยนจากฉบับเดิม)"},
+
+ {cat:"วาระ (เปลี่ยน)", q:"ตามฉบับที่ 2 กรรมการผู้ทรงคุณวุฒิมีวาระดำรงตำแหน่งคราวละเท่าใด?",
+  o:["คราวละ 2 ปี","คราวละ 4 ปี","คราวละ 3 ปี","คราวละ 5 ปี"], c:1,
+  e:"ฉบับที่ 2 แก้วาระเป็น <b>คราวละ 4 ปี</b> (เดิม 2552 = 2 ปี) — เป็นจุดออกสอบสำคัญที่สลับตัวเลขกันบ่อย"},
+
+ {cat:"วาระ (เปลี่ยน)", q:"ตามระเบียบฉบับเดิม พ.ศ. 2552 กรรมการผู้ทรงคุณวุฒิมีวาระคราวละกี่ปี?",
+  o:["2 ปี","4 ปี","3 ปี","6 ปี"], c:0,
+  e:"ฉบับเดิม 2552 วาระ <b>2 ปี</b> ต่อมาฉบับที่ 2 จึงแก้เป็น 4 ปี"},
+
+ {cat:"วาระ", q:"กรรมการผู้ทรงคุณวุฒิที่พ้นตำแหน่งแล้ว อาจได้รับแต่งตั้งใหม่ได้ติดต่อกันไม่เกินกี่วาระ?",
+  o:["ไม่เกิน 1 วาระ","ไม่เกิน 2 วาระติดต่อกัน","ไม่เกิน 3 วาระติดต่อกัน","ไม่จำกัดจำนวนวาระ"], c:1,
+  e:"<b>ไม่เกิน 2 วาระติดต่อกัน</b> — ส่วนนี้ไม่เปลี่ยน (ฉบับที่ 2 เปลี่ยนเฉพาะจำนวนปีต่อวาระจาก 2 เป็น 4 ปี)"},
+
+ {cat:"องค์ประชุม (เปลี่ยน)", q:"ตามฉบับที่ 2 องค์ประชุมของ กภช. ต้องมีกรรมการมาประชุมจำนวนเท่าใด?",
+  o:["ไม่น้อยกว่ากึ่งหนึ่งของกรรมการทั้งหมด","ไม่น้อยกว่าหนึ่งในสามของกรรมการทั้งหมด","ไม่น้อยกว่าสองในสามของกรรมการทั้งหมด","ไม่น้อยกว่าสามในสี่ของกรรมการทั้งหมด"], c:1,
+  e:"ฉบับที่ 2 แก้องค์ประชุมเป็น <b>ไม่น้อยกว่าหนึ่งในสาม</b> (เดิม 2552 = กึ่งหนึ่ง)"},
+
+ {cat:"องค์ประชุม (เปลี่ยน)", q:"ตามระเบียบฉบับเดิม พ.ศ. 2552 องค์ประชุม กภช. ต้องมีกรรมการเท่าใด?",
+  o:["ไม่น้อยกว่าหนึ่งในสาม","ไม่น้อยกว่ากึ่งหนึ่ง","ไม่น้อยกว่าสองในสาม","ไม่น้อยกว่าสามในสี่"], c:1,
+  e:"ฉบับเดิม 2552 องค์ประชุม = <b>ไม่น้อยกว่ากึ่งหนึ่ง</b> ฉบับที่ 2 จึงแก้ลดเหลือหนึ่งในสาม"},
+
+ {cat:"ข้อ 6/1 (ใหม่)", q:"ข้อ 6/1 ที่เพิ่มขึ้นโดยฉบับที่ 2 เป็นเรื่องเกี่ยวกับสิ่งใด?",
+  o:["องค์ประชุมและการลงมติ","เหตุการพ้นจากตำแหน่งของกรรมการผู้ทรงคุณวุฒิ","อำนาจหน้าที่ของกรม ปภ.","การจัดทำแผนงานและโครงการ"], c:1,
+  e:"ข้อ 6/1 (ใหม่) กำหนด <b>เหตุการพ้นจากตำแหน่งของกรรมการผู้ทรงคุณวุฒิ</b> ไว้ 6 ประการ"},
+
+ {cat:"ข้อ 6/1 (ใหม่)", q:"ข้อใดไม่ใช่เหตุพ้นจากตำแหน่งของกรรมการผู้ทรงคุณวุฒิตามข้อ 6/1?",
+  o:["ตาย หรือลาออกโดยยื่นหนังสือต่อประธานกรรมการ","นายกรัฐมนตรีให้ออก","ขาดการประชุม 3 ครั้งติดต่อกันโดยไม่มีเหตุอันสมควร","เป็นบุคคลล้มละลายทุจริต"], c:2,
+  e:"เหตุพ้นตำแหน่ง 6 ข้อ: ตาย / ลาออก / นายกฯ ให้ออก / ล้มละลายทุจริต / ไร้ความสามารถหรือเสมือนไร้ความสามารถ / ต้องโทษจำคุก — ส่วน <b>“ขาดประชุม 3 ครั้ง”</b> เป็นช้อยหลอกที่ไม่มีในระเบียบนี้"},
+
+ {cat:"ข้อ 6/1 (ใหม่)", q:"กรณีต้องโทษจำคุกโดยคำพิพากษาถึงที่สุด กรรมการผู้ทรงคุณวุฒิจะไม่พ้นจากตำแหน่งหากเป็นความผิดประเภทใด?",
+  o:["ความผิดเกี่ยวกับทรัพย์","ความผิดที่ได้กระทำโดยประมาทหรือความผิดลหุโทษ","ความผิดทางการเมือง","ความผิดที่ศาลรอการลงโทษ"], c:1,
+  e:"ยกเว้น <b>ความผิดที่กระทำโดยประมาทหรือความผิดลหุโทษ</b> จึงจะไม่พ้นจากตำแหน่ง"},
+
+ {cat:"ข้อ 6/1 (ใหม่)", q:"กรณีกรรมการผู้ทรงคุณวุฒิพ้นจากตำแหน่งก่อนวาระ ผู้ได้รับแต่งตั้งให้ดำรงตำแหน่งแทนจะอยู่ในตำแหน่งเท่าใด?",
+  o:["ครบวาระใหม่ 4 ปีเต็ม","เท่ากับวาระที่เหลืออยู่ของกรรมการซึ่งได้แต่งตั้งไว้แล้ว","2 ปี","จนกว่าจะมีการแต่งตั้งคณะกรรมการชุดใหม่"], c:1,
+  e:"ผู้แต่งตั้งแทนอยู่ในตำแหน่ง <b>เท่ากับวาระที่เหลืออยู่</b> ของกรรมการผู้ทรงคุณวุฒิที่ได้แต่งตั้งไว้แล้ว"},
+
+ {cat:"การประชุม", q:"การวินิจฉัยชี้ขาดของที่ประชุม กภช. กรณีคะแนนเสียงเท่ากันให้ทำอย่างไร?",
+  o:["เลื่อนการพิจารณาออกไป","ประธานในที่ประชุมออกเสียงเพิ่มอีกหนึ่งเสียงเป็นเสียงชี้ขาด","ให้เลขานุการเป็นผู้ชี้ขาด","ให้ลงมติใหม่จนกว่าจะได้ข้อยุติ"], c:1,
+  e:"ถือเสียงข้างมาก ถ้าเท่ากัน <b>ประธานในที่ประชุมออกเสียงเพิ่มอีก 1 เสียง</b> เป็นเสียงชี้ขาด"},
+
+ {cat:"การประชุม", q:"หากประธานและรองประธานกรรมการไม่อยู่ในที่ประชุมหรือไม่อาจปฏิบัติหน้าที่ได้ จะดำเนินการอย่างไร?",
+  o:["เลื่อนการประชุมออกไปก่อน","ให้กรรมการที่มาประชุมเลือกกรรมการคนหนึ่งเป็นประธานในที่ประชุม","ให้เลขานุการทำหน้าที่ประธาน","ให้รายงานนายกรัฐมนตรีเพื่อแต่งตั้งประธานชั่วคราว"], c:1,
+  e:"ให้ <b>กรรมการที่มาประชุมเลือกกรรมการคนหนึ่งเป็นประธานในที่ประชุม</b> (กรณีประธานไม่อยู่ ให้รองประธานตามลำดับทำหน้าที่ก่อน)"},
+
+ {cat:"สำนักงานเลขานุการ", q:"“ปภ.” เป็นชื่อย่อของหน่วยงานใด ซึ่งทำหน้าที่สำนักงานเลขานุการของ กภช. ตามฉบับปัจจุบัน?",
+  o:["กรมป้องกันและบรรเทาสาธารณภัย","กรมการปกครอง","กองอำนวยการป้องกันภัยฝ่ายพลเรือน","สำนักป้องกันสาธารณภัย"], c:0,
+  e:"<b>ปภ. = กรมป้องกันและบรรเทาสาธารณภัย</b> ทำหน้าที่สำนักงานเลขานุการของ กภช. ตามฉบับที่ 2"},
+
+ {cat:"สำนักงานเลขานุการ", q:"ข้อใดคือหน้าที่ของสำนักงานเลขานุการของ กภช. (ข้อ 10 ฉบับใหม่)?",
+  o:["บัญชาการเหตุการณ์ในภาวะฉุกเฉินทั่วประเทศ","รับผิดชอบงานธุรการ งานวิชาการ งานการประชุม และงานเลขานุการของ กภช.","อนุมัติงบประมาณของหน่วยราชการ","ประกาศเขตพื้นที่ประสบสาธารณภัย"], c:1,
+  e:"สำนักงานเลขานุการ (ปภ.) <b>รับผิดชอบงานธุรการ วิชาการ การประชุม และงานเลขานุการของ กภช.</b> เป็นต้น"},
+
+ {cat:"สำนักงานเลขานุการ", q:"ข้อใดไม่ใช่หน้าที่ของสำนักงานเลขานุการของ กภช.?",
+  o:["ศึกษา วิเคราะห์ และจัดทำข้อเสนอเกี่ยวกับนโยบายและแผนฯ เสนอ กภช.","ประสานงานหน่วยราชการในด้านการศึกษา วิเคราะห์ และวิจัยปัญหาและอุปสรรค","วินิจฉัยชี้ขาดข้อขัดแย้งระหว่างหน่วยราชการ","ปฏิบัติหน้าที่อื่นใดที่จำเป็นตามที่ กภช. มอบหมาย"], c:2,
+  e:"การ <b>วินิจฉัยชี้ขาด</b> ข้อขัดแย้งเป็นอำนาจของ “นายกรัฐมนตรี” ไม่ใช่หน้าที่ของสำนักงานเลขานุการ"},
+
+ {cat:"เรื่องที่ถูกแก้", q:"กรณีต้องใช้เงินงบประมาณ เงินกู้ หรือความช่วยเหลือจากต่างประเทศ ตามฉบับที่ 2 หน่วยงานใดเป็นผู้ขอทำความตกลงไปยังหน่วยงานที่เกี่ยวข้อง?",
+  o:["สำนักงานปลัดกระทรวงดิจิทัลเพื่อเศรษฐกิจและสังคม","กรม ปภ. กระทรวงมหาดไทย","สำนักงบประมาณ","กระทรวงการคลัง"], c:1,
+  e:"ฉบับที่ 2 แก้ข้อ 13 วรรคสอง ให้ <b>ปภ. กระทรวงมหาดไทย</b> เป็นผู้ขอทำความตกลง (เดิมคือ สป.ICT)"},
+
+ {cat:"เรื่องที่ถูกแก้", q:"ตามข้อ 21 (ฉบับที่ 2) การให้ข้าราชการ/ลูกจ้างไปช่วยปฏิบัติงานเป็นเจ้าหน้าที่ของ ปภ. มีกำหนดคราวละไม่เกินเท่าใด?",
+  o:["ไม่เกิน 3 เดือน","ไม่เกิน 6 เดือน","ไม่เกิน 1 ปี","ไม่ได้กำหนดระยะเวลา"], c:1,
+  e:"ฉบับที่ 2 เพิ่มกำหนด <b>“คราวละไม่เกินหกเดือน”</b> (ฉบับเดิม 2552 ไม่ได้กำหนดระยะเวลาไว้)"},
+
+ {cat:"เรื่องที่ยังคงเดิม", q:"นิยาม “ภัยพิบัติ” (ข้อ 4 ซึ่งฉบับที่ 2 ไม่ได้แก้ไข) ระบุภัยที่ชัดเจน 4 ประเภทแรกคือข้อใด?",
+  o:["อัคคีภัย วาตภัย อุทกภัย ธรณีพิบัติภัย","อัคคีภัย วาตภัย อุทกภัย ภัยแล้ง","อัคคีภัย อุทกภัย ธรณีพิบัติภัย โรคระบาด","วาตภัย อุทกภัย ธรณีพิบัติภัย ภัยจากสารเคมี"], c:0,
+  e:"นิยามในข้อ 4 ไม่ถูกแก้ไข ยังคงเป็น <b>อัคคีภัย วาตภัย อุทกภัย ธรณีพิบัติภัย</b> ตลอดจนภัยอื่น ๆ (ระวังช้อยที่เติมภัยแล้ง/โรคระบาด/สารเคมี)"},
+
+ {cat:"เรื่องที่ยังคงเดิม", q:"กรณีหน่วยราชการไม่เห็นด้วยกับมติของ กภช. ให้นำเสนอผู้ใดวินิจฉัยชี้ขาด?",
+  o:["คณะรัฐมนตรี","นายกรัฐมนตรี","ประธาน กภช.","รัฐมนตรีว่าการกระทรวงมหาดไทย"], c:1,
+  e:"ให้นำเสนอ <b>นายกรัฐมนตรีวินิจฉัยชี้ขาด</b> (ส่วนนี้ฉบับที่ 2 ไม่ได้แก้ไข)"}
+];
+
+/* ===================== แท็บ ===================== */
+const $ = id => document.getElementById(id);
+function selectTab(which){
+  const sum = which==='sum';
+  $('tabSum').setAttribute('aria-selected', sum);
+  $('tabQuiz').setAttribute('aria-selected', !sum);
+  $('panelSum').classList.toggle('active', sum);
+  $('panelQuiz').classList.toggle('active', !sum);
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+$('tabSum').addEventListener('click', ()=>selectTab('sum'));
+$('tabQuiz').addEventListener('click', ()=>selectTab('quiz'));
+$('tabSum').addEventListener('keydown', e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();selectTab('sum');}});
+$('tabQuiz').addEventListener('keydown', e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();selectTab('quiz');}});
+$('goQuizBtn').addEventListener('click', ()=>selectTab('quiz'));
+
+/* ===================== กลไกข้อสอบ ===================== */
+$('poolCount').textContent = BANK.length;
+let chosenMode = 20, quiz = [], idx = 0, score = 0, answered = false;
+
+$('modes').querySelectorAll('.mode').forEach(m=>{
+  const set = ()=>{
+    $('modes').querySelectorAll('.mode').forEach(x=>x.setAttribute('aria-pressed','false'));
+    m.setAttribute('aria-pressed','true');
+    chosenMode = m.dataset.n === 'all' ? 'all' : parseInt(m.dataset.n);
+  };
+  m.addEventListener('click', set);
+  m.addEventListener('keydown', e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();set();}});
+});
+
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+
+function buildQuiz(){
+  let pool = shuffle(BANK);
+  const n = chosenMode==='all' ? pool.length : Math.min(chosenMode,pool.length);
+  pool = pool.slice(0,n);
+  quiz = pool.map(item=>{
+    const order = shuffle(item.o.map((_,i)=>i));
+    return {cat:item.cat,q:item.q,e:item.e,opts:order.map(i=>item.o[i]),correct:order.indexOf(item.c),picked:null};
+  });
+  idx=0;score=0;
+}
+function start(){
+  buildQuiz();
+  $('startScreen').classList.add('hidden');
+  $('resultScreen').classList.add('hidden');
+  $('quizScreen').classList.remove('hidden');
+  renderQ();
+}
+function renderQ(){
+  answered=false;
+  const it=quiz[idx];
+  $('qCount').textContent=`ข้อ ${idx+1} / ${quiz.length}`;
+  $('scoreLive').textContent=`ถูก ${score}`;
+  $('bar').style.width=(idx/quiz.length*100)+'%';
+  $('qCat').textContent=it.cat;
+  $('qText').textContent=it.q;
+  $('explain').classList.remove('show');$('explain').innerHTML='';
+  $('nextBtn').classList.add('hidden');
+  $('nextBtn').textContent=(idx===quiz.length-1)?'ดูผลคะแนน':'ข้อถัดไป';
+  const box=$('opts');box.innerHTML='';
+  const keys=['ก','ข','ค','ง','จ'];
+  it.opts.forEach((text,i)=>{
+    const b=document.createElement('button');
+    b.className='opt';
+    b.innerHTML=`<span class="key">${keys[i]}</span><span>${text}</span>`;
+    b.addEventListener('click',()=>pick(i,b));
+    box.appendChild(b);
+  });
+}
+function pick(i){
+  if(answered)return;answered=true;
+  const it=quiz[idx];it.picked=i;
+  $('opts').querySelectorAll('.opt').forEach((b,bi)=>{
+    b.disabled=true;
+    if(bi===it.correct)b.classList.add('correct');
+    else if(bi===i)b.classList.add('wrong');
+    else b.classList.add('dim');
+  });
+  if(i===it.correct)score++;
+  $('scoreLive').textContent=`ถูก ${score}`;
+  $('explain').innerHTML=(i===it.correct?'✓ ถูกต้อง — ':'✗ คำตอบที่ถูกคือข้อที่เน้นสีเขียว — ')+it.e;
+  $('explain').classList.add('show');
+  $('nextBtn').classList.remove('hidden');
+  $('bar').style.width=((idx+1)/quiz.length*100)+'%';
+}
+$('nextBtn').addEventListener('click',()=>{
+  if(idx<quiz.length-1){idx++;renderQ();window.scrollTo({top:0,behavior:'smooth'});}
+  else showResult();
+});
+function showResult(){
+  $('quizScreen').classList.add('hidden');
+  $('resultScreen').classList.remove('hidden');
+  const total=quiz.length, pct=Math.round(score/total*100);
+  let col='var(--red)',verdict='ต้องทบทวนอีกหน่อย',sub='ลองอ่านแท็บสรุป เน้นตาราง “เดิม → ใหม่” แล้วทำชุดใหม่';
+  if(pct>=80){col='var(--green)';verdict='ยอดเยี่ยม พร้อมสอบ';sub='แม่นทั้งฉบับเดิมและฉบับที่แก้ไข รักษาระดับนี้ไว้';}
+  else if(pct>=60){col='var(--orange)';verdict='ผ่านเกณฑ์ดี';sub='ฐานแน่นแล้ว เก็บข้อที่พลาดด้านล่างให้ครบจะปลอดภัยขึ้น';}
+  else if(pct>=40){col='var(--orange-2)';verdict='พอใช้ ใกล้แล้ว';sub='จับหลักได้แล้ว เน้นจุดที่ตัวเลข/ตำแหน่งเปลี่ยนจากฉบับเดิม';}
+  $('ring').style.background=`conic-gradient(${col} ${pct*3.6}deg, var(--orange-soft) 0)`;
+  $('ring').innerHTML=`<div style="width:100%;height:100%;border-radius:50%;background:var(--paper);display:grid;place-items:center">
+    <div style="text-align:center"><div class="pct" style="color:${col}">${pct}%</div><div class="of">${score} / ${total}</div></div></div>`;
+  $('verdict').textContent=verdict;$('verdict').style.color=col;
+  $('verdictSub').textContent=sub;
+  const wrong=quiz.filter(x=>x.picked!==x.correct);
+  const list=$('reviewList');list.innerHTML='';
+  if(wrong.length===0){
+    list.innerHTML=`<div class="rev" style="text-align:center;color:var(--green)">เก็บครบทุกข้อ ไม่มีข้อผิดให้ทบทวน 🎯</div>`;
+  }else{
+    wrong.forEach(it=>{
+      const div=document.createElement('div');div.className='rev';
+      const youText=it.picked==null?'ไม่ได้ตอบ':it.opts[it.picked];
+      div.innerHTML=`<div class="rev-q"><span class="mark">✗</span><span>${it.q}</span></div>
+        <div class="rev-line">คุณตอบ: <span class="you-wrong">${youText}</span></div>
+        <div class="rev-line">คำตอบที่ถูก: <span class="ans">${it.opts[it.correct]}</span></div>
+        <div class="rev-line" style="margin-top:6px">${it.e}</div>`;
+      list.appendChild(div);
+    });
+  }
+}
+$('startBtn').addEventListener('click',start);
+$('retryBtn').addEventListener('click',start);
+$('homeBtn').addEventListener('click',()=>{
+  $('resultScreen').classList.add('hidden');
+  $('startScreen').classList.remove('hidden');
+});
+</script>
+</body>
+</html>

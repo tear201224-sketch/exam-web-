@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบสรุปย่อและข้อสอบ พ.ร.บ. ปรับปรุงกระทรวง ทบวง กรม พ.ศ. ๒๕๔๕</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Sarabun -->
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sarabun: ['Sarabun', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            200: '#fed7aa',
+                            300: '#fdba74',
+                            400: '#fb923c',
+                            500: '#f97316', // Primary Orange Accent
+                            600: '#ea580c',
+                            700: '#c2410c',
+                            800: '#9a3412',
+                            900: '#7c2d12',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background-color: #fafafa;
+        }
+        /* Custom premium scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #fed7aa;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f97316;
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased min-h-screen flex flex-col">
+
+    <!-- Top Premium Navigation Bar -->
+    <header class="sticky top-0 z-40 bg-white border-b border-orange-100 shadow-sm backdrop-blur-md bg-white/95">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-500 to-amber-500 flex items-center justify-center text-white shadow-md shadow-brand-500/20">
+                        <i class="fa-solid fa-sitemap text-lg"></i>
+                    </div>
+                    <div>
+                        <span class="font-bold text-base sm:text-lg text-slate-900 tracking-tight block leading-tight">พ.ร.บ. ปรับปรุงกระทรวง ทบวง กรม ๒๕๔๕</span>
+                        <span class="text-[10px] sm:text-xs text-brand-600 font-semibold tracking-wider uppercase">สรุปพรีเมียม (ม.1 - 46) & คลังข้อสอบปราบเซียน (๓๐ ข้อ)</span>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-1.5 sm:gap-2">
+                    <button onclick="switchTab('summary')" id="tab-summary-btn" class="px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg font-medium text-xs sm:text-sm transition-all duration-200 bg-brand-500 text-white shadow-sm">
+                        <i class="fa-solid fa-book-open mr-1.5"></i> สรุปเนื้อหา
+                    </button>
+                    <button onclick="switchTab('quiz')" id="tab-quiz-btn" class="px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg font-medium text-xs sm:text-sm transition-all duration-200 text-slate-600 hover:text-brand-600 hover:bg-brand-50">
+                        <i class="fa-solid fa-graduation-cap mr-1.5"></i> ข้อสอบปราบเซียน
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- SECTION 1: SUMMARY TAB -->
+        <div id="summary-section" class="space-y-8">
+            
+            <!-- Hero Banner (Vibrant Gradient to prevent text-wash issues) -->
+            <div class="relative rounded-3xl p-6 sm:p-10 shadow-xl overflow-hidden text-white" style="background: linear-gradient(135deg, #e65100 0%, #ff8f00 100%);">
+                <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                <div class="relative z-10 max-w-4xl">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold bg-white/20 text-white border border-white/30 mb-4">
+                        <i class="fa-solid fa-scale-balanced"></i> กฎหมายจัดระเบียบบริหารราชการแผ่นดิน
+                    </span>
+                    <h1 class="text-xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight mb-4 leading-tight text-white drop-shadow-md">
+                        พระราชบัญญัติว่าด้วยการปรับปรุงกระทรวง ทบวง กรม พ.ศ. ๒๕๔๕ และที่แก้ไขเพิ่มเติม
+                    </h1>
+                    <p class="text-orange-50 text-xs sm:text-sm leading-relaxed max-w-3xl">
+                        อาศัยอำนาจตามความในมาตรา ๑๑ (๘) แห่ง พ.ร.บ. ระเบียบบริหารราชการแผ่นดิน พ.ศ. ๒๕๓๔ บังคับใช้ตั้งแต่วันถัดจากวันประกาศในราชกิจจานุเบกษา คือวันที่ <span class="text-amber-200 font-bold underline decoration-amber-200">๑๕ มกราคม พ.ศ. ๒๕๔๕</span> โดยมี <strong class="text-white">นายกรัฐมนตรี</strong> เป็นผู้รักษาการตามพระราชบัญญัติตานี้ (มาตรา ๔)
+                    </p>
+                </div>
+                <div class="absolute right-0 bottom-0 opacity-10 transform translate-x-12 translate-y-12 hidden lg:block">
+                    <i class="fa-solid fa-landmark text-[240px] text-white"></i>
+                </div>
+            </div>
+
+            <!-- บททั่วไปและภาพรวมกระทรวง (ม.4 - 5) -->
+            <div class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+                <div class="bg-gradient-to-r from-orange-600 to-brand-500 px-6 py-4 flex items-center justify-between text-white">
+                    <h2 class="font-bold flex items-center gap-2 text-sm sm:text-base">
+                        <i class="fa-solid fa-circle-info"></i> บททั่วไปและภาพรวมโครงสร้าง (มาตรา ๔ - ๕)
+                    </h2>
+                    <span class="text-xs bg-white/20 px-2.5 py-1 rounded-full font-bold">ส่วนโครงสร้างหลัก</span>
+                </div>
+                <div class="p-6 space-y-6">
+                    <div class="space-y-4 text-xs sm:text-sm">
+                        <div class="space-y-3">
+                            <h4 class="font-bold text-slate-950 border-b pb-2 flex items-center gap-1.5 text-sm sm:text-base">
+                                <span class="w-2 h-2 rounded-full bg-brand-500"></span> รายชื่อกระทรวงและส่วนราชการที่มีฐานะเป็นกระทรวง (มาตรา ๕)
+                            </h4>
+                            <p class="text-slate-500 mb-4">โครงสร้างการจัดตั้งกระทรวงในประเทศไทยตามกฎหมายปัจจุบัน (มาตรา ๕) มีการแบ่งส่วนราชการที่มีฐานะเป็นกระทรวง รวมทั้งสิ้น <strong>๒๐ กระทรวง และอีก ๑ สำนักนายกรัฐมนตรี</strong> (รวมเป็น ๒๑ แห่ง) ดังนี้:</p>
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 text-xs text-slate-600">
+                                <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-100 hover:border-brand-200 transition-all"><span class="font-bold text-brand-600">๑.</span> สำนักนายกรัฐมนตรี</div>
+                                <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-100 hover:border-brand-200 transition-all"><span class="font-bold text-brand-600">๒.</span> กระทรวงกลาโหม</div>
+                                <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-100 hover:border-brand-200 transition-all"><span class="font-bold text-brand-600">๓.</span> กระทรวงการคลัง</div>
+                                <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-100 hover:border-brand-200 transition-all"><span class="font-bold text-brand-600">๔.</span> กระทรวงการต่างประเทศ</div>
+                                <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-100 hover:border-brand-200 transition-all"><span class="font-bold text-brand-600">๕.</span> กระทรวงการท่องเที่ยวและกีฬา</div>
+                                <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-100 hover:border-brand-200 transition-all"><span class="font-bold text-brand-600">๖.</span> กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์</div>
+                                <div class="p-2.5 bg-orange-50/50 rounded-xl border border-orange-100 hover:border-brand-300 transition-all font-semibold text-slate-800"><span class="font-bold text-brand-600">๖/๑.</span> กระทรวงการอุดมศึกษา วิทยาศาสตร์ วิจัยและนวัตกรรม</div>
+                                <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-100 hover:border-brand-200 transition-all"><span class="font-bold text-brand-600">๗.</span> กระทรวงเกษตรและสหกรณ์</div>
+                                <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-100 hover:border-brand-200 transition-all"><span class="font-bold text-brand-600">๘.</span> กระทรวงคมนาคม</div>
+                                <div class="p-2.5 bg-orange-50/50 rounded-xl border border-orange-100 hover:border-brand-300 transition-all font-semibold text-slate-800"><span class="font-bold text-brand-600">๘/๑.</span> กระทรวงดิจิทัลเพื่อเศรษฐกิจและสังคม</div>
+                                <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-100 hover:border-brand-200 transition-all"><span class="font-bold text-brand-600">๙.</span> กระทรวงทรัพยากรธรรมชาติและสิ่งแวดล้อม</div>
+                                <div class="p-2.5 bg-slate-100 text-slate-400 line-through rounded-xl border border-slate-200/55"><span class="font-bold">๑๐.</span> กระทรวงเทคโนโลยีสารสนเทศและการสื่อสาร (ยกเลิก)</div>
+                                <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-100 hover:border-brand-200 transition-all"><span class="font-bold text-brand-600">๑๑.</span> กระทรวงพลังงาน</div>
+                                <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-100 hover:border-brand-200 transition-all"><span class="font-bold text-brand-600">๑๒.</span> กระทรวงพาณิชย์</div>
+                                <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-100 hover:border-brand-200 transition-all"><span class="font-bold text-brand-600">๑๓.</span> กระทรวงมหาดไทย</div>
+                                <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-100 hover:border-brand-200 transition-all"><span class="font-bold text-brand-600">๑๔.</span> กระทรวงยุติธรรม</div>
+                                <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-100 hover:border-brand-200 transition-all"><span class="font-bold text-brand-600">๑๕.</span> กระทรวงแรงงาน</div>
+                                <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-100 hover:border-brand-200 transition-all"><span class="font-bold text-brand-600">๑๖.</span> กระทรวงวัฒนธรรม</div>
+                                <div class="p-2.5 bg-slate-100 text-slate-400 line-through rounded-xl border border-slate-200/55"><span class="font-bold">๑๗.</span> (ยกเลิก)</div>
+                                <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-100 hover:border-brand-200 transition-all"><span class="font-bold text-brand-600">๑๘.</span> กระทรวงศึกษาธิการ</div>
+                                <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-100 hover:border-brand-200 transition-all"><span class="font-bold text-brand-600">๑๙.</span> กระทรวงสาธารณสุข</div>
+                                <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-100 hover:border-brand-200 transition-all"><span class="font-bold text-brand-600">๒๐.</span> กระทรวงอุตสาหกรรม</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- สำนักนายกรัฐมนตรี เจาะลึก (ม.6 - 7) -->
+            <div class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+                <div class="bg-gradient-to-r from-orange-50 to-brand-50/30 px-6 py-4 border-b border-orange-100">
+                    <h2 class="font-bold text-slate-950 flex items-center gap-2 text-sm sm:text-base">
+                        <i class="fa-solid fa-building text-brand-600"></i> หมวด ๑: สำนักนายกรัฐมนตรี (มาตรา ๖ - ๗)
+                    </h2>
+                </div>
+                <div class="p-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm">
+                        <!-- อำนาจหน้าที่ สำนักนายกฯ -->
+                        <div class="space-y-2">
+                            <h4 class="font-bold text-slate-900 text-sm mb-2 border-b pb-1"><i class="fa-solid fa-briefcase text-brand-500"></i> อำนาจหน้าที่หลัก (มาตรา ๖)</h4>
+                            <p class="text-slate-600 leading-relaxed">
+                                มีอำนาจหน้าที่เกี่ยวกับราชการทั่วไปของนายกรัฐมนตรีและคณะรัฐมนตรี เสนอแนะนโยบาย วางแผนพัฒนาด้านเศรษฐกิจ สังคม การเมือง ความมั่นคง งบประมาณ ระบบราชการ การบริหารงานบุคคล กฎหมาย การส่งเสริมการลงทุน ทรัพยากรน้ำ การบริหารจัดการที่ดิน ตลอดจนภารกิจพิเศษ และราชการอื่นที่กฎหมายมิได้กำหนดให้อยู่ในหน้าที่ของกระทรวงใดโดยเฉพาะ
+                            </p>
+                        </div>
+                        <!-- โครงสร้างส่วนราชการสังกัด สำนักนายกฯ -->
+                        <div class="space-y-2">
+                            <h4 class="font-bold text-slate-900 text-sm mb-2 border-b pb-1"><i class="fa-solid fa-network-wired text-brand-500"></i> การแบ่งส่วนราชการ (มาตรา ๗)</h4>
+                            <div class="space-y-2 text-slate-600">
+                                <div>
+                                    <span class="font-bold text-slate-800 block mb-1">ก. ส่วนราชการสังกัดปกติ:</span>
+                                    <ul class="list-disc pl-5 space-y-0.5 text-xs">
+                                        <li>สำนักงานปลัดสำนักนายกรัฐมนตรี</li>
+                                        <li>กรมประชาสัมพันธ์</li>
+                                        <li>สำนักงานคณะกรรมการคุ้มครองผู้บริโภค (สคบ.)</li>
+                                    </ul>
+                                </div>
+                                <div class="mt-2">
+                                    <span class="font-bold text-red-600 block mb-1"><i class="fa-solid fa-triangle-exclamation"></i> ข. ขึ้นตรงต่อนายกรัฐมนตรี (จุดออกข้อสอบบ่อยที่สุด):</span>
+                                    <div class="grid grid-cols-2 gap-x-2 gap-y-0.5 text-[11px] bg-red-50/50 p-2.5 rounded-lg border border-red-100">
+                                        <div>• สำนักเลขาธิการนายกรัฐมนตรี</div>
+                                        <div>• สำนักเลขาธิการคณะรัฐมนตรี</div>
+                                        <div>• สำนักข่าวกรองแห่งชาติ</div>
+                                        <div>• สำนักงบประมาณ</div>
+                                        <div>• สำนักงานสภาความมั่นคงแห่งชาติ</div>
+                                        <div>• สำนักงานคณะกรรมการกฤษฎีกา</div>
+                                        <div>• สำนักงาน ก.พ.</div>
+                                        <div>• สำนักงานสภาพัฒน์ฯ</div>
+                                        <div>• สำนักงาน ก.พ.ร.</div>
+                                        <div>• สำนักงาน BOI</div>
+                                        <div>• สำนักงานทรัพยากรน้ำแห่งชาติ</div>
+                                        <div>• สำนักงาน ป.ย.ป.</div>
+                                        <div>• สำนักงานคณะกรรมการนโยบายที่ดินแห่งชาติ</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- สรุปอำนาจหน้าที่และส่วนราชการกระทรวงสำคัญ (ม.8 - 45) -->
+            <div class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+                <div class="bg-gradient-to-r from-orange-600 to-brand-500 px-6 py-4 text-white">
+                    <h3 class="font-bold flex items-center gap-2 text-sm sm:text-base">
+                        <i class="fa-solid fa-landmark"></i> สรุปรายกระทรวง: หน้าที่และหน่วยงานเด่นที่มักออกข้อสอบ
+                    </h3>
+                </div>
+                <div class="p-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-xs sm:text-sm">
+                        
+                        <!-- กระทรวงการคลัง (ม.10 - 11) -->
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <h4 class="font-bold text-slate-900 border-b pb-1.5 mb-2"><i class="fa-solid fa-coins text-brand-600 mr-1.5"></i>กระทรวงการคลัง</h4>
+                            <p class="text-slate-500 leading-relaxed mb-2"><strong>หน้าที่:</strong> การเงินการคลังแผ่นดิน การประเมินราคาทรัพย์สิน การบริหารพัสดุภาครัฐ ที่ราชพัสดุ ภาษีอากร หนี้สาธารณะ รัฐวิสาหกิจ</p>
+                            <span class="font-semibold text-[11px] text-brand-700 block mb-1">หน่วยงานสังกัดเด่น:</span>
+                            <p class="text-[11px] text-slate-600 leading-tight">ธนารักษ์, บัญชีกลาง, ศุลกากร, สรรพสามิต, สรรพากร, สำนักงานคณะกรรมการนโยบายรัฐวิสาหกิจ (สคร.), สำนักงานบริหารหนี้สาธารณะ (สบน.), สำนักงานเศรษฐกิจการคลัง (สศค.)</p>
+                        </div>
+
+                        <!-- กระทรวงเกษตรและสหกรณ์ (ม.18 - 19) -->
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <h4 class="font-bold text-slate-900 border-b pb-1.5 mb-2"><i class="fa-solid fa-wheat-awn text-brand-600 mr-1.5"></i>กระทรวงเกษตรและสหกรณ์</h4>
+                            <p class="text-slate-500 leading-relaxed mb-2"><strong>หน้าที่:</strong> เกษตรกรรม แหล่งน้ำและการชลประทาน ส่งเสริมเกษตรกรและสหกรณ์ กระบวนการผลิตและสินค้าเกษตร</p>
+                            <span class="font-semibold text-[11px] text-brand-700 block mb-1">หน่วยงานสังกัดเด่น (ระวังหลอก):</span>
+                            <p class="text-[11px] text-slate-600 leading-tight"><strong>กรมการข้าว, กรมฝนหลวงและการบินเกษตร, กรมหม่อนไหม</strong>, กรมชลประทาน, สหกรณ์, ส.ป.ก., มกอช. (มาตรฐานสินค้าเกษตรฯ)</p>
+                        </div>
+
+                        <!-- กระทรวงยุติธรรม (ม.32 - 33) -->
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <h4 class="font-bold text-slate-900 border-b pb-1.5 mb-2"><i class="fa-solid fa-scale-balanced text-brand-600 mr-1.5"></i>กระทรวงยุติธรรม</h4>
+                            <p class="text-slate-500 leading-relaxed mb-2"><strong>หน้าที่:</strong> บริหารจัดการกระบวนการยุติธรรม อำนวยความยุติธรรมในสังคม</p>
+                            <span class="font-semibold text-[11px] text-brand-700 block mb-1">หน่วยงานสังกัดเด่น:</span>
+                            <p class="text-[11px] text-slate-600 leading-tight">กรมคุมประพฤติ, กรมคุ้มครองสิทธิฯ, กรมบังคับคดี, กรมราชทัณฑ์, <strong>DSI (สอบสวนคดีพิเศษ), สถาบันนิติวิทยาศาสตร์</strong> <br><span class="text-red-600 font-bold">• สำนักงาน ป.ป.ส. (ขึ้นตรงต่อรัฐมนตรี)</span></p>
+                        </div>
+
+                        <!-- กระทรวงมหาดไทย (ม.30 - 31) -->
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <h4 class="font-bold text-slate-900 border-b pb-1.5 mb-2"><i class="fa-solid fa-tree-city text-brand-600 mr-1.5"></i>กระทรวงมหาดไทย</h4>
+                            <p class="text-slate-500 leading-relaxed mb-2"><strong>หน้าที่:</strong> บำบัดทุกข์บำรุงสุข ความสงบเรียบร้อย ทะเบียนราษฎร ปกครองท้องที่/ท้องถิ่น พัฒนาชุมชน ปภ. พัฒนาเมือง</p>
+                            <span class="font-semibold text-[11px] text-brand-700 block mb-1">หน่วยงานสังกัดเด่น:</span>
+                            <p class="text-[11px] text-slate-600 leading-tight">กรมการปกครอง, กรมการพัฒนาชุมชน, กรมที่ดิน, กรมป้องกันและบรรเทาสาธารณภัย (ปภ.), กรมโยธาธิการและผังเมือง, กรมส่งเสริมการปกครองท้องถิ่น (สถ.)</p>
+                        </div>
+
+                        <!-- กระทรวงคมนาคม (ม.20 - 21) -->
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <h4 class="font-bold text-slate-900 border-b pb-1.5 mb-2"><i class="fa-solid fa-plane-up text-brand-600 mr-1.5"></i>กระทรวงคมนาคม</h4>
+                            <p class="text-slate-500 leading-relaxed mb-2"><strong>หน้าที่:</strong> การขนส่ง ธุรกิจการขนส่ง การวางแผนจราจร การพัฒนาโครงสร้างพื้นฐานคมนาคม</p>
+                            <span class="font-semibold text-[11px] text-brand-700 block mb-1">หน่วยงานสังกัดเด่น (ระวังหลอก):</span>
+                            <p class="text-[11px] text-slate-600 leading-tight"><strong>กรมเจ้าท่า</strong> (เปลี่ยนจากกรมการขนส่งทางน้ำฯ), <strong>กรมการขนส่งทางราง</strong>, กรมท่าอากาศยาน, กรมทางหลวง, กรมทางหลวงชนบท, สนข. (สำนักงานนโยบายและแผนการขนส่งฯ)</p>
+                        </div>
+
+                        <!-- กระทรวงดิจิทัลเพื่อเศรษฐกิจและสังคม (ม.21/1 - 21/2) -->
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <h4 class="font-bold text-slate-900 border-b pb-1.5 mb-2"><i class="fa-solid fa-microchip text-brand-600 mr-1.5"></i>กระทรวงดิจิทัลฯ (ดีอีเอส)</h4>
+                            <p class="text-slate-500 leading-relaxed mb-2"><strong>หน้าที่:</strong> วางแผน ส่งเสริม พัฒนาดิจิทัลเพื่อเศรษฐกิจและสังคม อุตุนิยมวิทยา การสถิติ</p>
+                            <span class="font-semibold text-[11px] text-brand-700 block mb-1">หน่วยงานสังกัดเด่น:</span>
+                            <p class="text-[11px] text-slate-600 leading-tight"><strong>กรมอุตุนิยมวิทยา</strong>, สำนักงานคณะกรรมการดิจิทัลเพื่อเศรษฐกิจและสังคมแห่งชาติ, <strong>สำนักงานสถิติแห่งชาติ</strong></p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- ส่วนราชการไม่สังกัดสำนักนายกฯ กระทรวง หรือทบวง (ม.46) -->
+            <div class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+                <div class="bg-gradient-to-r from-orange-600 to-brand-500 px-6 py-4 text-white">
+                    <h3 class="font-bold flex items-center gap-2 text-sm sm:text-base">
+                        <i class="fa-solid fa-box-archive"></i> มาตรา ๔๖: ส่วนราชการไม่สังกัดสำนักนายกรัฐมนตรี กระทรวงหรือทบวง
+                    </h3>
+                </div>
+                <div class="p-6 space-y-4">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 text-xs sm:text-sm">
+                        <div class="space-y-2">
+                            <h4 class="font-bold text-slate-900 mb-2 border-b pb-1.5"><i class="fa-solid fa-circle-exclamation text-brand-600"></i> ลักษณะทางนิติบัญญัติและสถานะหน่วยงาน</h4>
+                            <ul class="space-y-2 text-slate-600 list-disc pl-4">
+                                <li>มีฐานะเป็น <strong>"กรม"</strong></li>
+                                <li>ไม่อยู่ในสังกัดของสำนักนายกรัฐมนตรี กระทรวง หรือทบวงใดๆ ทั้งสิ้น</li>
+                                <li>แต่จัดตั้งขึ้นโดยกำหนดให้อยู่ใน <strong>"บังคับบัญชาของนายกรัฐมนตรีโดยตรง"</strong> เพื่อความเป็นอิสระและคล่องตัวเชิงบริหารพิเศษ</li>
+                            </ul>
+                        </div>
+                        <div class="space-y-2 bg-orange-50/50 p-4 rounded-xl border border-orange-100">
+                            <h4 class="font-bold text-slate-900 mb-2 border-b pb-1.5"><i class="fa-solid fa-list-check text-brand-700"></i> รายชื่อส่วนราชการตามมาตรา ๔๖ (มีทั้งหมด ๖ หน่วยงาน):</h4>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-600">
+                                <div><strong>(๓)</strong> สำนักงานพระพุทธศาสนาแห่งชาติ</div>
+                                <div><strong>(๔)</strong> สำนักงาน กปร. (ประสานงานร.ดำริ)</div>
+                                <div><strong>(๖)</strong> สำนักงานราชบัณฑิตยสภา</div>
+                                <div><strong>(๗)</strong> สำนักงานตำรวจแห่งชาติ (สตช.)</div>
+                                <div><strong>(๘)</strong> สำนักงาน ปปง. (ป้องกันฟอกเงิน)</div>
+                                <div><strong>(๙)</strong> สำนักงาน ป.ป.ท. (ทุจริตภาครัฐ)</div>
+                            </div>
+                            <p class="text-[10px] text-red-500 font-bold mt-2">*หมายเหตุ: วงเล็บ (๑), (๒) และ (๕) ได้รับการประกาศยกเลิกไปตามกฎหมายแล้ว</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA to Quiz -->
+            <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-xl bg-orange-100 text-brand-600 flex items-center justify-center flex-shrink-0 text-xl">
+                        <i class="fa-solid fa-clipboard-list"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-950 text-sm sm:text-base">แบบทดสอบ พ.ร.บ. ปรับปรุงกระทรวง ทบวง กรม ๓๐ ข้อ (ยากพิเศษ)</h4>
+                        <p class="text-xs text-slate-400 mt-0.5">รวมจุดหลอกออกสอบระดับปราบเซียน คัดเฉพาะประเด็นวิเคราะห์ พ.ร.บ. ปรับปรุงกระทรวงฯ</p>
+                    </div>
+                </div>
+                <button onclick="switchTab('quiz')" class="bg-brand-500 hover:bg-brand-600 text-white font-bold text-sm py-2.5 px-5 rounded-xl shadow-sm transition-all flex items-center justify-center gap-2">
+                    เริ่มประเมินความรู้ <i class="fa-solid fa-arrow-right text-xs"></i>
+                </button>
+            </div>
+
+        </div>
+
+        <!-- SECTION 2: QUIZ TAB -->
+        <div id="quiz-section" class="hidden max-w-3xl mx-auto space-y-6">
+            
+            <!-- Quiz Header Card -->
+            <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                    <h2 class="text-lg sm:text-xl font-bold text-slate-900 flex items-center gap-2">
+                        <i class="fa-solid fa-list-check text-brand-500"></i> แบบทดสอบเจาะลึก พ.ร.บ. ปรับปรุงกระทรวง ทบวง กรม พ.ศ. ๒๕๔๕
+                    </h2>
+                    <p class="text-xs text-slate-400 mt-1">ประเมินทักษะความรอบรู้จำนวน ๓๐ ข้อระดับปราบเซียน</p>
+                </div>
+                <!-- Progress display -->
+                <div class="flex items-center gap-3 flex-shrink-0">
+                    <div class="text-right">
+                        <span class="text-xs text-slate-400 block font-medium">ข้อที่</span>
+                        <span id="current-question-indicator" class="text-lg font-bold text-brand-600">1/30</span>
+                    </div>
+                    <div class="w-24 sm:w-32 bg-slate-100 h-2 rounded-full overflow-hidden">
+                        <div id="quiz-progress-bar" class="bg-brand-500 h-full transition-all duration-300" style="width: 3.33%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quiz Play Box -->
+            <div id="quiz-play-box" class="space-y-6">
+                <!-- Question Statement Card -->
+                <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-100 shadow-sm relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-1.5 h-full bg-brand-500"></div>
+                    <span class="text-[10px] font-bold text-brand-600 uppercase tracking-wider block mb-2">คำถามสำหรับการเตรียมสอบ</span>
+                    <h3 id="question-text" class="text-sm sm:text-base md:text-lg font-bold text-slate-900 leading-relaxed">
+                        กำลังเตรียมความพร้อมของคำถาม...
+                    </h3>
+                </div>
+
+                <!-- Answer Options Box -->
+                <div id="options-container" class="space-y-3">
+                    <!-- Dynamic choices inject here -->
+                </div>
+
+                <!-- Explanation/Rationale (Hidden until answered) -->
+                <div id="explanation-box" class="hidden bg-slate-50 p-5 sm:p-6 rounded-2xl border border-slate-150 transition-all duration-300">
+                    <div class="flex gap-3">
+                        <div id="explanation-icon-container" class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-white">
+                            <!-- Icon dynamic -->
+                        </div>
+                        <div>
+                            <h4 id="explanation-title" class="font-bold text-xs sm:text-sm"></h4>
+                            <p id="explanation-body" class="text-xs sm:text-sm text-slate-600 mt-1.5 leading-relaxed"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nav Controls -->
+                <div class="flex items-center justify-between">
+                    <button id="hint-btn" onclick="toggleHint()" class="inline-flex items-center gap-1.5 text-slate-500 hover:text-brand-600 font-semibold text-xs sm:text-sm transition-colors py-2 px-3 rounded-lg hover:bg-slate-50">
+                        <i class="fa-regular fa-lightbulb"></i> <span id="hint-text-label">แสดงคำใบ้</span>
+                    </button>
+                    
+                    <button id="next-btn" onclick="goToNextQuestion()" class="hidden bg-brand-500 hover:bg-brand-600 text-white text-xs sm:text-sm font-semibold py-2.5 px-5 sm:px-6 rounded-xl shadow-sm transition-all items-center gap-1.5">
+                        <span>ถัดไป</span> <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                </div>
+                
+                <!-- Hint Text Box (Hidden by default) -->
+                <div id="hint-display-box" class="hidden bg-amber-50/50 border border-amber-100 p-4 rounded-xl text-xs sm:text-sm text-amber-800 leading-relaxed">
+                    <strong class="font-bold"><i class="fa-solid fa-circle-question mr-1"></i> คำใบ้ช่วยคิด:</strong> <span id="hint-content">...</span>
+                </div>
+            </div>
+
+            <!-- Quiz Score/Summary Screen (Hidden by default) -->
+            <div id="quiz-score-box" class="hidden bg-white p-6 sm:p-8 rounded-3xl border border-slate-100 shadow-sm text-center space-y-6">
+                <div class="w-20 h-20 sm:w-24 sm:h-24 bg-brand-50 rounded-full flex items-center justify-center mx-auto border-2 border-brand-100 relative">
+                    <i class="fa-solid fa-trophy text-3xl sm:text-4xl text-brand-500"></i>
+                    <div class="absolute -top-1 -right-1 bg-amber-500 text-white text-[9px] px-2 py-0.5 rounded-full font-bold">สำเร็จ</div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl sm:text-2xl font-black text-slate-900">ทดสอบเสร็จสมบูรณ์!</h3>
+                    <p class="text-xs text-slate-400 mt-1">เกณฑ์ประเมินระดับความรอบรู้พระราชบัญญัติการปรับปรุงกระทรวง ทบวง กรม</p>
+                </div>
+
+                <!-- Score Board -->
+                <div class="max-w-xs mx-auto bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                    <span class="text-xs text-slate-500 uppercase tracking-widest font-semibold block">คะแนนของคุณ</span>
+                    <span id="final-score-display" class="text-4xl sm:text-5xl font-extrabold text-brand-600 my-2 block">0 / 30</span>
+                    <span id="score-assessment" class="text-xs sm:text-sm font-bold text-slate-700 block">ประเมินผล</span>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                    <button onclick="restartQuiz()" class="bg-brand-500 hover:bg-brand-600 text-white font-bold text-xs sm:text-sm py-3 px-6 rounded-xl shadow-sm transition-all">
+                        <i class="fa-solid fa-arrows-rotate mr-1"></i> ทำใหม่อีกครั้ง
+                    </button>
+                    <button onclick="switchTab('summary')" class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs sm:text-sm py-3 px-6 rounded-xl transition-all">
+                        กลับไปอ่านสรุปย่อกฎหมาย
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-100 py-6 mt-12">
+        <div class="max-w-7xl mx-auto px-4 text-center space-y-2 text-xs text-slate-400">
+            <p>สรุปและวิเคราะห์คลังข้อสอบตามพระราชบัญญัติปรับปรุงกระทรวง ทบวง กรม พ.ศ. ๒๕๔๕ และที่แก้ไขเพิ่มเติม</p>
+            <p>&copy; 2026 ระบบการเรียนรู้ออนไลน์เตรียมสอบข้าราชการไทย</p>
+        </div>
+    </footer>
+
+    <!-- Quiz JS Logic -->
+    <script>
+        // 30 highly challenging questions mapped strictly to "ปรับปรุงกระทรวง ทบวง กรม พ.ศ. 2545"
+        const quizData = [
+            {
+                question: "ใครคือผู้รักษาการตามพระราชบัญญัติว่าด้วยการปรับปรุงกระทรวง ทบวง กรม พ.ศ. ๒๕๔๕?",
+                options: [
+                    { text: "นายกรัฐมนตรี", isCorrect: true, rationale: "มาตรา ๔ ของพระราชบัญญัตินี้บัญญัติไว้โดยตรงและสั้นกระชับว่า 'ให้นายกรัฐมนตรีรักษาการตามพระราชบัญญัตินี้'" },
+                    { text: "ปลัดสำนักนายกรัฐมนตรี", isCorrect: false, rationale: "แม้จะเป็นปลัดของกระทรวงหลัก แต่ผู้รักษาการตามกฎหมายเป็นฝ่ายบริหารระดับสูงสุดคือ นายกรัฐมนตรี" },
+                    { text: "รัฐมนตรีประจำสำนักนายกรัฐมนตรี", isCorrect: false, rationale: "รัฐมนตรีประจำสำนักนายกฯ ได้รับมอบหมายงานย่อย แต่ผู้รักษาการหลักคือนายกรัฐมนตรี" },
+                    { text: "ประธานคณะกรรมการพัฒนาระบบราชการ (ก.พ.ร.)", isCorrect: false, rationale: "ก.พ.ร. เสนอความคิดเห็นเรื่องการจัดทัพปรับโครงสร้าง แต่อำนาจรักษาการกฎหมายแม่บทนี้อยู่ที่นายกรัฐมนตรี" }
+                ],
+                hint: "เป็นผู้นำสูงสุดของฝ่ายบริหารและรัฐบาลไทยทั้งหมด"
+            },
+            {
+                question: "มาตรา ๕ บัญญัติให้การจัดระเบียบราชการส่วนกลางของประเทศไทยแบ่งออกเป็นกระทรวง และส่วนราชการที่มีฐานะเป็นกระทรวง รวมทั้งสิ้นกี่ส่วนราชการ?",
+                options: [
+                    { text: "๑๙ กระทรวง", isCorrect: false, rationale: "๑๙ กระทรวงเป็นจำนวนตัวเลขกระทรวงทางปฏิบัติเมื่อตัดสำนักนายกฯ ออก แต่อำนาจมาตรา ๕ ให้นับสำนักนายกฯ เข้าเป็นกระทรวงด้วย" },
+                    { text: "๒๐ ส่วนราชการ", isCorrect: false, rationale: "รวมแล้วตัวเลขกระทรวงทั้งหมดตามรายการวงเล็บกฎหมายปัจจุบันมีจำนวนมากกว่านี้" },
+                    { text: "๒๑ ส่วนราชการ (๒๐ กระทรวง และ ๑ สำนักนายกรัฐมนตรี)", isCorrect: true, rationale: "มาตรา ๕ กำหนดให้มีกระทรวงและส่วนราชการที่มีฐานะเป็นกระทรวง โดยมีสำนักนายกรัฐมนตรี และกระทรวงอื่นอีก ๒๐ กระทรวง (เดิมเคยมี ๒๐ ลำดับ แต่หลังจากเพิ่ม อว. ๖/๑ และ ดิจิทัล ๘/๑ และตัดไอซีทีกับลำดับ ๑๗ ออกแล้ว รวมเป็น ๒๑ แห่ง)" },
+                    { text: "๒๒ ส่วนราชการ", isCorrect: false, rationale: "ตัวเลขนี้สูงกว่าโครงสร้างกระทรวงรวมในมาตรา ๕ ของจริง" }
+                ],
+                hint: "นับจำนวนวงเล็บที่เหลืออยู่จริงของมาตรา ๕ ตั้งแต่สำนักนายกฯ (๑) จนถึง อุตสาหกรรม (๒๐) และมีกลุ่มกระทรวงพ่วงเครื่องหมายเศษส่วน"
+            },
+            {
+                question: "หน่วยงานใดในสำนักนายกรัฐมนตรีที่จัดอยู่ในกลุ่ม 'ส่วนราชการสังกัดปกติ' ตามมาตรา ๗ ไม่ใช่ส่วนราชการที่ขึ้นตรงต่อนายกรัฐมนตรี?",
+                options: [
+                    { text: "สำนักงบประมาณ", isCorrect: false, rationale: "สำนักงบประมาณ เป็นหน่วยงานขึ้นตรงต่อนายกรัฐมนตรีโดยเฉพาะตามมาตรา ๗" },
+                    { text: "สำนักงานคณะกรรมการคุ้มครองผู้บริโภค (สคบ.)", isCorrect: true, rationale: "มาตรา ๗ แบ่งส่วนราชการปกติไว้เพียง ๓ แห่ง คือ สำนักงานปลัดสำนักนายกฯ, กรมประชาสัมพันธ์ และ สำนักงานคณะกรรมการคุ้มครองผู้บริโภค" },
+                    { text: "สำนักงานคณะกรรมการกฤษฎีกา", isCorrect: false, rationale: "กฤษฎีกา ขึ้นตรงต่อนายกรัฐมนตรีโดยตรง" },
+                    { text: "สำนักข่าวกรองแห่งชาติ", isCorrect: false, rationale: "สำนักข่าวกรองแห่งชาติ ทำงานขึ้นตรงต่อนายกรัฐมนตรีโดยตรง" }
+                ],
+                hint: "เป็น ๑ ใน ๓ หน่วยงานที่ไม่ได้เขียนพ่วงท้ายวรรคว่า 'เป็นส่วนราชการขึ้นตรงต่อนายกรัฐมนตรี'"
+            },
+            {
+                question: "ข้อใดเป็นส่วนราชการที่จัดโครงสร้างขึ้นตรงต่อนายกรัฐมนตรีตามมาตรา ๗ และดูแลรับผิดชอบงาน 'การจัดตั้งเป้าหมายยุทธศาสตร์ระยะยาวและความมั่นคงแผ่นดิน'?",
+                options: [
+                    { text: "สำนักงานสภาความมั่นคงแห่งชาติ", isCorrect: true, rationale: "ตามมาตรา ๗ (๘) 'สำนักงานสภาความมั่นคงแห่งชาติ' เป็นหน่วยงานขึ้นตรงต่อนายกรัฐมนตรีที่มีภารกิจหลักด้านความมั่นคงระดับชาติ" },
+                    { text: "สำนักงานตำรวจแห่งชาติ", isCorrect: false, rationale: "สำนักงานตำรวจแห่งชาติไม่ได้สังกัดสำนักนายกรัฐมนตรีตามมาตรา ๗ แต่เป็นหน่วยงานมาตรา ๔๖ ไม่สังกัดกระทรวงใดๆ" },
+                    { text: "สำนักเลขาธิการนายกรัฐมนตรี", isCorrect: false, rationale: "เลขาธิการนายกฯ ทำงานประสานการเมืองและงานธุรการบุคคลของนายกฯ" },
+                    { text: "สถาบันนิติวิทยาศาสตร์", isCorrect: false, rationale: "สถาบันนิติวิทยาศาสตร์ สังกัดอยู่ภายใต้กระทรวงยุติธรรมมาตรา ๓๓" }
+                ],
+                hint: "ชื่อย่อคือ 'สมช.' นั่งเป็นคณะทำงานหลักขึ้นตรงต่อนายกฯ"
+            },
+            {
+                question: "หน่วยงานใดต่อไปนี้ 'ไม่มี' ฐานะเป็นกระทรวงหรือสังกัดกระทรวงใดๆ แต่มีฐานะเป็นกรม และจัดอยู่ใน 'บังคับบัญชาขึ้นตรงต่อนายกรัฐมนตรีโดยตรง' ตามมาตรา ๔๖?",
+                options: [
+                    { text: "สำนักงานคณะกรรมการป้องกันและปราบปรามยาเสพติด (ป.ป.ส.)", isCorrect: false, rationale: "ป.ป.ส. สังกัดอยู่ในกระทรวงยุติธรรม (มาตรา ๓๓) แต่อยู่ในบังคับบัญชาขึ้นตรงต่อรัฐมนตรี ไม่ใช่นายกรัฐมนตรี" },
+                    { text: "สำนักงานป้องกันและปราบปรามการทุจริตในภาครัฐ (ป.ป.ท.)", isCorrect: true, rationale: "ตามมาตรา ๔๖ (๙) 'สำนักงานคณะกรรมการป้องกันและปราบปรามการทุจริตในภาครัฐ' เป็นส่วนราชการไม่สังกัดกระทรวง มีฐานะเป็นกรม และขึ้นตรงต่อนายกรัฐมนตรี" },
+                    { text: "สำนักงานคณะกรรมการพัฒนาระบบราชการ (ก.พ.ร.)", isCorrect: false, rationale: "สำนักงาน ก.พ.ร. อยู่ภายใต้สำนักนายกรัฐมนตรีตามมาตรา ๗ ไม่ใช่มาตรา ๔๖" },
+                    { text: "สำนักงานพระราชดำริและฝนหลวง", isCorrect: false, rationale: "ฝนหลวงสังกัดเกษตรฯ และ กปร. เท่านั้นที่อยู่มาตรา ๔๖ แต่ชื่อข้อนี้แต่งหลอกขึ้นมา" }
+                ],
+                hint: "เป็นหน่วยงานป้องกันและปราบปรามการทุจริตของเจ้าหน้าที่รัฐในสังกัดฝ่ายบริหาร"
+            },
+            {
+                question: "ภารกิจหลักเกี่ยวกับ 'การเงินการคลังแผ่นดิน การประเมินราคาทรัพย์สิน การบริหารพัสดุภาครัฐ และที่ราชพัสดุ' ตกเป็นอำนาจหน้าที่ของกระทรวงใดตามมาตรา ๑๐?",
+                options: [
+                    { text: "กระทรวงมหาดไทย", isCorrect: false, rationale: "มหาดไทยคุมที่ดินราษฎร แต่เรื่องที่ราชพัสดุและการเงินแผ่นดินเป็นของกระทรวงคลัง" },
+                    { text: "กระทรวงอุตสาหกรรม", isCorrect: false, rationale: "อุตสาหกรรมดูแลโรงงานและการเหมืองแร่" },
+                    { text: "กระทรวงการคลัง", isCorrect: true, rationale: "มาตรา ๑๐ กำหนดอำนาจหน้าที่ของกระทรวงการคลังไว้อย่างชัดเจน ครอบคลุมเรื่องการเงิน การประเมินทรัพย์สิน พัสดุภาครัฐ และที่ราชพัสดุ" },
+                    { text: "กระทรวงพาณิชย์", isCorrect: false, rationale: "พาณิชย์ดูแลการค้า การเจรจาระหว่างประเทศ และทรัพย์สินทางปัญญา" }
+                ],
+                hint: "เป็นกระทรวงที่คุมงบประมาณ รายรับ-รายจ่ายของรัฐบาล และจัดตั้งกรมจัดเก็บภาษีหลักทั้งสามกรม"
+            },
+            {
+                question: "กรมใดต่อไปนี้ 'ไม่ได้' สังกัดอยู่ภายใต้โครงสร้างการแบ่งส่วนราชการของกระทรวงการคลังตามมาตรา ๑๑?",
+                options: [
+                    { text: "กรมธนารักษ์", isCorrect: false, rationale: "กรมธนารักษ์ เป็นหน่วยงานบริหารที่ราชพัสดุ สังกัดกระทรวงการคลังชัดเจน" },
+                    { text: "สำนักงานบริหารหนี้สาธารณะ (สบน.)", isCorrect: false, rationale: "สบน. ดูแลหนี้ภาครัฐ สังกัดกระทรวงการคลังตามมาตรา ๑๑" },
+                    { text: "สำนักงานคณะกรรมการกำกับและส่งเสริมการประกอบธุรกิจประกันภัย (คปภ.)", isCorrect: true, rationale: "คปภ. เป็นหน่วยงานอิสระของรัฐที่ไม่อยู่ภายใต้กรมในสังกัดมาตรา ๑๑ (แม้จะทำงานร่วมกันใกล้ชิดแต่กฎหมายโครงสร้างปรับปรุงกระทรวงนี้ไม่ได้ระบุ คปภ. ไว้ในวรรคแบ่งราชการ)" },
+                    { text: "สำนักงานคณะกรรมการนโยบายรัฐวิสาหกิจ (สคร.)", isCorrect: false, rationale: "สคร. สังกัดคลังคอยดูแลรัฐวิสาหกิจและหลักทรัพย์ของรัฐ" }
+                ],
+                hint: "หน่วยงานนี้มีลักษณะเป็นบอร์ดคุมธุรกิจด้านการประกันภัย เป็นองค์กรจัดตั้งรูปแบบพิเศษ"
+            },
+            {
+                question: "กรมความร่วมมือระหว่างประเทศ (TICA) ได้รับการตราจัดตั้งภายใต้สังกัดกระทรวงใดในมาตรา ๑๓?",
+                options: [
+                    { text: "กระทรวงการต่างประเทศ", isCorrect: true, rationale: "ตามมาตรา ๑๓ (๓/๑) 'กรมความร่วมมือระหว่างประเทศ' ได้รับการบรรจุให้เป็นส่วนราชการในสังกัดกระทรวงการต่างประเทศ" },
+                    { text: "กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์", isCorrect: false, rationale: "พม. ดูแลสวัสดิการสังคมในประเทศ" },
+                    { text: "สำนักนายกรัฐมนตรี", isCorrect: false, rationale: "สำนักนายกฯ ดูแลนโยบายภาพรวม แต่ความร่วมมือระหว่างประเทศส่วนใหญ่ส่งให้กระทรวงต่างประเทศดูแลโดยตรง" },
+                    { text: "กระทรวงอุตสาหกรรม", isCorrect: false, rationale: "อุตสาหกรรมไม่มีความเกี่ยวโยงหลักกับงานกงสุลหรือทูตความร่วมมือระหว่างประเทศ" }
+                ],
+                hint: "กระทรวงนี้คอยกำกับสถาบันการต่างประเทศ การทำสนธิสัญญา และกรมอาเซียน"
+            },
+            {
+                question: "หน่วยงานใดในกระทรวงการท่องเที่ยวและกีฬา ที่ได้รับการแปรสภาพและเปลี่ยนชื่อมาจาก 'สำนักงานพัฒนาการกีฬาและนันทนาการ'?",
+                options: [
+                    { text: "กรมพลศึกษา", isCorrect: true, rationale: "มาตรา ๑๕ ระบุว่า 'กรมพลศึกษา' ได้เปลี่ยนชื่อจากเดิมโดยผลของพระราชกฤษฎีกาเปลี่ยนชื่อสำนักงานพัฒนาการกีฬาและนันทนาการ พ.ศ. ๒๕๕๓" },
+                    { text: "กรมการท่องเที่ยว", isCorrect: false, rationale: "กรมการท่องเที่ยว เปลี่ยนชื่อมาจากสำนักงานพัฒนาการท่องเที่ยว" },
+                    { text: "สำนักงานกองทุนส่งเสริมการกีฬา", isCorrect: false, rationale: "เป็นหน่วยงานกองทุนภายนอก ไม่ใช่กรมพลศึกษาตามพระราชกฤษฎีกาปี ๒๕๕๓" },
+                    { text: "สถาบันการเรียนรู้พลศึกษาแห่งชาติ", isCorrect: false, rationale: "เป็นสถาบันอุดมศึกษา ไม่ใช่โครงสร้างหลักของกรมพลศึกษาตามมาตรา ๑๕" }
+                ],
+                hint: "กรมนี้ใช้ชื่อเดียวกับสถาบันศึกษาที่มุ่งเน้นการดูแลสมรรถภาพทางกายของนักเรียนและประชาชนทั่วไป"
+            },
+            {
+                question: "ตามมาตรา ๑๗ กรมใดต่อไปนี้ 'ไม่ได้' อยู่ในสังกัดกระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์?",
+                options: [
+                    { text: "กรมกิจการผู้สูงอายุ", isCorrect: false, rationale: "พม. มีกรมกิจการผู้สูงอายุคอยดูแลสวัสดิการผู้มีอายุสูงวัย" },
+                    { text: "กรมกิจการสตรีและสถาบันครอบครัว", isCorrect: false, rationale: "เป็นหน่วยงานสังกัด พม. ตามมาตรา ๑๗" },
+                    { text: "กรมสนับสนุนบริการสุขภาพ", isCorrect: true, rationale: "กรมสนับสนุนบริการสุขภาพ สังกัดอยู่ภายใต้กระทรวงสาธารณสุขตามมาตรา ๔๓" },
+                    { text: "กรมส่งเสริมและพัฒนาคุณภาพชีวิตคนพิการ", isCorrect: false, rationale: "พม. คอยกำกับงานส่งเสริมสิทธิ์และคุณภาพชีวิตคนพิการโดยตรง" }
+                ],
+                hint: "หน่วยงานนี้ทำหน้าที่ควบคุมมาตรฐานสถานพยาบาล คลินิก และโรงพยาบาล สังกัดงานระบบสาธารณสุข"
+            },
+            {
+                question: "กระทรวงการอุดมศึกษา วิทยาศาสตร์ วิจัยและนวัตกรรม (อว.) ตามมาตรา ๑๗/๒ บัญญัติให้การจัดระเบียบราชการภายในกระทรวงดำเนินงานตามกฎเกณฑ์ใด?",
+                options: [
+                    { text: "ให้เป็นไปตามกฎหมายว่าด้วยการนั้นโดยเฉพาะ", isCorrect: true, rationale: "มาตรา ๑๗/๒ ระบุชัดเจนว่า 'การจัดระเบียบราชการกระทรวงการอุดมศึกษา วิทยาศาสตร์ วิจัยและนวัตกรรม ให้เป็นไปตามกฎหมายว่าด้วยการนั้น' (คือ พ.ร.บ. ระเบียบบริหารราชการกระทรวง อว. ของตัวเอง)" },
+                    { text: "ให้เป็นไปตามพระราชกฤษฎีกาปรับโครงสร้างกระทรวงกลาโหม", isCorrect: false, rationale: "กลาโหมมีโครงสร้างวินัยทหารเฉพาะตัว ไม่สามารถนำมาใช้ร่วมกับกระทรวงวิชาการอย่าง อว. ได้" },
+                    { text: "ให้ยึดกฎกระทรวงที่ออกโดยรัฐมนตรีว่าการกระทรวงมหาดไทยเป็นหลัก", isCorrect: false, rationale: "มหาดไทยไม่ได้รับมอบอำนาจคุมการแปรโครงสร้างกระทรวง อว." },
+                    { text: "ให้ปลัดกระทรวงการคลังใช้อำนาจสภาวิจัยแห่งชาติในการกำหนดแบบแผน", isCorrect: false, rationale: "ไม่เกี่ยวโยงกับกระทรวงคลังทางตรงในการแบ่งสายบริหาร อว." }
+                ],
+                hint: "เนื่องจาก อว. หลอมรวมมาจากหลายทบวงและสถาบันวิจัย จึงมี พ.ร.บ. การจัดระเบียบราชการเป็นของตนเองโดยเฉพาะ"
+            },
+            {
+                question: "กรมใดต่อไปนี้ 'ไม่ได้' สังกัดกระทรวงเกษตรและสหกรณ์ตามมาตรา ๑๙?",
+                options: [
+                    { text: "กรมหม่อนไหม", isCorrect: false, rationale: "กรมหม่อนไหม จัดเป็นหน่วยงานในสังกัดกระทรวงเกษตรและสหกรณ์ตามมาตรา ๑๙" },
+                    { text: "กรมทรัพยากรน้ำ", isCorrect: true, rationale: "กรมทรัพยากรน้ำ สังกัดกระทรวงทรัพยากรธรรมชาติและสิ่งแวดล้อมตามมาตรา ๒๓ (แม้จะดูแลเรื่องน้ำแต่แบ่งแยกประเภทน้ำธรรมชาติออกจากงานน้ำชลประทานของเกษตรฯ)" },
+                    { text: "กรมฝนหลวงและการบินเกษตร", isCorrect: false, rationale: "ฝนหลวงและการบินเกษตร จัดอยู่กับกระทรวงเกษตรฯ ตามมาตรา ๑๙" },
+                    { text: "สำนักงานการปฏิรูปที่ดินเพื่อเกษตรกรรม (ส.ป.ก.)", isCorrect: false, rationale: "ส.ป.ก. เป็นหน่วยงานระดับกรม สังกัดกระทรวงเกษตรฯ ชัดเจน" }
+                ],
+                hint: "หน่วยงานนี้เน้นไปที่งานสิ่งแวดล้อมและการรักษาสภาพสมดุลแหล่งน้ำธรรมชาติและระบบนิเวศเชิงป่าไม้"
+            },
+            {
+                question: "กรมการขนส่งทางราง และกรมท่าอากาศยาน ได้รับการระบุจัดตั้งในฐานะส่วนราชการภายใต้สังกัดกระทรวงใดในมาตรา ๒๑?",
+                options: [
+                    { text: "กระทรวงอุตสาหกรรม", isCorrect: false, rationale: "อุตสาหกรรมดูแลกระบวนการผลิตและโรงงาน ไม่เกี่ยวกับการขนส่งระบบราง" },
+                    { text: "กระทรวงคมนาคม", isCorrect: true, rationale: "มาตรา ๒๑ บัญญัติว่ากระทรวงคมนาคม มีส่วนราชการ รวมถึง กรมการขนส่งทางราง และ กรมท่าอากาศยาน" },
+                    { text: "กระทรวงมหาดไทย", isCorrect: false, rationale: "มหาดไทยกำกับดูแลพื้นที่ แต่การขนส่งจราจรและคมนาคมหลักส่งให้คมนาคมจัดระเบียบ" },
+                    { text: "กระทรวงพลังงาน", isCorrect: false, rationale: "กระทรวงพลังงานดูแลการจัดการและการบริหารพลังงานเท่านั้น" }
+                ],
+                hint: "กระทรวงที่ดูแลการเชื่อมต่อระบบขนส่งสาธารณะ ทางบก ทางราง ทางน้ำ และทางอากาศ"
+            },
+            {
+                question: "กระทรวงดิจิทัลเพื่อเศรษฐกิจและสังคม ได้รับการจัดตั้งขึ้นมาเพื่อรับช่วงงานและขอบเขตภารกิจของหมวดกระทรวงใดเดิมที่โดนยกเลิกไป?",
+                options: [
+                    { text: "หมวด ๑๗ (กระทรวงการท่องเที่ยวและนันทนาการ)", isCorrect: false, rationale: "หมวด ๑๗ ถูกยกเลิกไปโดยไม่ได้เกี่ยวข้องกับการแปรสภาพไอซีที" },
+                    { text: "หมวด ๑๐ กระทรวงเทคโนโลยีสารสนเทศและการสื่อสาร (ไอซีที)", isCorrect: true, rationale: "พ.ร.บ. ปรับปรุงกระทรวงฯ ได้ยกเลิกบทบัญญัติหมวด ๑๐ (กระทรวงไอซีที) และได้จัดตั้งหมวด ๘/๑ กระทรวงดิจิทัลเพื่อเศรษฐกิจและสังคมขึ้นมาแทน" },
+                    { text: "หมวด ๒ สำนักงานตำรวจแห่งชาติ", isCorrect: false, rationale: "สตช. ยังคงเป็นหน่วยงานอิสระตามมาตรา ๔๖" },
+                    { text: "หมวด ๕ กระทรวงการต่างประเทศ", isCorrect: false, rationale: "สลับหมวดกระทรวงไม่ถูกต้อง" }
+                ],
+                hint: "ใช้ชื่อย่อภาษาอังกฤษเดิมว่า MICT ก่อนแปรสภาพมาเป็น MDES ในปัจจุบัน"
+            },
+            {
+                question: "หน่วยงาน 'กรมการเปลี่ยนแปลงสภาพภูมิอากาศและสิ่งแวดล้อม' (มาตรา ๒๓) ได้รับการแปรสภาพและเปลี่ยนชื่อมาจากหน่วยงานใด?",
+                options: [
+                    { text: "กรมควบคุมมลพิษ", isCorrect: false, rationale: "กรมควบคุมมลพิษ ยังคงเป็นกรมสังกัดกระทรวงทรัพยากรฯ แยกจากงานสิ่งแวดล้อมทั่วไป" },
+                    { text: "กรมส่งเสริมคุณภาพสิ่งแวดล้อม", isCorrect: true, rationale: "ตามมาตรา ๒๓ บันทึกแนบท้ายระบุว่า 'กรมการเปลี่ยนแปลงสภาพภูมิอากาศและสิ่งแวดล้อม' เปลี่ยนชื่อมาจากกรมส่งเสริมคุณภาพสิ่งแวดล้อม ตามพระราชกฤษฎีกา พ.ศ. ๒๕๖๖" },
+                    { text: "กรมป่าไม้", isCorrect: false, rationale: "กรมป่าไม้ โยกย้ายมาจากเกษตรฯ สู่กระทรวงทรัพยากรฯ แต่ไม่ได้เปลี่ยนชื่อเป็นกรมการเปลี่ยนแปลงสภาพภูมิอากาศ" },
+                    { text: "สำนักงานสภาพพัฒนาระบบนิเวศชายฝั่ง", isCorrect: false, rationale: "เป็นชื่อที่แต่งขึ้นลวงผู้เข้าสอบ" }
+                ],
+                hint: "เป็นกรมที่เน้นการรณรงค์ ส่งเสริมคุณภาพสิ่งแวดล้อมในระดับประชาชน และได้รีแบรนด์เพื่อมุ่งเน้นปัญหาโลกร้อน (Climate Change)"
+            },
+            {
+                question: "กระทรวงใดมีโครงสร้างกองกำลังหน่วยทหารสังกัดพิเศษ โดยมาตรา ๙ บัญญัติให้ 'การจัดระเบียบราชการ' เป็นไปตามกฎหมาย ข้อบังคับ และระเบียบแบบแผนเฉพาะของตนเอง?",
+                options: [
+                    { text: "กระทรวงมหาดไทย", isCorrect: false, rationale: "มหาดไทยมีกองอาสารักษาดินแดน แต่โครงสร้างหลักเป็นราชการพลเรือนไม่ใช่ทหารมาตรา ๙" },
+                    { text: "กระทรวงยุติธรรม", isCorrect: false, rationale: "งานยุติธรรมจัดระเบียบพลเรือนปกติ" },
+                    { text: "กระทรวงกลาโหม", isCorrect: true, rationale: "มาตรา ๙ ระบุว่า 'การจัดระเบียบราชการกระทรวงกลาโหมให้เป็นไปตามกฎหมาย ข้อบังคับ และระเบียบแบบแผนว่าด้วยการนั้น' (เช่น พ.ร.บ. จัดระเบียบราชการกระทรวงกลาโหม)" },
+                    { text: "สำนักนายกรัฐมนตรี", isCorrect: false, rationale: "สำนักนายกฯ จัดโครงสร้างตามกฎหมายระเบียบบริหารราชการแผ่นดินทั่วไป" }
+                ],
+                hint: "กระทรวงความมั่นคงทางทหารที่ดูแลทั้ง กองทัพบก กองทัพเรือ และกองทัพอากาศ"
+            },
+            {
+                question: "กระทรวงพลังงานมีส่วนราชการในสังกัดตามที่กำหนดไว้ในมาตรา ๒๗ จำนวนทั้งหมดกี่ส่วนราชการ (ไม่รวมสำนักงานรัฐมนตรี)?",
+                options: [
+                    { text: "๔ ส่วนราชการ", isCorrect: false, rationale: "น้อยกว่าจำนวนกรมจริงในสังกัดพลังงาน" },
+                    { text: "๕ ส่วนราชการ", isCorrect: true, rationale: "มาตรา ๒๗ ระบุส่วนราชการกระทรวงพลังงาน ได้แก่ (๑) สำนักงานรัฐมนตรี, (๒) สำนักงานปลัดกระทรวง, (๓) กรมเชื้อเพลิงธรรมชาติ, (๔) กรมธุรกิจพลังงาน, (๕) กรมพัฒนาพลังงานทดแทนและอนุรักษ์พลังงาน, (๖) สำนักงานนโยบายและแผนพลังงาน เมื่อตัดสำนักงานรัฐมนตรีออก จึงเหลือ ๕ ส่วนราชการหลักที่มีฐานะเป็นกรม" },
+                    { text: "๖ ส่วนราชการ", isCorrect: false, rationale: "รวมสำนักงานรัฐมนตรีด้วยจะได้ ๖ แต่โจทย์ถาม 'ไม่รวมสำนักงานรัฐมนตรี'" },
+                    { text: "๗ ส่วนราชการ", isCorrect: false, rationale: "ตัวเลขเกินขอบข่ายจริงของกระทรวงพลังงาน" }
+                ],
+                hint: "นับจำนวนข้อย่อยในมาตรา ๒๗ ตั้งแต่ ปลัดกระทรวง ไปจนถึง สำนักงานนโยบายและแผนพลังงาน"
+            },
+            {
+                question: "หน่วยงาน 'กรมส่งเสริมการค้าระหว่างประเทศ' ในสังกัดกระทรวงพาณิชย์ ได้รับการเปลี่ยนชื่อมาจากหน่วยงานใดเดิมในอดีตตามมาตรา ๒๙?",
+                options: [
+                    { text: "กรมการค้าต่างประเทศ", isCorrect: false, rationale: "กรมการค้าต่างประเทศยังเป็นกรมปกติแยกอีกกรมหนึ่ง" },
+                    { text: "กรมส่งเสริมการส่งออก", isCorrect: true, rationale: "มาตรา ๒๙ ระบุว่า 'กรมส่งเสริมการค้าระหว่างประเทศ' ได้เปลี่ยนชื่อมาจาก 'กรมส่งเสริมการส่งออก' ตามผลของพระราชกฤษฎีกา พ.ศ. ๒๕๕๕" },
+                    { text: "กรมเจรจาการค้าระหว่างประเทศ", isCorrect: false, rationale: "กรมเจรจาการค้าเป็นหน่วยงานเชิงเทคนิคการทำสนธิสัญญาและข้อตกลง ไม่ใช่กรมส่งเสริมการส่งออกเดิม" },
+                    { text: "สำนักงานส่งเสริมธุรกิจบริการพาณิชย์", isCorrect: false, rationale: "เป็นตัวเลือกหลอกทางวิชาการการค้า" }
+                ],
+                hint: "เน้นภารกิจส่งสินค้าไทยออกไปขายยังต่างประเทศ (เดิมใช้คำว่า 'ส่งออก' ตรงตัว)"
+            },
+            {
+                question: "งานวิเคราะห์และจัดการ 'ความมั่นคงภายใน กิจการสาธารณภัย การทะเบียนราษฎร และการพัฒนาเมือง' จัดเป็นอำนาจหน้าที่ของกระทรวงใดตามมาตรา ๓๐?",
+                options: [
+                    { text: "กระทรวงมหาดไทย", isCorrect: true, rationale: "มาตรา ๓๐ กำหนดอำนาจหน้าที่ของกระทรวงมหาดไทยให้ครอบคลุมการบำบัดทุกข์บำรุงสุข รักษาความสงบเรียบร้อย ปกครองท้องที่/ท้องถิ่น ทะเบียนราษฎร ความมั่นคงภายใน สาธารณภัย และพัฒนาเมือง" },
+                    { text: "กระทรวงยุติธรรม", isCorrect: false, rationale: "ยุติธรรมดูแลกระบวนการทางกฎหมาย ศาล และการราชทัณฑ์ แต่ไม่ได้คุมทะเบียนราษฎร" },
+                    { text: "สำนักงานตำรวจแห่งชาติ", isCorrect: false, rationale: "ตำรวจรักษาความสงบเรียบร้อยแต่ไม่มีงานทะเบียนราษฎรหรือการพัฒนาผังเมืองโดยตรง" },
+                    { text: "กระทรวงแรงงาน", isCorrect: false, rationale: "แรงงานจำกัดความรับผิดชอบที่กำลังแรงงานและฝีมือแรงงาน" }
+                ],
+                hint: "เป็นกระทรวงที่คุมกรมที่ดิน ปภ. และกรมการปกครอง (สัญลักษณ์รูปสิงห์)"
+            },
+            {
+                question: "ข้อใดกล่าวถึงอำนาจหน้าที่ของ 'กระทรวงแรงงาน' ได้ถูกต้องและสมบูรณ์ที่สุดตามกฎหมายในมาตรา ๓๔?",
+                options: [
+                    { text: "มีอำนาจหน้าที่เกี่ยวกับการบริหารและคุ้มครองแรงงาน พัฒนาฝีมือแรงงาน และส่งเสริมให้ประชาชนมีงานทำ", isCorrect: true, rationale: "มาตรา ๓๔ บัญญัติอำนาจหน้าที่ของกระทรวงแรงงานไว้ตรงตามนี้ครบทุกถ้อยคำ" },
+                    { text: "มีอำนาจหน้าที่จัดหางานและควบคุมการจ่ายเงินค่าชดเชยกรณีว่างงานแก่ข้าราชการพลเรือน", isCorrect: false, rationale: "ข้าราชการพลเรือนไม่อยู่ภายใต้ระบบประกันสังคมของกระทรวงแรงงาน" },
+                    { text: "มีอำนาจหน้าที่กำหนดอัตราค่าจ้างขั้นต่ำของคนงานในโรงงานเหมืองแร่อุตสาหกรรมร่วมกับกระทรวงการคลัง", isCorrect: false, rationale: "เป็นหน้าที่ของบอร์ดไตรภาคีในกระทรวงแรงงานเอง โดยคลังไม่ได้เข้ามาร่วมกำกับตรงในมาตรานี้" },
+                    { text: "ส่งเสริมและฝึกอาชีพให้แก่เด็ก เยาวชน และคนชราในสถานสงเคราะห์", isCorrect: false, rationale: "งานสงเคราะห์สถานเลี้ยงเด็กและเยาวชนตกเป็นของ พม. (กระทรวงการพัฒนาสังคมฯ)" }
+                ],
+                hint: "เน้นงาน 'บริหารแรงงาน-คุ้มครอง-พัฒนาฝีมือ-หางานให้ทำ' ครบกระบวนการส่งเสริมอาชีพประชาชน"
+            },
+            {
+                question: "สถาบันนิติวิทยาศาสตร์ ได้รับการตราจัดตั้งให้อยู่ภายใต้สายการบังคับบัญชาและสังกัดกระทรวงใดในมาตรา ๓๓?",
+                options: [
+                    { text: "กระทรวงสาธารณสุข", isCorrect: false, rationale: "แม้จะเป็นงานพิสูจน์แพทย์ศพและวิจัยวิทยาศาสตร์ แต่ในโครงสร้างแผ่นดินตั้งอยู่ในกระทรวงยุติธรรม" },
+                    { text: "กระทรวงมหาดไทย", isCorrect: false, rationale: "มหาดไทยไม่คุมงานสถาบันนิติวิทยาศาสตร์" },
+                    { text: "กระทรวงยุติธรรม", isCorrect: true, rationale: "มาตรา ๓๓ (๑๐) กำหนดให้ 'สถาบันนิติวิทยาศาสตร์' เป็นส่วนราชการสังกัดกระทรวงยุติธรรม" },
+                    { text: "กระทรวงการอุดมศึกษา วิทยาศาสตร์ วิจัยและนวัตกรรม (อว.)", isCorrect: false, rationale: "อว. เน้นสถาบันวิจัยการเรียนรู้ทั่วไป แต่การนิติวิทยาศาสตร์สำหรับคดีความขึ้นอยู่กับยุติธรรม" }
+                ],
+                hint: "กระทรวงนี้คอยกำกับดูแลกรมราชทัณฑ์ กรมคุ้มครองสิทธิและเสรีภาพ และ DSI"
+            },
+            {
+                question: "กรมการศาสนา และกรมศิลปากร ได้รับการระบุแบ่งส่วนราชการให้สังกัดอยู่ภายใต้กระทรวงใดตามมาตรา ๓๗?",
+                options: [
+                    { text: "กระทรวงศึกษาธิการ", isCorrect: false, rationale: "ศึกษาธิการเคยคุมศาสนาและศิลปะในอดีต แต่ พ.ร.บ. ปรับปรุงกระทรวง ๒๕๔๕ ได้ตัดแยกมาสังกัดกระทรวงวัฒนธรรมแทน" },
+                    { text: "กระทรวงวัฒนธรรม", isCorrect: true, rationale: "มาตรา ๓๗ กำหนดส่วนราชการกระทรวงวัฒนธรรม ได้แก่ สำนักงานรัฐมนตรี, ปลัดกระทรวง, กรมการศาสนา, กรมศิลปากร, กรมส่งเสริมวัฒนธรรม และสำนักงานศิลปวัฒนธรรมร่วมสมัย" },
+                    { text: "สำนักงานพระพุทธศาสนาแห่งชาติ", isCorrect: false, rationale: "สำนักงานพระพุทธศาสนาฯ แยกอยู่นอกกระทรวงตามมาตรา ๔๖ ไม่ได้คุมกรมศิลปากร" },
+                    { text: "กระทรวงการท่องเที่ยวและกีฬา", isCorrect: false, rationale: "ท่องเที่ยวและกีฬาไม่มีส่วนเกี่ยวข้องกับการจัดแบ่งกรมศิลปากรแต่อย่างใด" }
+                ],
+                hint: "กระทรวงที่ดูแลด้านศิลปะ ศาสนา วัฒนธรรม และอารยธรรมความรุ่งเรืองของชาติ"
+            },
+            {
+                question: "ตามมาตรา ๔๐ อำนาจหน้าที่ของ 'กระทรวงศึกษาธิการ' ได้รับการบัญญัติข้อยกเว้นไว้ในกรณีใดที่ 'ไม่รวมอยู่ในการกำกับดูแล' ของกระทรวง?",
+                options: [
+                    { text: "การศึกษานอกระบบและการศึกษาตามอัธยาศัยของประชาชน", isCorrect: false, rationale: "งานการศึกษานอกระบบยังอยู่ภายใต้กรอบการส่งเสริมของกระทรวงศึกษาธิการ" },
+                    { text: "การศึกษาระดับอุดมศึกษาที่อยู่ในอำนาจหน้าที่ของกระทรวงอื่นที่มีกฎหมายกำหนดไว้เป็นการเฉพาะ", isCorrect: true, rationale: "มาตรา ๔๐ ระบุข้อยกเว้นการศึกษาขั้นสูงสุดว่า 'แต่ไม่รวมถึงการศึกษาระดับอุดมศึกษาที่อยู่ในอำนาจหน้าที่ของกระทรวงอื่นที่มีกฎหมายกำหนดไว้เป็นการเฉพาะ' (หมายถึงกระทรวง อว.)" },
+                    { text: "การอาชีวศึกษาของภาคเอกชน", isCorrect: false, rationale: "การอาชีวศึกษาเอกชนและรัฐยังอยู่ภายใต้การกำกับของกระทรวงศึกษาธิการตามมาตรา ๔๐" },
+                    { text: "การเรียนการสอนพุทธศาสนาในโรงเรียนพระปริยัติธรรม", isCorrect: false, rationale: "มาตรฐานการศึกษายังต้องอิงตามกรอบของกระทรวงศึกษาธิการ" }
+                ],
+                hint: "เป็นการศึกษาระดับมหาวิทยาลัย/วิทยาลัยระดับปริญญาตรีขึ้นไป ซึ่งได้รับการตั้งกระทรวงใหม่ขึ้นมาดูแลโดยเฉพาะ"
+            },
+            {
+                question: "หน่วยงานใดในกระทรวงสาธารณสุข ที่ได้รับการเปลี่ยนชื่อตามพระราชกฤษฎีกา พ.ศ. ๒๕๖๐ จากเดิม 'กรมพัฒนาการแพทย์แผนไทยและการแพทย์ทางเลือก'?",
+                options: [
+                    { text: "กรมสนับสนุนบริการสุขภาพ", isCorrect: false, rationale: "สนับสนุนบริการสุขภาพเป็นคนละกรมสังกัดสาธารณสุข" },
+                    { text: "กรมการแพทย์แผนไทยและการแพทย์ทางเลือก", isCorrect: true, rationale: "มาตรา ๔๓ ระบุแนบท้ายว่า 'กรมการแพทย์แผนไทยและการแพทย์ทางเลือก' เปลี่ยนชื่อมาจาก กรมพัฒนาการแพทย์แผนไทยและการแพทย์ทางเลือก พ.ศ. ๒๕๖๐" },
+                    { text: "กรมสุขภาพจิต", isCorrect: false, rationale: "กรมสุขภาพจิตดูแลเรื่องจิตเวชและสุขภาพจิตของประชาชน" },
+                    { text: "กรมการแพทย์และการฟื้นฟูยาเสพติด", isCorrect: false, rationale: "เป็นชื่อที่แต่งขึ้นเพื่อลวง" }
+                ],
+                hint: "ตัดคำว่า 'พัฒนา' ออกจากชื่อกรมเดิมเพื่อความกระชับและชัดเจนยิ่งขึ้นในการสื่อความหมาย"
+            },
+            {
+                question: "สำนักงานมาตรฐานผลิตภัณฑ์อุตสาหกรรม (สมอ.) สังกัดอยู่ภายใต้กระทรวงใดตามมาตรา ๔๕?",
+                options: [
+                    { text: "กระทรวงอุตสาหกรรม", isCorrect: true, rationale: "มาตรา ๔๕ (๗) กำหนดให้ 'สำนักงานมาตรฐานผลิตภัณฑ์อุตสาหกรรม' อยู่ในสังกัดกระทรวงอุตสาหกรรม" },
+                    { text: "กระทรวงพาณิชย์", isCorrect: false, rationale: "พาณิชย์ดูแลมาตรฐานการค้าและจดลิขสิทธิ์ แต่เครื่องหมาย มอก. สินค้าอุตสาหกรรมคุมโดยกระทรวงอุตสาหกรรม" },
+                    { text: "กระทรวงการคลัง", isCorrect: false, rationale: "การคลังควบคุมพัสดุและงบประมาณการเบิกจ่าย แต่ไม่กำกับ มอก. สินค้าอุตสาหกรรม" },
+                    { text: "กระทรวงดิจิทัลเพื่อเศรษฐกิจและสังคม", isCorrect: false, rationale: "ดีอีเอสดูแลมาตรฐานไอทีและดิจิทัลเท่านั้น" }
+                ],
+                hint: "กระทรวงที่ดูแลเรื่องโรงงาน เหมืองแร่ และมาตรฐานการผลิตสินค้าทางอุตสาหกรรมแผ่นดิน (มอก.)"
+            },
+            {
+                question: "หน่วยงานอิสระใดตามมาตรา ๔๖ ที่มีอำนาจหน้าที่เกี่ยวกับการดูแลรักษา 'ศาสนสมบัติ' ตามกฎหมายว่าด้วยคณะสงฆ์?",
+                options: [
+                    { text: "สำนักงานราชบัณฑิตยสภา", isCorrect: false, rationale: "ราชบัณฑิตยสภาเน้นวิจัยพจนานุกรมและเผยแพร่งานวิชาการชาติ" },
+                    { text: "กรมการศาสนา กระทรวงวัฒนธรรม", isCorrect: false, rationale: "กรมการศาสนาทำงานด้านพิธีกรรมและศาสนิกชน แต่อำนาจคุมศาสนสมบัติทางกฎหมายสงฆ์ตกเป็นของสํานักงานพระพุทธศาสนาแห่งชาติ" },
+                    { text: "สำนักงานพระพุทธศาสนาแห่งชาติ", isCorrect: true, rationale: "ตามมาตรา ๔๖ (๓) ระบุว่า 'สำนักงานพระพุทธศาสนาแห่งชาติ' มีฐานะเป็นกรม ขึ้นตรงต่อนายกรัฐมนตรี มีอำนาจดูแลรักษาศาสนสมบัติตามกฎหมายว่าด้วยคณะสงฆ์" },
+                    { text: "สถาบันวิจัยพุทธศาสตร์ศึกษา", isCorrect: false, rationale: "เป็นสถาบันการศึกษาของคณะสงฆ์ ไม่ใช่หน่วยราชการตามมาตรา ๔๖" }
+                ],
+                hint: "เป็นส่วนราชการมาตรา ๔๖ ที่ขึ้นตรงต่อนายกรัฐมนตรีโดยตรง ไม่ได้สังกัดกระทรวงวัฒนธรรม"
+            },
+            {
+                question: "ข้อใดกล่าวถูกต้องเกี่ยวกับ 'สำนักงานตำรวจแห่งชาติ (สตช.)' ตามโครงสร้างของ พ.ร.บ. ปรับปรุงกระทรวง ทบวง กรม พ.ศ. ๒๕๔๕?",
+                options: [
+                    { text: "เป็นส่วนราชการที่ขึ้นตรงต่อรัฐมนตรีว่าการกระทรวงมหาดไทย", isCorrect: false, rationale: "ตำรวจไม่ได้สังกัดกระทรวงมหาดไทยมาตั้งแต่ปี ๒๕๔๑ (ก่อน พ.ร.บ. ฉบับนี้ประกาศใช้)" },
+                    { text: "เป็นส่วนราชการไม่สังกัดสำนักนายกรัฐมนตรี กระทรวง หรือทบวง มีฐานะเป็นกรม อยู่ในบังคับบัญชาของนายกรัฐมนตรีโดยตรง", isCorrect: true, rationale: "ตามมาตรา ๔๖ (๗) สตช. มีฐานะเป็นกรม ไม่อยู่ในสังกัดกระทรวงใดๆ แต่อยู่ในบังคับบัญชาขึ้นตรงต่อนายกรัฐมนตรีโดยตรง" },
+                    { text: "เป็นหน่วยงานในสังกัดสำนักเลขาธิการคณะรัฐมนตรี", isCorrect: false, rationale: "สำนักเลขาธิการ ครม. ดูแลวาระประชุม ครม. เท่านั้น ไม่เกี่ยวกับการดูแลกำลังพลตำรวจ" },
+                    { text: "เป็นสถาบันวิชาชีพเฉพาะกิจที่ไม่ขึ้นตรงต่อฝ่ายบริหารแผ่นดิน", isCorrect: false, rationale: "สตช. ยังคงเป็นหน่วยงานในสายงานบริหารที่มีนายกฯ นั่งคุมหัวโต๊ะ ก.ตร." }
+                ],
+                hint: "จัดอยู่ในกลุ่มหน่วยงานพิเศษตามมาตรา ๔๖ เพื่อความเป็นเอกเทศและคุมอำนาจพิทักษ์สันติราษฎร์โดยหัวหน้ารัฐบาล"
+            },
+            {
+                question: "สํานักงานคณะกรรมการคุ้มครองผู้บริโภค (สคบ.) จัดเป็นส่วนราชการประเภทใดในระบบราชการไทยปัจจุบัน?",
+                options: [
+                    { text: "ส่วนราชการสังกัดปกติในสำนักนายกรัฐมนตรี (มีโครงสร้างปลัด OPM คอยดูแลประสานงาน)", isCorrect: true, rationale: "มาตรา ๗ (๓) ระบุให้ สคบ. เป็นส่วนราชการปกติในสังกัดสำนักนายกฯ ร่วมกับสำนักงานปลัด OPM และกรมประชาสัมพันธ์" },
+                    { text: "ส่วนราชการไม่สังกัดกระทรวงแต่อยู่ภายใต้บังคับบัญชารัฐมนตรีประจำสำนักนายกฯ ชี้ขาดเป็นการส่วนตัว", isCorrect: false, rationale: "ทำงานตามโครงสร้าง OPM ปกติ ไม่ได้เป็นหน่วยแยกอิสระระดับกรมพิเศษข้ามสำนักงานปลัด OPM" },
+                    { text: "หน่วยงานในสังกัดกระทรวงพาณิชย์", isCorrect: false, rationale: "พาณิชย์ดูแลคุ้มครองทรัพย์สินทางปัญญาและการค้า แต่สิทธิ์คุ้มครองผู้บริโภค (สคบ.) อยู่กับ OPM" },
+                    { text: "สถาบันอิสระนอกฝ่ายบริหารที่ทำหน้าที่นิติบัญญัติคุ้มครองราษฎร", isCorrect: false, rationale: "สคบ. เป็นหน่วยราชการฝ่ายบริหารชัดเจน สังกัดสำนักนายกฯ" }
+                ],
+                hint: "เป็น ๑ ใน ๓ สหายหลักของมาตรา ๗ ที่ไม่อยู่ในข้อยกเว้นขึ้นตรงต่อนายกฯ"
+            },
+            {
+                question: "หน่วยงานใดในสำนักนายกรัฐมนตรีที่ไม่ได้มี 'สำนักงานรัฐมนตรี' เป็นของตนเอง แต่มีสำนักเลขาธิการเฉพาะกิจทำหน้าที่ธุรการทางเมืองและการประชุม ครม.?",
+                options: [
+                    { text: "กระทรวงมหาดไทย", isCorrect: false, rationale: "กระทรวงมหาดไทยมีสำนักงานรัฐมนตรีตามมาตรา ๓๑ ลำดับแรก" },
+                    { text: "กระทรวงการต่างประเทศ", isCorrect: false, rationale: "กระทรวงต่างประเทศมีสำนักงานรัฐมนตรีตามมาตรา ๑๓" },
+                    { text: "สำนักนายกรัฐมนตรี", isCorrect: true, rationale: "สำนักนายกฯ ไม่มี 'สำนักงานรัฐมนตรี' บัญญัติอยู่ในมาตรา ๗ แต่ใช้โครงสร้างสำนักเลขาธิการนายกรัฐมนตรี (สลน.) และสำนักเลขาธิการคณะรัฐมนตรี (สลค.) ปฏิบัติหน้าที่แทนในการสนับสนุนงานเมืองและราชการทั่วไป" },
+                    { text: "กระทรวงการคลัง", isCorrect: false, rationale: "กระทรวงการคลังมีสำนักงานรัฐมนตรีตามมาตรา ๑๑" }
+                ],
+                hint: "เป็นส่วนราชการระดับกระทรวงแห่งเดียวที่ไม่มี 'สำนักงานรัฐมนตรี' นั่งในลำดับที่ (๑) ของรายการกรมสังกัด"
+            },
+            {
+                question: "เหตุผลที่ประกาศใช้ พ.ร.บ. ปรับปรุงกระทรวง ทบวง กรม พ.ศ. ๒๕๔๕ บัญญัติประเด็นแก้ไขปัญหาใดในระบบราชการไทยเดิม?",
+                options: [
+                    { text: "ขั้นตอนการปฏิบัติงานล่าช้า ซ้ำซ้อน และขาดการกำหนดเป้าหมายการทำงานร่วมกันของส่วนราชการที่มีความเกี่ยวข้องกัน", isCorrect: true, rationale: "เหตุผลท้ายพระราชบัญญัติระบุถึงความล่าช้า ขาดทิศทางร่วมกัน และความซ้ำซ้อนของการทำงานในแบบเดิม จึงปรับอำนาจหน้าที่จัดส่วนราชการที่สัมพันธ์กันรวมไว้เป็นกลุ่มงานเดียวกัน" },
+                    { text: "ปัญหางบประมาณขาดแคลนเฉียบพลันจากการลดระดับการเก็บภาษีอากรแผ่นดิน", isCorrect: false, rationale: "ไม่ได้เน้นเรื่องปัญหาการเก็บภาษีอากรแผ่นดินขาดแคลนในคำแถลงท้าย พ.ร.บ." },
+                    { text: "เพื่อลดอัตรากำลังข้าราชการลง ๕๐% ทั่วประเทศทันทีเพื่อประหยัดเงินแผ่นดิน", isCorrect: false, rationale: "ไม่มีข้อกำหนดเชิงลบเรื่องการสั่งปลดกำลังคนลงครึ่งหนึ่งในท้ายประกาศเหตุผล" },
+                    { text: "การแทรกแซงทางอำนาจศาลจากการดำเนินงานของสำนักงานตำรวจแห่งชาติ", isCorrect: false, rationale: "คำแถลงเหตุผลมุ่งแก้ปัญหาประสิทธิภาพการทำงาน บริการประชาชน และความเป็นเอกภาพในการทำงานกลุ่มภารกิจ" }
+                ],
+                hint: "มุ่งปรับปรุงการทำงานให้เป็นกลุ่มภารกิจ ทำงานร่วมกันได้อย่างมีเอกภาพ และเกิดประโยชน์แก่ประชาชนสูงสุด"
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let hasAnswered = false;
+
+        // Switch Tabs Logic
+        function switchTab(tab) {
+            const summaryBtn = document.getElementById('tab-summary-btn');
+            const quizBtn = document.getElementById('tab-quiz-btn');
+            const summarySec = document.getElementById('summary-section');
+            const quizSec = document.getElementById('quiz-section');
+
+            if (tab === 'summary') {
+                summaryBtn.className = "px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg font-medium text-xs sm:text-sm transition-all duration-200 bg-brand-500 text-white shadow-sm";
+                quizBtn.className = "px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg font-medium text-xs sm:text-sm transition-all duration-200 text-slate-600 hover:text-brand-600 hover:bg-brand-50";
+                summarySec.classList.remove('hidden');
+                quizSec.classList.add('hidden');
+            } else {
+                quizBtn.className = "px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg font-medium text-xs sm:text-sm transition-all duration-200 bg-brand-500 text-white shadow-sm";
+                summaryBtn.className = "px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg font-medium text-xs sm:text-sm transition-all duration-200 text-slate-600 hover:text-brand-600 hover:bg-brand-50";
+                quizSec.classList.remove('hidden');
+                summarySec.classList.add('hidden');
+                initQuiz();
+            }
+        }
+
+        // Initialize / Restart Quiz
+        function initQuiz() {
+            currentQuestionIndex = 0;
+            score = 0;
+            hasAnswered = false;
+            document.getElementById('quiz-play-box').classList.remove('hidden');
+            document.getElementById('quiz-score-box').classList.add('hidden');
+            showQuestion();
+        }
+
+        // Render Current Question
+        function showQuestion() {
+            hasAnswered = false;
+            const q = quizData[currentQuestionIndex];
+            
+            // Set Progress Indicators
+            document.getElementById('current-question-indicator').innerText = `${currentQuestionIndex + 1}/${quizData.length}`;
+            document.getElementById('quiz-progress-bar').style.width = `${((currentQuestionIndex + 1) / quizData.length) * 100}%`;
+            
+            // Set Question Statement
+            document.getElementById('question-text').innerText = `[ข้อที่ ${currentQuestionIndex + 1}] ${q.question}`;
+            
+            // Hide next button & hint box
+            document.getElementById('next-btn').classList.add('hidden');
+            document.getElementById('explanation-box').classList.add('hidden');
+            
+            // Reset hint btn
+            const hintDisplay = document.getElementById('hint-display-box');
+            hintDisplay.classList.add('hidden');
+            document.getElementById('hint-text-label').innerText = "แสดงคำใบ้";
+            document.getElementById('hint-content').innerText = q.hint;
+
+            // Generate Option Cards
+            const container = document.getElementById('options-container');
+            container.innerHTML = '';
+            
+            q.options.forEach((opt, idx) => {
+                const optId = `opt-${idx}`;
+                const card = document.createElement('div');
+                card.id = optId;
+                card.onclick = () => selectOption(idx);
+                card.className = "p-3 sm:p-4 bg-white hover:bg-orange-50/50 border border-slate-150 hover:border-brand-300 rounded-xl cursor-pointer transition-all duration-150 flex items-start gap-3 shadow-sm";
+                
+                // Bullet icon placeholder
+                card.innerHTML = `
+                    <div class="w-5 h-5 sm:w-6 sm:h-6 rounded-full border border-slate-300 flex items-center justify-center flex-shrink-0 text-[10px] sm:text-xs font-semibold text-slate-400 bg-slate-50 transition-all opt-bullet">
+                        ${String.fromCharCode(65 + idx)}
+                    </div>
+                    <div class="text-xs sm:text-sm font-medium text-slate-800 flex-grow leading-relaxed">${opt.text}</div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Toggle Hint Display
+        function toggleHint() {
+            const hintBox = document.getElementById('hint-display-box');
+            const hintLabel = document.getElementById('hint-text-label');
+            if (hintBox.classList.contains('hidden')) {
+                hintBox.classList.remove('hidden');
+                hintLabel.innerText = "ซ่อนคำใบ้";
+            } else {
+                hintBox.classList.add('hidden');
+                hintLabel.innerText = "แสดงคำใบ้";
+            }
+        }
+
+        // Select Option Handling
+        function selectOption(selectedIdx) {
+            if (hasAnswered) return; // Prevent multiple clicks
+            hasAnswered = true;
+            
+            const q = quizData[currentQuestionIndex];
+            const isCorrect = q.options[selectedIdx].isCorrect;
+            
+            if (isCorrect) score++;
+
+            // Visual markers for choices
+            q.options.forEach((opt, idx) => {
+                const card = document.getElementById(`opt-${idx}`);
+                const bullet = card.querySelector('.opt-bullet');
+                
+                // Remove interactive styles
+                card.className = card.className.replace('hover:bg-orange-50/50', '').replace('hover:border-brand-300', '').replace('cursor-pointer', '');
+                
+                if (opt.isCorrect) {
+                    // Correct green styling
+                    card.classList.add('border-green-500', 'bg-green-50/80');
+                    bullet.className = "w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-green-500 text-white flex items-center justify-center flex-shrink-0 text-[10px] sm:text-xs font-semibold";
+                    bullet.innerHTML = '<i class="fa-solid fa-check text-[9px] sm:text-[11px]"></i>';
+                } else if (idx === selectedIdx) {
+                    // Incorrect red styling
+                    card.classList.add('border-red-500', 'bg-red-50/80');
+                    bullet.className = "w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-red-500 text-white flex items-center justify-center flex-shrink-0 text-[10px] sm:text-xs font-semibold";
+                    bullet.innerHTML = '<i class="fa-solid fa-xmark text-[9px] sm:text-[11px]"></i>';
+                } else {
+                    card.classList.add('opacity-60');
+                }
+            });
+
+            // Show explanation/rationale box
+            const expBox = document.getElementById('explanation-box');
+            const expIcon = document.getElementById('explanation-icon-container');
+            const expTitle = document.getElementById('explanation-title');
+            const expBody = document.getElementById('explanation-body');
+            
+            expBox.classList.remove('hidden');
+            
+            if (isCorrect) {
+                expIcon.className = "w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-white bg-green-500 shadow-sm";
+                expIcon.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+                expTitle.className = "font-bold text-xs sm:text-sm text-green-700";
+                expTitle.innerText = "คำตอบถูกต้อง!";
+            } else {
+                expIcon.className = "w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-white bg-red-500 shadow-sm";
+                expIcon.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i>';
+                expTitle.className = "font-bold text-xs sm:text-sm text-red-600";
+                expTitle.innerText = "คำตอบยังไม่ถูกต้อง";
+            }
+            
+            expBody.innerText = q.options[selectedIdx].rationale;
+            
+            // Show next button
+            const nextBtn = document.getElementById('next-btn');
+            nextBtn.classList.remove('hidden');
+            if (currentQuestionIndex === quizData.length - 1) {
+                nextBtn.innerHTML = '<span>ดูผลการสอบทั้งหมด</span> <i class="fa-solid fa-square-poll-vertical ml-1.5"></i>';
+            } else {
+                nextBtn.innerHTML = '<span>ข้อต่อไป</span> <i class="fa-solid fa-chevron-right text-[10px] ml-1.5"></i>';
+            }
+        }
+
+        // Progress or finish quiz
+        function goToNextQuestion() {
+            if (currentQuestionIndex < quizData.length - 1) {
+                currentQuestionIndex++;
+                showQuestion();
+            } else {
+                showQuizResult();
+            }
+        }
+
+        // Show Scoreboard Screen
+        function showQuizResult() {
+            document.getElementById('quiz-play-box').classList.add('hidden');
+            
+            const scoreBox = document.getElementById('quiz-score-box');
+            scoreBox.classList.remove('hidden');
+            
+            document.getElementById('final-score-display').innerText = `${score} / ${quizData.length}`;
+            
+            const assessment = document.getElementById('score-assessment');
+            if (score === 30) {
+                assessment.innerText = "ระดับ: 🏆 เทพแห่งการปรับปรุงกระทรวง (คะแนนเต็ม 30/30 ระดับประธาน ก.พ.ร. กลับชาติมาเกิด)";
+                assessment.className = "text-xs sm:text-sm font-bold text-emerald-600 block";
+            } else if (score >= 25) {
+                assessment.innerText = "ระดับ: 🥇 ยอดเยี่ยม (เกรดเอ ทรงพลังความรอบรู้โครงสร้างข้าราชการพลเรือนไทย)";
+                assessment.className = "text-xs sm:text-sm font-bold text-teal-600 block";
+            } else if (score >= 18) {
+                assessment.innerText = "ระดับ: 🥈 ผ่านเกณฑ์ดีเลิศ (ความรู้ระดับมาตรฐานชั้นดี มีหลงประเด็นย่อยเล็กน้อย)";
+                assessment.className = "text-xs sm:text-sm font-bold text-amber-600 block";
+            } else {
+                assessment.innerText = "ระดับ: ⚠️ ควรกลับไปเปิดอ่านหมวดส่วนราชการสังกัดปกติ OPM และมาตรา ๔๖ ใหม่อีกครั้ง";
+                assessment.className = "text-xs sm:text-sm font-bold text-red-500 block";
+            }
+        }
+
+        function restartQuiz() {
+            initQuiz();
+        }
+
+        // Start app in summary tab on load
+        window.onload = function() {
+            switchTab('summary');
+        };
+    </script>
+</body>
+</html>
